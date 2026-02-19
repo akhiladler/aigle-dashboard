@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AIGLE — Sinyal Buzz Film Indonesia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           AIGLE DASHBOARD — Cinema Buzz Aggregator
+           Dark theme, mobile-first, editorial design
+           ============================================================ */
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #050507;
+            --bg-elevated: #0a0a0f;
+            --bg-card: rgba(255,255,255,0.025);
+            --border-subtle: rgba(255,255,255,0.06);
+            --border-card: rgba(255,255,255,0.08);
+            --gold: #daa520;
+            --gold-dim: #8b6914;
+            --gold-glow: rgba(218,165,32,0.15);
+            --text-primary: #f0f0f0;
+            --text-secondary: #999;
+            --text-muted: #555;
+            --text-dim: #333;
+            --red: #dc2626;
+            --red-dim: rgba(220,38,38,0.12);
+            --yellow: #eab308;
+            --yellow-dim: rgba(234,179,8,0.12);
+            --green: #22c55e;
+            --green-dim: rgba(34,197,94,0.12);
+            --blue: #3b82f6;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Container: mobile-first, centered on desktop */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding-bottom: 48px;
+        }
+
+        /* ============================================================
+           SECTION 1: HEADER
+           ============================================================ */
+
+        .header {
+            position: relative;
+            padding: 40px 24px 28px;
+            background: linear-gradient(180deg, #0c0c14 0%, var(--bg) 100%);
+            overflow: hidden;
+        }
+
+        /* Subtle golden ambient glow */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(218,165,32,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 12px rgba(218,165,32,0.2);
+        }
+
+        .brand-name {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .brand-tagline {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        /* Pulsing context line */
+        .context-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 7px 16px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--blue);
+            animation: pulse 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.85); }
+        }
+
+        /* ============================================================
+           SECTION 2: HEADLINE
+           ============================================================ */
+
+        .headline-section {
+            padding: 20px 24px 8px;
+        }
+
+        .headline {
+            font-size: 32px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .headline .accent {
+            color: var(--gold);
+        }
+
+        .subheadline {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 400px;
+        }
+
+        /* ============================================================
+           SECTION 3: BUZZ SPECTRUM (log-scale dot plot)
+           ============================================================ */
+
+        .spectrum-section {
+            padding: 28px 24px 12px;
+        }
+
+        .section-label {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .spectrum-wrapper {
+            position: relative;
+            height: 140px;
+            margin-bottom: 6px;
+        }
+
+        /* The horizontal track */
+        .spectrum-track {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(220,38,38,0.25) 0%,
+                rgba(234,179,8,0.2) 50%,
+                rgba(34,197,94,0.2) 100%
+            );
+            transform: translateY(-0.5px);
+        }
+
+        /* Zone background bands */
+        .spectrum-zone {
+            position: absolute;
+            top: calc(50% - 24px);
+            height: 48px;
+            opacity: 0.03;
+        }
+        .spectrum-zone.zone-low {
+            left: 0;
+            background: var(--red);
+        }
+        .spectrum-zone.zone-med {
+            background: var(--yellow);
+        }
+        .spectrum-zone.zone-high {
+            background: var(--green);
+        }
+
+        /* Threshold lines */
+        .threshold-line {
+            position: absolute;
+            top: calc(50% - 20px);
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.08);
+        }
+        .threshold-text {
+            position: absolute;
+            top: calc(50% + 26px);
+            transform: translateX(-50%);
+            font-size: 8px;
+            font-weight: 600;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* Zone labels at the bottom */
+        .zone-labels {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .zone-label-rendah { color: var(--red); }
+        .zone-label-sedang { color: var(--yellow); }
+        .zone-label-tinggi { color: var(--green); }
+
+        /* Film dots - shared */
+        .dot {
+            position: absolute;
+            top: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: default;
+        }
+
+        /* Historical dots */
+        .dot-hist {
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.25s ease;
+            z-index: 1;
+        }
+        .dot-hist:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%) scale(1.8);
+            z-index: 5;
+        }
+
+        /* Tooltip for historical dots */
+        .dot-tooltip {
+            position: absolute;
+            bottom: calc(50% + 14px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a22;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 9px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 10;
+        }
+        .dot-hist:hover .dot-tooltip {
+            opacity: 1;
+        }
+
+        /* New-film dots (this week) */
+        .dot-new {
+            width: 14px;
+            height: 14px;
+            background: var(--gold);
+            border: 2px solid var(--bg);
+            box-shadow: 0 0 12px rgba(218,165,32,0.35);
+            z-index: 3;
+            animation: dotGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes dotGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(218,165,32,0.3); }
+            50% { box-shadow: 0 0 22px rgba(218,165,32,0.55); }
+        }
+
+        /* Labels for new-film dots */
+        .dot-new-label {
+            position: absolute;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gold);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 4;
+        }
+        .dot-new-label.above {
+            bottom: calc(50% + 16px);
+            transform: translateX(-50%);
+        }
+        .dot-new-label.below {
+            top: calc(50% + 16px);
+            transform: translateX(-50%);
+        }
+
+        /* Spectrum legend / footnote */
+        .spectrum-legend {
+            text-align: center;
+            font-size: 10px;
+            color: var(--text-dim);
+            padding: 6px 0 0;
+        }
+        .spectrum-legend .legend-gold {
+            color: var(--gold);
+        }
+
+        /* ============================================================
+           SECTION 4: FILM CARDS
+           ============================================================ */
+
+        .cards-section {
+            padding: 20px 24px 0;
+        }
+
+        .cards-section .section-label {
+            margin-bottom: 14px;
+        }
+
+        .film-card {
+            position: relative;
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--border-card);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Gold left accent bar */
+        .film-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--text-dim), var(--text-dim));
+        }
+        .film-card.rank-1::before {
+            background: linear-gradient(180deg, var(--gold), var(--gold-dim));
+        }
+        .film-card.rank-2::before {
+            background: linear-gradient(180deg, #666, #333);
+        }
+
+        /* Big faded rank number in background */
+        .card-rank-bg {
+            position: absolute;
+            top: 8px;
+            right: 14px;
+            font-size: 48px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.025);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 3px;
+            padding-right: 40px;
+            line-height: 1.3;
+        }
+        .film-card.rank-1 .card-title {
+            color: var(--gold);
+        }
+
+        .card-meta {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            letter-spacing: 0.2px;
+        }
+
+        /* Badges row */
+        .badges-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .badge {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .badge-sequel {
+            color: var(--yellow);
+            background: var(--yellow-dim);
+            border: 1px solid rgba(234,179,8,0.15);
+        }
+        .badge-nobar {
+            color: var(--blue);
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.15);
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2px;
+            margin-bottom: 14px;
+        }
+
+        .stat-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .stat-label {
+            font-size: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .stat-value.rendah { color: var(--red); }
+        .stat-value.sedang { color: var(--yellow); }
+        .stat-value.tinggi { color: var(--green); }
+        .stat-value.empty { color: var(--text-dim); font-weight: 400; }
+
+        /* "Mirip dengan" insight box */
+        .insight-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(218,165,32,0.035);
+            border: 1px solid rgba(218,165,32,0.06);
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .insight-icon {
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .insight-content {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .insight-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .insight-content .insight-outcome {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ============================================================
+           SECTION 5: KEKUATAN MINGGU (Week Strength)
+           ============================================================ */
+
+        .week-strength {
+            margin: 24px 24px 0;
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .strength-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .strength-title {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        .strength-badge {
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        .strength-bar-track {
+            height: 4px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .strength-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .strength-context {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+        .strength-context .highlight {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* ============================================================
+           SECTION 6: FOOTER
+           ============================================================ */
+
+        .footer {
+            padding: 40px 24px 32px;
+            text-align: center;
+        }
+
+        .footer-motto {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .footer-stats {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .footer-brand {
+            font-size: 10px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+        }
+
+        /* ============================================================
+           LOADING & ERROR STATES
+           ============================================================ */
+
+        .loading-state, .error-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--border-subtle);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .error-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .error-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .error-message {
+            font-size: 12px;
+            color: var(--text-muted);
+            max-width: 300px;
+            line-height: 1.5;
+        }
+
+        /* ============================================================
+           UTILITY & RESPONSIVE
+           ============================================================ */
+
+        /* Hide content until loaded */
+        .dashboard-content { display: none; }
+        .dashboard-content.loaded { display: block; }
+
+        @media (min-width: 520px) {
+            .container {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Loading state -->
+    <div id="loadingState" class="loading-state">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Memuat data film...</div>
+    </div>
+
+    <!-- Error state -->
+    <div id="errorState" class="error-state" style="display:none;">
+        <div class="error-icon">&#9888;&#65039;</div>
+        <div class="error-title">Gagal Memuat Data</div>
+        <div class="error-message" id="errorMessage">Pastikan file films.json tersedia di direktori yang sama.</div>
+    </div>
+
+    <!-- Dashboard content (hidden until data loads) -->
+    <div id="dashboard" class="dashboard-content">
+
+        <!-- SECTION 1: HEADER -->
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">&#x1F985;</div>
+                <div>
+                    <div class="brand-name">AIGLE</div>
+                    <div class="brand-tagline">Sinyal Buzz Film Indonesia</div>
+                </div>
+            </div>
+            <div class="context-pill">
+                <span class="pulse-dot"></span>
+                <span id="contextLine">Memuat...</span>
+            </div>
+        </header>
+
+        <!-- SECTION 2: HEADLINE -->
+        <div class="headline-section">
+            <h1 class="headline" id="headlineText"></h1>
+            <p class="subheadline" id="subheadlineText"></p>
+        </div>
+
+        <!-- SECTION 3: BUZZ SPECTRUM -->
+        <div class="spectrum-section">
+            <div class="section-label">Peta Buzz &mdash; <span id="spectrumCount">0</span> Film Dilacak</div>
+            <div class="spectrum-wrapper" id="spectrumWrapper">
+                <div class="spectrum-track"></div>
+                <!-- Zones, thresholds, dots injected by JS -->
+            </div>
+            <div class="spectrum-legend">
+                <span class="legend-gold">&#x25CF;</span> emas = rilis minggu ini &nbsp;&nbsp;
+                <span style="color:var(--text-muted);">&#x25CF;</span> abu = riwayat &nbsp;&nbsp;
+                Skala: views trailer YouTube (log)
+            </div>
+        </div>
+
+        <!-- SECTION 4: FILM CARDS -->
+        <div class="cards-section">
+            <div class="section-label">Film Minggu Ini</div>
+            <div id="filmCards"></div>
+        </div>
+
+        <!-- SECTION 5: WEEK STRENGTH -->
+        <div id="weekStrengthSection"></div>
+
+        <!-- SECTION 6: FOOTER -->
+        <div class="footer">
+            <div class="footer-motto">Sinyal, Bukan Prediksi</div>
+            <div class="footer-stats" id="footerStats"></div>
+            <div class="footer-brand">AIGLE &bull; Dibangun selama Ramadan 2026</div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ============================================================
+// AIGLE DASHBOARD — JavaScript Engine
+// Fetches films.json, processes data, renders all sections
+// ============================================================
+
+(function() {
+    'use strict';
+
+    // -----------------------------------------------------------
+    // UTILITY FUNCTIONS
+    // -----------------------------------------------------------
+
+    /**
+     * Format large view counts in Bahasa Indonesia style.
+     * Uses "Jt" for millions (Juta) and "Rb" for thousands (Ribu).
+     */
+    function fmtViews(v) {
+        if (v == null || isNaN(v)) return '—';
+        if (v >= 1000000) return (v / 1000000).toFixed(v >= 10000000 ? 1 : 2) + ' Jt';
+        if (v >= 1000) return Math.round(v / 1000) + ' Rb';
+        return v.toString();
+    }
+
+    /**
+     * Format views for spectrum tooltips (shorter form).
+     */
+    function fmtViewsShort(v) {
+        if (v == null) return '—';
+        if (v >= 1000000) return (v / 1000000).toFixed(1) + 'Jt';
+        if (v >= 1000) return Math.round(v / 1000) + 'Rb';
+        return v.toString();
+    }
+
+    /**
+     * Convert buzz level to display class.
+     */
+    function buzzClass(level) {
+        if (!level) return 'empty';
+        const l = level.toUpperCase();
+        if (l === 'TINGGI' || l === 'HIGH') return 'tinggi';
+        if (l === 'SEDANG' || l === 'MED') return 'sedang';
+        return 'rendah';
+    }
+
+    /**
+     * Normalize buzz level to Bahasa Indonesia.
+     */
+    function buzzLabel(level) {
+        if (!level) return '—';
+        const l = level.toUpperCase();
+        if (l === 'HIGH' || l === 'TINGGI') return 'TINGGI';
+        if (l === 'MED' || l === 'SEDANG') return 'SEDANG';
+        return 'RENDAH';
+    }
+
+    /**
+     * Normalize calendar period to Bahasa Indonesia.
+     */
+    function calendarLabel(cal) {
+        if (!cal) return 'NORMAL';
+        const c = cal.toUpperCase();
+        if (c === 'PANAS' || c === 'HOT') return 'PANAS';
+        if (c === 'DINGIN' || c === 'COLD') return 'DINGIN';
+        return 'NORMAL';
+    }
+
+    /**
+     * Get human-readable calendar period name.
+     */
+    function calendarName(cal) {
+        const c = calendarLabel(cal);
+        if (c === 'PANAS') return 'Periode Panas';
+        if (c === 'DINGIN') return 'Periode Dingin';
+        return 'Periode Normal';
+    }
+
+    /**
+     * Calculate log-scale position (0-100%) for a view count.
+     * Uses log10 with a fixed floor/ceiling for consistent visualization.
+     */
+    function logPosition(views, minViews, maxViews) {
+        if (views <= 0) return 0;
+        const logMin = Math.log10(Math.max(minViews, 1));
+        const logMax = Math.log10(Math.max(maxViews, 2));
+        const logVal = Math.log10(views);
+        const range = logMax - logMin;
+        if (range <= 0) return 50;
+        // Add padding so dots don't sit on the edge
+        const pct = ((logVal - logMin) / range) * 90 + 5;
+        return Math.max(2, Math.min(98, pct));
+    }
+
+    /**
+     * Simple date formatting: "19 Feb 2026"
+     */
+    function fmtDate(dateStr) {
+        const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+        const d = new Date(dateStr + 'T00:00:00');
+        return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+    }
+
+    /**
+     * Calculate days between two date strings.
+     */
+    function daysBetween(dateStr1, dateStr2) {
+        const d1 = new Date(dateStr1 + 'T00:00:00');
+        const d2 = new Date(dateStr2 + 'T00:00:00');
+        return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+    }
+
+    /**
+     * Escape HTML special characters.
+     */
+    function esc(str) {
+        if (!str) return '';
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                  .replace(/"/g, '&quot;');
+    }
+
+
+    // -----------------------------------------------------------
+    // DATA LOADING
+    // -----------------------------------------------------------
+
+    async function loadData() {
+        try {
+            const resp = await fetch('films.json');
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            const films = await resp.json();
+            if (!Array.isArray(films) || films.length === 0) {
+                throw new Error('Data kosong atau format tidak valid');
+            }
+            return films;
+        } catch (err) {
+            throw err;
+        }
+    }
+
+
+    // -----------------------------------------------------------
+    // DATA PROCESSING
+    // -----------------------------------------------------------
+
+    function processData(films) {
+        // Sort by release_date descending to find the most recent week
+        films.sort((a, b) => b.release_date.localeCompare(a.release_date));
+
+        // The most recent release_date is "this week"
+        const latestDate = films[0].release_date;
+
+        // Split into this week and history
+        const thisWeek = films
+            .filter(f => f.release_date === latestDate)
+            .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+
+        const history = films
+            .filter(f => f.release_date !== latestDate)
+            .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+
+        // View bounds across ALL films (for spectrum)
+        const allViews = films.map(f => f.youtube_views || 0).filter(v => v > 0);
+        const minViews = Math.min(...allViews);
+        const maxViews = Math.max(...allViews);
+
+        // Week strength calculation
+        // Group historical films by week, calculate average total views per week
+        const weekMap = {};
+        history.forEach(f => {
+            const wk = f.release_date;
+            if (!weekMap[wk]) weekMap[wk] = 0;
+            weekMap[wk] += (f.youtube_views || 0);
+        });
+
+        const weekTotals = Object.values(weekMap);
+        const avgWeekViews = weekTotals.length > 0
+            ? weekTotals.reduce((a, b) => a + b, 0) / weekTotals.length
+            : 0;
+
+        const thisWeekTotal = thisWeek.reduce((s, f) => s + (f.youtube_views || 0), 0);
+        const strengthPct = avgWeekViews > 0
+            ? Math.round((thisWeekTotal / avgWeekViews) * 100)
+            : 0;
+
+        return {
+            films,
+            thisWeek,
+            history,
+            latestDate,
+            minViews,
+            maxViews,
+            thisWeekTotal,
+            avgWeekViews,
+            strengthPct,
+            totalFilms: films.length
+        };
+    }
+
+
+    // -----------------------------------------------------------
+    // FIND SIMILAR FILM (for insight boxes)
+    // -----------------------------------------------------------
+
+    /**
+     * Find the most similar historical film:
+     * 1. Same genre first
+     * 2. Then closest youtube_views
+     */
+    function findSimilar(film, history) {
+        if (!history || history.length === 0) return null;
+
+        const filmViews = film.youtube_views || 0;
+        const filmGenre = (film.genre || '').toLowerCase();
+
+        // Score each historical film
+        let best = null;
+        let bestScore = Infinity;
+
+        history.forEach(h => {
+            const hViews = h.youtube_views || 0;
+            const hGenre = (h.genre || '').toLowerCase();
+
+            // Genre match bonus (strongly prefer same genre)
+            const genreMatch = (hGenre === filmGenre) ? 0 : 1000000;
+
+            // View distance (on log scale for proportionality)
+            const logDist = Math.abs(
+                Math.log10(Math.max(filmViews, 1)) - Math.log10(Math.max(hViews, 1))
+            );
+
+            const score = genreMatch + logDist;
+
+            if (score < bestScore) {
+                bestScore = score;
+                best = h;
+            }
+        });
+
+        return best;
+    }
+
+
+    // -----------------------------------------------------------
+    // RENDER: HEADER CONTEXT
+    // -----------------------------------------------------------
+
+    function renderHeader(data) {
+        const { latestDate, thisWeek } = data;
+
+        // Today's date
+        const today = new Date();
+        const todayStr = today.getFullYear() + '-' +
+            String(today.getMonth() + 1).padStart(2, '0') + '-' +
+            String(today.getDate()).padStart(2, '0');
+
+        const daysToRelease = daysBetween(todayStr, latestDate);
+        const cal = thisWeek.length > 0 ? calendarLabel(thisWeek[0].calendar) : 'NORMAL';
+
+        let calText = '';
+        if (cal === 'PANAS') calText = 'Periode Panas';
+        else if (cal === 'DINGIN') calText = 'Periode Dingin';
+        else calText = 'Periode Normal';
+
+        let daysText = '';
+        if (daysToRelease > 0) daysText = daysToRelease + ' hari sebelum rilis';
+        else if (daysToRelease === 0) daysText = 'Hari rilis';
+        else daysText = Math.abs(daysToRelease) + ' hari setelah rilis';
+
+        const calIcon = cal === 'PANAS' ? '&#x1F525;' : (cal === 'DINGIN' ? '&#x2744;&#xFE0F;' : '');
+
+        document.getElementById('contextLine').innerHTML =
+            fmtDate(latestDate) + ' &bull; ' + calText + ' ' + calIcon + ' &bull; ' + daysText;
+    }
+
+
+    // -----------------------------------------------------------
+    // RENDER: HEADLINE
+    // -----------------------------------------------------------
+
+    function renderHeadline(data) {
+        const { thisWeek } = data;
+
+        const buzzLevels = thisWeek.map(f => buzzLabel(f.buzz_level));
+        const hasTinggi = buzzLevels.includes('TINGGI');
+        const hasSedang = buzzLevels.includes('SEDANG');
+        const allRendah = buzzLevels.every(l => l === 'RENDAH');
+
+        let headlineHTML = '';
+        let subText = '';
+
+        const filmCount = thisWeek.length;
+        const filmWord = filmCount + ' film baru';
+
+        if (hasTinggi) {
+            headlineHTML = 'Ada yang <span class="accent">Panas.</span>';
+            const hotFilm = thisWeek.find(f => buzzLabel(f.buzz_level) === 'TINGGI');
+            subText = filmWord + '. ' + (hotFilm ? hotFilm.title : 'Satu film') +
+                ' menunjukkan buzz tinggi. Patut diperhatikan oleh jadwal minggu ini.';
+        } else if (hasSedang && !allRendah) {
+            headlineHTML = 'Sinyal <span class="accent">Campur.</span>';
+            subText = filmWord + ' dengan sinyal campur. Tidak ada yang menonjol,' +
+                ' tapi ada potensi di beberapa judul.';
+        } else if (allRendah) {
+            headlineHTML = 'Minggu <span class="accent">Sepi.</span>';
+            subText = filmWord + ', semua buzz rendah. Tidak ada push marketing dari rumah produksi.' +
+                ' Holdover akan mendominasi.';
+        } else {
+            headlineHTML = 'Sinyal <span class="accent">Baru.</span>';
+            subText = filmWord + ' masuk. Cek sinyal di bawah.';
+        }
+
+        document.getElementById('headlineText').innerHTML = headlineHTML;
+        document.getElementById('subheadlineText').textContent = subText;
+    }
+
+
+    // -----------------------------------------------------------
+    // RENDER: BUZZ SPECTRUM
+    // -----------------------------------------------------------
+
+    function renderSpectrum(data) {
+        const { films, thisWeek, history, minViews, maxViews, totalFilms } = data;
+        const wrapper = document.getElementById('spectrumWrapper');
+
+        // Update count in section label
+        document.getElementById('spectrumCount').textContent = totalFilms;
+
+        // Calculate threshold positions
+        const pos100K = logPosition(100000, minViews, maxViews);
+        const pos500K = logPosition(500000, minViews, maxViews);
+
+        // Zone background bands
+        let zonesHTML = '';
+
+        // RENDAH zone (left edge to 100K)
+        zonesHTML += '<div class="spectrum-zone zone-low" style="left:0;width:' + pos100K + '%;"></div>';
+        // SEDANG zone (100K to 500K)
+        zonesHTML += '<div class="spectrum-zone zone-med" style="left:' + pos100K + '%;width:' + (pos500K - pos100K) + '%;"></div>';
+        // TINGGI zone (500K to right edge)
+        zonesHTML += '<div class="spectrum-zone zone-high" style="left:' + pos500K + '%;width:' + (100 - pos500K) + '%;"></div>';
+
+        // Threshold lines
+        zonesHTML += '<div class="threshold-line" style="left:' + pos100K + '%;"></div>';
+        zonesHTML += '<div class="threshold-text" style="left:' + pos100K + '%;">100Rb</div>';
+        zonesHTML += '<div class="threshold-line" style="left:' + pos500K + '%;"></div>';
+        zonesHTML += '<div class="threshold-text" style="left:' + pos500K + '%;">500Rb</div>';
+
+        // Zone labels at bottom
+        const rendahPos = pos100K / 2;
+        const sedangPos = (pos100K + pos500K) / 2;
+        const tinggiPos = (pos500K + 100) / 2;
+
+        zonesHTML += '<div class="zone-labels">';
+        zonesHTML += '<span class="zone-label-rendah" style="position:absolute;left:' + rendahPos + '%;transform:translateX(-50%);">RENDAH</span>';
+        zonesHTML += '<span class="zone-label-sedang" style="position:absolute;left:' + sedangPos + '%;transform:translateX(-50%);">SEDANG</span>';
+        zonesHTML += '<span class="zone-label-tinggi" style="position:absolute;left:' + tinggiPos + '%;transform:translateX(-50%);">TINGGI</span>';
+        zonesHTML += '</div>';
+
+        // Historical dots
+        history.forEach(function(film) {
+            const views = film.youtube_views || 0;
+            if (views <= 0) return;
+            const pos = logPosition(views, minViews, maxViews);
+            zonesHTML += '<div class="dot dot-hist" style="left:' + pos + '%;">' +
+                '<div class="dot-tooltip">' + esc(film.title) + ' &bull; ' + fmtViewsShort(views) + '</div>' +
+                '</div>';
+        });
+
+        // This week's dots (alternating label above/below to avoid overlap)
+        thisWeek.forEach(function(film, i) {
+            const views = film.youtube_views || 0;
+            if (views <= 0) return;
+            const pos = logPosition(views, minViews, maxViews);
+            const labelPos = (i % 2 === 0) ? 'above' : 'below';
+
+            // Truncate long names for spectrum label
+            let shortName = film.title;
+            if (shortName.length > 22) {
+                shortName = shortName.substring(0, 20) + '...';
+            }
+
+            zonesHTML += '<div class="dot dot-new" style="left:' + pos + '%;"></div>';
+            zonesHTML += '<div class="dot-new-label ' + labelPos + '" style="left:' + pos + '%;">' +
+                esc(shortName) + '</div>';
+        });
+
+        // Keep the existing track, append zones/dots
+        wrapper.innerHTML = '<div class="spectrum-track"></div>' + zonesHTML;
+    }
+
+
+    // -----------------------------------------------------------
+    // RENDER: FILM CARDS
+    // -----------------------------------------------------------
+
+    function renderCards(data) {
+        const { thisWeek, history } = data;
+        const container = document.getElementById('filmCards');
+        let html = '';
+
+        thisWeek.forEach(function(film, idx) {
+            const rank = idx + 1;
+            const rankClass = rank <= 3 ? 'rank-' + rank : '';
+            const views = film.youtube_views || 0;
+            const buzz = buzzLabel(film.buzz_level);
+            const bClass = buzzClass(film.buzz_level);
+
+            // Find similar historical film
+            const similar = findSimilar(film, history);
+
+            // TikTok display
+            const ttDisplay = (film.tiktok != null) ? film.tiktok + '/10' : '—';
+            const ttClass = (film.tiktok != null) ? '' : 'empty';
+
+            // Google Trends display
+            const gtDisplay = (film.google_trends != null) ? film.google_trends : '—';
+            const gtClass = (film.google_trends != null && film.google_trends > 0) ? '' : 'empty';
+
+            // Badges
+            let badgesHTML = '';
+            if (film.sequel_of) {
+                badgesHTML += '<span class="badge badge-sequel">SEQUEL</span>';
+            }
+            if (film.nobar === true) {
+                badgesHTML += '<span class="badge badge-nobar">NOBAR</span>';
+            }
+
+            // Insight box content
+            let insightHTML = '';
+            if (similar) {
+                const simViews = fmtViews(similar.youtube_views);
+                let outcomeText = '';
+
+                if (similar.day1_sams_adm_show != null) {
+                    outcomeText += 'Hari 1 SAMs: ' + similar.day1_sams_adm_show + ' adm/show';
+                }
+                if (similar.day1_national_adm_show != null) {
+                    if (outcomeText) outcomeText += ', ';
+                    outcomeText += 'Nasional: ' + similar.day1_national_adm_show + ' adm/show';
+                }
+                if (similar.ow_national != null && !similar.day1_sams_adm_show && !similar.day1_national_adm_show) {
+                    outcomeText += 'OW Nasional: ' + fmtViews(similar.ow_national) + ' tiket';
+                }
+
+                if (outcomeText) {
+                    insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
+                        '<span class="insight-content">' +
+                        '<strong>Mirip dengan ' + esc(similar.title) + '</strong> (' +
+                        simViews + ', ' + esc(similar.genre) + ') &#x2192; ' +
+                        '<span class="insight-outcome">' + outcomeText + '</span>' +
+                        '</span>';
+                } else {
+                    insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
+                        '<span class="insight-content">' +
+                        '<strong>Mirip dengan ' + esc(similar.title) + '</strong> (' +
+                        simViews + ', ' + esc(similar.genre) + '). Belum ada data hasil.' +
+                        '</span>';
+                }
+            } else {
+                insightHTML = '<span class="insight-icon">&#x26A0;&#xFE0F;</span>' +
+                    '<span class="insight-content">' +
+                    'Tidak ada kecocokan di riwayat. Ekspektasi sulit diprediksi.' +
+                    '</span>';
+            }
+
+            html += '<div class="film-card ' + rankClass + '">' +
+                '<div class="card-rank-bg">#' + rank + '</div>' +
+                '<div class="card-title">' + esc(film.title) + '</div>' +
+                '<div class="card-meta">' + esc(film.ph) + ' &bull; ' + esc(film.genre) + ' &bull; ' + esc(film.ph_tier) + '</div>';
+
+            if (badgesHTML) {
+                html += '<div class="badges-row">' + badgesHTML + '</div>';
+            }
+
+            html += '<div class="stats-grid">' +
+                '<div class="stat-cell">' +
+                    '<span class="stat-label">YouTube</span>' +
+                    '<span class="stat-value ' + bClass + '">' + fmtViews(views) + '</span>' +
+                '</div>' +
+                '<div class="stat-cell">' +
+                    '<span class="stat-label">TikTok</span>' +
+                    '<span class="stat-value ' + ttClass + '">' + ttDisplay + '</span>' +
+                '</div>' +
+                '<div class="stat-cell">' +
+                    '<span class="stat-label">G. Trends</span>' +
+                    '<span class="stat-value ' + gtClass + '">' + gtDisplay + '</span>' +
+                '</div>' +
+                '<div class="stat-cell">' +
+                    '<span class="stat-label">Buzz</span>' +
+                    '<span class="stat-value ' + bClass + '">' + buzz + '</span>' +
+                '</div>' +
+                '</div>';
+
+            html += '<div class="insight-box">' + insightHTML + '</div>';
+            html += '</div>';
+        });
+
+        container.innerHTML = html;
+    }
+
+
+    // -----------------------------------------------------------
+    // RENDER: WEEK STRENGTH
+    // -----------------------------------------------------------
+
+    function renderWeekStrength(data) {
+        const { thisWeekTotal, avgWeekViews, strengthPct, thisWeek } = data;
+        const section = document.getElementById('weekStrengthSection');
+
+        // Determine strength level and colors
+        let badgeText, badgeColor, badgeBg, barColor, borderColor, sectionBg;
+
+        if (strengthPct >= 150) {
+            badgeText = 'SANGAT KUAT';
+            badgeColor = '#22c55e';
+            badgeBg = 'rgba(34,197,94,0.12)';
+            barColor = 'linear-gradient(90deg, #22c55e, #16a34a)';
+            borderColor = 'rgba(34,197,94,0.12)';
+            sectionBg = 'linear-gradient(135deg, rgba(34,197,94,0.05) 0%, rgba(34,197,94,0.01) 100%)';
+        } else if (strengthPct >= 100) {
+            badgeText = 'KUAT';
+            badgeColor = '#22c55e';
+            badgeBg = 'rgba(34,197,94,0.1)';
+            barColor = 'linear-gradient(90deg, #22c55e, #16a34a)';
+            borderColor = 'rgba(34,197,94,0.1)';
+            sectionBg = 'linear-gradient(135deg, rgba(34,197,94,0.04) 0%, rgba(34,197,94,0.01) 100%)';
+        } else if (strengthPct >= 60) {
+            badgeText = 'RATA-RATA';
+            badgeColor = '#eab308';
+            badgeBg = 'rgba(234,179,8,0.1)';
+            barColor = 'linear-gradient(90deg, #eab308, #ca8a04)';
+            borderColor = 'rgba(234,179,8,0.1)';
+            sectionBg = 'linear-gradient(135deg, rgba(234,179,8,0.04) 0%, rgba(234,179,8,0.01) 100%)';
+        } else if (strengthPct >= 25) {
+            badgeText = 'LEMAH';
+            badgeColor = '#f97316';
+            badgeBg = 'rgba(249,115,22,0.1)';
+            barColor = 'linear-gradient(90deg, #f97316, #ea580c)';
+            borderColor = 'rgba(249,115,22,0.1)';
+            sectionBg = 'linear-gradient(135deg, rgba(249,115,22,0.04) 0%, rgba(249,115,22,0.01) 100%)';
+        } else {
+            badgeText = 'SANGAT LEMAH';
+            badgeColor = '#dc2626';
+            badgeBg = 'rgba(220,38,38,0.1)';
+            barColor = 'linear-gradient(90deg, #dc2626, #991b1b)';
+            borderColor = 'rgba(220,38,38,0.1)';
+            sectionBg = 'linear-gradient(135deg, rgba(220,38,38,0.05) 0%, rgba(220,38,38,0.01) 100%)';
+        }
+
+        // Cap bar at 100% visually (can exceed if very strong week)
+        const barWidth = Math.min(strengthPct, 100);
+
+        const contextText = 'Total buzz: <span class="highlight">' + fmtViews(thisWeekTotal) +
+            ' views</span> (' + thisWeek.length + ' film). Rata-rata minggu sebelumnya: <span class="highlight">' +
+            fmtViews(Math.round(avgWeekViews)) + '</span>.' +
+            (strengthPct < 25
+                ? ' Minggu sangat lemah. Holdover dan NOBAR akan mendominasi.'
+                : strengthPct < 60
+                    ? ' Minggu di bawah rata-rata. Perhatikan holdover.'
+                    : strengthPct < 100
+                        ? ' Mendekati rata-rata. Cek sinyal lebih detail.'
+                        : ' Minggu kuat. Ada potensi performa tinggi.');
+
+        section.innerHTML = '<div class="week-strength" style="background:' + sectionBg + ';border-color:' + borderColor + ';">' +
+            '<div class="strength-header">' +
+                '<span class="strength-title">Kekuatan Minggu</span>' +
+                '<span class="strength-badge" style="color:' + badgeColor + ';background:' + badgeBg + ';">' + badgeText + '</span>' +
+            '</div>' +
+            '<div class="strength-bar-track">' +
+                '<div class="strength-bar-fill" id="strengthBar" style="background:' + barColor + ';" data-width="' + barWidth + '"></div>' +
+            '</div>' +
+            '<div class="strength-context">' + contextText + '</div>' +
+            '<div style="text-align:right;margin-top:8px;font-size:20px;font-weight:900;color:' + badgeColor + ';opacity:0.5;">' +
+                strengthPct + '%' +
+            '</div>' +
+        '</div>';
+
+        // Animate bar after a short delay
+        requestAnimationFrame(function() {
+            setTimeout(function() {
+                var bar = document.getElementById('strengthBar');
+                if (bar) bar.style.width = bar.getAttribute('data-width') + '%';
+            }, 400);
+        });
+    }
+
+
+    // -----------------------------------------------------------
+    // RENDER: FOOTER
+    // -----------------------------------------------------------
+
+    function renderFooter(data) {
+        document.getElementById('footerStats').textContent =
+            data.totalFilms + ' film dilacak sejak Desember 2025';
+    }
+
+
+    // -----------------------------------------------------------
+    // MAIN: LOAD AND RENDER
+    // -----------------------------------------------------------
+
+    async function init() {
+        try {
+            const films = await loadData();
+            const data = processData(films);
+
+            // Hide loading, show dashboard
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('dashboard').classList.add('loaded');
+
+            // Render all sections
+            renderHeader(data);
+            renderHeadline(data);
+            renderSpectrum(data);
+            renderCards(data);
+            renderWeekStrength(data);
+            renderFooter(data);
+
+        } catch (err) {
+            // Show error state
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('errorState').style.display = 'flex';
+            document.getElementById('errorMessage').textContent =
+                'Gagal memuat films.json: ' + err.message +
+                '. Pastikan file ada di direktori yang sama.';
+        }
+    }
+
+    // Run on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+})();
+</script>
+
+</body>
+</html>
