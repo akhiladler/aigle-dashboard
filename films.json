@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-02-25",
+    "last_updated": "2026-03-04",
     "total_films": 19,
     "description": "Aigle film tracking database - pre-release signals and outcomes"
   },
@@ -11,7 +11,7 @@
       "week_label": "29 Jan",
       "ph": "Heart Pictures",
       "ph_tier": "T3",
-      "genre": "Drama",
+      "genre": "Komedi",
       "youtube_views": 3150940,
       "buzz_level": "TINGGI",
       "youtube_url": "https://youtube.com/watch?v=example",
@@ -22,14 +22,14 @@
       "calendar": "NORMAL",
       "day1_sams_adm_show": 8.12,
       "day1_national_adm_show": 37.75,
-      "ow_sams": null,
+      "ow_sams": 932,
       "ow_national": 21998
     },
     {
       "title": "Kuyank",
       "release_date": "2026-01-29",
       "week_label": "29 Jan",
-      "ph": "Tidak diketahui",
+      "ph": "DHF Entertainment",
       "ph_tier": "T3",
       "genre": "Komedi",
       "youtube_views": 475261,
@@ -40,17 +40,17 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null
+      "day1_sams_adm_show": 7.89,
+      "day1_national_adm_show": 56.28,
+      "ow_sams": 807,
+      "ow_national": 194617
     },
     {
       "title": "Tuhan, Benarkah Kau Mendengarku?",
       "release_date": "2026-01-29",
       "week_label": "29 Jan",
-      "ph": "Tidak diketahui",
-      "ph_tier": "T3",
+      "ph": "Paragon Pictures",
+      "ph_tier": "T2",
       "genre": "Drama",
       "youtube_views": 227755,
       "buzz_level": "SEDANG",
@@ -60,10 +60,10 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null
+      "day1_sams_adm_show": 2.74,
+      "day1_national_adm_show": 28.92,
+      "ow_sams": 378,
+      "ow_national": 57825
     },
     {
       "title": "Kafir: Gerbang Sukma",
@@ -80,9 +80,9 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
+      "day1_sams_adm_show": 4.11,
       "day1_national_adm_show": 34.26,
-      "ow_sams": null,
+      "ow_sams": 1781,
       "ow_national": 194442
     },
     {
@@ -100,8 +100,8 @@
       "nobar": false,
       "sequel_of": "Hidup Ini Terlalu Banyak Kamu (~50K tiket)",
       "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
+      "day1_sams_adm_show": 1.56,
+      "day1_national_adm_show": 17.22,
       "ow_sams": 538,
       "ow_national": 27686
     },
@@ -120,8 +120,8 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
+      "day1_sams_adm_show": 0.63,
+      "day1_national_adm_show": 7.98,
       "ow_sams": 21,
       "ow_national": 13958
     },
@@ -129,7 +129,7 @@
       "title": "Teman Tegar Maira",
       "release_date": "2026-02-05",
       "week_label": "5 Feb",
-      "ph": "Tidak diketahui",
+      "ph": "Aksa Bumi Langit",
       "ph_tier": "T3",
       "genre": "Drama",
       "youtube_views": 112826,
@@ -141,7 +141,7 @@
       "sequel_of": null,
       "calendar": "NORMAL",
       "day1_sams_adm_show": 3.72,
-      "day1_national_adm_show": null,
+      "day1_national_adm_show": 33.75,
       "ow_sams": 554,
       "ow_national": 24801
     },
@@ -169,8 +169,8 @@
       "title": "Balas Budi",
       "release_date": "2026-02-05",
       "week_label": "5 Feb",
-      "ph": "Tidak diketahui",
-      "ph_tier": "T4",
+      "ph": "Impian Indonesia",
+      "ph_tier": "T3",
       "genre": "Drama",
       "youtube_views": 25410,
       "buzz_level": "RENDAH",
@@ -180,8 +180,8 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
+      "day1_sams_adm_show": 1.55,
+      "day1_national_adm_show": 17.91,
       "ow_sams": 136,
       "ow_national": 19281
     },
@@ -189,7 +189,7 @@
       "title": "Rumah Tanpa Cahaya",
       "release_date": "2026-02-12",
       "week_label": "12 Feb",
-      "ph": "Tidak diketahui",
+      "ph": "Sinemart",
       "ph_tier": "T4",
       "genre": "Horor",
       "youtube_views": 20240,
@@ -209,7 +209,7 @@
       "title": "Jangan Seperti Bapak",
       "release_date": "2026-02-12",
       "week_label": "12 Feb",
-      "ph": "Tidak diketahui",
+      "ph": "Kasih Karunia Film",
       "ph_tier": "T4",
       "genre": "Drama",
       "youtube_views": 16671,
@@ -229,7 +229,7 @@
       "title": "Waru",
       "release_date": "2026-02-12",
       "week_label": "12 Feb",
-      "ph": "Tidak diketahui",
+      "ph": "Sinema Digital Indonesia",
       "ph_tier": "T4",
       "genre": "Horor",
       "youtube_views": 14847,
@@ -250,7 +250,7 @@
       "title": "AIU-EO Macam Betool Aja",
       "release_date": "2026-02-12",
       "week_label": "12 Feb",
-      "ph": "Tidak diketahui",
+      "ph": "Tunas Citrasinema Kreatif",
       "ph_tier": "T4",
       "genre": "Komedi",
       "youtube_views": 14071,
@@ -270,7 +270,7 @@
       "title": "Asrama Putri",
       "release_date": "2026-02-19",
       "week_label": "19 Feb",
-      "ph": "Fokus Production",
+      "ph": "Puras Production",
       "ph_tier": "T4",
       "genre": "Horor",
       "youtube_views": 20374,
@@ -281,16 +281,16 @@
       "nobar": null,
       "sequel_of": null,
       "calendar": "DINGIN",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null
+      "day1_sams_adm_show": 1.1,
+      "day1_national_adm_show": 3.06,
+      "ow_sams": 324,
+      "ow_national": 6534
     },
     {
       "title": "Antara Mama, Cinta, dan Surga",
       "release_date": "2026-02-19",
       "week_label": "19 Feb",
-      "ph": "PJK Pictures",
+      "ph": "PIM Pictures",
       "ph_tier": "T4",
       "genre": "Drama",
       "youtube_views": 7215,
@@ -301,10 +301,10 @@
       "nobar": null,
       "sequel_of": null,
       "calendar": "DINGIN",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null
+      "day1_sams_adm_show": 1.67,
+      "day1_national_adm_show": 11.51,
+      "ow_sams": 246,
+      "ow_national": 27149
     },
     {
       "title": "Taneuh Kalaknat",
@@ -312,7 +312,7 @@
       "week_label": "19 Feb",
       "ph": "Shen Entertainment",
       "ph_tier": "T4",
-      "genre": "Drama",
+      "genre": "Horor",
       "youtube_views": 3199,
       "buzz_level": "RENDAH",
       "youtube_url": "https://youtube.com/watch?v=wksn_E73FuI",
@@ -321,9 +321,9 @@
       "nobar": null,
       "sequel_of": null,
       "calendar": "DINGIN",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
+      "day1_sams_adm_show": 1.0,
+      "day1_national_adm_show": 1.82,
+      "ow_sams": 187,
       "ow_national": null
     },
     {
@@ -341,10 +341,10 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "DINGIN",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null
+      "day1_sams_adm_show": 2.54,
+      "day1_national_adm_show": 13.07,
+      "ow_sams": 838,
+      "ow_national": 46711
     },
     {
       "title": "Lift",
@@ -361,10 +361,10 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "DINGIN",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null
+      "day1_sams_adm_show": 1.94,
+      "day1_national_adm_show": 10.62,
+      "ow_sams": 565,
+      "ow_national": 39092
     },
     {
       "title": "Rajah",
@@ -381,10 +381,10 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "DINGIN",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null
+      "day1_sams_adm_show": 0.61,
+      "day1_national_adm_show": 3.31,
+      "ow_sams": 247,
+      "ow_national": 6606
     }
   ]
 }
