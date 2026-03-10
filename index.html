@@ -528,6 +528,7 @@
         .stat-value.rendah { color: var(--red); }
         .stat-value.sedang { color: var(--yellow); }
         .stat-value.tinggi { color: var(--green); }
+        .stat-value.mega { color: #4ade80; font-size: 20px; text-shadow: 0 0 12px rgba(74,222,128,0.3); }
         .stat-value.empty { color: var(--text-dim); font-weight: 400; }
 
         /* "Mirip dengan" insight box */
@@ -1330,10 +1331,16 @@
                 html += '<div class="badges-row">' + badgesHTML + '</div>';
             }
 
+            // SAMs shows display
+            const samsShows = film.sams_shows;
+            const hasSamsShows = (samsShows != null && samsShows > 0);
+
+            const ytClass = (views >= 2000000) ? 'mega' : bClass;
+
             html += '<div class="stats-grid">' +
                 '<div class="stat-cell">' +
                     '<span class="stat-label">YouTube</span>' +
-                    '<span class="stat-value ' + bClass + '">' + fmtViews(views) + '</span>' +
+                    '<span class="stat-value ' + ytClass + '">' + fmtViews(views) + '</span>' +
                 '</div>' +
                 '<div class="stat-cell">' +
                     '<span class="stat-label">TikTok</span>' +
@@ -1348,6 +1355,14 @@
                     '<span class="stat-value ' + bClass + '">' + buzz + '</span>' +
                 '</div>' +
                 '</div>';
+
+            // SAMs allocation bar (only for films with show data)
+            if (hasSamsShows) {
+                html += '<div style="margin: 8px 0 4px; padding: 8px 12px; background: rgba(218,165,32,0.06); border: 1px solid rgba(218,165,32,0.12); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">' +
+                    '<span style="font-size: 10px; font-weight: 600; letter-spacing: 0.5px; color: var(--text-secondary); text-transform: uppercase;">SAMs Allocation</span>' +
+                    '<span style="font-size: 16px; font-weight: 800; color: var(--gold);">' + samsShows + ' Show</span>' +
+                    '</div>';
+            }
 
             html += '<div class="insight-box">' + insightHTML + '</div>';
             html += '</div>';
