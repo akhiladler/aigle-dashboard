@@ -56,11 +56,16 @@
             line-height: 1.5;
         }
 
-        /* Container: mobile-first, centered on desktop */
+        /* Container: mobile-first, wider on desktop */
         .container {
             max-width: 480px;
             margin: 0 auto;
             padding-bottom: 48px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
         }
 
         /* ============================================================
@@ -467,6 +472,31 @@
             background: rgba(59,130,246,0.1);
             border: 1px solid rgba(59,130,246,0.15);
         }
+        .badge-ph-power {
+            color: #f97316;
+            background: rgba(249,115,22,0.1);
+            border: 1px solid rgba(249,115,22,0.15);
+        }
+        .badge-franchise {
+            color: #a855f7;
+            background: rgba(168,85,247,0.1);
+            border: 1px solid rgba(168,85,247,0.15);
+        }
+        .badge-yt-only {
+            color: var(--red);
+            background: var(--red-dim);
+            border: 1px solid rgba(220,38,38,0.15);
+        }
+        .badge-aligned {
+            color: var(--green);
+            background: var(--green-dim);
+            border: 1px solid rgba(34,197,94,0.15);
+        }
+        .badge-nobar-override {
+            color: #06b6d4;
+            background: rgba(6,182,212,0.1);
+            border: 1px solid rgba(6,182,212,0.15);
+        }
 
         /* Stats grid */
         .stats-grid {
@@ -722,6 +752,11 @@
             </div>
         </header>
 
+        <!-- LEBARAN BANNER (shown dynamically) -->
+        <div id="lebaranBanner" style="display:none; margin: 0 24px; padding: 12px 20px; background: linear-gradient(135deg, rgba(218,165,32,0.12), rgba(218,165,32,0.04)); border: 1px solid rgba(218,165,32,0.2); border-radius: 10px; text-align: center;">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--gold); text-transform: uppercase;">Lebaran 2026 — Minggu terbesar tahun ini</span>
+        </div>
+
         <!-- SECTION 2: HEADLINE -->
         <div class="headline-section">
             <h1 class="headline" id="headlineText"></h1>
@@ -975,24 +1010,35 @@
 
         const filmViews = film.youtube_views || 0;
         const filmGenre = (film.genre || '').toLowerCase();
+        const filmBuzz = buzzLabel(film.buzz_level);
 
-        // Score each historical film
+        // Score each historical film (lower = better match)
         let best = null;
         let bestScore = Infinity;
 
         history.forEach(h => {
             const hViews = h.youtube_views || 0;
             const hGenre = (h.genre || '').toLowerCase();
+            const hBuzz = buzzLabel(h.buzz_level);
+
+            // Must be same buzz level — TINGGI matches TINGGI, not SEDANG
+            if (filmBuzz !== hBuzz) return;
 
             // Genre match bonus (strongly prefer same genre)
-            const genreMatch = (hGenre === filmGenre) ? 0 : 1000000;
+            const genreMatch = (hGenre === filmGenre) ? 0 : 100;
 
             // View distance (on log scale for proportionality)
             const logDist = Math.abs(
                 Math.log10(Math.max(filmViews, 1)) - Math.log10(Math.max(hViews, 1))
             );
 
-            const score = genreMatch + logDist;
+            // Skip if views are too far apart (more than 0.5 on log scale ≈ 3x difference)
+            if (logDist > 0.5) return;
+
+            // Prefer matches with outcome data
+            const hasOutcome = (h.day1_national_adm_show != null || h.ow_national != null) ? 0 : 50;
+
+            const score = genreMatch + logDist + hasOutcome;
 
             if (score < bestScore) {
                 bestScore = score;
@@ -1021,7 +1067,8 @@
         const cal = thisWeek.length > 0 ? calendarLabel(thisWeek[0].calendar) : 'NORMAL';
 
         let calText = '';
-        if (cal === 'PANAS') calText = 'Periode Panas';
+        if (cal === 'PANAS' && thisWeek.length >= 4) calText = 'Lebaran 2026';
+        else if (cal === 'PANAS') calText = 'Periode Panas';
         else if (cal === 'DINGIN') calText = 'Periode Dingin';
         else calText = 'Periode Normal';
 
@@ -1055,19 +1102,25 @@
         const filmCount = thisWeek.length;
         const filmWord = filmCount + ' film baru';
 
-        if (hasTinggi) {
-            headlineHTML = 'Ada yang <span class="accent">Panas.</span>';
-            const hotFilm = thisWeek.find(f => buzzLabel(f.buzz_level) === 'TINGGI');
-            subText = filmWord + '. ' + (hotFilm ? hotFilm.title : 'Satu film') +
-                ' menunjukkan buzz tinggi. Patut diperhatikan oleh jadwal minggu ini.';
+        const hotFilms = thisWeek.filter(f => buzzLabel(f.buzz_level) === 'TINGGI');
+        const topFilm = thisWeek[0]; // Already sorted by views
+
+        if (hasTinggi && hotFilms.length >= 3) {
+            headlineHTML = 'Minggu <span class="accent">Besar.</span>';
+            subText = filmCount + ' film, ' + hotFilms.length + ' buzz tinggi. ' +
+                (topFilm ? topFilm.title + ' memimpin dengan ' + fmtViews(topFilm.youtube_views) + ' views.' : '');
+        } else if (hasTinggi) {
+            headlineHTML = '<span class="accent">' + (topFilm ? topFilm.title : 'Satu film') + '</span> memimpin.';
+            subText = filmWord + '. ' + hotFilms.length + ' film buzz tinggi' +
+                (hotFilms.length === 1 ? '' : ': ' + hotFilms.map(f => f.title).join(', ')) +
+                '. Perhatikan sinyal di bawah.';
         } else if (hasSedang && !allRendah) {
             headlineHTML = 'Sinyal <span class="accent">Campur.</span>';
             subText = filmWord + ' dengan sinyal campur. Tidak ada yang menonjol,' +
                 ' tapi ada potensi di beberapa judul.';
         } else if (allRendah) {
             headlineHTML = 'Minggu <span class="accent">Sepi.</span>';
-            subText = filmWord + ', semua buzz rendah. Tidak ada push marketing dari rumah produksi.' +
-                ' Holdover akan mendominasi.';
+            subText = filmWord + ', semua buzz rendah. Holdover akan mendominasi.';
         } else {
             headlineHTML = 'Sinyal <span class="accent">Baru.</span>';
             subText = filmWord + ' masuk. Cek sinyal di bawah.';
@@ -1075,6 +1128,12 @@
 
         document.getElementById('headlineText').innerHTML = headlineHTML;
         document.getElementById('subheadlineText').textContent = subText;
+
+        // Show Lebaran banner for PANAS weeks with 4+ films
+        const isPanas = thisWeek.length > 0 && thisWeek[0].calendar === 'PANAS';
+        if (isPanas && thisWeek.length >= 4) {
+            document.getElementById('lebaranBanner').style.display = 'block';
+        }
     }
 
 
@@ -1173,64 +1232,99 @@
             const similar = findSimilar(film, history);
 
             // TikTok display
-            const ttDisplay = (film.tiktok != null) ? film.tiktok + '/10' : '—';
+            const ttDisplay = (film.tiktok != null) ? film.tiktok + '/10' : 'Segera';
             const ttClass = (film.tiktok != null) ? '' : 'empty';
 
             // Google Trends display
-            const gtDisplay = (film.google_trends != null) ? film.google_trends : '—';
+            const gtDisplay = (film.google_trends != null) ? film.google_trends : 'Segera';
             const gtClass = (film.google_trends != null && film.google_trends > 0) ? '' : 'empty';
+
+            // Signal Conflict Detector
+            let signalFlag = film.signal_flag || null;
+            if (!signalFlag) {
+                const yt = film.youtube_views || 0;
+                const tt = film.tiktok;
+                const gt = film.google_trends;
+                const tier = film.ph_tier;
+                const buzzHigh = yt >= 500000;
+                const buzzMed = yt >= 100000;
+                const ttLow = (tt != null && tt < 4);
+                const gtLow = (gt != null && gt < 5);
+                const ttHigh = (tt != null && tt >= 7);
+                const gtHigh = (gt != null && gt >= 20);
+                const hasSignals = (tt != null || gt != null);
+
+                if (buzzMed && ttLow && gtLow) {
+                    signalFlag = 'YT_ONLY';
+                } else if (!buzzMed && film.nobar === true) {
+                    signalFlag = 'NOBAR_OVERRIDE';
+                } else if (!buzzMed && (tier === 'T1') && hasSignals) {
+                    signalFlag = 'PH_POWER';
+                } else if (buzzHigh && hasSignals && (ttHigh || gtHigh)) {
+                    signalFlag = 'ALIGNED';
+                }
+            }
 
             // Badges
             let badgesHTML = '';
-            if (film.sequel_of) {
+            if (film.sequel_of && signalFlag !== 'FRANCHISE') {
                 badgesHTML += '<span class="badge badge-sequel">SEQUEL</span>';
             }
             if (film.nobar === true) {
                 badgesHTML += '<span class="badge badge-nobar">NOBAR</span>';
             }
+            if (signalFlag === 'PH_POWER') {
+                badgesHTML += '<span class="badge badge-ph-power">PH POWER</span>';
+            }
+            if (signalFlag === 'FRANCHISE') {
+                badgesHTML += '<span class="badge badge-franchise">FRANCHISE</span>';
+            }
+            if (signalFlag === 'YT_ONLY') {
+                badgesHTML += '<span class="badge badge-yt-only">YT ONLY</span>';
+            }
+            if (signalFlag === 'ALIGNED') {
+                badgesHTML += '<span class="badge badge-aligned">SINYAL SELARAS</span>';
+            }
+            if (signalFlag === 'NOBAR_OVERRIDE') {
+                badgesHTML += '<span class="badge badge-nobar-override">NOBAR OVERRIDE</span>';
+            }
 
-            // Insight box content
+            // Insight box — always range-based (aggregator, not predictor)
             let insightHTML = '';
-            if (similar) {
-                const simViews = fmtViews(similar.youtube_views);
-                let outcomeText = '';
+            const buzzLvl = buzzLabel(film.buzz_level);
+            const sameLevel = history.filter(h => buzzLabel(h.buzz_level) === buzzLvl && h.day1_national_adm_show != null);
+            const sameLevelSams = history.filter(h => buzzLabel(h.buzz_level) === buzzLvl && h.day1_sams_adm_show != null);
 
-                if (similar.day1_sams_adm_show != null) {
-                    outcomeText += 'Hari 1 SAMs: ' + similar.day1_sams_adm_show + ' adm/show';
-                }
-                if (similar.day1_national_adm_show != null) {
-                    if (outcomeText) outcomeText += ', ';
-                    outcomeText += 'Nasional: ' + similar.day1_national_adm_show + ' adm/show';
-                }
-                if (similar.ow_national != null && !similar.day1_sams_adm_show && !similar.day1_national_adm_show) {
-                    outcomeText += 'OW Nasional: ' + fmtViews(similar.ow_national) + ' tiket';
+            if (sameLevel.length >= 2) {
+                const adms = sameLevel.map(h => h.day1_national_adm_show).sort((a,b) => a - b);
+                const low = adms[0];
+                const high = adms[adms.length - 1];
+                let rangeText = 'Konteks: Film ' + buzzLvl + ' sebelumnya: <strong>' + low + ' &ndash; ' + high + ' adm/show nasional</strong> Hari 1 (' + sameLevel.length + ' film).';
+
+                // Add SAMs range if available
+                if (sameLevelSams.length >= 2) {
+                    const samsAdms = sameLevelSams.map(h => h.day1_sams_adm_show).sort((a,b) => a - b);
+                    rangeText += ' SAMs: ' + samsAdms[0] + ' &ndash; ' + samsAdms[samsAdms.length - 1] + ' adm/show.';
                 }
 
-                if (outcomeText) {
-                    insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
-                        '<span class="insight-content">' +
-                        '<strong>Mirip dengan ' + esc(similar.title) + '</strong> (' +
-                        simViews + ', ' + esc(similar.genre) + ') &#x2192; ' +
-                        '<span class="insight-outcome">' + outcomeText + '</span>' +
-                        '</span>';
-                } else {
-                    insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
-                        '<span class="insight-content">' +
-                        '<strong>Mirip dengan ' + esc(similar.title) + '</strong> (' +
-                        simViews + ', ' + esc(similar.genre) + '). Belum ada data hasil.' +
-                        '</span>';
-                }
-            } else {
-                insightHTML = '<span class="insight-icon">&#x26A0;&#xFE0F;</span>' +
+                insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
+                    '<span class="insight-content">' + rangeText + '</span>';
+            } else if (sameLevel.length === 1) {
+                insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
                     '<span class="insight-content">' +
-                    'Tidak ada kecocokan di riwayat. Ekspektasi sulit diprediksi.' +
+                    'Konteks: Baru 1 film ' + buzzLvl + ' dilacak (' + esc(sameLevel[0].title) + ', ' + sameLevel[0].day1_national_adm_show + ' adm/show nasional).' +
+                    '</span>';
+            } else {
+                insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
+                    '<span class="insight-content">' +
+                    'Buzz ' + buzzLvl + ' &mdash; belum ada data historis di level ini.' +
                     '</span>';
             }
 
             html += '<div class="film-card ' + rankClass + '">' +
                 '<div class="card-rank-bg">#' + rank + '</div>' +
                 '<div class="card-title">' + esc(film.title) + '</div>' +
-                '<div class="card-meta">' + esc(film.ph) + ' &bull; ' + esc(film.genre) + ' &bull; ' + esc(film.ph_tier) + '</div>';
+                '<div class="card-meta">' + esc(film.ph) + ' &bull; ' + esc(film.genre) + ' &bull; ' + esc(film.ph_tier) + ' &bull; Rilis ' + esc(film.week_label) + '</div>';
 
             if (badgesHTML) {
                 html += '<div class="badges-row">' + badgesHTML + '</div>';
