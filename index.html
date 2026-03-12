@@ -67,6 +67,18 @@
                 max-width: 720px;
             }
         }
+        @media (min-width: 900px) {
+            .container {
+                max-width: 900px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1100px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
 
         /* ============================================================
            SECTION 1: HEADER
@@ -411,17 +423,43 @@
             background: linear-gradient(180deg, #666, #333);
         }
 
-        /* Big faded rank number in background */
+        /* Rank number in background */
         .card-rank-bg {
             position: absolute;
             top: 8px;
             right: 14px;
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 900;
-            color: rgba(255,255,255,0.025);
+            color: rgba(255,255,255,0.06);
             line-height: 1;
             pointer-events: none;
             user-select: none;
+        }
+        .film-card.rank-1 .card-rank-bg {
+            color: rgba(218,165,32,0.12);
+            font-size: 64px;
+        }
+        .film-card.rank-2 .card-rank-bg {
+            color: rgba(255,255,255,0.08);
+        }
+
+        /* Visible rank label */
+        .card-rank-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .card-rank-label::before {
+            content: '#';
+        }
+        .film-card.rank-1 .card-rank-label {
+            color: var(--gold);
+            font-size: 12px;
+        }
+        .film-card.rank-2 .card-rank-label {
+            color: var(--text-secondary);
         }
 
         .card-title {
@@ -434,6 +472,7 @@
         }
         .film-card.rank-1 .card-title {
             color: var(--gold);
+            font-size: 20px;
         }
 
         .card-meta {
@@ -529,37 +568,30 @@
         .stat-value.sedang { color: var(--yellow); }
         .stat-value.tinggi { color: var(--green); }
         .stat-value.mega { color: #4ade80; font-size: 20px; text-shadow: 0 0 12px rgba(74,222,128,0.3); }
-        .stat-value.empty { color: var(--text-dim); font-weight: 400; }
+        .stat-value.empty { color: var(--text-dim); font-weight: 400; font-size: 10px; font-style: italic; }
 
-        /* "Mirip dengan" insight box */
-        .insight-box {
+        /* Golden nugget note */
+        .film-note {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            background: rgba(218,165,32,0.035);
-            border: 1px solid rgba(218,165,32,0.06);
-            border-radius: 10px;
-            padding: 12px 14px;
+            margin: 10px 0 12px;
+            padding: 10px 14px;
+            background: linear-gradient(135deg, rgba(218,165,32,0.06) 0%, rgba(218,165,32,0.02) 100%);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
         }
-
-        .insight-icon {
-            font-size: 14px;
+        .film-note-icon {
+            font-size: 13px;
             flex-shrink: 0;
-            margin-top: 1px;
+            margin-top: 0px;
         }
-
-        .insight-content {
+        .film-note-text {
             font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        .insight-content strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-        .insight-content .insight-outcome {
             color: var(--gold);
+            line-height: 1.5;
             font-weight: 600;
+            letter-spacing: 0.1px;
         }
 
         /* ============================================================
@@ -715,6 +747,30 @@
             .container {
                 padding-left: 8px;
                 padding-right: 8px;
+            }
+        }
+
+        /* Desktop: 2-column card grid */
+        @media (min-width: 900px) {
+            #filmCards {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                align-items: start;
+            }
+            #filmCards .film-card {
+                margin-bottom: 0;
+            }
+            /* #1 film spans full width — hero treatment */
+            #filmCards .film-card.rank-1 {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* Wide desktop: wider container */
+        @media (min-width: 1200px) {
+            #filmCards {
+                gap: 20px;
             }
         }
     </style>
@@ -1233,11 +1289,11 @@
             const similar = findSimilar(film, history);
 
             // TikTok display
-            const ttDisplay = (film.tiktok != null) ? film.tiktok + '/10' : 'Segera';
+            const ttDisplay = (film.tiktok != null) ? film.tiktok + '/10' : 'Menunggu input Dias';
             const ttClass = (film.tiktok != null) ? '' : 'empty';
 
             // Google Trends display
-            const gtDisplay = (film.google_trends != null) ? film.google_trends : 'Segera';
+            const gtDisplay = (film.google_trends != null) ? film.google_trends : 'Menunggu input Dias';
             const gtClass = (film.google_trends != null && film.google_trends > 0) ? '' : 'empty';
 
             // Signal Conflict Detector
@@ -1290,45 +1346,22 @@
                 badgesHTML += '<span class="badge badge-nobar-override">NOBAR OVERRIDE</span>';
             }
 
-            // Insight box — always range-based (aggregator, not predictor)
-            let insightHTML = '';
-            const buzzLvl = buzzLabel(film.buzz_level);
-            const sameLevel = history.filter(h => buzzLabel(h.buzz_level) === buzzLvl && h.day1_national_adm_show != null);
-            const sameLevelSams = history.filter(h => buzzLabel(h.buzz_level) === buzzLvl && h.day1_sams_adm_show != null);
-
-            if (sameLevel.length >= 2) {
-                const adms = sameLevel.map(h => h.day1_national_adm_show).sort((a,b) => a - b);
-                const low = adms[0];
-                const high = adms[adms.length - 1];
-                let rangeText = 'Konteks: Film ' + buzzLvl + ' sebelumnya: <strong>' + low + ' &ndash; ' + high + ' adm/show nasional</strong> Hari 1 (' + sameLevel.length + ' film).';
-
-                // Add SAMs range if available
-                if (sameLevelSams.length >= 2) {
-                    const samsAdms = sameLevelSams.map(h => h.day1_sams_adm_show).sort((a,b) => a - b);
-                    rangeText += ' SAMs: ' + samsAdms[0] + ' &ndash; ' + samsAdms[samsAdms.length - 1] + ' adm/show.';
-                }
-
-                insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
-                    '<span class="insight-content">' + rangeText + '</span>';
-            } else if (sameLevel.length === 1) {
-                insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
-                    '<span class="insight-content">' +
-                    'Konteks: Baru 1 film ' + buzzLvl + ' dilacak (' + esc(sameLevel[0].title) + ', ' + sameLevel[0].day1_national_adm_show + ' adm/show nasional).' +
-                    '</span>';
-            } else {
-                insightHTML = '<span class="insight-icon">&#x1F4CA;</span>' +
-                    '<span class="insight-content">' +
-                    'Buzz ' + buzzLvl + ' &mdash; belum ada data historis di level ini.' +
-                    '</span>';
-            }
-
             html += '<div class="film-card ' + rankClass + '">' +
                 '<div class="card-rank-bg">#' + rank + '</div>' +
+                '<div class="card-rank-label">' + rank + '</div>' +
                 '<div class="card-title">' + esc(film.title) + '</div>' +
                 '<div class="card-meta">' + esc(film.ph) + ' &bull; ' + esc(film.genre) + ' &bull; ' + esc(film.ph_tier) + ' &bull; Rilis ' + esc(film.week_label) + '</div>';
 
             if (badgesHTML) {
                 html += '<div class="badges-row">' + badgesHTML + '</div>';
+            }
+
+            // Golden nugget note
+            if (film.note) {
+                html += '<div class="film-note">' +
+                    '<span class="film-note-icon">&#x1F4A1;</span>' +
+                    '<span class="film-note-text">' + esc(film.note) + '</span>' +
+                    '</div>';
             }
 
             // SAMs shows display
@@ -1358,13 +1391,12 @@
 
             // SAMs allocation bar (only for films with show data)
             if (hasSamsShows) {
-                html += '<div style="margin: 8px 0 4px; padding: 8px 12px; background: rgba(218,165,32,0.06); border: 1px solid rgba(218,165,32,0.12); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">' +
-                    '<span style="font-size: 10px; font-weight: 600; letter-spacing: 0.5px; color: var(--text-secondary); text-transform: uppercase;">SAMs Allocation</span>' +
-                    '<span style="font-size: 16px; font-weight: 800; color: var(--gold);">' + samsShows + ' Show</span>' +
+                html += '<div style="margin: 8px 0 4px; padding: 10px 14px; background: linear-gradient(135deg, rgba(218,165,32,0.08) 0%, rgba(218,165,32,0.03) 100%); border: 1px solid rgba(218,165,32,0.18); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">' +
+                    '<span style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><img src="sams-logo.png" alt="SAMs" style="height: 16px; width: 16px; object-fit: contain; border-radius: 3px;"> SAMs Allocation</span>' +
+                    '<span style="font-size: 18px; font-weight: 900; color: var(--gold); text-shadow: 0 0 8px rgba(218,165,32,0.2);">' + samsShows + ' Show</span>' +
                     '</div>';
             }
 
-            html += '<div class="insight-box">' + insightHTML + '</div>';
             html += '</div>';
         });
 
