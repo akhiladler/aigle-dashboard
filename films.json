@@ -462,11 +462,11 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "sams_shows": 4,
-      "note": "Buzz tertinggi sejak Aigle mulai. Kandidat kuat penguasa Lebaran.",
       "day1_sams_adm_show": null,
       "day1_national_adm_show": null,
       "ow_sams": null,
-      "ow_national": null
+      "ow_national": null,
+      "note": "5.4Jt views. Gala premiere banjir pujian — \"magical, hangat, penuh imajinasi.\" Dari kreator JUMBO."
     },
     {
       "title": "Pelangi Di Mars",
@@ -484,11 +484,11 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "sams_shows": 3,
-      "note": "T4 tembus 3Jt tanpa franchise. Dark horse sesungguhnya minggu ini.",
       "day1_sams_adm_show": null,
       "day1_national_adm_show": null,
       "ow_sams": null,
-      "ow_national": null
+      "ow_national": null,
+      "note": "T4 tembus 3Jt tanpa franchise. Sci-fi Indonesia pertama pakai XR + Unreal Engine live-action."
     },
     {
       "title": "Senin Harga Naik",
@@ -507,11 +507,11 @@
       "calendar": "PANAS",
       "sams_shows": 4,
       "signal_flag": "PH_POWER",
-      "note": "Views rendah, distribusi T1 Starvision jamin layar penuh.",
       "day1_sams_adm_show": null,
       "day1_national_adm_show": null,
       "ow_sams": null,
-      "ow_national": null
+      "ow_national": null,
+      "note": "Starvision x Legacy Pictures. Penerus Komang (3Jt penonton Lebaran 2025). Views rendah tapi distribusi T1."
     },
     {
       "title": "Suzzanna: Santet Dosa di Atas Dosa",
@@ -530,11 +530,11 @@
       "calendar": "PANAS",
       "sams_shows": 3,
       "signal_flag": "FRANCHISE",
-      "note": "Franchise naik 85Rb sehari. Momentum akselerasi menjelang rilis.",
       "day1_sams_adm_show": null,
       "day1_national_adm_show": null,
       "ow_sams": null,
-      "ow_national": null
+      "ow_national": null,
+      "note": "Luna Maya satu-satunya film 2026. Reza Rahadian gabung franchise pertama kali. Trailer naik 85Rb/hari."
     },
     {
       "title": "Danur: The Last Chapter",
@@ -553,11 +553,11 @@
       "calendar": "PANAS",
       "sams_shows": 4,
       "signal_flag": "FRANCHISE",
-      "note": "T1 dengan dua trailer aktif. Total reach mendekati 1Jt.",
       "day1_sams_adm_show": null,
       "day1_national_adm_show": null,
       "ow_sams": null,
-      "ow_national": null
+      "ow_national": null,
+      "note": "Babak terakhir franchise 10 tahun. Format IMAX. Teaser 538Rb, official trailer 392Rb dan naik cepat."
     },
     {
       "title": "Tunggu Aku Sukses Nanti",
@@ -574,11 +574,11 @@
       "nobar": false,
       "sequel_of": null,
       "calendar": "PANAS",
-      "note": "Rapi Films, tidak tayang di SAMs. Pantau nasional saja.",
       "day1_sams_adm_show": null,
       "day1_national_adm_show": null,
       "ow_sams": null,
-      "ow_national": null
+      "ow_national": null,
+      "note": "Rapi Films — tidak tayang di SAMs. Drama mudik soal tekanan sosial dan ekspektasi keluarga."
     }
   ]
 }
