@@ -194,7 +194,7 @@
             font-weight: 400;
             color: var(--text-secondary);
             line-height: 1.65;
-            max-width: 400px;
+            max-width: 560px;
         }
 
         /* ============================================================
@@ -764,6 +764,26 @@
             /* #1 film spans full width — hero treatment */
             #filmCards .film-card.rank-1 {
                 grid-column: 1 / -1;
+                padding: 28px 32px;
+            }
+            #filmCards .film-card.rank-1 .card-title {
+                font-size: 24px;
+            }
+            #filmCards .film-card.rank-1 .card-rank-bg {
+                font-size: 80px;
+            }
+            /* Section headers on desktop */
+            .header {
+                padding: 40px 32px 28px;
+            }
+            .headline-section {
+                padding: 20px 32px 8px;
+            }
+            .spectrum-section {
+                padding: 28px 32px 12px;
+            }
+            .cards-section {
+                padding: 20px 32px 0;
             }
         }
 
@@ -1289,11 +1309,11 @@
             const similar = findSimilar(film, history);
 
             // TikTok display
-            const ttDisplay = (film.tiktok != null) ? film.tiktok + '/10' : 'Menunggu input Dias';
+            const ttDisplay = (film.tiktok != null) ? film.tiktok + '/10' : '—';
             const ttClass = (film.tiktok != null) ? '' : 'empty';
 
             // Google Trends display
-            const gtDisplay = (film.google_trends != null) ? film.google_trends : 'Menunggu input Dias';
+            const gtDisplay = (film.google_trends != null) ? film.google_trends : '—';
             const gtClass = (film.google_trends != null && film.google_trends > 0) ? '' : 'empty';
 
             // Signal Conflict Detector
