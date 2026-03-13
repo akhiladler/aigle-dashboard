@@ -1,0 +1,64 @@
+{
+  "_note": "Lebaran 2026 YouTube view tracker. Baseline captured Mar 10, 18:43 WIB. Updated each checkpoint.",
+  "release_date": "2026-03-18",
+  "films": [
+    {
+      "title": "Na Willa",
+      "ph": "Visinema Pictures",
+      "youtube_url": "https://www.youtube.com/watch?v=-qsIG4vsG5Y",
+      "checkpoints": [
+        {"date": "2026-03-10", "views": 5423531, "note": "baseline — original tracker URL yknKIlYTKG8 now shows 226 views (broken/privated); matched to Visinema PH official trailer -qsIG4vsG5Y"},
+        {"date": "2026-03-13", "views": 5425367, "note": "checkpoint — 5 days out. Delta +1,836. Trailer momentum plateaued; film awareness already saturated."}
+      ]
+    },
+    {
+      "title": "Pelangi Di Mars",
+      "ph": "Mahakarya Production",
+      "youtube_url": "https://www.youtube.com/watch?v=nSoRBPSsdWg",
+      "checkpoints": [
+        {"date": "2026-03-10", "views": 3006493, "note": "baseline"},
+        {"date": "2026-03-13", "views": 3013422, "note": "checkpoint — 5 days out. Delta +6,929."}
+      ]
+    },
+    {
+      "title": "Danur: The Last Chapter",
+      "ph": "MD Pictures",
+      "youtube_url": "https://www.youtube.com/watch?v=nsACtG92wd4",
+      "checkpoints": [
+        {"date": "2026-03-10", "views": 537709, "note": "baseline — teaser (MD Pictures). URL corrected from 0fuFgUmW_HA to nsACtG92wd4. Official trailer 2 (oBGe7mAzb5M) also at 391K baseline."},
+        {"date": "2026-03-13", "views": 538638, "note": "checkpoint — 5 days out. Teaser delta +929. Official trailer 2 now at 366,958."}
+      ]
+    },
+    {
+      "title": "Suzzanna: Santet Dosa di Atas Dosa",
+      "ph": "Soraya Intercine Films",
+      "youtube_url": "https://www.youtube.com/watch?v=uxMUhVwN-Eo",
+      "youtube_url_ph": "https://www.youtube.com/watch?v=u16-sKOCTUo",
+      "checkpoints": [
+        {"date": "2026-03-10", "views": 124754, "note": "baseline — Cinema 21 official trailer. Soraya PH official trailer (u16-sKOCTUo) was at ~620K."},
+        {"date": "2026-03-13", "views": 127495, "views_ph_trailer": 710532, "note": "checkpoint — 5 days out. C21 delta +2,741. Soraya PH trailer surged to 710K (+~90K in 3 days) — real buzz signal."}
+      ]
+    },
+    {
+      "title": "Senin Harga Naik",
+      "ph": "Starvision",
+      "youtube_url": "https://www.youtube.com/watch?v=DOSLZNXK4Wk",
+      "youtube_url_ph": "https://www.youtube.com/watch?v=xSXGN3PYykM",
+      "checkpoints": [
+        {"date": "2026-03-10", "views": 940, "note": "baseline — PH POWER signal: 4 SAMS shows despite near-zero YouTube buzz"},
+        {"date": "2026-03-13", "views": 1031, "views_ph_trailer": 35262, "views_c21_trailer": 28972, "note": "checkpoint — 5 days out. Tracked video delta +91. But Starvision PH official trailer at 35K and Cinema 21 at 29K exist — tracker was on wrong video."}
+      ]
+    },
+    {
+      "title": "Tunggu Aku Sukses Nanti",
+      "ph": "Rapi Films",
+      "youtube_url": "https://www.youtube.com/watch?v=Ga4rG82wC10",
+      "sams_eligible": false,
+      "sams_note": "Rapi Films — SAMS does not screen Rapi titles",
+      "checkpoints": [
+        {"date": "2026-03-10", "views": 856, "note": "baseline — no clean official trailer found at the time"},
+        {"date": "2026-03-13", "views": 68551, "note": "checkpoint — 5 days out. Cinema 21 official trailer now at 68,551. Rapi Films channel trailer at 42,917. Baseline was on a different/minor video; effective reset. Also: trailer 2 (Cinema 21) at 58,219."}
+      ]
+    }
+  ]
+}
