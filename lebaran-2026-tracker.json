@@ -8,7 +8,8 @@
       "youtube_url": "https://www.youtube.com/watch?v=-qsIG4vsG5Y",
       "checkpoints": [
         {"date": "2026-03-10", "views": 5423531, "note": "baseline — original tracker URL yknKIlYTKG8 now shows 226 views (broken/privated); matched to Visinema PH official trailer -qsIG4vsG5Y"},
-        {"date": "2026-03-13", "views": 5425367, "note": "checkpoint — 5 days out. Delta +1,836. Trailer momentum plateaued; film awareness already saturated."}
+        {"date": "2026-03-13", "views": 5425367, "note": "checkpoint — 5 days out. Delta +1,836. Trailer momentum plateaued; film awareness already saturated."},
+        {"date": "2026-03-16", "views": 5428801, "note": "checkpoint — 2 days out. Delta +3,434 vs Mar 13, +5,270 vs baseline. Still flat — saturated awareness."}
       ]
     },
     {
@@ -17,7 +18,8 @@
       "youtube_url": "https://www.youtube.com/watch?v=nSoRBPSsdWg",
       "checkpoints": [
         {"date": "2026-03-10", "views": 3006493, "note": "baseline"},
-        {"date": "2026-03-13", "views": 3013422, "note": "checkpoint — 5 days out. Delta +6,929."}
+        {"date": "2026-03-13", "views": 3013422, "note": "checkpoint — 5 days out. Delta +6,929."},
+        {"date": "2026-03-16", "views": 3031384, "note": "checkpoint — 2 days out. Delta +17,962 vs Mar 13, +24,891 vs baseline. Accelerating — nearly 3x the Mar 10–13 pace."}
       ]
     },
     {
@@ -26,7 +28,8 @@
       "youtube_url": "https://www.youtube.com/watch?v=nsACtG92wd4",
       "checkpoints": [
         {"date": "2026-03-10", "views": 537709, "note": "baseline — teaser (MD Pictures). URL corrected from 0fuFgUmW_HA to nsACtG92wd4. Official trailer 2 (oBGe7mAzb5M) also at 391K baseline."},
-        {"date": "2026-03-13", "views": 538638, "note": "checkpoint — 5 days out. Teaser delta +929. Official trailer 2 now at 366,958."}
+        {"date": "2026-03-13", "views": 538638, "note": "checkpoint — 5 days out. Teaser delta +929. Official trailer 2 now at 366,958."},
+        {"date": "2026-03-16", "views": 540181, "note": "checkpoint — 2 days out. Delta +1,543 vs Mar 13, +2,472 vs baseline. Minimal momentum on teaser."}
       ]
     },
     {
@@ -36,7 +39,8 @@
       "youtube_url_ph": "https://www.youtube.com/watch?v=u16-sKOCTUo",
       "checkpoints": [
         {"date": "2026-03-10", "views": 124754, "note": "baseline — Cinema 21 official trailer. Soraya PH official trailer (u16-sKOCTUo) was at ~620K."},
-        {"date": "2026-03-13", "views": 127495, "views_ph_trailer": 710532, "note": "checkpoint — 5 days out. C21 delta +2,741. Soraya PH trailer surged to 710K (+~90K in 3 days) — real buzz signal."}
+        {"date": "2026-03-13", "views": 127495, "views_ph_trailer": 710532, "note": "checkpoint — 5 days out. C21 delta +2,741. Soraya PH trailer surged to 710K (+~90K in 3 days) — real buzz signal."},
+        {"date": "2026-03-16", "views": 131906, "views_ph_trailer": 727452, "note": "checkpoint — 2 days out. C21 delta +4,411 vs Mar 13. PH trailer +16,920 vs Mar 13 (727K total). PH trailer is the primary signal at 727K."}
       ]
     },
     {
@@ -46,7 +50,8 @@
       "youtube_url_ph": "https://www.youtube.com/watch?v=xSXGN3PYykM",
       "checkpoints": [
         {"date": "2026-03-10", "views": 940, "note": "baseline — PH POWER signal: 4 SAMS shows despite near-zero YouTube buzz"},
-        {"date": "2026-03-13", "views": 1031, "views_ph_trailer": 35262, "views_c21_trailer": 28972, "note": "checkpoint — 5 days out. Tracked video delta +91. But Starvision PH official trailer at 35K and Cinema 21 at 29K exist — tracker was on wrong video."}
+        {"date": "2026-03-13", "views": 1031, "views_ph_trailer": 35262, "views_c21_trailer": 28972, "note": "checkpoint — 5 days out. Tracked video delta +91. But Starvision PH official trailer at 35K and Cinema 21 at 29K exist — tracker was on wrong video."},
+        {"date": "2026-03-16", "views": 1120, "views_ph_trailer": 44521, "note": "checkpoint — 2 days out. PH trailer +9,259 vs Mar 13 (44.5K total). Steady climb for a PH POWER play."}
       ]
     },
     {
@@ -57,7 +62,8 @@
       "sams_note": "Rapi Films — SAMS does not screen Rapi titles",
       "checkpoints": [
         {"date": "2026-03-10", "views": 856, "note": "baseline — no clean official trailer found at the time"},
-        {"date": "2026-03-13", "views": 68551, "note": "checkpoint — 5 days out. Cinema 21 official trailer now at 68,551. Rapi Films channel trailer at 42,917. Baseline was on a different/minor video; effective reset. Also: trailer 2 (Cinema 21) at 58,219."}
+        {"date": "2026-03-13", "views": 68551, "note": "checkpoint — 5 days out. Cinema 21 official trailer now at 68,551. Rapi Films channel trailer at 42,917. Baseline was on a different/minor video; effective reset. Also: trailer 2 (Cinema 21) at 58,219."},
+        {"date": "2026-03-16", "views": 72179, "note": "checkpoint — 2 days out. Delta +3,628 vs Mar 13. Moderate pace."}
       ]
     }
   ]
