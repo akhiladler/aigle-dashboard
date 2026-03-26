@@ -1,0 +1,674 @@
+{
+    "_note": "Aigle film schedule. Source: movie-forecast-2026.md + 21cineplex.com verification.",
+    "_updated": "2026-03-24",
+    "_source": "21cineplex.com (primary) + IDNTimes, IMDb, web search",
+    "_instructions": "Add new films here. The notebook loads this file automatically. No code editing needed. Only named films included (no 'Untitled' placeholders).",
+    "films": [
+        {
+            "date": "2026-01-22",
+            "title": "Sengkolo 2: Petaka Satu Suro",
+            "genre": "Horor",
+            "production_house": "MVP Pictures"
+        },
+        {
+            "date": "2026-01-22",
+            "title": "Esok Tanpa Ibu",
+            "genre": "Drama",
+            "production_house": "BASE Entertainment"
+        },
+        {
+            "date": "2026-01-29",
+            "title": "Kafir: Gerbang Sukma",
+            "genre": "Horor",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-01-29",
+            "title": "Tuhan, Benarkah Kau Mendengarku?",
+            "genre": "Drama Religi",
+            "production_house": "Paragon Pictures"
+        },
+        {
+            "date": "2026-01-29",
+            "title": "Kuyank",
+            "genre": "Komedi",
+            "production_house": "DHF Entertainment"
+        },
+        {
+            "date": "2026-01-29",
+            "title": "Dowa Juseyo",
+            "genre": "Komedi",
+            "production_house": "Heart Pictures"
+        },
+        {
+            "date": "2026-02-05",
+            "title": "Ahlan Singapore",
+            "genre": "Komedi",
+            "production_house": "MD Pictures"
+        },
+        {
+            "date": "2026-02-05",
+            "title": "Sadali",
+            "genre": "Drama Romantis",
+            "production_house": "MVP Pictures"
+        },
+        {
+            "date": "2026-02-05",
+            "title": "Teman Tegar Maira",
+            "genre": "Drama Sosial",
+            "production_house": "Aksa Bumi Langit"
+        },
+        {
+            "date": "2026-02-05",
+            "title": "Balas Budi",
+            "genre": "Drama",
+            "production_house": "Impian Indonesia"
+        },
+        {
+            "date": "2026-02-12",
+            "title": "AIU-EO Macam Betool Aja",
+            "genre": "Komedi",
+            "production_house": "Tunas Citrasinema Kreatif"
+        },
+        {
+            "date": "2026-02-12",
+            "title": "Rumah Tanpa Cahaya",
+            "genre": "Horor",
+            "production_house": "Sinemart"
+        },
+        {
+            "date": "2026-02-12",
+            "title": "Waru",
+            "genre": "Horor",
+            "production_house": "Sinema Digital Indonesia"
+        },
+        {
+            "date": "2026-02-12",
+            "title": "Jangan Seperti Bapak",
+            "genre": "Drama Keluarga",
+            "production_house": "Kasih Karunia Film"
+        },
+        {
+            "date": "2026-02-19",
+            "title": "Antara Mama, Cinta, dan Surga",
+            "genre": "Drama Keluarga Religi",
+            "production_house": "PIM Pictures"
+        },
+        {
+            "date": "2026-02-19",
+            "title": "Asrama Putri",
+            "genre": "Horor",
+            "production_house": "Puras Production"
+        },
+        {
+            "date": "2026-02-19",
+            "title": "Taneuh Kalaknat",
+            "genre": "Horor",
+            "production_house": "Shen Entertainment"
+        },
+        {
+            "date": "2026-02-26",
+            "title": "Titip Bunda di Surga-Mu",
+            "genre": "Drama",
+            "production_house": "Ruang Rangkai Kata"
+        },
+        {
+            "date": "2026-02-26",
+            "title": "Lift",
+            "genre": "Horor",
+            "production_house": "Trois Global Film"
+        },
+        {
+            "date": "2026-02-26",
+            "title": "Rajah",
+            "genre": "Horor",
+            "production_house": "Eight Senses Film"
+        },
+        {
+            "date": "2026-03-05",
+            "title": "Setan Alas!",
+            "genre": "Horor",
+            "production_house": "Pabrik Imaji Akasacara"
+        },
+        {
+            "date": "2026-03-05",
+            "title": "Setannya Cuan",
+            "genre": "Horor Komedi",
+            "production_house": "Radepa Konten Indonesia"
+        },
+        {
+            "date": "2026-03-05",
+            "title": "Juara Sejati",
+            "genre": "Drama",
+            "production_house": "Alamanda Mandiri Sejahtera"
+        },
+        {
+            "date": "2026-03-18",
+            "title": "Danur: The Last Chapter",
+            "genre": "Horor",
+            "production_house": "MD Pictures"
+        },
+        {
+            "date": "2026-03-18",
+            "title": "Na Willa",
+            "genre": "Drama",
+            "production_house": "Visinema"
+        },
+        {
+            "date": "2026-03-18",
+            "title": "Tunggu Aku Sukses Nanti",
+            "genre": "Drama Komedi",
+            "production_house": "TBD"
+        },
+        {
+            "date": "2026-03-18",
+            "title": "Suzzanna: Santet Dosa di Atas Dosa",
+            "genre": "Horor",
+            "production_house": "Soraya Intercine Films"
+        },
+        {
+            "date": "2026-03-18",
+            "title": "Senin Harga Naik",
+            "genre": "Drama",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-03-18",
+            "title": "Pelangi Di Mars",
+            "genre": "Drama",
+            "production_house": "Mahakarya Production"
+        },
+        {
+            "date": "2026-03-19",
+            "title": "Garuda Di Dadaku",
+            "genre": "Drama Animasi",
+            "production_house": "BASE Entertainment",
+            "status": "postponed"
+        },
+        {
+            "date": "2026-03-19",
+            "title": "Operasi Pesta Pora",
+            "genre": "Drama",
+            "production_house": "Imajinari",
+            "status": "postponed"
+        },
+        {
+            "date": "2026-03-20",
+            "title": "Komang",
+            "genre": "Drama",
+            "production_house": "TBD",
+            "_note": "Added 2026-03-10 release check. Indonesian drama (Balinese setting), on 21cineplex."
+        },
+        {
+            "date": "2026-03-26",
+            "title": "Amulet",
+            "genre": "Horor",
+            "production_house": "Bina Dinamika Sentosa"
+        },
+        {
+            "date": "2026-03-26",
+            "title": "Conjurig",
+            "genre": "Horor",
+            "production_house": "Impian Indonesia"
+        },
+        {
+            "date": "2026-03-26",
+            "title": "Kita Butuh Bahagia Walau Sesaat",
+            "genre": "Drama",
+            "production_house": "Piranti Humaniora Asia"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "Aku Harus Mati",
+            "genre": "Horor",
+            "production_house": "Rollink Action"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "Dosa: Penebusan atau Pengampunan",
+            "genre": "Horor",
+            "production_house": "HAS Kreatif"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "Manifesting",
+            "genre": "Drama",
+            "production_house": "Hebat Raya Sejahtera"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "Tiba-Tiba Setan",
+            "genre": "Horor",
+            "production_house": "Ess Jay Studio"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "Juminten Edan",
+            "genre": "Drama Komedi",
+            "production_house": "Mercusuar Film Indonesia"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "Munafik",
+            "genre": "Horor",
+            "production_house": "Unlimited Production"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "Cinta Lama Babak Kedua",
+            "genre": "Drama Komedi",
+            "production_house": "Smara Visioncraft Studios"
+        },
+        {
+            "date": "2026-04-02",
+            "title": "The Hostage's Hero",
+            "genre": "Action",
+            "production_house": "TNI AL"
+        },
+        {
+            "date": "2026-04-09",
+            "title": "Uang Gawat Darurat",
+            "genre": "Drama Komedi",
+            "production_house": "Cahaya Sinema Nusantara"
+        },
+        {
+            "date": "2026-04-09",
+            "title": "Amin Tanpa Iman",
+            "genre": "Drama",
+            "production_house": "Dwiwarna Sentosa Ria"
+        },
+        {
+            "date": "2026-04-09",
+            "title": "Warung Pocong",
+            "genre": "Horor",
+            "production_house": "Entelekey Media Indonesia"
+        },
+        {
+            "date": "2026-04-09",
+            "title": "Ayah, Ini Arahnya Kemana, Ya?",
+            "genre": "Drama",
+            "production_house": "Citra Sinema Kreasi"
+        },
+        {
+            "date": "2026-04-09",
+            "title": "Lastri: Arwah Kembang Desa",
+            "genre": "Horor",
+            "production_house": "Desa Company"
+        },
+        {
+            "date": "2026-04-09",
+            "title": "Ibadah dan Cinta",
+            "genre": "Drama",
+            "production_house": "Multi Buana Kreasindo"
+        },
+        {
+            "date": "2026-04-09",
+            "title": "Yohanna",
+            "genre": "Drama",
+            "production_house": "TBD",
+            "_note": "Added 2026-03-10 release check. Indonesian film April 9, on 21cineplex."
+        },
+        {
+            "date": "2026-04-16",
+            "title": "Ain: Bukan Semata Memandang Dengan Doa",
+            "genre": "Horor",
+            "production_house": "Mata Company"
+        },
+        {
+            "date": "2026-04-16",
+            "title": "Bolong (The Hole)",
+            "genre": "Thriller",
+            "production_house": "Adhya Pictures"
+        },
+        {
+            "date": "2026-04-16",
+            "title": "Kamu Harus Mati",
+            "genre": "Horor",
+            "production_house": "Nant Adi Luhur"
+        },
+        {
+            "date": "2026-04-16",
+            "title": "Suamiku Lukaku",
+            "genre": "Drama",
+            "production_house": "Sinemart"
+        },
+        {
+            "date": "2026-04-16",
+            "title": "Ghost in the Cell",
+            "genre": "Horor Komedi",
+            "production_house": "Come and See Pictures",
+            "_note": "Added 2026-03-10. Joko Anwar film #12. Starring Abimana Aryasatya, Morgan Oey. Premiered Berlin IFF 2026. BIG SIGNAL CANDIDATE."
+        },
+        {
+            "date": "2026-04-16",
+            "title": "Dalam Sujudku",
+            "genre": "Drama",
+            "production_house": "Proj3ct 69 Indonesia",
+            "_note": "Added 2026-03-10. Indonesian-Malaysia-Singapore collab. On 21cineplex."
+        },
+        {
+            "date": "2026-04-23",
+            "title": "Sunda Emperor",
+            "genre": "Drama Komedi",
+            "production_house": "Setia Company"
+        },
+        {
+            "date": "2026-04-23",
+            "title": "Songko: Makhluk Penghisap Darah Sulawesi",
+            "genre": "Horor",
+            "production_house": "MVP Pictures"
+        },
+        {
+            "date": "2026-04-23",
+            "title": "Dadu",
+            "genre": "Horor",
+            "production_house": "Trois Global Film"
+        },
+        {
+            "date": "2026-04-23",
+            "title": "Para Perasuk",
+            "genre": "Drama",
+            "production_house": "Multiple (intl co-production)"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "Dilan ITB",
+            "genre": "Drama",
+            "production_house": "Falcon"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "Kupilih Jalur Langit",
+            "genre": "Drama",
+            "production_house": "MD Pictures"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "Ku Peluk Kamu Selamanya",
+            "genre": "Drama",
+            "production_house": "Visinema Pictures"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "730 Days",
+            "genre": "Drama",
+            "production_house": "Kharisma Starvision Plus"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "PKL Di Rumah Sakit",
+            "genre": "Horor",
+            "production_house": "MVP Pictures"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "Warkop DKI 5",
+            "genre": "Drama Komedi",
+            "production_house": "Falcon"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "Tumbal Proyek",
+            "genre": "Horor",
+            "production_house": "Dee Company"
+        },
+        {
+            "date": "2026-04-30",
+            "title": "Rumah Terindah",
+            "genre": "Drama",
+            "production_house": "Cakra Film"
+        },
+        {
+            "date": "2026-05-07",
+            "title": "Bintang Kecil Di Langit Biru",
+            "genre": "Drama",
+            "production_house": "Lex Pictures"
+        },
+        {
+            "date": "2026-05-14",
+            "title": "Harusnya Horror",
+            "genre": "Drama Komedi",
+            "production_house": "Ess Jay Studios"
+        },
+        {
+            "date": "2026-05-14",
+            "title": "Hari Terakhir Bersama Ibu",
+            "genre": "Drama",
+            "production_house": "Tiger Wong Entertainment"
+        },
+        {
+            "date": "2026-05-21",
+            "title": "Untitle Raditya Dika's Project",
+            "genre": "Drama",
+            "production_house": "Soraya Intercine"
+        },
+        {
+            "date": "2026-05-21",
+            "title": "Nobody Loves Kay",
+            "genre": "Drama",
+            "production_house": "Visinema Pictures"
+        },
+        {
+            "date": "2026-05-21",
+            "title": "The Bell: Panggilan Untuk Mati",
+            "genre": "Horor",
+            "production_house": "Sinemata Indonesia Pratama"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "Sekawan Limo 2: Gunung Klawih",
+            "genre": "Horor",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "Children of Heaven",
+            "genre": "Drama",
+            "production_house": "MD Pictures"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "Koes Plus",
+            "genre": "Drama",
+            "production_house": "Falcon"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "Siksa Sampai Mati",
+            "genre": "Horor",
+            "production_house": "Sinemaku Pictures"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "Penjaga Makam",
+            "genre": "Horor",
+            "production_house": "VMS"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "1000 Pintu",
+            "genre": "Drama",
+            "production_house": "Lyto Pictures"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "Paket Kematian",
+            "genre": "Horor",
+            "production_house": "BASE Entertainment"
+        },
+        {
+            "date": "2026-06-04",
+            "title": "KBSK",
+            "genre": "Drama",
+            "production_house": "BION Studios"
+        },
+        {
+            "date": "2026-06-04",
+            "title": "Monster Pabrik Rambut",
+            "genre": "Thriller",
+            "production_house": "Palari Pictures"
+        },
+        {
+            "date": "2026-06-04",
+            "title": "Dosa Pelakor",
+            "genre": "Horor",
+            "production_house": "Lex Pictures"
+        },
+        {
+            "date": "2026-06-11",
+            "title": "Kunti Bogel",
+            "genre": "Horor",
+            "production_house": "Dee Company"
+        },
+        {
+            "date": "2026-06-11",
+            "title": "Pemburu Jenazah",
+            "genre": "Horor",
+            "production_house": "Tawang Khan Production"
+        },
+        {
+            "date": "2026-06-11",
+            "title": "Kalimayit Desa Angkeran",
+            "genre": "Horor",
+            "production_house": "Ess Jay Studios"
+        },
+        {
+            "date": "2026-06-17",
+            "title": "RS Angker Korea",
+            "genre": "Horor",
+            "production_house": "MD Pictures"
+        },
+        {
+            "date": "2026-06-17",
+            "title": "Cerita Lila",
+            "genre": "Drama",
+            "production_house": "MVP Pictures"
+        },
+        {
+            "date": "2026-06-25",
+            "title": "Brandal Brandal Bandung",
+            "genre": "Drama",
+            "production_house": "Falcon"
+        },
+        {
+            "date": "2026-06-25",
+            "title": "Cek Khodam",
+            "genre": "Horor",
+            "production_house": "Dee Company"
+        },
+        {
+            "date": "2026-06-25",
+            "title": "Anak Betawi",
+            "genre": "Drama",
+            "production_house": "Cakra Film"
+        },
+        {
+            "date": "2026-07-16",
+            "title": "Shaka Oh Shaka",
+            "genre": "Horor",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-07-30",
+            "title": "Dewi Siluman Ular",
+            "genre": "Horor",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-08-13",
+            "title": "Misteri",
+            "genre": "Horor",
+            "production_house": "Paragon Pictures"
+        },
+        {
+            "date": "2026-08-20",
+            "title": "Badoet Gendong",
+            "genre": "Horor",
+            "production_house": "Magma Entertainment"
+        },
+        {
+            "date": "2026-09-03",
+            "title": "Ikatan Darah",
+            "genre": "Thriller",
+            "production_house": "Uwais Pictures"
+        },
+        {
+            "date": "2026-09-10",
+            "title": "Pasung",
+            "genre": "Horor",
+            "production_house": "Uwais Pictures"
+        },
+        {
+            "date": "2026-09-17",
+            "title": "Kamar Ganti",
+            "genre": "Horor",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-10-01",
+            "title": "Datang Akan Pergi",
+            "genre": "Drama",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-10-08",
+            "title": "Kampung Siluman Pulo Majeti",
+            "genre": "Horor",
+            "production_house": "Adhya Pictures"
+        },
+        {
+            "date": "2026-10-15",
+            "title": "Laut Bercerita",
+            "genre": "Drama",
+            "production_house": "Pal8 Pictures"
+        },
+        {
+            "date": "2026-10-22",
+            "title": "Kuasa Gelap II",
+            "genre": "Horor",
+            "production_house": "Paragon Pictures"
+        },
+        {
+            "date": "2026-10-29",
+            "title": "Mayat Hidup",
+            "genre": "Horor",
+            "production_house": "Magma Entertainment"
+        },
+        {
+            "date": "2026-11-05",
+            "title": "Medium Ugly",
+            "genre": "Drama",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-11-12",
+            "title": "Teruntuk Masa Kecilku",
+            "genre": "Drama",
+            "production_house": "Unlimited Production"
+        },
+        {
+            "date": "2026-12-03",
+            "title": "Forza",
+            "genre": "Drama",
+            "production_house": "Adhya Pictures"
+        },
+        {
+            "date": "2026-12-03",
+            "title": "Agensi Rumah Tangga",
+            "genre": "Drama",
+            "production_house": "Starvision"
+        },
+        {
+            "date": "2026-12-17",
+            "title": "A Very Yuppy Wedding",
+            "genre": "Drama",
+            "production_house": "Paragon Pictures"
+        },
+        {
+            "date": "2026-12-24",
+            "title": "Ratu Malaka",
+            "genre": "Action",
+            "production_house": "Visinema Pictures"
+        }
+    ]
+}
