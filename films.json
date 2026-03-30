@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-03-29",
+    "last_updated": "2026-03-30",
     "total_films": 40,
     "description": "Aigle film tracking database - pre-release signals and outcomes"
   },
@@ -462,11 +462,15 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "sams_shows": 4,
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null,
-      "note": "5.4Jt views. Gala premiere banjir pujian — \"magical, hangat, penuh imajinasi.\" Dari kreator JUMBO."
+      "day1_sams_adm_show": 9.0,
+      "day1_national_adm_show": 17.3,
+      "ow_sams": 4034,
+      "ow_national": 156039,
+      "note": "5.4Jt views. Gala premiere banjir pujian — \"magical, hangat, penuh imajinasi.\" Dari kreator JUMBO.",
+      "day1_national_adm": 29335,
+      "day1_national_screens": 1691,
+      "day1_sams_adm": 592,
+      "day1_sams_shows": 66
     },
     {
       "title": "Pelangi Di Mars",
@@ -484,11 +488,15 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "sams_shows": 3,
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null,
-      "note": "T4 tembus 3Jt tanpa franchise. Sci-fi Indonesia pertama pakai XR + Unreal Engine live-action."
+      "day1_sams_adm_show": 3.2,
+      "day1_national_adm_show": 19.5,
+      "ow_sams": 1438,
+      "ow_national": 117652,
+      "note": "T4 tembus 3Jt tanpa franchise. Sci-fi Indonesia pertama pakai XR + Unreal Engine live-action.",
+      "day1_national_adm": 19920,
+      "day1_national_screens": 1023,
+      "day1_sams_adm": 197,
+      "day1_sams_shows": 61
     },
     {
       "title": "Senin Harga Naik",
@@ -507,11 +515,15 @@
       "calendar": "PANAS",
       "sams_shows": 4,
       "signal_flag": "PH_POWER",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null,
-      "note": "Starvision x Legacy Pictures. Penerus Komang (3Jt penonton Lebaran 2025). Views rendah tapi distribusi T1."
+      "day1_sams_adm_show": 7.8,
+      "day1_national_adm_show": 24.5,
+      "ow_sams": 2326,
+      "ow_national": 173203,
+      "note": "Starvision x Legacy Pictures. Penerus Komang (3Jt penonton Lebaran 2025). Views rendah tapi distribusi T1.",
+      "day1_national_adm": 45285,
+      "day1_national_screens": 1850,
+      "day1_sams_adm": 478,
+      "day1_sams_shows": 61
     },
     {
       "title": "Suzzanna: Santet Dosa di Atas Dosa",
@@ -530,11 +542,15 @@
       "calendar": "PANAS",
       "sams_shows": 3,
       "signal_flag": "FRANCHISE",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null,
-      "note": "Luna Maya satu-satunya film 2026. Reza Rahadian gabung franchise pertama kali. Trailer naik 85Rb/hari."
+      "day1_sams_adm_show": 14.2,
+      "day1_national_adm_show": 27.8,
+      "ow_sams": 5120,
+      "ow_national": 286435,
+      "note": "Luna Maya satu-satunya film 2026. Reza Rahadian gabung franchise pertama kali. Trailer naik 85Rb/hari.",
+      "day1_national_adm": 47456,
+      "day1_national_screens": 1707,
+      "day1_sams_adm": 639,
+      "day1_sams_shows": 45
     },
     {
       "title": "Danur: The Last Chapter",
@@ -553,11 +569,15 @@
       "calendar": "PANAS",
       "sams_shows": 4,
       "signal_flag": "FRANCHISE",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null,
-      "note": "Babak terakhir franchise 10 tahun. Format IMAX. Teaser 538Rb, official trailer 392Rb dan naik cepat."
+      "day1_sams_adm_show": 20.1,
+      "day1_national_adm_show": 50.4,
+      "ow_sams": 10477,
+      "ow_national": 616381,
+      "note": "Babak terakhir franchise 10 tahun. Format IMAX. Teaser 538Rb, official trailer 392Rb dan naik cepat.",
+      "day1_national_adm": 111803,
+      "day1_national_screens": 2220,
+      "day1_sams_adm": 1509,
+      "day1_sams_shows": 75
     },
     {
       "title": "Tunggu Aku Sukses Nanti",
@@ -575,10 +595,12 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
+      "day1_national_adm_show": 37.6,
       "ow_sams": null,
-      "ow_national": null,
-      "note": "Buzz melonjak karena almarhum Vidi Aldiano. Momentum emosional kuat menjelang rilis."
+      "ow_national": 390452,
+      "note": "Buzz melonjak karena almarhum Vidi Aldiano. Momentum emosional kuat menjelang rilis.",
+      "day1_national_adm": 80886,
+      "day1_national_screens": 2149
     },
     {
       "title": "Komang",
