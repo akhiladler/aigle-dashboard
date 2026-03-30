@@ -462,15 +462,11 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "sams_shows": 4,
-      "day1_sams_adm_show": 9.0,
-      "day1_national_adm_show": 17.3,
-      "ow_sams": 4034,
-      "ow_national": 156039,
-      "note": "5.4Jt views. Gala premiere banjir pujian — \"magical, hangat, penuh imajinasi.\" Dari kreator JUMBO.",
-      "day1_national_adm": 29335,
-      "day1_national_screens": 1691,
-      "day1_sams_adm": 592,
-      "day1_sams_shows": 66
+      "day1_sams_adm_show": null,
+      "day1_national_adm_show": 21.09,
+      "ow_sams": null,
+      "ow_national": 423000,
+      "note": "Visinema, Ryan Adriandhy (Jumbo director). 423Rb cumulative 25 Mar beat Senin Harga Naik on legs. Jumbo-style slow burn — may have long tail."
     },
     {
       "title": "Pelangi Di Mars",
@@ -488,15 +484,11 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "sams_shows": 3,
-      "day1_sams_adm_show": 3.2,
-      "day1_national_adm_show": 19.5,
-      "ow_sams": 1438,
-      "ow_national": 117652,
-      "note": "T4 tembus 3Jt tanpa franchise. Sci-fi Indonesia pertama pakai XR + Unreal Engine live-action.",
-      "day1_national_adm": 19920,
-      "day1_national_screens": 1023,
-      "day1_sams_adm": 197,
-      "day1_sams_shows": 61
+      "day1_sams_adm_show": null,
+      "day1_national_adm_show": 20.29,
+      "ow_sams": null,
+      "ow_national": 174000,
+      "note": "Indonesia's first sci-fi live-action/CG (XR + Unreal Engine). 174Rb cumulative. Underperformed YT buzz (3Jt views) but per-screen improved week 1."
     },
     {
       "title": "Senin Harga Naik",
@@ -515,15 +507,11 @@
       "calendar": "PANAS",
       "sams_shows": 4,
       "signal_flag": "PH_POWER",
-      "day1_sams_adm_show": 7.8,
-      "day1_national_adm_show": 24.5,
-      "ow_sams": 2326,
-      "ow_national": 173203,
-      "note": "Starvision x Legacy Pictures. Penerus Komang (3Jt penonton Lebaran 2025). Views rendah tapi distribusi T1.",
-      "day1_national_adm": 45285,
-      "day1_national_screens": 1850,
-      "day1_sams_adm": 478,
-      "day1_sams_shows": 61
+      "day1_sams_adm_show": null,
+      "day1_national_adm_show": 24.8,
+      "ow_sams": null,
+      "ow_national": 373000,
+      "note": "Starvision. 373Rb cumulative 25 Mar. Weaker legs vs Na Willa despite more screens. PH_POWER flag justified distribution but not audience."
     },
     {
       "title": "Suzzanna: Santet Dosa di Atas Dosa",
@@ -542,15 +530,11 @@
       "calendar": "PANAS",
       "sams_shows": 3,
       "signal_flag": "FRANCHISE",
-      "day1_sams_adm_show": 14.2,
-      "day1_national_adm_show": 27.8,
-      "ow_sams": 5120,
-      "ow_national": 286435,
-      "note": "Luna Maya satu-satunya film 2026. Reza Rahadian gabung franchise pertama kali. Trailer naik 85Rb/hari.",
-      "day1_national_adm": 47456,
-      "day1_national_screens": 1707,
-      "day1_sams_adm": 639,
-      "day1_sams_shows": 45
+      "day1_sams_adm_show": null,
+      "day1_national_adm_show": 31.07,
+      "ow_sams": null,
+      "ow_national": 661000,
+      "note": "Luna Maya + Reza Rahadian. 661Rb cumulative 25 Mar. Strong WOM — +139.90% day 4 spike. Franchise power confirmed."
     },
     {
       "title": "Danur: The Last Chapter",
@@ -569,15 +553,11 @@
       "calendar": "PANAS",
       "sams_shows": 4,
       "signal_flag": "FRANCHISE",
-      "day1_sams_adm_show": 20.1,
-      "day1_national_adm_show": 50.4,
-      "ow_sams": 10477,
-      "ow_national": 616381,
-      "note": "Babak terakhir franchise 10 tahun. Format IMAX. Teaser 538Rb, official trailer 392Rb dan naik cepat.",
-      "day1_national_adm": 111803,
-      "day1_national_screens": 2220,
-      "day1_sams_adm": 1509,
-      "day1_sams_shows": 75
+      "day1_sams_adm_show": null,
+      "day1_national_adm_show": 78.41,
+      "ow_sams": null,
+      "ow_national": 1630000,
+      "note": "Film Lebaran terlaris 2026. 1.63Jt penonton per 25 Mar (Cinepoint). Day 1: 174Rb adm di 2220 layar. Franchise finale delivers."
     },
     {
       "title": "Tunggu Aku Sukses Nanti",
@@ -595,12 +575,10 @@
       "sequel_of": null,
       "calendar": "PANAS",
       "day1_sams_adm_show": null,
-      "day1_national_adm_show": 37.6,
+      "day1_national_adm_show": 40.41,
       "ow_sams": null,
-      "ow_national": 390452,
-      "note": "Buzz melonjak karena almarhum Vidi Aldiano. Momentum emosional kuat menjelang rilis.",
-      "day1_national_adm": 80886,
-      "day1_national_screens": 2149
+      "ow_national": 1000000,
+      "note": "Rapi Films — WON'T PLAY AT SAMS. Hit 1Jt penonton 25 Mar. Buzz melonjak karena almarhum Vidi Aldiano."
     },
     {
       "title": "Komang",
