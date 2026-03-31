@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-03-30",
+    "last_updated": "2026-03-31",
     "total_films": 40,
     "description": "Aigle film tracking database - pre-release signals and outcomes"
   },
@@ -671,9 +671,9 @@
       "ph": "Rolling Action",
       "ph_tier": "T4",
       "genre": "Horor",
-      "youtube_views": null,
-      "buzz_level": "UNKNOWN",
-      "youtube_url": null,
+      "youtube_views": 6436857,
+      "buzz_level": "TINGGI",
+      "youtube_url": "https://www.youtube.com/watch?v=DEV6C8sKAXg",
       "tiktok": null,
       "google_trends": null,
       "nobar": null,
@@ -683,7 +683,7 @@
       "day1_national_adm_show": null,
       "ow_sams": null,
       "ow_national": null,
-      "note": "Directed Hestu Saputra. Indonesian horror. Awaiting YouTube + Day 1 data. Added Mar 29."
+      "note": "6.4Jt views — tertinggi di batch April 2. T4 dengan angka setara Na Willa. Potensi sleeper hit besar."
     },
     {
       "title": "Dosa: Penebusan atau Pengampunan",
@@ -731,12 +731,12 @@
       "title": "Tiba-Tiba Setan",
       "release_date": "2026-04-02",
       "week_label": "2 Apr",
-      "ph": "unknown",
+      "ph": "Ess Jay Studio",
       "ph_tier": "T4",
       "genre": "Horor",
-      "youtube_views": null,
-      "buzz_level": "UNKNOWN",
-      "youtube_url": null,
+      "youtube_views": 87710,
+      "buzz_level": "RENDAH",
+      "youtube_url": "https://www.youtube.com/watch?v=M8lU4pAEYTM",
       "tiktok": null,
       "google_trends": null,
       "nobar": null,
@@ -746,7 +746,7 @@
       "day1_national_adm_show": null,
       "ow_sams": null,
       "ow_national": null,
-      "note": "Awaiting YouTube trailer + Day 1 data. Added Mar 29."
+      "note": "87Rb views. Horor standar, buzz rendah menjelang rilis."
     },
     {
       "title": "Juminten Edan",
@@ -776,9 +776,9 @@
       "ph": "unknown",
       "ph_tier": "T4",
       "genre": "Horor",
-      "youtube_views": null,
-      "buzz_level": "UNKNOWN",
-      "youtube_url": null,
+      "youtube_views": 13416,
+      "buzz_level": "RENDAH",
+      "youtube_url": "https://www.youtube.com/watch?v=P7HZWUIjA_4",
       "tiktok": null,
       "google_trends": null,
       "nobar": null,
@@ -788,7 +788,7 @@
       "day1_national_adm_show": null,
       "ow_sams": null,
       "ow_national": null,
-      "note": "Indonesian remake, director Guntur Soeharjanto, filmed in Yogyakarta. Awaiting YouTube + Day 1 data. Added Mar 29."
+      "note": "Remake Munafik Malaysia. Baru first look trailer (13Rb). Franchise recognition bisa angkat, tapi belum terlihat."
     },
     {
       "title": "Cinta Lama Babak Kedua",
@@ -817,10 +817,10 @@
       "week_label": "2 Apr",
       "ph": "unknown",
       "ph_tier": "T4",
-      "genre": "unknown",
-      "youtube_views": null,
-      "buzz_level": "UNKNOWN",
-      "youtube_url": null,
+      "genre": "Action",
+      "youtube_views": 32051,
+      "buzz_level": "RENDAH",
+      "youtube_url": "https://www.youtube.com/watch?v=CUQgNgeUYGE",
       "tiktok": null,
       "google_trends": null,
       "nobar": null,
@@ -830,8 +830,8 @@
       "day1_national_adm_show": null,
       "ow_sams": null,
       "ow_national": null,
-      "note": "Awaiting YouTube trailer + Day 1 data. Added Mar 29."
+      "note": "32Rb views. Trailer di CINEMA 21 + TNI AL official — looks like military action film."
     }
   ],
-  "last_updated": "2026-03-29"
+  "last_updated": "2026-03-31"
 }
