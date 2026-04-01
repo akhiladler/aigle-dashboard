@@ -1,7 +1,7 @@
 {
   "meta": {
     "last_updated": "2026-04-01",
-    "total_films": 32,
+    "total_films": 30,
     "description": "Aigle film tracking database - pre-release signals and outcomes"
   },
   "films": [
@@ -625,48 +625,6 @@
       "ow_sams": null,
       "ow_national": null,
       "note": "7.1Jt views dari PH channel — tertinggi di batch April. Rollink Action debut di bioskop."
-    },
-    {
-      "title": "Tiba-Tiba Setan",
-      "release_date": "2026-04-02",
-      "week_label": "2 Apr",
-      "ph": "Ess Jay Studio",
-      "ph_tier": "T4",
-      "genre": "Horor",
-      "youtube_views": 89167,
-      "buzz_level": "RENDAH",
-      "youtube_url": "https://www.youtube.com/watch?v=M8lU4pAEYTM",
-      "tiktok": null,
-      "google_trends": null,
-      "nobar": null,
-      "sequel_of": null,
-      "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null,
-      "note": "89Rb views. Ess Jay Studio horor — belum ada track record."
-    },
-    {
-      "title": "Munafik",
-      "release_date": "2026-04-02",
-      "week_label": "2 Apr",
-      "ph": "unknown",
-      "ph_tier": "T4",
-      "genre": "Horor",
-      "youtube_views": 51423,
-      "buzz_level": "RENDAH",
-      "youtube_url": "https://www.youtube.com/watch?v=fZfA43tJ0QA",
-      "tiktok": null,
-      "google_trends": null,
-      "nobar": null,
-      "sequel_of": "Munafik (Malaysian 2016)",
-      "calendar": "NORMAL",
-      "day1_sams_adm_show": null,
-      "day1_national_adm_show": null,
-      "ow_sams": null,
-      "ow_national": null,
-      "note": "Remake Indonesia dari franchise Malaysia. Unlimited Production (T1). Views masih rendah."
     },
     {
       "title": "The Hostage's Hero",
