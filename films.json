@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-03-31",
+    "last_updated": "2026-04-01",
     "total_films": 40,
     "description": "Aigle film tracking database - pre-release signals and outcomes"
   },
@@ -543,7 +543,7 @@
       "ph": "MD Pictures",
       "ph_tier": "T1",
       "genre": "Horor",
-      "youtube_views": 538631,
+      "youtube_views": 567464,
       "buzz_level": "TINGGI",
       "youtube_url": "https://youtube.com/watch?v=nsACtG92wd4",
       "tiktok": 7,
@@ -671,7 +671,7 @@
       "ph": "Rolling Action",
       "ph_tier": "T4",
       "genre": "Horor",
-      "youtube_views": 6436857,
+      "youtube_views": 6942298,
       "buzz_level": "TINGGI",
       "youtube_url": "https://www.youtube.com/watch?v=DEV6C8sKAXg",
       "tiktok": null,
@@ -734,7 +734,7 @@
       "ph": "Ess Jay Studio",
       "ph_tier": "T4",
       "genre": "Horor",
-      "youtube_views": 87710,
+      "youtube_views": 87890,
       "buzz_level": "RENDAH",
       "youtube_url": "https://www.youtube.com/watch?v=M8lU4pAEYTM",
       "tiktok": null,
@@ -776,7 +776,7 @@
       "ph": "unknown",
       "ph_tier": "T4",
       "genre": "Horor",
-      "youtube_views": 13416,
+      "youtube_views": 13445,
       "buzz_level": "RENDAH",
       "youtube_url": "https://www.youtube.com/watch?v=P7HZWUIjA_4",
       "tiktok": null,
@@ -818,7 +818,7 @@
       "ph": "unknown",
       "ph_tier": "T4",
       "genre": "Action",
-      "youtube_views": 32051,
+      "youtube_views": 34825,
       "buzz_level": "RENDAH",
       "youtube_url": "https://www.youtube.com/watch?v=CUQgNgeUYGE",
       "tiktok": null,
@@ -833,5 +833,5 @@
       "note": "32Rb views. Trailer di CINEMA 21 + TNI AL official — looks like military action film."
     }
   ],
-  "last_updated": "2026-03-31"
+  "last_updated": "2026-04-01"
 }
