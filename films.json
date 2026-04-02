@@ -615,7 +615,7 @@
       "youtube_views": 7109724,
       "buzz_level": "TINGGI",
       "youtube_url": "https://www.youtube.com/watch?v=DEV6C8sKAXg",
-      "tiktok": null,
+      "tiktok": 4,
       "google_trends": 3,
       "nobar": null,
       "sequel_of": null,
@@ -624,7 +624,9 @@
       "day1_national_adm_show": null,
       "ow_sams": null,
       "ow_national": null,
-      "note": "7.1Jt views dari PH channel â€” tertinggi di batch April. Rollink Action debut di bioskop."
+      "note": "7.1Jt views dari PH channel (Rollink Action). GT=3 — massive YT/GT gap suggests pushed/promoted content (Dias: TikTok content pushed but only 100K views each). Debut PH di bioskop. 2 shows at SAMS.",
+      "sams_shows": 2,
+      "plays_at_sams": true
     },
     {
       "title": "The Hostage's Hero",
@@ -636,7 +638,7 @@
       "youtube_views": 34921,
       "buzz_level": "RENDAH",
       "youtube_url": "https://www.youtube.com/watch?v=CUQgNgeUYGE",
-      "tiktok": null,
+      "tiktok": 1,
       "google_trends": 1,
       "nobar": null,
       "sequel_of": null,
@@ -645,7 +647,9 @@
       "day1_national_adm_show": null,
       "ow_sams": null,
       "ow_national": null,
-      "note": "Produksi TNI AL. 35Rb views. Niche audience tapi distribusi bisa kuat via institusi."
+      "note": "Produksi TNI AL. 35K views, TikTok=1, GT=1 — minimal organic buzz. Potensi nobar (Dias). 2 shows at SAMS.",
+      "sams_shows": 2,
+      "plays_at_sams": true
     }
   ],
   "last_updated": "2026-04-01"
