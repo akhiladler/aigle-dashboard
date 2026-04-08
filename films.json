@@ -647,16 +647,16 @@
       "ph": "Citra Sinema Kreasi",
       "ph_tier": "T4",
       "genre": "Drama",
-      "youtube_views": null,
-      "buzz_level": null,
-      "youtube_url": null,
+      "youtube_views": 64138,
+      "buzz_level": "RENDAH",
+      "youtube_url": "https://youtube.com/watch?v=Cr9EOETsDuU",
       "tiktok": null,
       "google_trends": null,
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "note": "Stub awaiting YouTube + Dias confirmation. Has advance ticket sales on 21cineplex (positive signal).",
-      "plays_at_sams": null
+      "note": "Has advance ticket sales on 21cineplex (positive signal). Awaiting TikTok + GT.",
+      "plays_at_sams": true
     },
     {
       "title": "Warung Pocong",
@@ -665,16 +665,16 @@
       "ph": "Entelekey Media Indonesia",
       "ph_tier": "T4",
       "genre": "Horor",
-      "youtube_views": null,
-      "buzz_level": null,
+      "youtube_views": 177075,
+      "buzz_level": "SEDANG",
       "youtube_url": null,
       "tiktok": null,
       "google_trends": null,
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "note": "Stub awaiting YouTube + Dias confirmation.",
-      "plays_at_sams": null
+      "note": "Strongest YT buzz of the 3 Apr 9 SAMS films. URL pending Milo re-fetch.",
+      "plays_at_sams": true
     },
     {
       "title": "Yohanna",
@@ -683,16 +683,16 @@
       "ph": "TBD",
       "ph_tier": null,
       "genre": "Drama",
-      "youtube_views": null,
-      "buzz_level": null,
-      "youtube_url": null,
+      "youtube_views": 47799,
+      "buzz_level": "RENDAH",
+      "youtube_url": "https://youtube.com/watch?v=efelF2ij--A",
       "tiktok": null,
       "google_trends": null,
       "nobar": false,
       "sequel_of": null,
       "calendar": "NORMAL",
-      "note": "Stub awaiting YouTube + PH confirmation from Dias.",
-      "plays_at_sams": null
+      "note": "Awaiting PH confirmation + TikTok + GT.",
+      "plays_at_sams": true
     }
   ],
   "last_updated": "2026-04-08"
