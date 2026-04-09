@@ -1,7 +1,7 @@
 {
       "meta": {
             "last_updated": "2026-04-09",
-            "total_films": 32,
+            "total_films": 33,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -799,6 +799,24 @@
                   "note": "All signals weak. TikTok 1, GT 1, YT 48K. Lowest buzz of the Apr 9 batch.",
                   "plays_at_sams": true,
                   "sams_shows": 18
+            },
+            {
+                  "title": "Crocodile Tears",
+                  "release_date": "2026-05-07",
+                  "week_label": "7 May",
+                  "ph": "Palari Films",
+                  "ph_tier": "T4",
+                  "genre": "Drama Thriller",
+                  "youtube_views": null,
+                  "buzz_level": null,
+                  "youtube_url": "https://www.youtube.com/watch?v=zNtNhvEeskQ",
+                  "tiktok": null,
+                  "google_trends": null,
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Tumpal Tampubolon's debut feature. 30+ international festivals (TIFF, Busan, BFI London). Direction Award + Film Award at Jakarta Film Week 2025. Anthony Chen produced. Tracking starts now — 4 weeks to release.",
+                  "plays_at_sams": true
             }
       ],
       "last_updated": "2026-04-09"

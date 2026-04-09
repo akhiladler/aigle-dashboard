@@ -71,6 +71,7 @@ VMS | T4 |
 Summerland | T4 | Co-producer Yohanna (Apr 2026). Source: ANTARA, Kompas.
 Reason8 Films | T4 | Co-producer Yohanna (Apr 2026). Source: KapanLagi.
 Pilgrim Film | T4 | Co-producer Yohanna (Apr 2026). Source: 21cineplex.
+Palari Films | T4 | Crocodile Tears (May 2026). Anthony Chen co-produced. 30+ festivals. Source: Variety, ANTARA.
 
 ---
 
