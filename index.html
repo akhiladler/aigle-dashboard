@@ -581,6 +581,11 @@
             background: rgba(168,85,247,0.1);
             border: 1px solid rgba(168,85,247,0.15);
         }
+        .badge-tt-sleeper {
+            color: #e879f9;
+            background: rgba(232,121,249,0.1);
+            border: 1px solid rgba(232,121,249,0.15);
+        }
         .badge-yt-only {
             color: var(--red);
             background: var(--red-dim);
@@ -1420,7 +1425,12 @@
                 const gtHigh = (gt != null && gt >= 20);
                 const hasSignals = (tt != null || gt != null);
 
-                if (buzzMed && ttLow && gtLow) {
+                // TT_SLEEPER: TikTok >= 7 but YT below SEDANG
+                // Learning from Apr 9: Ayah (TT 7, YT 64K) beat WP (TT 3, YT 129K) by 6x
+                // TikTok is a stronger signal than YT delta in RENDAH-SEDANG range
+                if (!buzzMed && ttHigh) {
+                    signalFlag = 'TT_SLEEPER';
+                } else if (buzzMed && ttLow && gtLow) {
                     signalFlag = 'YT_ONLY';
                 } else if (!buzzMed && film.nobar === true) {
                     signalFlag = 'NOBAR_OVERRIDE';
@@ -1444,6 +1454,9 @@
             }
             if (signalFlag === 'FRANCHISE') {
                 badgesHTML += '<span class="badge badge-franchise">FRANCHISE</span>';
+            }
+            if (signalFlag === 'TT_SLEEPER') {
+                badgesHTML += '<span class="badge badge-tt-sleeper">TIKTOK SLEEPER</span>';
             }
             if (signalFlag === 'YT_ONLY') {
                 badgesHTML += '<span class="badge badge-yt-only">YT ONLY</span>';
