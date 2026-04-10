@@ -1182,6 +1182,7 @@
         const filmViews = film.youtube_views || 0;
         const filmGenre = (film.genre || '').toLowerCase();
         const filmBuzz = buzzLabel(film.buzz_level);
+        const filmTT = film.tiktok;
 
         // Score each historical film (lower = better match)
         let best = null;
@@ -1191,25 +1192,37 @@
             const hViews = h.youtube_views || 0;
             const hGenre = (h.genre || '').toLowerCase();
             const hBuzz = buzzLabel(h.buzz_level);
+            const hTT = h.tiktok;
 
-            // Must be same buzz level — TINGGI matches TINGGI, not SEDANG
-            if (filmBuzz !== hBuzz) return;
+            // Must have outcome data — no point matching to unknown
+            if (h.day1_national_adm == null && h.ow_national == null) return;
 
-            // Genre match bonus (strongly prefer same genre)
-            const genreMatch = (hGenre === filmGenre) ? 0 : 100;
+            // Buzz level: same = 0, adjacent = 30, far = skip
+            let buzzDist = 0;
+            if (filmBuzz !== hBuzz) {
+                const levels = ['RENDAH', 'SEDANG', 'TINGGI'];
+                const diff = Math.abs(levels.indexOf(filmBuzz) - levels.indexOf(hBuzz));
+                if (diff > 1) return;
+                buzzDist = 30;
+            }
 
-            // View distance (on log scale for proportionality)
+            // Genre match (strongly prefer same base genre)
+            const filmBase = filmGenre.split('(')[0].trim().split(' ')[0];
+            const hBase = hGenre.split('(')[0].trim().split(' ')[0];
+            const genreMatch = (filmBase === hBase) ? 0 : 60;
+
+            // View distance (log scale)
             const logDist = Math.abs(
                 Math.log10(Math.max(filmViews, 1)) - Math.log10(Math.max(hViews, 1))
-            );
+            ) * 40;
 
-            // Skip if views are too far apart (more than 0.5 on log scale ≈ 3x difference)
-            if (logDist > 0.5) return;
+            // TikTok similarity (learned Apr 10: TT matters more than YT delta)
+            let ttDist = 0;
+            if (filmTT != null && hTT != null) {
+                ttDist = Math.abs(filmTT - hTT) * 5;
+            }
 
-            // Prefer matches with outcome data
-            const hasOutcome = (h.day1_national_adm_show != null || h.ow_national != null) ? 0 : 50;
-
-            const score = genreMatch + logDist + hasOutcome;
+            const score = buzzDist + genreMatch + logDist + ttDist;
 
             if (score < bestScore) {
                 bestScore = score;
@@ -1511,11 +1524,30 @@
                 '</div>' +
                 '</div>';
 
-            // SAMs allocation bar (only for films with show data)
+            // SAMs Day 1 allocation (snapshot, not live)
             if (hasSamsShows) {
                 html += '<div style="margin: 8px 0 4px; padding: 10px 14px; background: linear-gradient(135deg, rgba(218,165,32,0.08) 0%, rgba(218,165,32,0.03) 100%); border: 1px solid rgba(218,165,32,0.18); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">' +
-                    '<span style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><img src="sams-logo.png" alt="SAMs" style="height: 16px; width: 16px; object-fit: contain; border-radius: 3px;"> Alokasi SAMs</span>' +
-                    '<span style="font-size: 18px; font-weight: 900; color: var(--gold); text-shadow: 0 0 8px rgba(218,165,32,0.2);">' + samsShows + ' Tayang</span>' +
+                    '<span style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><img src="sams-logo.png" alt="SAMs" style="height: 16px; width: 16px; object-fit: contain; border-radius: 3px;"> Alokasi SAMs (Hari 1)</span>' +
+                    '<span style="font-size: 18px; font-weight: 900; color: var(--gold); text-shadow: 0 0 8px rgba(218,165,32,0.2);">' + samsShows + ' Shows</span>' +
+                    '</div>';
+            }
+
+            // Comparable film insight — the killer feature
+            if (similar) {
+                const simD1 = similar.day1_national_adm;
+                const simOW = similar.ow_national;
+                let simText = 'Sinyal mirip dengan <strong>' + esc(similar.title) + '</strong>';
+                if (simD1 != null) {
+                    simText += ' yang meraih ' + simD1.toLocaleString() + ' penonton Hari 1';
+                    if (simOW != null) simText += ' dan ' + simOW.toLocaleString() + ' OW';
+                } else if (simOW != null) {
+                    simText += ' yang meraih ' + simOW.toLocaleString() + ' OW';
+                }
+                simText += '.';
+
+                html += '<div style="margin: 8px 0 4px; padding: 10px 14px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; display: flex; align-items: flex-start; gap: 8px;">' +
+                    '<span style="font-size: 12px; flex-shrink: 0;">&#x1F50D;</span>' +
+                    '<span style="font-size: 11px; color: var(--text-secondary); line-height: 1.5;">' + simText + '</span>' +
                     '</div>';
             }
 
