@@ -1649,7 +1649,7 @@
     // -----------------------------------------------------------
 
     function renderUpcoming(data) {
-        const { upcoming } = data;
+        const { upcoming, history } = data;
         const container = document.getElementById('upcomingCards');
         if (!upcoming || upcoming.length === 0) {
             container.innerHTML = '<div style="text-align:center;padding:32px 0;color:var(--text-muted);font-size:13px;">Tidak ada film mendatang.</div>';
@@ -1661,6 +1661,9 @@
             String(today.getMonth() + 1).padStart(2, '0') + '-' +
             String(today.getDate()).padStart(2, '0');
 
+        // All films with outcomes for benchmarking
+        const allWithOutcomes = history.filter(h => h.day1_national_adm != null);
+
         let html = '';
 
         upcoming.forEach(function(film) {
@@ -1668,6 +1671,18 @@
             const buzz = buzzLabel(film.buzz_level);
             const bClass = buzzClass(film.buzz_level);
             const daysOut = daysBetween(todayStr, film.release_date);
+
+            // Find comparable film
+            const similar = findSimilar(film, history);
+
+            // Find range for this buzz level from historical data
+            const sameBuzz = allWithOutcomes.filter(h => buzzLabel(h.buzz_level) === buzz);
+            let rangeMin = null, rangeMax = null;
+            if (sameBuzz.length >= 2) {
+                const d1s = sameBuzz.map(h => h.day1_national_adm).sort((a,b) => a - b);
+                rangeMin = d1s[0];
+                rangeMax = d1s[d1s.length - 1];
+            }
 
             html += '<div style="position:relative;background:linear-gradient(135deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.01) 100%);border:1px solid rgba(59,130,246,0.12);border-radius:14px;padding:20px;margin-bottom:12px;overflow:hidden;">' +
                 '<div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg, var(--blue), rgba(59,130,246,0.3));"></div>' +
@@ -1683,19 +1698,46 @@
                     '</div>' +
                 '</div>';
 
-            if (film.note) {
-                html += '<div class="film-note" style="border-left-color:var(--blue);">' +
-                    '<span class="film-note-icon">&#x1F4A1;</span>' +
-                    '<span class="film-note-text" style="color:var(--blue);">' + esc(film.note) + '</span>' +
-                    '</div>';
-            }
-
+            // Stats row
             html += '<div class="stats-grid">' +
                 '<div class="stat-cell"><span class="stat-label">YouTube</span><span class="stat-value ' + bClass + '">' + fmtViews(views) + '</span></div>' +
                 '<div class="stat-cell"><span class="stat-label">TikTok</span><span class="stat-value ' + ((film.tiktok != null) ? '' : 'empty') + '">' + ((film.tiktok != null) ? film.tiktok + '/10' : '—') + '</span></div>' +
                 '<div class="stat-cell"><span class="stat-label">G. Trends</span><span class="stat-value ' + ((film.google_trends != null && film.google_trends > 0) ? '' : 'empty') + '">' + ((film.google_trends != null) ? film.google_trends : '—') + '</span></div>' +
                 '<div class="stat-cell"><span class="stat-label">Buzz</span><span class="stat-value ' + bClass + '">' + buzz + '</span></div>' +
                 '</div>';
+
+            // Comparable film insight
+            if (similar) {
+                const simD1 = similar.day1_national_adm;
+                const simOW = similar.ow_national;
+                let simText = 'Sinyal mirip dengan <strong>' + esc(similar.title) + '</strong>';
+                if (simD1 != null) {
+                    simText += ' yang meraih ' + simD1.toLocaleString() + ' penonton Hari 1';
+                    if (simOW != null) simText += ' dan ' + simOW.toLocaleString() + ' OW';
+                }
+                simText += '.';
+
+                html += '<div style="margin: 8px 0 4px; padding: 10px 14px; background: rgba(59,130,246,0.04); border: 1px solid rgba(59,130,246,0.1); border-radius: 8px; display: flex; align-items: flex-start; gap: 8px;">' +
+                    '<span style="font-size: 12px; flex-shrink: 0;">&#x1F50D;</span>' +
+                    '<span style="font-size: 11px; color: var(--text-secondary); line-height: 1.5;">' + simText + '</span>' +
+                    '</div>';
+            }
+
+            // Historical range for this buzz level
+            if (rangeMin != null && rangeMax != null) {
+                html += '<div style="margin: 4px 0; padding: 10px 14px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; display: flex; align-items: flex-start; gap: 8px;">' +
+                    '<span style="font-size: 12px; flex-shrink: 0;">&#x1F4CA;</span>' +
+                    '<span style="font-size: 11px; color: var(--text-secondary); line-height: 1.5;">Film ' + buzz + ' di database: Hari 1 antara <strong>' + rangeMin.toLocaleString() + '</strong> dan <strong>' + rangeMax.toLocaleString() + '</strong> penonton nasional.</span>' +
+                    '</div>';
+            }
+
+            // Note (moved to bottom, after insights)
+            if (film.note) {
+                html += '<div class="film-note" style="border-left-color:var(--blue);">' +
+                    '<span class="film-note-icon">&#x1F4A1;</span>' +
+                    '<span class="film-note-text" style="color:var(--blue);">' + esc(film.note) + '</span>' +
+                    '</div>';
+            }
 
             html += '</div>';
         });
