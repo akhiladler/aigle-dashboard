@@ -1,6 +1,6 @@
 {
       "meta": {
-            "last_updated": "2026-04-09",
+            "last_updated": "2026-04-10",
             "total_films": 33,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
@@ -759,7 +759,11 @@
                   "calendar": "NORMAL",
                   "note": "TikTok 7 = strongest social signal of the 3 Apr 9 films. Advance ticket sales on 21cineplex.",
                   "plays_at_sams": true,
-                  "sams_shows": 61
+                  "sams_shows": 61,
+                  "day1_national_adm": 82500,
+                  "day1_national_screens": 1521,
+                  "day1_national_adm_show": 54.2,
+                  "day1_source": "Cinepoint 10 Apr 2026"
             },
             {
                   "title": "Warung Pocong",
@@ -778,7 +782,11 @@
                   "calendar": "NORMAL",
                   "note": "Strongest YT buzz of the 3 Apr 9 SAMS films. Horror genre — typically front-loaded weekend openers.",
                   "plays_at_sams": true,
-                  "sams_shows": 54
+                  "sams_shows": 54,
+                  "day1_national_adm": 14312,
+                  "day1_national_screens": 758,
+                  "day1_national_adm_show": 18.9,
+                  "day1_source": "Cinepoint 10 Apr 2026"
             },
             {
                   "title": "Yohanna",
@@ -798,7 +806,11 @@
                   "calendar": "NORMAL",
                   "note": "All signals weak. TikTok 1, GT 1, YT 48K. Lowest buzz of the Apr 9 batch.",
                   "plays_at_sams": true,
-                  "sams_shows": 18
+                  "sams_shows": 18,
+                  "day1_national_adm": 1684,
+                  "day1_national_screens": 126,
+                  "day1_national_adm_show": 13.4,
+                  "day1_source": "Cinepoint 10 Apr 2026"
             },
             {
                   "title": "Crocodile Tears",
@@ -807,17 +819,17 @@
                   "ph": "Palari Films",
                   "ph_tier": "T4",
                   "genre": "Drama Thriller",
-                  "youtube_views": 151,
+                  "youtube_views": 3000,
                   "buzz_level": "RENDAH",
-                  "youtube_url": "https://www.youtube.com/watch?v=zNtNhvEeskQ",
+                  "youtube_url": "https://www.youtube.com/watch?v=CGV_CT_URL",
                   "tiktok": null,
                   "google_trends": null,
                   "nobar": false,
                   "sequel_of": null,
                   "calendar": "NORMAL",
-                  "note": "Tumpal Tampubolon's debut feature. 30+ international festivals (TIFF, Busan, BFI London). Direction Award + Film Award at Jakarta Film Week 2025. Anthony Chen produced. Official trailer dropped Apr 6 via Cinepolis Indonesia — 151 views, 4 weeks to release. Festival darling but zero mainstream buzz yet.",
+                  "note": "Debut feature Tumpal Tampubolon. 30+ festival internasional (TIFF, Busan, BFI London). Direction Award + Film Award di JFW 2025. Produser: Anthony Chen (Palari Films). Trailer CGV: 3Rb views (4 hari). Trailer festival (Talamedia): 27Rb views (1 tahun). Buzz mainstream masih sangat rendah.",
                   "plays_at_sams": true
             }
       ],
-      "last_updated": "2026-04-09"
+      "last_updated": "2026-04-10"
 }

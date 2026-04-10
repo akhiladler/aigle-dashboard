@@ -383,6 +383,66 @@
         }
 
         /* ============================================================
+           TAB NAVIGATION
+           ============================================================ */
+
+        .tab-nav {
+            display: flex;
+            gap: 4px;
+            padding: 20px 24px 0;
+            margin-bottom: 0;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px 6px;
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-secondary);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .tab-btn.active {
+            color: var(--gold);
+            background: var(--bg-card);
+            border-color: var(--gold-dim);
+        }
+
+        .tab-btn .tab-count {
+            font-size: 9px;
+            font-weight: 800;
+            opacity: 0.6;
+            margin-left: 4px;
+        }
+
+        .tab-content {
+            display: none;
+            border: 1px solid var(--border-subtle);
+            border-top: 1px solid var(--gold-dim);
+            border-radius: 0 0 14px 14px;
+            margin: 0 24px;
+            padding: 16px;
+            background: rgba(255,255,255,0.01);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ============================================================
            SECTION 4: FILM CARDS
            ============================================================ */
 
@@ -599,7 +659,7 @@
            ============================================================ */
 
         .week-strength {
-            margin: 24px 24px 0;
+            margin: 16px 0 0;
             padding: 18px;
             border-radius: 14px;
             border: 1px solid var(--border-subtle);
@@ -854,14 +914,28 @@
             </div>
         </div>
 
-        <!-- SECTION 4: FILM CARDS -->
-        <div class="cards-section">
-            <div class="section-label">Film Minggu Ini</div>
-            <div id="filmCards"></div>
+        <!-- TAB NAVIGATION -->
+        <div class="tab-nav" id="tabNav">
+            <button class="tab-btn active" data-tab="minggu-ini" id="tabBtnMinggu">Minggu Ini<span class="tab-count" id="tabCountMinggu"></span></button>
+            <button class="tab-btn" data-tab="mendatang" id="tabBtnMendatang">Mendatang<span class="tab-count" id="tabCountMendatang"></span></button>
+            <button class="tab-btn" data-tab="riwayat" id="tabBtnRiwayat">Riwayat<span class="tab-count" id="tabCountRiwayat"></span></button>
         </div>
 
-        <!-- SECTION 5: WEEK STRENGTH -->
-        <div id="weekStrengthSection"></div>
+        <!-- TAB: MINGGU INI -->
+        <div class="tab-content active" id="tabMingguIni">
+            <div id="filmCards"></div>
+            <div id="weekStrengthSection" style="margin-top: 16px;"></div>
+        </div>
+
+        <!-- TAB: MENDATANG -->
+        <div class="tab-content" id="tabMendatang">
+            <div id="upcomingCards"></div>
+        </div>
+
+        <!-- TAB: RIWAYAT -->
+        <div class="tab-content" id="tabRiwayat">
+            <div id="historyCards"></div>
+        </div>
 
         <!-- SECTION 6: FOOTER -->
         <div class="footer">
@@ -1022,15 +1096,29 @@
         // Sort by release_date descending to find the most recent week
         films.sort((a, b) => b.release_date.localeCompare(a.release_date));
 
-        // The most recent release_date is "this week"
-        const latestDate = films[0].release_date;
+        // Separate upcoming films (>14 days from today) from current/historical
+        const today = new Date();
+        const cutoff = new Date(today);
+        cutoff.setDate(cutoff.getDate() + 14);
+        const cutoffStr = cutoff.getFullYear() + '-' +
+            String(cutoff.getMonth() + 1).padStart(2, '0') + '-' +
+            String(cutoff.getDate()).padStart(2, '0');
+
+        const upcoming = films
+            .filter(f => f.release_date > cutoffStr)
+            .sort((a, b) => a.release_date.localeCompare(b.release_date));
+
+        const currentFilms = films.filter(f => f.release_date <= cutoffStr);
+
+        // The most recent release_date among current films is "this week"
+        const latestDate = currentFilms.length > 0 ? currentFilms[0].release_date : films[0].release_date;
 
         // Split into this week and history
-        const thisWeek = films
+        const thisWeek = currentFilms
             .filter(f => f.release_date === latestDate)
             .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
 
-        const history = films
+        const history = currentFilms
             .filter(f => f.release_date !== latestDate)
             .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
 
@@ -1062,6 +1150,7 @@
             films,
             thisWeek,
             history,
+            upcoming,
             latestDate,
             minViews,
             maxViews,
@@ -1412,8 +1501,8 @@
             // SAMs allocation bar (only for films with show data)
             if (hasSamsShows) {
                 html += '<div style="margin: 8px 0 4px; padding: 10px 14px; background: linear-gradient(135deg, rgba(218,165,32,0.08) 0%, rgba(218,165,32,0.03) 100%); border: 1px solid rgba(218,165,32,0.18); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">' +
-                    '<span style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><img src="sams-logo.png" alt="SAMs" style="height: 16px; width: 16px; object-fit: contain; border-radius: 3px;"> SAMs Allocation</span>' +
-                    '<span style="font-size: 18px; font-weight: 900; color: var(--gold); text-shadow: 0 0 8px rgba(218,165,32,0.2);">' + samsShows + ' Show</span>' +
+                    '<span style="font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><img src="sams-logo.png" alt="SAMs" style="height: 16px; width: 16px; object-fit: contain; border-radius: 3px;"> Alokasi SAMs</span>' +
+                    '<span style="font-size: 18px; font-weight: 900; color: var(--gold); text-shadow: 0 0 8px rgba(218,165,32,0.2);">' + samsShows + ' Tayang</span>' +
                     '</div>';
             }
 
@@ -1511,6 +1600,145 @@
 
 
     // -----------------------------------------------------------
+    // RENDER: UPCOMING FILMS
+    // -----------------------------------------------------------
+
+    function renderUpcoming(data) {
+        const { upcoming } = data;
+        const container = document.getElementById('upcomingCards');
+        if (!upcoming || upcoming.length === 0) {
+            container.innerHTML = '<div style="text-align:center;padding:32px 0;color:var(--text-muted);font-size:13px;">Tidak ada film mendatang.</div>';
+            return;
+        }
+
+        const today = new Date();
+        const todayStr = today.getFullYear() + '-' +
+            String(today.getMonth() + 1).padStart(2, '0') + '-' +
+            String(today.getDate()).padStart(2, '0');
+
+        let html = '';
+
+        upcoming.forEach(function(film) {
+            const views = film.youtube_views || 0;
+            const buzz = buzzLabel(film.buzz_level);
+            const bClass = buzzClass(film.buzz_level);
+            const daysOut = daysBetween(todayStr, film.release_date);
+
+            html += '<div style="position:relative;background:linear-gradient(135deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.01) 100%);border:1px solid rgba(59,130,246,0.12);border-radius:14px;padding:20px;margin-bottom:12px;overflow:hidden;">' +
+                '<div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg, var(--blue), rgba(59,130,246,0.3));"></div>' +
+                '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">' +
+                    '<div>' +
+                        '<div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:3px;">' + esc(film.title) + '</div>' +
+                        '<div style="font-size:11px;font-weight:500;color:var(--text-muted);letter-spacing:0.2px;">' +
+                            esc(film.ph) + ' &bull; ' + esc(film.genre) + ' &bull; ' + esc(film.ph_tier) + ' &bull; Rilis ' + fmtDate(film.release_date) +
+                        '</div>' +
+                    '</div>' +
+                    '<div style="flex-shrink:0;background:rgba(59,130,246,0.12);color:var(--blue);font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px;letter-spacing:0.5px;">' +
+                        daysOut + ' hari lagi' +
+                    '</div>' +
+                '</div>';
+
+            if (film.note) {
+                html += '<div class="film-note" style="border-left-color:var(--blue);">' +
+                    '<span class="film-note-icon">&#x1F4A1;</span>' +
+                    '<span class="film-note-text" style="color:var(--blue);">' + esc(film.note) + '</span>' +
+                    '</div>';
+            }
+
+            html += '<div class="stats-grid">' +
+                '<div class="stat-cell"><span class="stat-label">YouTube</span><span class="stat-value ' + bClass + '">' + fmtViews(views) + '</span></div>' +
+                '<div class="stat-cell"><span class="stat-label">TikTok</span><span class="stat-value ' + ((film.tiktok != null) ? '' : 'empty') + '">' + ((film.tiktok != null) ? film.tiktok + '/10' : '—') + '</span></div>' +
+                '<div class="stat-cell"><span class="stat-label">G. Trends</span><span class="stat-value ' + ((film.google_trends != null && film.google_trends > 0) ? '' : 'empty') + '">' + ((film.google_trends != null) ? film.google_trends : '—') + '</span></div>' +
+                '<div class="stat-cell"><span class="stat-label">Buzz</span><span class="stat-value ' + bClass + '">' + buzz + '</span></div>' +
+                '</div>';
+
+            html += '</div>';
+        });
+
+        container.innerHTML = html;
+    }
+
+
+    // -----------------------------------------------------------
+    // RENDER: HISTORY (RIWAYAT)
+    // -----------------------------------------------------------
+
+    function renderHistory(data) {
+        const { history } = data;
+        const container = document.getElementById('historyCards');
+        if (!history || history.length === 0) {
+            container.innerHTML = '<div style="text-align:center;padding:32px 0;color:var(--text-muted);font-size:13px;">Tidak ada riwayat.</div>';
+            return;
+        }
+
+        // Group by week
+        const weekMap = {};
+        history.forEach(function(f) {
+            const wk = f.week_label || f.release_date;
+            if (!weekMap[wk]) weekMap[wk] = [];
+            weekMap[wk].push(f);
+        });
+
+        // Sort weeks by release_date descending
+        const weeks = Object.keys(weekMap).sort(function(a, b) {
+            const dateA = weekMap[a][0].release_date;
+            const dateB = weekMap[b][0].release_date;
+            return dateB.localeCompare(dateA);
+        });
+
+        let html = '';
+
+        weeks.forEach(function(wk) {
+            const films = weekMap[wk].sort(function(a, b) {
+                return (b.youtube_views || 0) - (a.youtube_views || 0);
+            });
+
+            html += '<div style="margin-bottom: 20px;">' +
+                '<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.04);">Rilis ' + esc(wk) + ' &bull; ' + films.length + ' film</div>';
+
+            films.forEach(function(film) {
+                const views = film.youtube_views || 0;
+                const buzz = buzzLabel(film.buzz_level);
+                const bClass = buzzClass(film.buzz_level);
+                const d1 = film.day1_national_adm;
+                const ow = film.ow_national;
+
+                html += '<div style="position:relative;background:var(--bg-card);border:1px solid var(--border-card);border-radius:10px;padding:14px 16px;margin-bottom:8px;overflow:hidden;">' +
+                    '<div style="position:absolute;top:0;left:0;width:2px;height:100%;background:var(--text-dim);"></div>' +
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;">' +
+                        '<div style="flex:1;">' +
+                            '<div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;">' + esc(film.title) + '</div>' +
+                            '<div style="font-size:10px;color:var(--text-muted);">' + esc(film.ph) + ' &bull; ' + esc(film.genre) + ' &bull; ' + esc(film.ph_tier) + '</div>' +
+                        '</div>' +
+                        '<div style="text-align:right;flex-shrink:0;margin-left:12px;">' +
+                            '<div style="font-size:13px;font-weight:700;" class="' + bClass + '">' + fmtViews(views) + '</div>' +
+                            '<div style="font-size:8px;font-weight:600;letter-spacing:1px;color:var(--text-muted);">YT</div>' +
+                        '</div>' +
+                    '</div>';
+
+                // Outcome row if available
+                if (d1 != null || ow != null) {
+                    html += '<div style="display:flex;gap:16px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.03);">';
+                    if (d1 != null) {
+                        html += '<div style="font-size:11px;color:var(--text-sec);"><span style="color:var(--text-muted);font-weight:600;">H1:</span> <span style="font-weight:700;color:#fff;">' + d1.toLocaleString() + '</span></div>';
+                    }
+                    if (ow != null) {
+                        html += '<div style="font-size:11px;color:var(--text-sec);"><span style="color:var(--text-muted);font-weight:600;">OW:</span> <span style="font-weight:700;color:#fff;">' + ow.toLocaleString() + '</span></div>';
+                    }
+                    html += '</div>';
+                }
+
+                html += '</div>';
+            });
+
+            html += '</div>';
+        });
+
+        container.innerHTML = html;
+    }
+
+
+    // -----------------------------------------------------------
     // RENDER: FOOTER
     // -----------------------------------------------------------
 
@@ -1524,6 +1752,31 @@
     // MAIN: LOAD AND RENDER
     // -----------------------------------------------------------
 
+    // -----------------------------------------------------------
+    // TAB SWITCHING
+    // -----------------------------------------------------------
+
+    function initTabs() {
+        var btns = document.querySelectorAll('.tab-btn');
+        btns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var tabId = btn.getAttribute('data-tab');
+                // Deactivate all
+                btns.forEach(function(b) { b.classList.remove('active'); });
+                document.querySelectorAll('.tab-content').forEach(function(tc) { tc.classList.remove('active'); });
+                // Activate clicked
+                btn.classList.add('active');
+                var targetMap = {
+                    'minggu-ini': 'tabMingguIni',
+                    'mendatang': 'tabMendatang',
+                    'riwayat': 'tabRiwayat'
+                };
+                document.getElementById(targetMap[tabId]).classList.add('active');
+            });
+        });
+    }
+
+
     async function init() {
         try {
             const films = await loadData();
@@ -1533,13 +1786,28 @@
             document.getElementById('loadingState').style.display = 'none';
             document.getElementById('dashboard').classList.add('loaded');
 
+            // Tab counts
+            document.getElementById('tabCountMinggu').textContent = ' (' + data.thisWeek.length + ')';
+            document.getElementById('tabCountMendatang').textContent = data.upcoming.length > 0 ? ' (' + data.upcoming.length + ')' : '';
+            document.getElementById('tabCountRiwayat').textContent = ' (' + data.history.length + ')';
+
+            // Hide mendatang tab if no upcoming films
+            if (data.upcoming.length === 0) {
+                document.getElementById('tabBtnMendatang').style.display = 'none';
+            }
+
             // Render all sections
             renderHeader(data);
             renderHeadline(data);
             renderSpectrum(data);
             renderCards(data);
             renderWeekStrength(data);
+            renderUpcoming(data);
+            renderHistory(data);
             renderFooter(data);
+
+            // Init tab switching
+            initTabs();
 
         } catch (err) {
             // Show error state

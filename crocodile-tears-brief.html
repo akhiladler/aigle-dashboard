@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AIGLE — Buzz Brief: Crocodile Tears</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #050507;
+            --bg-card: rgba(255,255,255,0.025);
+            --border: rgba(255,255,255,0.08);
+            --gold: #daa520;
+            --gold-dim: #8b6914;
+            --blue: #3b82f6;
+            --red: #dc2626;
+            --yellow: #eab308;
+            --green: #22c55e;
+            --text: #f0f0f0;
+            --text-sec: #999;
+            --text-muted: #555;
+            --text-dim: #333;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 0 24px 64px;
+        }
+
+        .brief-header {
+            padding: 48px 0 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .brief-tag {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 12px;
+        }
+
+        .brief-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .brief-subtitle {
+            font-size: 14px;
+            color: var(--text-sec);
+            line-height: 1.6;
+        }
+
+        .brief-date {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        /* Big number callout */
+        .big-number {
+            text-align: center;
+            padding: 28px 20px;
+            border-radius: 14px;
+            margin-bottom: 16px;
+        }
+
+        .big-number-value {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .big-number-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 8px;
+        }
+
+        .big-number-context {
+            font-size: 12px;
+            color: var(--text-sec);
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* Identity card */
+        .identity-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .identity-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 13px;
+        }
+
+        .identity-label {
+            color: var(--text-sec);
+            font-weight: 500;
+        }
+
+        .identity-value {
+            color: #fff;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .identity-row + .identity-row {
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        /* Benchmark table */
+        .benchmark-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .benchmark-table th {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-align: left;
+            padding: 8px 6px 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .benchmark-table td {
+            padding: 10px 6px 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            color: var(--text-sec);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .benchmark-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .benchmark-table .val {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .benchmark-table .you-row td {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        /* Insight boxes */
+        .insight-box {
+            padding: 16px 18px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .insight-problem {
+            background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(220,38,38,0.02) 100%);
+            border: 1px solid rgba(220,38,38,0.15);
+            border-left: 3px solid var(--red);
+            color: var(--text-sec);
+        }
+
+        .insight-data {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--yellow);
+            color: var(--text-sec);
+        }
+
+        .insight-action {
+            background: linear-gradient(135deg, rgba(218,165,32,0.08) 0%, rgba(218,165,32,0.03) 100%);
+            border: 1px solid rgba(218,165,32,0.18);
+            border-left: 3px solid var(--gold);
+            color: var(--text-sec);
+        }
+
+        .insight-label {
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .insight-problem .insight-label { color: var(--red); }
+        .insight-data .insight-label { color: var(--yellow); }
+        .insight-action .insight-label { color: var(--gold); }
+
+        /* Verdict */
+        .verdict {
+            background: linear-gradient(135deg, rgba(220,38,38,0.06) 0%, rgba(220,38,38,0.02) 100%);
+            border: 1px solid rgba(220,38,38,0.12);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .verdict-label {
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--red);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .verdict-text {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        .verdict-sub {
+            font-size: 12px;
+            color: var(--text-sec);
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 4px;
+            bottom: 4px;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 6px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--text-dim);
+            border: 2px solid var(--bg);
+        }
+
+        .timeline-item.danger::before {
+            background: var(--red);
+            box-shadow: 0 0 8px rgba(220,38,38,0.4);
+        }
+
+        .timeline-item.target::before {
+            background: var(--gold);
+            box-shadow: 0 0 8px rgba(218,165,32,0.4);
+        }
+
+        .timeline-date {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .timeline-text {
+            font-size: 13px;
+            color: var(--text-sec);
+            line-height: 1.5;
+        }
+
+        .timeline-item.danger .timeline-date { color: var(--red); }
+        .timeline-item.target .timeline-date { color: var(--gold); }
+
+        .brief-footer {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .brief-footer-brand {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--text-dim);
+        }
+
+        .brief-footer-note {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        strong { color: #fff; font-weight: 700; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="brief-header">
+        <div class="brief-tag">Aigle Buzz Brief — Pra-Rilis</div>
+        <div class="brief-title">Crocodile Tears</div>
+        <div class="brief-subtitle">27 hari sebelum rilis. Laporan ini berdasarkan data dari 33 film Indonesia yang dilacak Aigle sejak Desember 2025. Bukan opini — angka.</div>
+        <div class="brief-date">10 April 2026 &bull; Rilis: 7 Mei 2026</div>
+    </div>
+
+    <!-- THE PROBLEM: LEAD WITH IT -->
+    <div class="section">
+        <div class="section-title">Posisi Saat Ini</div>
+
+        <div class="big-number" style="background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(220,38,38,0.02) 100%); border: 1px solid rgba(220,38,38,0.12);">
+            <div class="big-number-value" style="color: var(--yellow);">3 Rb</div>
+            <div class="big-number-label" style="color: var(--yellow);">tayangan YouTube (CGV) &bull; 27 hari sebelum rilis</div>
+            <div class="big-number-context">Trailer CGV Kreasi, 4 hari sejak upload. Trailer festival (Talamedia) sudah 27.000 views dalam setahun. Tapi yang menentukan alokasi layar bioskop adalah buzz mainstream saat ini — dan 3.000 views masih sangat rendah.</div>
+        </div>
+
+        <div class="insight-problem">
+            <div class="insight-label">Tantangan Utama</div>
+            Prestasi festival dan performa box office domestik adalah dua dunia yang berbeda. TIFF, Busan, BFI London — ini membuka pintu distribusi dan kredibilitas. <strong>Tapi belum pernah cukup untuk mengisi kursi bioskop di Indonesia tanpa kampanye pemasaran yang tepat.</strong> Dari 33 film di database kami, pola ini konsisten: yang menentukan Hari 1 adalah awareness mainstream, bukan penghargaan. 3.000 views di CGV setelah 4 hari = awal yang perlu dipercepat.
+        </div>
+    </div>
+
+    <!-- DATA: WHAT THE NUMBERS SAY -->
+    <div class="section">
+        <div class="section-title">Data Tidak Berbohong</div>
+
+        <table class="benchmark-table">
+            <tr>
+                <th>Film (T4 Drama)</th>
+                <th>YT</th>
+                <th>Hari 1</th>
+                <th>OW</th>
+                <th>Adm/Tay</th>
+            </tr>
+            <tr>
+                <td>Taneuh Kalaknat</td>
+                <td class="val">3.199</td>
+                <td class="val">1.023</td>
+                <td>—</td>
+                <td class="val">25</td>
+            </tr>
+            <tr>
+                <td>Antara Mama, Cinta...</td>
+                <td class="val">7.215</td>
+                <td class="val">7.841</td>
+                <td class="val">27.149</td>
+                <td class="val">121</td>
+            </tr>
+            <tr>
+                <td>Jangan Seperti Bapak</td>
+                <td class="val">16.671</td>
+                <td class="val">9.479</td>
+                <td class="val">15.514</td>
+                <td class="val">107</td>
+            </tr>
+            <tr>
+                <td>Titip Bunda di Surga-Mu</td>
+                <td class="val">310.977</td>
+                <td class="val">16.629</td>
+                <td class="val">46.711</td>
+                <td class="val">195</td>
+            </tr>
+            <tr class="you-row">
+                <td>Crocodile Tears</td>
+                <td>3.000</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+            </tr>
+        </table>
+        <div style="font-size: 11px; color: var(--text-muted); margin-top: 12px; line-height: 1.5;">
+            Adm/Tay = admisi per tayang (Hari 1). Sumber admisi: Cinepoint. Film terurut dari YT terendah ke tertinggi.
+        </div>
+
+        <div class="insight-data" style="margin-top: 16px;">
+            <div class="insight-label">Pola yang Kami Lihat</div>
+            Film T4 drama dengan YT di bawah 5.000 views: <strong>Hari 1 di bawah 2.000 penonton nasional.</strong> Film T4 drama dengan YT 7.000-17.000: Hari 1 antara 7.000-10.000. Korelasi ini konsisten di seluruh 33 film (r=0.704). YouTube views adalah indikator terkuat untuk Hari 1. <strong>Crocodile Tears (3.000 views, CGV) saat ini setara dengan Taneuh Kalaknat (3.199 views) yang meraih hanya 1.023 penonton Hari 1.</strong>
+        </div>
+    </div>
+
+    <!-- THE UNCOMFORTABLE QUESTIONS -->
+    <div class="section">
+        <div class="section-title">Pertanyaan yang Harus Dijawab</div>
+
+        <div class="insight-problem">
+            <div class="insight-label">1. Siapa Target Penontonnya?</div>
+            Festival audience dan bioskop audience adalah dua populasi yang nyaris tidak overlap di Indonesia. Film ini harus memilih: apakah ini rilis "prestige" yang puas dengan 5.000-10.000 OW, atau ada ambisi mainstream? Jawaban ini menentukan semua keputusan lain.
+        </div>
+
+        <div class="insight-problem" style="margin-top: 12px;">
+            <div class="insight-label">2. Di Mana Kampanye Pemasarannya?</div>
+            Trailer drop di Cinepolis Indonesia — bukan 21cineplex (jaringan terbesar), bukan CGV, bukan kanal film utama. 4 hari sejak upload, 3.000 views. Sebagai perbandingan: bahkan film T4 terlemah di database kami (Taneuh Kalaknat, 3.199 views) punya 20x lipat. <strong>Apakah ada rencana distribusi trailer yang lebih luas?</strong>
+        </div>
+
+        <div class="insight-problem" style="margin-top: 12px;">
+            <div class="insight-label">3. Anthony Chen Dimanfaatkan?</div>
+            Anthony Chen (Ilo Ilo, Wet Season) sebagai produser = PR asset yang kuat. Tapi asset hanya bernilai jika dipakai. Apakah sudah ada feature article? Interview? Press release? Jika belum — 27 hari bukan waktu yang banyak.
+        </div>
+    </div>
+
+    <!-- WHAT NEEDS TO HAPPEN -->
+    <div class="section">
+        <div class="section-title">Apa yang Harus Terjadi</div>
+
+        <div class="timeline">
+            <div class="timeline-item danger">
+                <div class="timeline-date">Sekarang — Kritis</div>
+                <div class="timeline-text"><strong>Trailer harus ada di 21cineplex, CGV, dan minimal 3 media film dalam 7 hari.</strong> Setiap hari tanpa distribusi trailer adalah hari yang tidak bisa diambil kembali.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Minggu 2 (17-24 Apr)</div>
+                <div class="timeline-text">Jika views masih di bawah 5.000 pada tanggal 24 April, alarm serius. Artinya bahkan dengan distribusi, konten trailer tidak cukup menarik perhatian mainstream. Pertimbangkan: clip alternatif, behind-the-scenes, atau angle festival yang di-repackage untuk audience lokal.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Minggu 3 (24 Apr - 1 Mei)</div>
+                <div class="timeline-text">TikTok seeding dan NOBAR (preview screening). Ini bukan opsional untuk film T4 tanpa YT buzz — ini satu-satunya cara membangun word-of-mouth yang bisa mengkompensasi lemahnya sinyal digital.</div>
+            </div>
+            <div class="timeline-item target">
+                <div class="timeline-date">1-7 Mei — Minggu Rilis</div>
+                <div class="timeline-text">Alokasi layar sudah ditentukan. Di titik ini, data berbicara. Aigle akan update brief final dengan posisi sinyal terbaru.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REALISTIC SCENARIOS -->
+    <div class="section">
+        <div class="section-title">Skenario Realistis</div>
+
+        <div style="display: grid; gap: 12px;">
+            <div style="background: linear-gradient(135deg, rgba(220,38,38,0.06) 0%, transparent 100%); border: 1px solid rgba(220,38,38,0.1); border-radius: 10px; padding: 16px;">
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1.5px; color: var(--red); text-transform: uppercase; margin-bottom: 4px;">Jika YT tetap di bawah 5.000</div>
+                <div style="font-size: 13px; color: var(--text-sec); line-height: 1.6;">Hari 1: <strong>500-2.000</strong> penonton nasional. Alokasi layar minimal. Film bergantung sepenuhnya pada word-of-mouth dan legs. Ini adalah skenario paling mungkin saat ini.</div>
+            </div>
+            <div style="background: linear-gradient(135deg, rgba(234,179,8,0.06) 0%, transparent 100%); border: 1px solid rgba(234,179,8,0.1); border-radius: 10px; padding: 16px;">
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1.5px; color: var(--yellow); text-transform: uppercase; margin-bottom: 4px;">Jika YT tembus 10.000-50.000</div>
+                <div style="font-size: 13px; color: var(--text-sec); line-height: 1.6;">Hari 1: <strong>5.000-10.000.</strong> Alokasi layar kompetitif. Film punya fighting chance. Tapi ini butuh kampanye pemasaran yang agresif mulai hari ini.</div>
+            </div>
+            <div style="background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, transparent 100%); border: 1px solid rgba(34,197,94,0.1); border-radius: 10px; padding: 16px;">
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1.5px; color: var(--green); text-transform: uppercase; margin-bottom: 4px;">Jika YT tembus 100.000+</div>
+                <div style="font-size: 13px; color: var(--text-sec); line-height: 1.6;">Hari 1: <strong>10.000+.</strong> Ini membutuhkan sesuatu yang viral — bukan mustahil dengan angle festival + Anthony Chen, tapi tidak akan terjadi secara organik.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VERDICT -->
+    <div class="section">
+        <div class="verdict">
+            <div class="verdict-label">Kesimpulan Per 10 April</div>
+            <div class="verdict-text">Crocodile Tears adalah film yang dihormati oleh dunia festival, tapi belum dikenal oleh pasar Indonesia.</div>
+            <div class="verdict-sub">30 festival internasional dan 2 penghargaan JFW adalah fondasi yang kuat — tapi fondasi saja tidak mengisi kursi. Dibutuhkan kampanye yang menerjemahkan kredibilitas itu ke bahasa yang dipahami penonton mainstream. <strong>27 hari bukan banyak. Tapi bukan nol.</strong></div>
+        </div>
+    </div>
+
+    <!-- WHAT AIGLE TRACKS -->
+    <div class="section">
+        <div class="section-title">Yang Dipantau Aigle</div>
+        <div class="identity-card">
+            <div class="identity-row">
+                <span class="identity-label">YouTube Views</span>
+                <span class="identity-value" style="color: var(--red);">3.000 (10 Apr)</span>
+            </div>
+            <div class="identity-row">
+                <span class="identity-label">TikTok Buzz</span>
+                <span class="identity-value" style="color: var(--text-dim);">Belum terdeteksi</span>
+            </div>
+            <div class="identity-row">
+                <span class="identity-label">Google Trends</span>
+                <span class="identity-value" style="color: var(--text-dim);">Belum terdeteksi</span>
+            </div>
+            <div class="identity-row">
+                <span class="identity-label">Buzz Level</span>
+                <span class="identity-value" style="color: var(--red);">RENDAH</span>
+            </div>
+            <div class="identity-row">
+                <span class="identity-label">NOBAR</span>
+                <span class="identity-value" style="color: var(--text-dim);">Tidak ada</span>
+            </div>
+            <div class="identity-row">
+                <span class="identity-label">Data Per</span>
+                <span class="identity-value">10 April 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="brief-footer">
+        <div class="brief-footer-brand">AIGLE</div>
+        <div class="brief-footer-note">Sinyal, bukan prediksi. Data dari 33 film Indonesia (Des 2025 - Apr 2026).</div>
+        <div style="font-size: 10px; color: var(--text-dim); margin-top: 6px;">SAM Studios &bull; akhiladler.github.io/aigle-dashboard</div>
+    </div>
+
+</div>
+</body>
+</html>
