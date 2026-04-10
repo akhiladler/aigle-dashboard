@@ -1723,117 +1723,146 @@
                 '</div>';
 
             // === SIGNAL INTELLIGENCE REPORT ===
-            html += '<div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">Laporan Sinyal</div>';
+            html += '<div style="font-size:9px;font-weight:700;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(218,165,32,0.15);">Laporan Sinyal</div>';
 
-            // Helper: signal row builder
-            function signalRow(label, statusText, statusColor, dataLine, actionLine) {
-                return '<div style="padding:12px 14px;background:rgba(255,255,255,0.02);border:1px solid var(--border-subtle);border-radius:8px;margin-bottom:8px;">' +
-                    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
-                        '<div style="font-size:11px;font-weight:700;color:var(--text-secondary);">' + label + '</div>' +
-                        '<div style="font-size:12px;font-weight:800;color:' + statusColor + ';">' + statusText + '</div>' +
+            // Helper: signal row builder with colored left border and gradient
+            function signalRow(label, statusText, statusColor, rgbVals, dataLine, actionLine) {
+                var bgGrad = 'linear-gradient(135deg, rgba(' + rgbVals + ',0.06) 0%, rgba(' + rgbVals + ',0.01) 100%)';
+                var borderCol = 'rgba(' + rgbVals + ',0.15)';
+                return '<div style="padding:14px 16px;background:' + bgGrad + ';border:1px solid ' + borderCol + ';border-left:3px solid ' + statusColor + ';border-radius:2px 10px 10px 2px;margin-bottom:10px;">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">' +
+                        '<div style="font-size:12px;font-weight:800;color:#fff;letter-spacing:0.3px;">' + label + '</div>' +
+                        '<div style="font-size:12px;font-weight:800;color:' + statusColor + ';letter-spacing:0.3px;">' + statusText + '</div>' +
                     '</div>' +
-                    '<div style="font-size:11px;color:var(--text-muted);line-height:1.5;margin-bottom:4px;">' + dataLine + '</div>' +
-                    (actionLine ? '<div style="font-size:11px;color:var(--gold);line-height:1.5;">\u2192 ' + actionLine + '</div>' : '') +
+                    '<div style="font-size:11px;color:var(--text-secondary);line-height:1.6;margin-bottom:' + (actionLine ? '6' : '0') + 'px;">' + dataLine + '</div>' +
+                    (actionLine ? '<div style="font-size:11px;font-weight:600;color:var(--gold);line-height:1.5;padding-top:6px;border-top:1px solid rgba(255,255,255,0.04);">\u2192 ' + actionLine + '</div>' : '') +
                 '</div>';
             }
 
             // 1. YouTube Signal
-            var ytStatus, ytColor, ytData, ytAction;
+            var ytStatus, ytColor, ytRgb, ytData, ytAction;
             if (views < 5000) {
                 ytStatus = fmtViews(views) + ' views';
-                ytColor = 'var(--red)';
-                ytData = 'Film dengan YT di bawah 5Rb: rata-rata ' + (ytUnder5k.length > 0 ? avg(ytUnder5k).toLocaleString() : '<2.000') + ' penonton Hari 1. Belum ada yang tembus 2.000.';
+                ytColor = 'var(--red)'; ytRgb = '220,38,38';
+                ytData = 'Dari 33 film: trailer di bawah 5Rb views tidak pernah menembus 2.000 penonton Hari 1.';
                 ytAction = 'Distribusi trailer ke 21cineplex, media film, dan kanal utama. Setiap hari tanpa distribusi = hari yang hilang.';
             } else if (views < 50000) {
                 ytStatus = fmtViews(views) + ' views';
-                ytColor = 'var(--yellow)';
+                ytColor = 'var(--yellow)'; ytRgb = '234,179,8';
                 ytData = 'Film dengan YT 5-50Rb: rata-rata ' + avg(yt5to50k).toLocaleString() + ' penonton Hari 1 (' + yt5to50k.length + ' film).';
                 ytAction = 'Push trailer ke lebih banyak channel. Target 50Rb+ sebelum rilis.';
             } else if (views < 100000) {
                 ytStatus = fmtViews(views) + ' views';
-                ytColor = 'var(--yellow)';
+                ytColor = 'var(--yellow)'; ytRgb = '234,179,8';
                 ytData = 'Film dengan YT 50-100Rb: rata-rata ' + avg(yt50to100k).toLocaleString() + ' penonton Hari 1 (' + yt50to100k.length + ' film).';
                 ytAction = 'Momentum bagus. Pertahankan distribusi trailer.';
             } else {
                 ytStatus = fmtViews(views) + ' views';
-                ytColor = 'var(--green)';
+                ytColor = 'var(--green)'; ytRgb = '34,197,94';
                 ytData = 'Film dengan YT 100Rb+: rata-rata ' + avg(ytOver100k).toLocaleString() + ' penonton Hari 1 (' + ytOver100k.length + ' film).';
                 ytAction = '';
             }
-            html += signalRow('YouTube', ytStatus, ytColor, ytData, ytAction);
+            html += signalRow('YouTube', ytStatus, ytColor, ytRgb, ytData, ytAction);
 
             // 2. TikTok Signal
-            var ttStatus, ttColor, ttData, ttAction;
+            var ttStatus, ttColor, ttRgb, ttData, ttAction;
             if (tt != null) {
                 if (tt >= 7) {
                     ttStatus = tt + '/10';
-                    ttColor = 'var(--green)';
-                    ttData = 'TikTok \u2265 7: rata-rata ' + avg(ttHigh).toLocaleString() + ' penonton Hari 1 (' + ttHigh.length + ' film). Sinyal terkuat dalam data kami.';
+                    ttColor = 'var(--green)'; ttRgb = '34,197,94';
+                    ttData = 'TikTok \u2265 7: rata-rata <strong style="color:#fff;">' + avg(ttHigh).toLocaleString() + '</strong> penonton Hari 1 (' + ttHigh.length + ' film). Sinyal terkuat dalam data kami.';
                     ttAction = '';
                 } else if (tt >= 4) {
                     ttStatus = tt + '/10';
-                    ttColor = 'var(--yellow)';
+                    ttColor = 'var(--yellow)'; ttRgb = '234,179,8';
                     ttData = 'TikTok sedang. Bisa naik atau turun \u2014 pantau tren menjelang rilis.';
                     ttAction = 'Kampanye TikTok organik: behind-the-scenes, scene teaser, hook emosional.';
                 } else {
                     ttStatus = tt + '/10';
-                    ttColor = 'var(--red)';
+                    ttColor = 'var(--red)'; ttRgb = '220,38,38';
                     ttData = 'TikTok < 4: rata-rata ' + avg(ttLow).toLocaleString() + ' penonton Hari 1 (' + ttLow.length + ' film). Sinyal peringatan.';
                     ttAction = 'TikTok bisa mengubah segalanya. Prioritaskan konten organik dan seeding.';
                 }
             } else {
-                ttStatus = 'Belum ada';
-                ttColor = 'var(--text-muted)';
-                ttData = 'Tanpa data TikTok, sulit membedakan film di bawah 100Rb YouTube.';
-                ttAction = 'Mulai kampanye TikTok. Data terbaru: TikTok bisa mengungguli YouTube 2x lipat sebagai prediktor.';
+                ttStatus = 'Belum dipantau';
+                ttColor = 'var(--text-muted)'; ttRgb = '100,100,100';
+                ttData = 'Kami belum mengukur aktivitas TikTok untuk film ini \u2014 bukan berarti belum ada. Tanpa data TikTok, sulit membedakan film di bawah 100Rb YouTube.';
+                ttAction = 'Data terbaru kami: TikTok bisa mengungguli YouTube 2x lipat sebagai prediktor Hari 1.';
             }
-            html += signalRow('TikTok', ttStatus, ttColor, ttData, ttAction);
+            html += signalRow('TikTok', ttStatus, ttColor, ttRgb, ttData, ttAction);
 
             // 3. Google Trends
-            var gtStatus, gtColor, gtData, gtAction;
+            var gtStatus, gtColor, gtRgb, gtData, gtAction;
             if (gt != null) {
                 if (gt >= 7) {
                     gtStatus = gt + '/10';
-                    gtColor = 'var(--green)';
+                    gtColor = 'var(--green)'; gtRgb = '34,197,94';
                     gtData = 'Google Trends tinggi. Publik aktif mencari film ini.';
                     gtAction = '';
                 } else if (gt >= 4) {
                     gtStatus = gt + '/10';
-                    gtColor = 'var(--yellow)';
+                    gtColor = 'var(--yellow)'; gtRgb = '234,179,8';
                     gtData = 'Google Trends sedang. Ada awareness tapi belum viral.';
                     gtAction = 'PR push: artikel, interview, liputan festival.';
                 } else {
                     gtStatus = gt + '/10';
-                    gtColor = 'var(--red)';
+                    gtColor = 'var(--red)'; gtRgb = '220,38,38';
                     gtData = 'Hampir tidak ada yang mencari film ini di Google.';
                     gtAction = 'Butuh PR: liputan media, interview cast/sutradara.';
                 }
             } else {
-                gtStatus = 'Belum ada';
-                gtColor = 'var(--text-muted)';
+                gtStatus = 'Belum dipantau';
+                gtColor = 'var(--text-muted)'; gtRgb = '100,100,100';
                 gtData = 'Belum dipantau. Google Trends mengukur apakah publik aktif mencari film ini.';
-                gtAction = 'Data akan ditambahkan saat mendekati rilis.';
+                gtAction = 'Data akan ditambahkan mendekati rilis.';
             }
-            html += signalRow('Google Trends', gtStatus, gtColor, gtData, gtAction);
+            html += signalRow('Google Trends', gtStatus, gtColor, gtRgb, gtData, gtAction);
 
             // 4. NOBAR / Screening
-            var nbStatus, nbColor, nbData, nbAction;
+            var nbStatus, nbColor, nbRgb, nbData, nbAction;
             if (nobar === true) {
                 nbStatus = 'Aktif';
-                nbColor = 'var(--green)';
+                nbColor = 'var(--green)'; nbRgb = '34,197,94';
                 nbData = 'Ada kegiatan NOBAR/screening khusus. Membangun word-of-mouth.';
                 nbAction = '';
             } else {
-                nbStatus = 'Belum ada';
-                nbColor = 'var(--text-muted)';
-                nbData = 'Belum ada NOBAR atau screening komunitas tercatat.';
+                nbStatus = 'Belum tercatat';
+                nbColor = 'var(--text-muted)'; nbRgb = '100,100,100';
+                nbData = 'Belum ada NOBAR atau screening komunitas yang kami catat.';
                 nbAction = 'Screening khusus + Q&A sutradara bisa menggerakkan word-of-mouth untuk film auteur.';
             }
-            html += signalRow('NOBAR / Screening', nbStatus, nbColor, nbData, nbAction);
+            html += signalRow('NOBAR / Screening', nbStatus, nbColor, nbRgb, nbData, nbAction);
+
+            // === GOLDEN NUGGETS — bold data insights ===
+            // Nugget 1: The TikTok Flip — real case study from this week
+            html += '<div style="margin-top:20px;margin-bottom:10px;">' +
+                '<div style="font-size:9px;font-weight:700;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(218,165,32,0.15);">Temuan dari Data Aigle</div>' +
+                '</div>';
+
+            html += '<div style="padding:16px 18px;background:linear-gradient(135deg, rgba(218,165,32,0.08) 0%, rgba(218,165,32,0.02) 100%);border:1px solid rgba(218,165,32,0.18);border-radius:12px;margin-bottom:10px;position:relative;overflow:hidden;">' +
+                '<div style="position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg, var(--gold), transparent);"></div>' +
+                '<div style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Minggu Lalu: TikTok Mengalahkan YouTube</div>' +
+                '<div style="font-size:12px;color:var(--text-secondary);line-height:1.7;">' +
+                    '<strong style="color:#fff;">Ayah</strong> (YT 64Rb, TikTok 7/10) vs <strong style="color:#fff;">Warung Pocong</strong> (YT 129Rb, TikTok 3/10).<br>' +
+                    'YouTube dua kali lipat lebih tinggi. Tapi Hari 1? Ayah: <strong style="color:var(--green);">82.500</strong>. Warung Pocong: <strong style="color:var(--red);">14.312</strong>. Selisih <strong style="color:#fff;">6x lipat</strong>.<br>' +
+                    '<span style="color:var(--gold);">YouTube menunjukkan siapa yang tahu. TikTok menunjukkan siapa yang mau datang.</span>' +
+                '</div>' +
+            '</div>';
+
+            // Nugget 2: The Festival Paradox — specific to auteur/festival films
+            html += '<div style="padding:16px 18px;background:linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(59,130,246,0.02) 100%);border:1px solid rgba(59,130,246,0.18);border-radius:12px;margin-bottom:16px;position:relative;overflow:hidden;">' +
+                '<div style="position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg, var(--blue), transparent);"></div>' +
+                '<div style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:var(--blue);text-transform:uppercase;margin-bottom:8px;">Paradoks Festival</div>' +
+                '<div style="font-size:12px;color:var(--text-secondary);line-height:1.7;">' +
+                    '30+ festival internasional dan Anthony Chen adalah modal yang <strong style="color:#fff;">sangat jarang</strong> dimiliki film T4. ' +
+                    'Tapi dari 33 film yang kami lacak, prestasi festival <strong style="color:#fff;">belum pernah otomatis mengerek box office domestik</strong> tanpa kampanye mainstream yang sengaja dibangun.<br>' +
+                    '<span style="color:var(--blue);">Modal besar ini perlu dikonversi: headline PR, behind-the-scenes, narasi "film Indonesia di panggung dunia". 27 hari untuk membangun jembatan antara festival dan bioskop.</span>' +
+                '</div>' +
+            '</div>';
 
             // === BENCHMARK TABLE ===
             if (topComps.length > 0) {
-                html += '<div style="margin-top:16px;margin-bottom:16px;">' +
+                html += '<div style="margin-bottom:16px;">' +
                     '<div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;margin-bottom:10px;">Film Pembanding</div>' +
                     '<table style="width:100%;border-collapse:collapse;font-size:12px;">' +
                     '<tr>' +
@@ -1869,8 +1898,8 @@
 
             // === FILM NOTE (if exists) ===
             if (film.note) {
-                html += '<div style="padding:12px 14px;background:rgba(218,165,32,0.04);border:1px solid rgba(218,165,32,0.1);border-radius:8px;margin-bottom:12px;">' +
-                    '<div style="font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;">Catatan</div>' +
+                html += '<div style="padding:12px 14px;background:rgba(255,255,255,0.02);border:1px solid var(--border-subtle);border-radius:8px;margin-bottom:14px;">' +
+                    '<div style="font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--text-muted);text-transform:uppercase;margin-bottom:4px;">Catatan</div>' +
                     '<div style="font-size:11px;color:var(--text-secondary);line-height:1.6;">' + esc(film.note) + '</div>' +
                 '</div>';
             }
@@ -1878,16 +1907,12 @@
             // === VERDICT (multi-signal aware) ===
             var signals = 0;
             var signalTotal = 0;
-            // YT score
             if (views >= 100000) { signals++; signalTotal += 2; }
             else if (views >= 50000) { signals++; signalTotal += 1.5; }
             else if (views >= 5000) { signals++; signalTotal += 1; }
             else { signals++; signalTotal += 0; }
-            // TikTok
             if (tt != null) { signals++; signalTotal += (tt >= 7 ? 2 : tt >= 4 ? 1 : 0); }
-            // GT
             if (gt != null) { signals++; signalTotal += (gt >= 7 ? 2 : gt >= 4 ? 1 : 0); }
-            // NOBAR
             if (nobar) { signals++; signalTotal += 1; }
 
             var signalAvg = signals > 0 ? signalTotal / signals : 0;
@@ -1895,10 +1920,10 @@
             var missing = [];
             if (tt == null) missing.push('TikTok');
             if (gt == null) missing.push('Google Trends');
-            var missingNote = missing.length > 0 ? ' Data belum lengkap: ' + missing.join(', ') + '.' : '';
+            var missingNote = missing.length > 0 ? ' Sinyal belum dipantau: ' + missing.join(', ') + '.' : '';
 
             if (signalAvg < 0.5) {
-                verdictText = 'Semua sinyal yang tersedia menunjukkan awareness sangat rendah. Butuh aksi kampanye segera.' + missingNote;
+                verdictText = 'Awareness mainstream sangat rendah. Tapi ini bukan vonis \u2014 ini diagnosis. ' + daysOut + ' hari adalah waktu yang cukup untuk mengubah posisi, jika kampanye dimulai sekarang.' + missingNote;
                 verdictColor = 'var(--red)';
             } else if (signalAvg < 1.2) {
                 verdictText = 'Sinyal campuran. Ada potensi, tapi belum cukup kuat untuk pembukaan yang besar.' + missingNote;
@@ -1908,7 +1933,7 @@
                 verdictColor = 'var(--green)';
             }
 
-            html += '<div style="padding:14px 16px;border-left:3px solid ' + verdictColor + ';background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;font-size:12px;color:var(--text-secondary);line-height:1.6;">' +
+            html += '<div style="padding:16px 18px;border-left:3px solid ' + verdictColor + ';background:rgba(255,255,255,0.025);border-radius:0 10px 10px 0;font-size:12px;color:var(--text-secondary);line-height:1.7;">' +
                 '<strong style="color:' + verdictColor + ';">Kesimpulan:</strong> ' + verdictText + '</div>';
 
             html += '</div>';
