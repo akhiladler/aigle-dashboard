@@ -1,93 +1,102 @@
-# Milo Skill: Wednesday Pipeline
+# Milo Skill: Wednesday Ops Lead Pipeline
 
-**Burden removed:** Akhil no longer has to run the Wednesday workflow manually. One command from anywhere (including Bali) triggers the full cycle.
+**Goal:** By 12pm Wednesday, Aigle must have a validator-clean export, the correct SAMS slate, current pre-release signals, and a draft brief ready for Akhil.
 
-## What This Does
-End-to-end Wednesday update: pull YouTube views → recalculate buzz → update films.json → push to dashboard → send Telegram summary.
+## Milo Role
+Milo is the machine-side ops lead on Wednesday.
 
-## When to Run
-Every Wednesday. Can also be triggered manually.
+That means Milo should:
+- verify the operating slate early
+- collect and normalize bounded data
+- run validation before publish
+- draft the operator brief
+- escalate only when the work needs judgment
 
-## Step-by-Step
+Milo should **not**:
+- guess through source conflicts
+- change product logic or schema
+- invent TikTok scores
+- make final strategic calls
 
-### Step 1: Read operating_week.json
-Read `/root/aigle-dashboard/operating_week.json` to know which week we're in and which films are releasing.
+## Canonical Files
+- `pipeline_config.json` = machine rules
+- `operating_week.json` = canonical weekly slate
+- `films.json` = public dashboard export
+- `weekly_state.json` = machine readiness state
 
-If the file is stale (>7 days old) or the week has passed, check 21cineplex.com for this week's Indonesian film releases and update operating_week.json FIRST.
+## Wednesday Workflow
+### Step 1: Generate the operating slate
+Run:
 
-### Step 2: Update YouTube views for THIS WEEK's films
-For each film in the current operating week's `films_releasing` array:
-1. Search YouTube for "[film title] trailer resmi 2026" or "[film title] official trailer 2026"
-2. Find the most relevant trailer (prefer official channels: 21cineplex, CGV, production house)
-3. Record the current view count
-4. Record the YouTube URL
-
-**ALSO** update Crocodile Tears (see milo-task-crocodile-tears-tracker.md for details).
-
-### Step 3: Update films.json
-For each film updated in Step 2:
-1. Update `youtube_views` with the new count
-2. Recalculate `buzz_level`:
-   - TINGGI: >= 500,000
-   - SEDANG: 100,000 - 499,999
-   - RENDAH: < 100,000
-3. Update `youtube_url` if it was missing or wrong
-4. Do NOT touch any other field
-5. Do NOT touch films that are NOT in this week's release list (except CT)
-
-Update `meta.last_updated` to today's date.
-
-### Step 4: Validate
-Re-read films.json after editing. For each film you updated, print:
-- Title
-- Old views → New views
-- Buzz level
-- YouTube URL
-
-If anything looks wrong, FIX IT before proceeding.
-
-### Step 5: Commit and push
+```bash
+python select_operating_week.py
 ```
-cd /root/aigle-dashboard
-git add films.json operating_week.json
-git commit -m "Milo: Wednesday pipeline [date] — [N] films updated"
+
+Re-read `operating_week.json`. If the slate is obviously wrong, stop and escalate to Akhil.
+
+### Step 2: Collect YouTube for active titles
+For each title in `operating_week.json -> films_releasing`:
+- find the best official trailer source
+- update `youtube_views`
+- update `youtube_url`
+- recalculate `buzz_level`
+
+### Step 3: Handle Google Trends
+Use the canonical dual-track GT rule in `pipeline_config.json`.
+
+Milo may:
+- collect the GT score, or
+- prefill the GT capture context if the score must be confirmed manually
+
+If GT is present in `films.json`, Milo must also keep these audit fields current:
+- `gt_benchmark_title`
+- `gt_capture_context`
+- `gt_entity_type`
+- `gt_capture_date`
+- `gt_capture_stage`
+
+Milo must **not** invent GT scores.
+
+### Step 4: Leave TikTok to Akhil/Dias
+If `tiktok` is missing, leave it missing and let validation surface it as a human-input dependency.
+
+### Step 5: Validate and build weekly state
+Run:
+
+```bash
+python validate_films.py
+python check-films.py
+```
+
+If validation fails or `check-films.py` fails, do not publish. Escalate with the exact blocker.
+
+### Step 6: Draft the Wednesday brief
+Run:
+
+```bash
+python generate_wednesday_brief.py
+```
+
+Send the draft output to Akhil. Keep it short and factual.
+
+### Step 7: Commit and push
+Only if validation passes and the machine side is ready:
+
+```bash
+git add films.json operating_week.json weekly_state.json
+git commit -m "Milo: Wednesday pipeline [date]"
 git push
 ```
 
-### Step 6: Send Telegram summary to Akhil
-Max 150 words. Format:
+## Publish Rules
+- Publish must fail loudly on stale or inconsistent operating week state.
+- Publish must fail if a title in `operating_week.json` is missing from `films.json`.
+- Publish must fail if `buzz_level` contradicts `youtube_views`.
+- Missing TikTok is allowed, but it must be visible in `weekly_state.json`.
 
-```
-Wednesday Pipeline [date]
-
-This week: [film1], [film2], [film3]
-
-[film1]: [old] → [new] views ([buzz level])
-[film2]: [old] → [new] views ([buzz level])
-[film3]: [old] → [new] views ([buzz level])
-
-CT: [old] → [new] views ([days to release])
-
-Dashboard updated. [link]
-```
-
-## What NOT to Do
-- Do NOT update Day 1 or OW data (that's a separate task)
-- Do NOT generate insights, briefs, or recommendations
-- Do NOT touch TikTok, Google Trends, or NOBAR fields (those come from Dias/Akhil)
-- Do NOT modify index.html
-- Do NOT run on any day other than Wednesday unless Akhil explicitly asks
-- Do NOT expand scope. This skill does ONE thing: update YouTube views and push.
-- Do NOT add films to films.json. Only update existing entries.
-- If a film is not yet in films.json, report it to Akhil. Do not add it yourself.
-
-## Failure Handling
-- If YouTube search returns no results for a film: report it in Telegram. Do NOT guess or use 0.
-- If git push fails: report it. Do NOT retry silently.
-- If films.json has merge conflicts: STOP. Report to Akhil.
-
-## Verification (for Akhil)
-After the pipeline runs, check:
-1. https://akhiladler.github.io/aigle-dashboard/ — Ctrl+Shift+R
-2. Telegram message received with correct numbers
-3. Git log shows the commit
+## Escalate to Akhil If
+- title/entity ambiguity cannot be resolved cleanly
+- GT matching is inconsistent across titles
+- a SAMS-relevant title is missing from the dataset
+- TikTok is still pending close to deadline
+- validation fails and the issue is not a simple data omission

@@ -1,0 +1,45 @@
+{
+  "timezone": "Asia/Jakarta",
+  "ops_lead": "milo",
+  "operating_week": {
+    "lookahead_days": 14,
+    "active_retention_days": 5,
+    "stale_after_days": 7
+  },
+  "sams_filters": {
+    "local_only": true,
+    "excluded_production_houses": [
+      "RAPI Films",
+      "Rapi Films"
+    ],
+    "require_plays_at_sams": true
+  },
+  "wednesday": {
+    "deadline_local": "12:00",
+    "required_signal_fields": [
+      "youtube_views",
+      "buzz_level",
+      "google_trends"
+    ],
+    "manual_fields": [
+      "tiktok"
+    ],
+    "audit_fields": [
+      "gt_benchmark_title",
+      "gt_capture_context",
+      "gt_entity_type",
+      "gt_capture_date",
+      "gt_capture_stage"
+    ]
+  },
+  "google_trends": {
+    "dias_decision_score": {
+      "benchmark_rule": "best_sams_relevant_performer_from_last_week",
+      "region": "Indonesia",
+      "timeframe": "Past week",
+      "capture_window": "Wednesday evening or Thursday morning",
+      "score_rule": "record_highest_value_on_capture_day",
+      "preferred_entity_type": "search_term"
+    }
+  }
+}
