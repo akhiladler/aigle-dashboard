@@ -1076,17 +1076,31 @@
     // DATA LOADING
     // -----------------------------------------------------------
 
+    function titleKey(title) {
+        return (title || '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, ' ')
+            .trim();
+    }
+
     async function loadData() {
         try {
-            const resp = await fetch('films.json');
-            if (!resp.ok) throw new Error('HTTP ' + resp.status);
-            const data = await resp.json();
+            const [filmsResp, weekResp] = await Promise.all([
+                fetch('films.json'),
+                fetch('operating_week.json').catch(function() { return null; })
+            ]);
+            if (!filmsResp.ok) throw new Error('HTTP ' + filmsResp.status);
+            const data = await filmsResp.json();
             // Support both formats: plain array OR {meta, films} object
             const films = Array.isArray(data) ? data : (data.films || []);
             if (!Array.isArray(films) || films.length === 0) {
                 throw new Error('Data kosong atau format tidak valid');
             }
-            return films;
+            var operatingWeek = null;
+            if (weekResp && weekResp.ok) {
+                operatingWeek = await weekResp.json();
+            }
+            return { films, operatingWeek };
         } catch (err) {
             throw err;
         }
@@ -1097,7 +1111,7 @@
     // DATA PROCESSING
     // -----------------------------------------------------------
 
-    function processData(films) {
+    function processData(films, operatingWeek) {
         // Sort by release_date descending to find the most recent week
         films.sort((a, b) => b.release_date.localeCompare(a.release_date));
 
@@ -1109,23 +1123,45 @@
             String(cutoff.getMonth() + 1).padStart(2, '0') + '-' +
             String(cutoff.getDate()).padStart(2, '0');
 
-        const upcoming = films
-            .filter(f => f.release_date > cutoffStr)
-            .sort((a, b) => a.release_date.localeCompare(b.release_date));
+        const operatingTitles = new Set(
+            (((operatingWeek && operatingWeek.films_releasing) || []).map(titleKey))
+        );
+        const hasOperatingWeek = operatingTitles.size > 0 && operatingWeek && operatingWeek.week_start;
 
-        const currentFilms = films.filter(f => f.release_date <= cutoffStr);
+        let latestDate;
+        let thisWeek;
+        let history;
+        let upcoming;
 
-        // The most recent release_date among current films is "this week"
-        const latestDate = currentFilms.length > 0 ? currentFilms[0].release_date : films[0].release_date;
+        if (hasOperatingWeek) {
+            latestDate = operatingWeek.week_start;
+            thisWeek = films
+                .filter(f => operatingTitles.has(titleKey(f.title)))
+                .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+            history = films
+                .filter(f => !operatingTitles.has(titleKey(f.title)) && f.release_date < latestDate)
+                .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+            upcoming = films
+                .filter(f => !operatingTitles.has(titleKey(f.title)) && f.release_date > latestDate)
+                .sort((a, b) => a.release_date.localeCompare(b.release_date));
+        } else {
+            upcoming = films
+                .filter(f => f.release_date > cutoffStr)
+                .sort((a, b) => a.release_date.localeCompare(b.release_date));
 
-        // Split into this week and history
-        const thisWeek = currentFilms
-            .filter(f => f.release_date === latestDate)
-            .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+            const currentFilms = films.filter(f => f.release_date <= cutoffStr);
 
-        const history = currentFilms
-            .filter(f => f.release_date !== latestDate)
-            .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+            // Fallback: the most recent release_date among current films is "this week"
+            latestDate = currentFilms.length > 0 ? currentFilms[0].release_date : films[0].release_date;
+
+            thisWeek = currentFilms
+                .filter(f => f.release_date === latestDate)
+                .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+
+            history = currentFilms
+                .filter(f => f.release_date !== latestDate)
+                .sort((a, b) => (b.youtube_views || 0) - (a.youtube_views || 0));
+        }
 
         // View bounds across ALL films (for spectrum)
         const allViews = films.map(f => f.youtube_views || 0).filter(v => v > 0);
@@ -2111,8 +2147,8 @@
 
     async function init() {
         try {
-            const films = await loadData();
-            const data = processData(films);
+            const { films, operatingWeek } = await loadData();
+            const data = processData(films, operatingWeek);
 
             // Hide loading, show dashboard
             document.getElementById('loadingState').style.display = 'none';
@@ -2146,8 +2182,8 @@
             document.getElementById('loadingState').style.display = 'none';
             document.getElementById('errorState').style.display = 'flex';
             document.getElementById('errorMessage').textContent =
-                'Gagal memuat films.json: ' + err.message +
-                '. Pastikan file ada di direktori yang sama.';
+                'Gagal memuat data dashboard: ' + err.message +
+                '. Pastikan films.json dan operating_week.json tersedia di direktori yang sama.';
         }
     }
 

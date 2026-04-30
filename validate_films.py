@@ -13,7 +13,7 @@ FILMS_PATH = ROOT / 'films.json'
 SCHEDULE_PATH = ROOT / 'films_schedule.json'
 WEEKLY_STATE_PATH = ROOT / 'weekly_state.json'
 
-PH_TIERS = {'T1', 'T2', 'T3', 'T4'}
+PH_TIERS = {'T1', 'T2', 'T3', 'T4', 'GOV'}
 BUZZ_LEVELS = {'TINGGI', 'SEDANG', 'RENDAH'}
 CALENDAR_VALUES = {'PANAS', 'NORMAL', 'DINGIN'}
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')

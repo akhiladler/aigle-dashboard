@@ -1,7 +1,7 @@
 {
       "meta": {
             "last_updated": "2026-04-10",
-            "total_films": 33,
+            "total_films": 36,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -774,7 +774,7 @@
                   "genre": "Horor Komedi",
                   "youtube_views": 129000,
                   "buzz_level": "SEDANG",
-                  "youtube_url": null,
+                  "youtube_url": "https://www.youtube.com/watch?v=glH4L4GOJQk",
                   "tiktok": 3,
                   "google_trends": 1,
                   "nobar": false,
@@ -813,6 +813,60 @@
                   "day1_source": "Cinepoint 10 Apr 2026"
             },
             {
+                  "title": "DILAN ITB 1997",
+                  "release_date": "2026-04-30",
+                  "week_label": "30 Apr",
+                  "ph": "Falcon Pictures",
+                  "ph_tier": "T1",
+                  "genre": "Drama",
+                  "youtube_views": 1390354,
+                  "buzz_level": "TINGGI",
+                  "youtube_url": "https://www.youtube.com/watch?v=xzues7Sn_44",
+                  "tiktok": null,
+                  "google_trends": 2,
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Trailer Falcon paling kuat di slate 30 Apr. Advance ticket sales sudah terlihat di XXI.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Ikatan Darah",
+                  "release_date": "2026-04-30",
+                  "week_label": "30 Apr",
+                  "ph": "Uwais Pictures",
+                  "ph_tier": "T3",
+                  "genre": "Action Thriller",
+                  "youtube_views": 271502,
+                  "buzz_level": "SEDANG",
+                  "youtube_url": "https://www.youtube.com/watch?v=Qq2Plb_X0gc",
+                  "tiktok": null,
+                  "google_trends": 2,
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Trailer traction menengah. Uwais trust signal kuat, tapi search interest tetap rendah versus benchmark Ghost in the Cell.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Kupeluk Kamu Selamanya",
+                  "release_date": "2026-04-30",
+                  "week_label": "30 Apr",
+                  "ph": "Visinema Pictures",
+                  "ph_tier": "T2",
+                  "genre": "Drama",
+                  "youtube_views": 39249,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": "https://www.youtube.com/watch?v=Wquw6ByRQjo",
+                  "tiktok": null,
+                  "google_trends": 1,
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Trailer traction masih rendah. Search interest juga tipis versus benchmark Ghost in the Cell.",
+                  "plays_at_sams": true
+            },
+            {
                   "title": "Crocodile Tears",
                   "release_date": "2026-05-07",
                   "week_label": "7 May",
@@ -831,5 +885,5 @@
                   "plays_at_sams": true
             }
       ],
-      "last_updated": "2026-04-10"
+      "last_updated": "2026-04-29"
 }

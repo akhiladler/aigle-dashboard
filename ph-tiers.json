@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "version": "2026-04-29",
+    "purpose": "Canonical machine-readable production house tier lookup for Aigle",
+    "rules": {
+      "exact_match_only": true,
+      "guessing_allowed": false,
+      "if_missing": "flag_for_review"
+    }
+  },
+  "tiers": {
+    "T1": "Giants",
+    "T2": "Established",
+    "T3": "Rising",
+    "T4": "Micro/Indie"
+  },
+  "canonical": [
+    { "name": "MD Pictures", "tier": "T1", "notes": "Manoj Punjabi. Listed on JSX." },
+    { "name": "Falcon Pictures", "tier": "T1", "notes": "HB Naveen, Frederica." },
+    { "name": "Legacy Pictures", "tier": "T1", "notes": "Robert Ronny. #1 by releases." },
+    { "name": "Starvision", "tier": "T1", "notes": "Chand Parwez Servia." },
+    { "name": "Starvision Plus", "tier": "T1", "notes": "Alias group under Starvision." },
+
+    { "name": "RAPI Films", "tier": "T2", "notes": "Does NOT play at SAMS." },
+    { "name": "Visinema Pictures", "tier": "T2", "notes": "SAMS-Visinema multiplier confirmed." },
+    { "name": "MVP Pictures", "tier": "T2", "notes": "Raam Punjabi. Owns Platinum Cineplex." },
+    { "name": "MNC Pictures", "tier": "T2", "notes": "MNC Media Group." },
+    { "name": "Miles Films", "tier": "T2", "notes": "Mira Lesmana, Riri Riza." },
+    { "name": "Screenplay Films", "tier": "T2", "notes": "Wicky V. Olindo." },
+    { "name": "BASE Entertainment", "tier": "T2", "notes": "" },
+    { "name": "Sinemart", "tier": "T2", "notes": "" },
+    { "name": "Soraya Intercine", "tier": "T2", "notes": "" },
+
+    { "name": "Imajinari", "tier": "T3", "notes": "Ernest Prakasa. Agak Laen." },
+    { "name": "Pichouse Films", "tier": "T3", "notes": "" },
+    { "name": "786 Productions", "tier": "T3", "notes": "" },
+    { "name": "IDN Media", "tier": "T3", "notes": "" },
+    { "name": "Screenplay Bumilangit", "tier": "T3", "notes": "Gundala." },
+    { "name": "SinemaArt", "tier": "T3", "notes": "" },
+    { "name": "Heart Pictures", "tier": "T3", "notes": "Herty Purba." },
+    { "name": "Paragon Pictures", "tier": "T3", "notes": "" },
+    { "name": "Sinemaku Pictures", "tier": "T3", "notes": "" },
+    { "name": "Lyto Pictures", "tier": "T3", "notes": "" },
+    { "name": "Tiger Wong Entertainment", "tier": "T3", "notes": "" },
+    { "name": "Uwais Pictures", "tier": "T3", "notes": "Rising action-focused banner led by Iko Uwais. Strong launch signal, not yet established enough for T2." },
+
+    { "name": "Citra Sinema Kreasi", "tier": "T4", "notes": "" },
+    { "name": "Entelekey Media Indonesia", "tier": "T4", "notes": "" },
+    { "name": "MVP Pictures (indie arm)", "tier": "T4", "notes": "" },
+    { "name": "Shen Entertainment", "tier": "T4", "notes": "" },
+    { "name": "Puras Production", "tier": "T4", "notes": "" },
+    { "name": "PIM Pictures", "tier": "T4", "notes": "" },
+    { "name": "Ruang Rangkai Kata", "tier": "T4", "notes": "" },
+    { "name": "Trois Global Film", "tier": "T4", "notes": "" },
+    { "name": "Eight Senses Film", "tier": "T4", "notes": "" },
+    { "name": "Pabrik Imaji Akasacara", "tier": "T4", "notes": "" },
+    { "name": "Radepa Konten Indonesia", "tier": "T4", "notes": "" },
+    { "name": "Alamanda Mandiri Sejahtera", "tier": "T4", "notes": "" },
+    { "name": "DHF Entertainment", "tier": "T4", "notes": "" },
+    { "name": "Aksa Bumi Langit", "tier": "T4", "notes": "" },
+    { "name": "Impian Indonesia", "tier": "T4", "notes": "" },
+    { "name": "Tunas Citrasinema Kreatif", "tier": "T4", "notes": "" },
+    { "name": "Sinema Digital Indonesia", "tier": "T4", "notes": "" },
+    { "name": "Kasih Karunia Film", "tier": "T4", "notes": "" },
+    { "name": "Lex Pictures", "tier": "T4", "notes": "" },
+    { "name": "Ess Jay Studios", "tier": "T4", "notes": "" },
+    { "name": "Sinemata Indonesia Pratama", "tier": "T4", "notes": "" },
+    { "name": "VMS", "tier": "T4", "notes": "" }
+  ],
+  "aliases": {
+    "MD": "MD Pictures",
+    "Falcon": "Falcon Pictures",
+    "StarVision": "Starvision",
+    "Rapi Films": "RAPI Films",
+    "Visinema": "Visinema Pictures",
+    "MVP": "MVP Pictures",
+    "Soraya": "Soraya Intercine",
+    "Ruang Rankai Kata": "Ruang Rangkai Kata",
+    "Pabrik Imagi Akasacara": "Pabrik Imaji Akasacara",
+    "Ess Jay Studio": "Ess Jay Studios"
+  }
+}

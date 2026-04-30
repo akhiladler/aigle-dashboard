@@ -11,10 +11,12 @@ If no match → `ph_tier: null` + `needs_ph_review: true`.
 ## Tier 1 — Giants (XXI cartel, guaranteed screens)
 
 MD Pictures | T1 | Manoj Punjabi. Listed on JSX.
+MD | T1 | Alias for MD Pictures.
 Falcon Pictures | T1 | HB Naveen, Frederica.
 Falcon | T1 | Alias for Falcon Pictures.
 Legacy Pictures | T1 | Robert Ronny. #1 by releases.
 Starvision | T1 | Chand Parwez Servia.
+StarVision | T1 | Alias for Starvision.
 Starvision Plus | T1 | Alias for Starvision.
 
 ## Tier 2 — Established
@@ -22,13 +24,16 @@ Starvision Plus | T1 | Alias for Starvision.
 RAPI Films | T2 | Does NOT play at SAMS.
 Rapi Films | T2 | Alias.
 Visinema Pictures | T2 | SAMS-Visinema multiplier confirmed.
+Visinema | T2 | Alias for Visinema Pictures.
 MVP Pictures | T2 | Raam Punjabi. Owns Platinum Cineplex.
+MVP | T2 | Alias for MVP Pictures.
 MNC Pictures | T2 | MNC Media Group.
 Miles Films | T2 | Mira Lesmana, Riri Riza.
 Screenplay Films | T2 | Wicky V. Olindo.
 BASE Entertainment | T2 |
 Sinemart | T2 |
 Soraya Intercine | T2 |
+Soraya | T2 | Alias for Soraya Intercine.
 
 ## Tier 3 — Rising
 
@@ -43,6 +48,7 @@ Paragon Pictures | T3 |
 Sinemaku Pictures | T3 |
 Lyto Pictures | T3 |
 Tiger Wong Entertainment | T3 |
+Uwais Pictures | T3 | Rising action-focused banner led by Iko Uwais. Strong launch signal, not yet established enough for T2.
 
 ## Tier 4 — Micro/Indie
 
@@ -53,9 +59,11 @@ Shen Entertainment | T4 |
 Puras Production | T4 |
 PIM Pictures | T4 |
 Ruang Rangkai Kata | T4 |
+Ruang Rankai Kata | T4 | Alias for Ruang Rangkai Kata.
 Trois Global Film | T4 |
 Eight Senses Film | T4 |
 Pabrik Imaji Akasacara | T4 |
+Pabrik Imagi Akasacara | T4 | Alias for Pabrik Imaji Akasacara.
 Radepa Konten Indonesia | T4 |
 Alamanda Mandiri Sejahtera | T4 |
 DHF Entertainment | T4 |
@@ -66,6 +74,7 @@ Sinema Digital Indonesia | T4 |
 Kasih Karunia Film | T4 |
 Lex Pictures | T4 |
 Ess Jay Studios | T4 |
+Ess Jay Studio | T4 | Alias for Ess Jay Studios.
 Sinemata Indonesia Pratama | T4 |
 VMS | T4 |
 Summerland | T4 | Co-producer Yohanna (Apr 2026). Source: ANTARA, Kompas.
