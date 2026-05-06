@@ -1,11 +1,12 @@
 {
-  "week_label": "30 Apr",
-  "week_start": "2026-04-30",
+  "week_label": "7 May",
+  "week_start": "2026-05-07",
   "films_releasing": [
-    "DILAN ITB 1997",
-    "Ikatan Darah",
-    "Kupeluk Kamu Selamanya"
+    "AIN",
+    "The Bell: Panggilan untuk Mati",
+    "SHAKA OH SHAKA",
+    "Crocodile Tears"
   ],
-  "updated_at": "2026-04-30T17:00:10+07:00",
-  "updated_by": "milo"
+  "updated_at": "2026-05-06T15:22:46+07:00",
+  "updated_by": "codex"
 }

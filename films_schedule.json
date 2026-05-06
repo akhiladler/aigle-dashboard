@@ -1,6 +1,6 @@
 {
     "_note": "Aigle film schedule. Source: movie-forecast-2026.md + 21cineplex.com verification.",
-    "_updated": "2026-03-24",
+    "_updated": "2026-05-06",
     "_source": "21cineplex.com (primary) + IDNTimes, IMDb, web search",
     "_instructions": "Add new films here. The notebook loads this file automatically. No code editing needed. Only named films included (no 'Untitled' placeholders).",
     "films": [
@@ -422,13 +422,36 @@
             "date": "2026-05-07",
             "title": "Bintang Kecil Di Langit Biru",
             "genre": "Drama",
-            "production_house": "Lex Pictures"
+            "production_house": "Lex Pictures",
+            "_note": "Not on current 21cineplex coming-soon list as of 2026-05-06. Treat as possible delay/watchlist until reconfirmed."
+        },
+        {
+            "date": "2026-05-07",
+            "title": "AIN",
+            "genre": "Horor",
+            "production_house": "MVP Pictures",
+            "_note": "21cineplex May 7 local title. Working title kept as listed on 21."
         },
         {
             "date": "2026-05-07",
             "title": "Crocodile Tears",
             "genre": "Drama Thriller",
-            "production_house": "Palari Films"
+            "production_house": "Palari Films",
+            "_note": "Tumpal Tampubolon's feature directorial debut. Confirmed via 21cineplex and direct WhatsApp note from Tumpal."
+        },
+        {
+            "date": "2026-05-07",
+            "title": "SHAKA OH SHAKA",
+            "genre": "Drama",
+            "production_house": "Starvision Plus",
+            "_note": "21cineplex May 7 local title."
+        },
+        {
+            "date": "2026-05-07",
+            "title": "The Bell: Panggilan untuk Mati",
+            "genre": "Horor",
+            "production_house": "Multi Buana Kreasindo",
+            "_note": "21cineplex now lists May 7 release; previously carried as May 21."
         },
         {
             "date": "2026-05-14",
@@ -453,12 +476,6 @@
             "title": "Nobody Loves Kay",
             "genre": "Drama",
             "production_house": "Visinema Pictures"
-        },
-        {
-            "date": "2026-05-21",
-            "title": "The Bell: Panggilan Untuk Mati",
-            "genre": "Horor",
-            "production_house": "Sinemata Indonesia Pratama"
         },
         {
             "date": "2026-05-27",

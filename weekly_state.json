@@ -1,82 +1,130 @@
 {
-  "week_label": "30 Apr",
-  "week_start": "2026-04-30",
+  "week_label": "7 May",
+  "week_start": "2026-05-07",
   "deadline_local": "12:00",
-  "generated_at": "2026-04-30T17:00:35+07:00",
+  "generated_at": "2026-05-06T15:22:46+07:00",
   "films_in_scope": [
-    "DILAN ITB 1997",
-    "Ikatan Darah",
-    "Kupeluk Kamu Selamanya"
+    "AIN",
+    "The Bell: Panggilan untuk Mati",
+    "SHAKA OH SHAKA",
+    "Crocodile Tears"
   ],
   "missing_titles": [],
   "film_status": [
     {
       "rank": 1,
-      "title": "DILAN ITB 1997",
-      "youtube_views": 1390354,
-      "buzz_level": "TINGGI",
-      "tiktok": 7,
-      "google_trends": 42,
-      "attention_score": 4.54,
+      "title": "AIN",
+      "youtube_views": 318137,
+      "buzz_level": "SEDANG",
+      "tiktok": null,
+      "google_trends": 1,
+      "attention_score": 2.02,
       "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "film",
-      "missing_human_inputs": [],
+      "gt_entity_type": "mixed",
+      "missing_human_inputs": [
+        "tiktok"
+      ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": true
+      "operator_ready": false
     },
     {
       "rank": 2,
-      "title": "Ikatan Darah",
-      "youtube_views": 271502,
-      "buzz_level": "SEDANG",
-      "tiktok": 4,
-      "google_trends": 8,
-      "attention_score": 2.56,
+      "title": "The Bell: Panggilan untuk Mati",
+      "youtube_views": 65047,
+      "buzz_level": "RENDAH",
+      "tiktok": null,
+      "google_trends": 0,
+      "attention_score": 1.0,
       "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "movie",
-      "missing_human_inputs": [],
+      "gt_entity_type": "mixed",
+      "missing_human_inputs": [
+        "tiktok"
+      ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": true
+      "operator_ready": false
     },
     {
       "rank": 3,
-      "title": "Kupeluk Kamu Selamanya",
-      "youtube_views": 39249,
+      "title": "SHAKA OH SHAKA",
+      "youtube_views": 22163,
       "buzz_level": "RENDAH",
-      "tiktok": 2,
-      "google_trends": 4,
-      "attention_score": 1.28,
+      "tiktok": null,
+      "google_trends": 2,
+      "attention_score": 1.04,
       "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "search_term",
-      "missing_human_inputs": [],
+      "gt_entity_type": "mixed",
+      "missing_human_inputs": [
+        "tiktok"
+      ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": true
+      "operator_ready": false
+    },
+    {
+      "rank": 4,
+      "title": "Crocodile Tears",
+      "youtube_views": 10723,
+      "buzz_level": "RENDAH",
+      "tiktok": null,
+      "google_trends": 0,
+      "attention_score": 1.0,
+      "gt_benchmark_title": "Ghost in the Cell",
+      "gt_entity_type": "mixed",
+      "missing_human_inputs": [
+        "tiktok"
+      ],
+      "missing_autofillable_inputs": [],
+      "missing_audit_inputs": [],
+      "anomalies": [],
+      "machine_ready": true,
+      "operator_ready": false
     }
   ],
-  "missing_human_inputs": [],
+  "missing_human_inputs": [
+    {
+      "title": "AIN",
+      "fields": [
+        "tiktok"
+      ]
+    },
+    {
+      "title": "The Bell: Panggilan untuk Mati",
+      "fields": [
+        "tiktok"
+      ]
+    },
+    {
+      "title": "SHAKA OH SHAKA",
+      "fields": [
+        "tiktok"
+      ]
+    },
+    {
+      "title": "Crocodile Tears",
+      "fields": [
+        "tiktok"
+      ]
+    }
+  ],
   "missing_autofillable_inputs": [],
   "missing_audit_inputs": [],
   "anomalies": [],
   "ready_for_publish_titles": [
-    "DILAN ITB 1997",
-    "Ikatan Darah",
-    "Kupeluk Kamu Selamanya"
+    "AIN",
+    "The Bell: Panggilan untuk Mati",
+    "SHAKA OH SHAKA",
+    "Crocodile Tears"
   ],
-  "ready_for_operator_titles": [
-    "DILAN ITB 1997",
-    "Ikatan Darah",
-    "Kupeluk Kamu Selamanya"
-  ],
+  "ready_for_operator_titles": [],
   "ready_for_publish": true,
-  "ready_for_operator": true,
-  "operator_summary": "All 3 films are fully ready for Wednesday output."
+  "ready_for_operator": false,
+  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: AIN, The Bell: Panggilan untuk Mati, SHAKA OH SHAKA, Crocodile Tears."
 }
