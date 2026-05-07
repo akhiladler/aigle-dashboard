@@ -1,9 +1,3 @@
-# Deprecated: Use `milo-task-friday-day1.md`
-
-This file is retained only to avoid lookup confusion during transition.
-The canonical Friday Day 1 task is now:
-- `milo-task-friday-day1.md`
-
 # Milo Task: Friday Day 1 Protocol
 
 **Burden removed:** Akhil should not manually assemble Day 1 film fields from raw SAMS and Cinepoint evidence.
@@ -75,7 +69,7 @@ Preserve the full raw blocks for:
 Run:
 
 ```bash
-python /root/.openclaw/workspace/aigle/parse_sams_day1.py --input <raw_sams_file> --release-date <YYYY-MM-DD>
+python /root/aigle-dashboard/parse_sams_day1.py --input <raw_sams_file> --release-date <YYYY-MM-DD>
 ```
 
 Expected output:
@@ -94,7 +88,7 @@ Rules:
 Run:
 
 ```bash
-python /root/.openclaw/workspace/aigle/parse_cinepoint_day1.py --input <raw_cinepoint_file> --release-date <YYYY-MM-DD>
+python /root/aigle-dashboard/parse_cinepoint_day1.py --input <raw_cinepoint_file> --release-date <YYYY-MM-DD>
 ```
 
 Expected output:
@@ -113,7 +107,7 @@ Rules:
 Run:
 
 ```bash
-python /root/.openclaw/workspace/aigle/merge_day1_sources.py --cinepoint <cinepoint_json> --sams <sams_json>
+python /root/aigle-dashboard/merge_day1_sources.py --cinepoint <cinepoint_json> --sams <sams_json>
 ```
 
 This is the Day 1 review packet.
@@ -122,7 +116,7 @@ This is the Day 1 review packet.
 Run:
 
 ```bash
-python /root/.openclaw/workspace/aigle/apply_day1_merged.py --input <merged_json> --write
+python /root/aigle-dashboard/apply_day1_merged.py --input <merged_json> --write
 ```
 
 Update only:
@@ -140,8 +134,8 @@ Do not touch non-Day 1 fields.
 Run:
 
 ```bash
-python /root/.openclaw/workspace/aigle/validate_films.py
-python /root/.openclaw/workspace/aigle/check-films.py
+python /root/aigle-dashboard/validate_films.py
+python /root/aigle-dashboard/check-films.py
 ```
 
 If validation fails:

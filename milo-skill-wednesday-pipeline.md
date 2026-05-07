@@ -24,6 +24,11 @@ Milo should **not**:
 - `films.json` = public dashboard export
 - `weekly_state.json` = machine readiness state
 
+Think of them like this:
+- `films.json` = the data
+- `operating_week.json` = this week's target
+- `weekly_state.json` = the readiness verdict
+
 ## Wednesday Workflow
 ### Step 1: Generate the operating slate
 Run:
@@ -34,12 +39,47 @@ python select_operating_week.py
 
 Re-read `operating_week.json`. If the slate is obviously wrong, stop and escalate to Akhil.
 
+If `operating_week.json` conflicts with `films_schedule.json` or current release-facing evidence:
+- do not answer as if the slate is trustworthy
+- emit `STATE_MISMATCH`
+- include:
+  - file path
+  - `week_label`
+  - `week_start`
+  - `updated_at`
+  - the exact conflicting titles or dates
+- escalate before continuing
+
+### Step 1.5: Repo preflight
+Do not fail just because the repo has unrelated dirty files.
+
+Only stop immediately if:
+- merge / rebase / cherry-pick is in progress
+- conflict markers exist in canonical publish files
+
+Unrelated dirty task files are not a reason to abort the whole Wednesday pipeline.
+
 ### Step 2: Collect YouTube for active titles
+Preferred path:
+
+```bash
+python update_youtube_signals.py --titles "Title 1" "Title 2"
+```
+
 For each title in `operating_week.json -> films_releasing`:
-- find the best official trailer source
+- prefer the direct fallback collector first
+- if the fallback collector is unavailable, then do a manual trailer lookup
 - update `youtube_views`
 - update `youtube_url`
 - recalculate `buzz_level`
+
+Do not stop at the first failed tool.
+
+If `yt-dlp` search is bot-gated:
+- use YouTube search HTML to get candidate video IDs
+- open the watch pages
+- prefer PH / `CINEMA 21` / `CGV` official trailers
+- reject reaction / press-conference / recap / commentary clips
 
 ### Step 3: Handle Google Trends
 Use the canonical dual-track GT rule in `pipeline_config.json`.
@@ -83,10 +123,10 @@ Send the draft output to Akhil. Keep it short and factual.
 Only if validation passes and the machine side is ready:
 
 ```bash
-git add films.json operating_week.json weekly_state.json
-git commit -m "Milo: Wednesday pipeline [date]"
-git push
+python publish_dashboard_state.py --repo-root /root/aigle-dashboard --message "Milo: Wednesday pipeline [date]" --push
 ```
+
+This script stages only canonical dashboard-state files and ignores unrelated dirty files.
 
 ## Publish Rules
 - Publish must fail loudly on stale or inconsistent operating week state.
@@ -100,3 +140,4 @@ git push
 - a SAMS-relevant title is missing from the dataset
 - TikTok is still pending close to deadline
 - validation fails and the issue is not a simple data omission
+- `operating_week.json` conflicts with `films_schedule.json` or live release evidence
