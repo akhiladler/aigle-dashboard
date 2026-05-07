@@ -2,7 +2,7 @@
   "week_label": "7 May",
   "week_start": "2026-05-07",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-06T15:22:46+07:00",
+  "generated_at": "2026-05-07T13:46:54+07:00",
   "films_in_scope": [
     "AIN",
     "The Bell: Panggilan untuk Mati",
@@ -16,104 +16,71 @@
       "title": "AIN",
       "youtube_views": 318137,
       "buzz_level": "SEDANG",
-      "tiktok": null,
+      "tiktok": 6,
       "google_trends": 1,
-      "attention_score": 2.02,
+      "attention_score": 2.62,
       "gt_benchmark_title": "Ghost in the Cell",
       "gt_entity_type": "mixed",
-      "missing_human_inputs": [
-        "tiktok"
-      ],
+      "missing_human_inputs": [],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": false
+      "operator_ready": true
     },
     {
       "rank": 2,
       "title": "The Bell: Panggilan untuk Mati",
       "youtube_views": 65047,
       "buzz_level": "RENDAH",
-      "tiktok": null,
+      "tiktok": 2,
       "google_trends": 0,
-      "attention_score": 1.0,
+      "attention_score": 1.2,
       "gt_benchmark_title": "Ghost in the Cell",
       "gt_entity_type": "mixed",
-      "missing_human_inputs": [
-        "tiktok"
-      ],
+      "missing_human_inputs": [],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": false
+      "operator_ready": true
     },
     {
       "rank": 3,
       "title": "SHAKA OH SHAKA",
       "youtube_views": 22163,
       "buzz_level": "RENDAH",
-      "tiktok": null,
+      "tiktok": 7,
       "google_trends": 2,
-      "attention_score": 1.04,
+      "attention_score": 1.74,
       "gt_benchmark_title": "Ghost in the Cell",
       "gt_entity_type": "mixed",
-      "missing_human_inputs": [
-        "tiktok"
-      ],
+      "missing_human_inputs": [],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": false
+      "operator_ready": true
     },
     {
       "rank": 4,
       "title": "Crocodile Tears",
       "youtube_views": 10723,
       "buzz_level": "RENDAH",
-      "tiktok": null,
+      "tiktok": 1,
       "google_trends": 0,
-      "attention_score": 1.0,
+      "attention_score": 1.1,
       "gt_benchmark_title": "Ghost in the Cell",
       "gt_entity_type": "mixed",
-      "missing_human_inputs": [
-        "tiktok"
-      ],
+      "missing_human_inputs": [],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": false
+      "operator_ready": true
     }
   ],
-  "missing_human_inputs": [
-    {
-      "title": "AIN",
-      "fields": [
-        "tiktok"
-      ]
-    },
-    {
-      "title": "The Bell: Panggilan untuk Mati",
-      "fields": [
-        "tiktok"
-      ]
-    },
-    {
-      "title": "SHAKA OH SHAKA",
-      "fields": [
-        "tiktok"
-      ]
-    },
-    {
-      "title": "Crocodile Tears",
-      "fields": [
-        "tiktok"
-      ]
-    }
-  ],
+  "missing_human_inputs": [],
   "missing_autofillable_inputs": [],
   "missing_audit_inputs": [],
   "anomalies": [],
@@ -123,8 +90,13 @@
     "SHAKA OH SHAKA",
     "Crocodile Tears"
   ],
-  "ready_for_operator_titles": [],
+  "ready_for_operator_titles": [
+    "AIN",
+    "The Bell: Panggilan untuk Mati",
+    "SHAKA OH SHAKA",
+    "Crocodile Tears"
+  ],
   "ready_for_publish": true,
-  "ready_for_operator": false,
-  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: AIN, The Bell: Panggilan untuk Mati, SHAKA OH SHAKA, Crocodile Tears."
+  "ready_for_operator": true,
+  "operator_summary": "All 4 films are fully ready for Wednesday output."
 }

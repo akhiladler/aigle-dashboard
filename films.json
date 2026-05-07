@@ -891,7 +891,7 @@
                   "youtube_views": 10723,
                   "buzz_level": "RENDAH",
                   "youtube_url": "https://www.youtube.com/watch?v=Lw7ALcWVepc",
-                  "tiktok": null,
+                  "tiktok": 1,
                   "google_trends": 0,
                   "gt_benchmark_title": "Ghost in the Cell",
                   "gt_capture_context": "Google Trends manual capture: Indonesia | Past week | Web Search | benchmark Ghost in the Cell",
@@ -901,7 +901,7 @@
                   "nobar": false,
                   "sequel_of": null,
                   "calendar": "NORMAL",
-                  "note": "Festival pedigree kuat, tapi traction mainstream masih lemah. Nama Tumpal dan Anthony Chen memberi kredibilitas, namun sinyal komersial pra-rilis belum ikut terangkat.",
+                  "note": "Festival pedigree kuat, tapi traction mainstream tetap paling lemah di slate. Nama Tumpal dan Anthony Chen memberi kredibilitas, namun sinyal komersial pra-rilis belum ikut terangkat; Dias juga menilai TikTok-nya paling rendah.",
                   "plays_at_sams": true
             },
             {
@@ -914,7 +914,7 @@
                   "youtube_views": 318137,
                   "buzz_level": "SEDANG",
                   "youtube_url": "https://www.youtube.com/watch?v=0fQJm8yUSjA",
-                  "tiktok": null,
+                  "tiktok": 6,
                   "google_trends": 1,
                   "gt_benchmark_title": "Ghost in the Cell",
                   "gt_capture_context": "Google Trends manual capture: Indonesia | Past week | Web Search | benchmark Ghost in the Cell",
@@ -924,7 +924,7 @@
                   "nobar": false,
                   "sequel_of": null,
                   "calendar": "NORMAL",
-                  "note": "Pemimpin slate 7 Mei dari sisi trailer traction. Tetapi search interest tetap rendah, jadi kekuatannya terlihat lebih sebagai awareness daripada demand yang benar-benar meledak.",
+                  "note": "Pemimpin slate 7 Mei dari sisi trailer traction dan masih peringkat dua di TikTok menurut Dias. Tetapi search interest tetap rendah, jadi kekuatannya terlihat lebih sebagai awareness kuat daripada demand yang benar-benar meledak.",
                   "plays_at_sams": true
             },
             {
@@ -937,7 +937,7 @@
                   "youtube_views": 22163,
                   "buzz_level": "RENDAH",
                   "youtube_url": "https://www.youtube.com/watch?v=X4SL1xRyuo8",
-                  "tiktok": null,
+                  "tiktok": 7,
                   "google_trends": 2,
                   "gt_benchmark_title": "Ghost in the Cell",
                   "gt_capture_context": "Google Trends manual capture: Indonesia | Past week | Web Search | benchmark Ghost in the Cell",
@@ -947,7 +947,7 @@
                   "nobar": false,
                   "sequel_of": null,
                   "calendar": "NORMAL",
-                  "note": "Trailer traction rendah, tetapi masih ada sedikit tanda hidup di search interest. Dengan PH Tier 1, ini lebih terlihat sebagai kasus PH power daripada buzz organik.",
+                  "note": "Trailer traction rendah, tetapi TikTok justru paling tinggi di slate menurut Dias. Dengan PH Tier 1, ini terlihat sebagai kasus PH power plus short-form push yang lebih hidup daripada sinyal trailer.",
                   "plays_at_sams": true
             },
             {
@@ -960,7 +960,7 @@
                   "youtube_views": 65047,
                   "buzz_level": "RENDAH",
                   "youtube_url": "https://www.youtube.com/watch?v=2M02dobFABQ",
-                  "tiktok": null,
+                  "tiktok": 2,
                   "google_trends": 0,
                   "gt_benchmark_title": "Ghost in the Cell",
                   "gt_capture_context": "Google Trends manual capture: Indonesia | Past week | Web Search | benchmark Ghost in the Cell",
@@ -970,7 +970,7 @@
                   "nobar": false,
                   "sequel_of": null,
                   "calendar": "NORMAL",
-                  "note": "Trailer views berada di tengah slate bawah, tetapi search interest nol. Sinyalnya ada, namun belum cukup untuk disebut kuat; lebih cocok dibaca sebagai title pendamping daripada driver utama minggu ini.",
+                  "note": "Trailer views berada di tengah slate bawah, tetapi search interest nol dan TikTok juga rendah. Ditambah keterbatasan DCP menurut SAMS programming chat, ini lebih cocok dibaca sebagai title pendamping daripada driver utama minggu ini.",
                   "plays_at_sams": true
             }
       ],
