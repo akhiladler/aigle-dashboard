@@ -17,7 +17,7 @@ Canonical files that matter:
 
 ## Goal
 Produce a verified Day 1 update for the current operating-week films using:
-- SAMS release-day numbers
+- human-provided SAMS release-day numbers
 - Cinepoint Day 1 numbers
 
 Then update only the verified Day 1 fields in `films.json`.
@@ -48,6 +48,11 @@ Collect raw evidence separately for:
 Do not paraphrase.
 Do not rewrite titles by hand if the raw source already has them.
 
+Important:
+- Milo may collect public Cinepoint Day 1 data on its own
+- Milo may not invent or assume private SAMS Day 1 data
+- if SAMS Day 1 is only available through operator channels, wait for Akhil to provide the raw SAMS block and treat that as the canonical internal input
+
 #### SAMS preferred raw format
 ```text
 Film Title | admissions | shows
@@ -64,6 +69,11 @@ Film Title,245,34
 Preserve the full raw blocks for:
 - `ESTIMATED ADMISSION`
 - `SHOWTIMES`
+
+Showtimes rule:
+- prefer the official Cinepoint `SHOWTIMES` block for the national denominator
+- do not derive the Friday national denominator from Cinepoint movie-detail pages unless that source is explicitly verified as equivalent
+- if only admissions are available but the official `SHOWTIMES` block is missing, keep `day1_national_adm` and leave `day1_national_screens` / `day1_national_adm_show` blank
 
 ### Step 2: Parse SAMS Day 1
 Run:
@@ -102,6 +112,7 @@ Rules:
 - use Cinepoint only for raw Day 1 numbers
 - if Cinepoint has not posted yet, report `BLOCKED | waiting_for_cinepoint`
 - do not guess showtimes or ratios
+- do not treat a movie-detail page count as the official `SHOWTIMES` denominator unless separately verified
 
 ### Step 4: Merge the two parsed sources
 Run:
@@ -160,6 +171,7 @@ No speculative commentary.
 
 Escalate when:
 - Cinepoint is not yet posted
+- SAMS Day 1 has not yet been provided by Akhil / operator channel
 - SAMS recap is incomplete
 - a title match is ambiguous
 - a ratio exists without a trustworthy denominator
@@ -173,3 +185,11 @@ Friday Day 1 is successful when:
 - only verified Day 1 fields are written
 - validation passes
 - Akhil receives a short receipt-based report
+
+## Scope Truth
+
+Friday has two different collection surfaces:
+- public Cinepoint Day 1 can be cron-collected automatically
+- private SAMS Day 1 still requires human handoff unless and until a safe internal feed exists
+
+Do not confuse a successful public-data cron with a complete Friday Day 1 update.
