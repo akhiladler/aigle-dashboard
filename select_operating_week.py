@@ -2,7 +2,7 @@
 import argparse
 import json
 from collections import defaultdict
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -39,6 +39,12 @@ def parse_args(config):
     parser = argparse.ArgumentParser(description='Generate canonical operating_week.json for Aigle.')
     parser.add_argument('--today', help='Override local date in YYYY-MM-DD format.')
     parser.add_argument('--updated-by', default=config.get('ops_lead', 'milo'))
+    parser.add_argument(
+        '--mode',
+        choices=['active', 'prerelease'],
+        default='active',
+        help='Use active for the still-live slate, or prerelease for the next upcoming release slate.',
+    )
     return parser.parse_args()
 
 
@@ -84,7 +90,7 @@ def group_tracked_films(films):
     return grouped
 
 
-def choose_operating_date(today, available_dates, config):
+def choose_operating_date(today, available_dates, config, mode):
     retention_days = config['operating_week']['active_retention_days']
     lookahead_days = config['operating_week']['lookahead_days']
 
@@ -92,13 +98,21 @@ def choose_operating_date(today, available_dates, config):
         d for d in available_dates
         if 0 <= (today - d).days <= retention_days
     )
-    if current_dates:
-        return current_dates[-1]
-
     upcoming_dates = sorted(
         d for d in available_dates
         if 0 <= (d - today).days <= lookahead_days
     )
+
+    if mode == 'prerelease':
+        if upcoming_dates:
+            return upcoming_dates[0]
+        if current_dates:
+            return current_dates[-1]
+        return None
+
+    if current_dates:
+        return current_dates[-1]
+
     if upcoming_dates:
         return upcoming_dates[0]
 
@@ -140,7 +154,7 @@ def main():
     tracked_by_date = group_tracked_films(films)
 
     available_dates = set(schedule_by_date.keys()) | set(tracked_by_date.keys())
-    primary_date = choose_operating_date(today, available_dates, config)
+    primary_date = choose_operating_date(today, available_dates, config, args.mode)
     primary_titles = titles_for_date(primary_date, schedule_by_date, tracked_by_date)
 
     payload = {
@@ -149,6 +163,7 @@ def main():
         'films_releasing': primary_titles,
         'updated_at': datetime.now(timezone).isoformat(timespec='seconds'),
         'updated_by': args.updated_by,
+        'selection_mode': args.mode,
     }
 
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')

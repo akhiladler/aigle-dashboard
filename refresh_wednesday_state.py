@@ -24,10 +24,16 @@ def main():
     parser = argparse.ArgumentParser(description="Refresh Wednesday operating week and weekly state sequentially.")
     parser.add_argument("--today", help="Override local date in YYYY-MM-DD format.")
     parser.add_argument("--updated-by", default="codex")
+    parser.add_argument(
+        "--mode",
+        choices=["active", "prerelease"],
+        default="prerelease",
+        help="Pick the upcoming prerelease slate by default for Wednesday work.",
+    )
     parser.add_argument("--skip-check", action="store_true", help="Skip final check-films summary.")
     args = parser.parse_args()
 
-    select_cmd = [sys.executable, str(SELECT_SCRIPT), "--updated-by", args.updated_by]
+    select_cmd = [sys.executable, str(SELECT_SCRIPT), "--updated-by", args.updated_by, "--mode", args.mode]
     if args.today:
         select_cmd.extend(["--today", args.today])
 

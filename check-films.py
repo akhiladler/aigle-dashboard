@@ -30,6 +30,7 @@ def main():
     print_group('Missing human inputs', state.get('missing_human_inputs', []))
     print_group('Missing autofillable inputs', state.get('missing_autofillable_inputs', []))
     print_group('Missing audit inputs', state.get('missing_audit_inputs', []))
+    print_group('Pending signal inputs', state.get('pending_signal_inputs', []))
 
     anomalies = state.get('anomalies', [])
     if anomalies:

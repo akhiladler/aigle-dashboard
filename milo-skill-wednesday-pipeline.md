@@ -34,10 +34,14 @@ Think of them like this:
 Run:
 
 ```bash
-python select_operating_week.py
+python select_operating_week.py --mode prerelease
 ```
 
 Re-read `operating_week.json`. If the slate is obviously wrong, stop and escalate to Akhil.
+
+For Wednesday pre-release work:
+- do not let the still-live holdover slate outrank the next release slate
+- `--mode prerelease` is the default safe choice
 
 If `operating_week.json` conflicts with `films_schedule.json` or current release-facing evidence:
 - do not answer as if the slate is trustworthy
@@ -88,6 +92,11 @@ Milo may:
 - collect the GT score, or
 - prefill the GT capture context if the score must be confirmed manually
 
+If GT is still pending:
+- set `google_trends_pending: true`
+- keep `gt_benchmark_title`, `gt_capture_context`, and `gt_capture_stage` current
+- do not fake a zero just to make validation green
+
 If GT is present in `films.json`, Milo must also keep these audit fields current:
 - `gt_benchmark_title`
 - `gt_capture_context`
@@ -133,6 +142,7 @@ This script stages only canonical dashboard-state files and ignores unrelated di
 - Publish must fail if a title in `operating_week.json` is missing from `films.json`.
 - Publish must fail if `buzz_level` contradicts `youtube_views`.
 - Missing TikTok is allowed, but it must be visible in `weekly_state.json`.
+- Pending GT is allowed only if `google_trends_pending=true` and the benchmark context is explicit.
 
 ## Escalate to Akhil If
 - title/entity ambiguity cannot be resolved cleanly

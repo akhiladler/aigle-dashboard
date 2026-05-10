@@ -31,8 +31,10 @@ NUMERIC_FIELDS = [
 ]
 OPTIONAL_DATE_FIELDS = ['gt_capture_date']
 OPTIONAL_URL_FIELDS = ['youtube_url']
+OPTIONAL_BOOL_FIELDS = ['google_trends_pending']
 MANUAL_FIELDS = {'tiktok'}
 AUTOFILLABLE_FIELDS = {'google_trends', 'youtube_views', 'youtube_url'}
+PENDING_GT_REQUIRED_FIELDS = ['gt_benchmark_title', 'gt_capture_context', 'gt_capture_stage']
 
 issues = []
 
@@ -222,6 +224,11 @@ def validate_film(film, idx, schedule_map, valid_ph_tiers):
     if film.get('calendar') not in CALENDAR_VALUES:
         add('ERROR', f"Invalid calendar: {film.get('calendar')}", film=title, field='calendar')
 
+    for field in OPTIONAL_BOOL_FIELDS:
+        value = film.get(field)
+        if value is not None and not isinstance(value, bool):
+            add('ERROR', f'{field} must be true, false, or null', film=title, field=field)
+
     for field in OPTIONAL_URL_FIELDS:
         value = film.get(field)
         if value is not None and (not isinstance(value, str) or not valid_url(value)):
@@ -254,8 +261,16 @@ def validate_film(film, idx, schedule_map, valid_ph_tiers):
         add('ERROR', 'tiktok must be between 0 and 10', film=title, field='tiktok')
 
     gt = film.get('google_trends')
+    gt_pending = film.get('google_trends_pending') is True
     if gt is not None and is_number(gt) and not (0 <= gt <= 100):
         add('ERROR', 'google_trends must be between 0 and 100', film=title, field='google_trends')
+    if gt_pending and gt is not None:
+        add('ERROR', 'google_trends_pending cannot be true when google_trends already has a score', film=title, field='google_trends_pending')
+    if gt_pending:
+        for field in PENDING_GT_REQUIRED_FIELDS:
+            value = film.get(field)
+            if not isinstance(value, str) or not value.strip():
+                add('ERROR', f'{field} is required when google_trends_pending=true', film=title, field=field)
 
     nobar = film.get('nobar')
     if nobar is not None and not isinstance(nobar, bool):
@@ -332,16 +347,25 @@ def classify_missing(fields):
     return human, autofillable, other
 
 
-def build_operator_summary(titles, ready_for_publish, ready_for_operator, missing_human, missing_auto, missing_titles):
+def build_operator_summary(titles, ready_for_publish, ready_for_operator, missing_human, missing_auto, missing_titles, pending_signal_inputs):
     if not titles:
         return 'No films in scope.'
 
     if ready_for_operator:
         return f"All {len(titles)} films are fully ready for Wednesday output."
 
+    if ready_for_publish and missing_human and pending_signal_inputs:
+        pending_human = ', '.join(item['title'] for item in missing_human)
+        pending_signal_titles = ', '.join(item['title'] for item in pending_signal_inputs)
+        return f"Machine side is publish-ready. Human inputs still pending for: {pending_human}. Signal confirmation still pending for: {pending_signal_titles}."
+
     if ready_for_publish and missing_human:
         pending = ', '.join(item['title'] for item in missing_human)
         return f"Machine side is publish-ready. Human inputs still pending for: {pending}."
+
+    if ready_for_publish and pending_signal_inputs:
+        pending_signal_titles = ', '.join(item['title'] for item in pending_signal_inputs)
+        return f"Machine side is publish-ready. Signal confirmation still pending for: {pending_signal_titles}."
 
     if missing_titles:
         return f"Operating week is blocked. Missing film records for: {', '.join(missing_titles)}."
@@ -376,6 +400,7 @@ def build_weekly_state(films_by_title, operating_week, config):
     missing_human = []
     missing_auto = []
     missing_audit = []
+    pending_signal_inputs = []
     anomalies = []
     ready_for_publish_titles = []
     ready_for_operator_titles = []
@@ -387,6 +412,8 @@ def build_weekly_state(films_by_title, operating_week, config):
             continue
 
         missing = []
+        pending_signals = []
+        gt_pending = film.get('google_trends_pending') is True
         if film.get('tiktok') is None:
             missing.append('tiktok')
         if film.get('youtube_views') in (None, 0):
@@ -394,7 +421,17 @@ def build_weekly_state(films_by_title, operating_week, config):
         if film.get('youtube_views', 0) > 0 and not film.get('youtube_url'):
             missing.append('youtube_url')
         if film.get('google_trends') is None:
-            missing.append('google_trends')
+            if gt_pending:
+                pending_missing = [
+                    field for field in PENDING_GT_REQUIRED_FIELDS
+                    if not film.get(field)
+                ]
+                if pending_missing:
+                    missing.extend(pending_missing)
+                else:
+                    pending_signals.append('google_trends')
+            else:
+                missing.append('google_trends')
 
         audit_missing = []
         if film.get('google_trends') is not None:
@@ -414,11 +451,13 @@ def build_weekly_state(films_by_title, operating_week, config):
             missing_auto.append({'title': title, 'fields': autofillable_missing + other_missing})
         if audit_missing:
             missing_audit.append({'title': title, 'fields': audit_missing})
+        if pending_signals:
+            pending_signal_inputs.append({'title': title, 'fields': pending_signals})
         if week_anomalies:
             anomalies.append({'title': title, 'issues': week_anomalies})
 
         machine_ready = not autofillable_missing and not other_missing and not audit_missing and not week_anomalies
-        operator_ready = machine_ready and not human_missing
+        operator_ready = machine_ready and not human_missing and not pending_signals
 
         if machine_ready:
             ready_for_publish_titles.append(title)
@@ -432,12 +471,14 @@ def build_weekly_state(films_by_title, operating_week, config):
             'buzz_level': film.get('buzz_level'),
             'tiktok': film.get('tiktok'),
             'google_trends': film.get('google_trends'),
+            'google_trends_pending': gt_pending,
             'attention_score': attention_score(film),
             'gt_benchmark_title': film.get('gt_benchmark_title'),
             'gt_entity_type': film.get('gt_entity_type'),
             'missing_human_inputs': human_missing,
             'missing_autofillable_inputs': autofillable_missing + other_missing,
             'missing_audit_inputs': audit_missing,
+            'pending_signal_inputs': pending_signals,
             'anomalies': week_anomalies,
             'machine_ready': machine_ready,
             'operator_ready': operator_ready,
@@ -457,12 +498,21 @@ def build_weekly_state(films_by_title, operating_week, config):
         'missing_human_inputs': missing_human,
         'missing_autofillable_inputs': missing_auto,
         'missing_audit_inputs': missing_audit,
+        'pending_signal_inputs': pending_signal_inputs,
         'anomalies': anomalies,
         'ready_for_publish_titles': ready_for_publish_titles,
         'ready_for_operator_titles': ready_for_operator_titles,
         'ready_for_publish': ready_for_publish,
         'ready_for_operator': ready_for_operator,
-        'operator_summary': build_operator_summary(titles, ready_for_publish, ready_for_operator, missing_human, missing_auto + missing_audit, missing_titles),
+        'operator_summary': build_operator_summary(
+            titles,
+            ready_for_publish,
+            ready_for_operator,
+            missing_human,
+            missing_auto + missing_audit,
+            missing_titles,
+            pending_signal_inputs,
+        ),
     }
 
 
