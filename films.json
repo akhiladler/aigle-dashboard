@@ -1,6 +1,6 @@
 {
       "meta": {
-            "last_updated": "2026-05-06",
+            "last_updated": "2026-05-11",
             "total_films": 39,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
@@ -907,6 +907,8 @@
                   "day1_sams_adm": 49,
                   "day1_sams_shows": 34,
                   "day1_sams_adm_show": 1.44,
+                  "ow_sams": 114,
+                  "ow_national": 2762,
                   "note": "Festival pedigree kuat, tapi traction mainstream tetap paling lemah di slate. Nama Tumpal dan Anthony Chen memberi kredibilitas, namun sinyal komersial pra-rilis belum ikut terangkat; Dias juga menilai TikTok-nya paling rendah.",
                   "plays_at_sams": true
             },
@@ -936,6 +938,8 @@
                   "day1_sams_adm": 298,
                   "day1_sams_shows": 54,
                   "day1_sams_adm_show": 5.52,
+                  "ow_sams": 1998,
+                  "ow_national": 63831,
                   "note": "Pemimpin slate 7 Mei dari sisi trailer traction dan masih peringkat dua di TikTok menurut Dias. Tetapi search interest tetap rendah, jadi kekuatannya terlihat lebih sebagai awareness kuat daripada demand yang benar-benar meledak.",
                   "plays_at_sams": true
             },
@@ -965,6 +969,8 @@
                   "day1_sams_adm": 101,
                   "day1_sams_shows": 62,
                   "day1_sams_adm_show": 1.63,
+                  "ow_sams": 391,
+                  "ow_national": 27644,
                   "note": "Trailer traction rendah, tetapi TikTok justru paling tinggi di slate menurut Dias. Dengan PH Tier 1, ini terlihat sebagai kasus PH power plus short-form push yang lebih hidup daripada sinyal trailer.",
                   "plays_at_sams": true
             },
@@ -994,9 +1000,11 @@
                   "day1_sams_adm": 115,
                   "day1_sams_shows": 24,
                   "day1_sams_adm_show": 4.79,
+                  "ow_sams": 1249,
+                  "ow_national": 83445,
                   "note": "Trailer views berada di tengah slate bawah, tetapi search interest nol dan TikTok juga rendah. Ditambah keterbatasan DCP menurut SAMS programming chat, ini lebih cocok dibaca sebagai title pendamping daripada driver utama minggu ini.",
                   "plays_at_sams": true
             }
       ],
-      "last_updated": "2026-05-06"
+      "last_updated": "2026-05-11"
 }
