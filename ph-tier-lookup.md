@@ -34,6 +34,7 @@ BASE Entertainment | T2 |
 Sinemart | T2 |
 Soraya Intercine | T2 |
 Soraya | T2 | Alias for Soraya Intercine.
+Dee Company | T2 | Established horor producer. Akhil executive call 2026-05-11.
 
 ## Tier 3 — Rising
 

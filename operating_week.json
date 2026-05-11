@@ -1,12 +1,11 @@
 {
-  "week_label": "7 May",
-  "week_start": "2026-05-07",
+  "week_label": "13 May",
+  "week_start": "2026-05-13",
   "films_releasing": [
-    "AIN",
-    "The Bell: Panggilan untuk Mati",
-    "SHAKA OH SHAKA",
-    "Crocodile Tears"
+    "Semua Akan Baik-Baik Saja",
+    "Tumbal Proyek"
   ],
-  "updated_at": "2026-05-06T15:22:46+07:00",
-  "updated_by": "codex"
+  "updated_at": "2026-05-11T16:21:51+07:00",
+  "updated_by": "codex",
+  "selection_mode": "prerelease"
 }

@@ -1,7 +1,7 @@
 {
       "meta": {
             "last_updated": "2026-05-11",
-            "total_films": 39,
+            "total_films": 41,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -1003,6 +1003,50 @@
                   "ow_sams": 1249,
                   "ow_national": 83445,
                   "note": "Trailer views berada di tengah slate bawah, tetapi search interest nol dan TikTok juga rendah. Ditambah keterbatasan DCP menurut SAMS programming chat, ini lebih cocok dibaca sebagai title pendamping daripada driver utama minggu ini.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Semua Akan Baik-Baik Saja",
+                  "release_date": "2026-05-13",
+                  "week_label": "13 May",
+                  "ph": "Tiger Wong Entertainment",
+                  "ph_tier": "T3",
+                  "genre": "Drama",
+                  "youtube_views": 330784,
+                  "buzz_level": "SEDANG",
+                  "youtube_url": "https://www.youtube.com/watch?v=L1jfo8e0RDk",
+                  "tiktok": null,
+                  "google_trends": null,
+                  "google_trends_pending": true,
+                  "gt_benchmark_title": "AIN",
+                  "gt_capture_context": "Google Trends pending manual capture: Indonesia | Past week | Web Search | benchmark AIN | May 13 SAMS slate",
+                  "gt_capture_stage": "monday-pre-release",
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "PANAS",
+                  "note": "Official 21cineplex canonical title for the former local working title Hari Terakhir Bersama Ibu. Medium trailer traction, strong cast credibility, but GT and TikTok remain human/pending inputs.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Tumbal Proyek",
+                  "release_date": "2026-05-13",
+                  "week_label": "13 May",
+                  "ph": "Dee Company",
+                  "ph_tier": "T2",
+                  "genre": "Horor",
+                  "youtube_views": 171603,
+                  "buzz_level": "SEDANG",
+                  "youtube_url": "https://www.youtube.com/watch?v=McymJCOx-YE",
+                  "tiktok": null,
+                  "google_trends": null,
+                  "google_trends_pending": true,
+                  "gt_benchmark_title": "AIN",
+                  "gt_capture_context": "Google Trends pending manual capture: Indonesia | Past week | Web Search | benchmark AIN | May 13 SAMS slate",
+                  "gt_capture_stage": "monday-pre-release",
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "PANAS",
+                  "note": "Dee Company T2 horror on official 21cineplex May 13 slate. Official trailer is medium traction; May 13/long-weekend timing and horror genre make it the cleanest machine-side SAMS candidate pending TikTok and GT.",
                   "plays_at_sams": true
             }
       ],

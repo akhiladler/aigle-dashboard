@@ -1,102 +1,98 @@
 {
-  "week_label": "7 May",
-  "week_start": "2026-05-07",
+  "week_label": "13 May",
+  "week_start": "2026-05-13",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-07T13:46:54+07:00",
+  "generated_at": "2026-05-11T16:47:10+07:00",
   "films_in_scope": [
-    "AIN",
-    "The Bell: Panggilan untuk Mati",
-    "SHAKA OH SHAKA",
-    "Crocodile Tears"
+    "Semua Akan Baik-Baik Saja",
+    "Tumbal Proyek"
   ],
   "missing_titles": [],
   "film_status": [
     {
       "rank": 1,
-      "title": "AIN",
-      "youtube_views": 318137,
+      "title": "Semua Akan Baik-Baik Saja",
+      "youtube_views": 330784,
       "buzz_level": "SEDANG",
-      "tiktok": 6,
-      "google_trends": 1,
-      "attention_score": 2.62,
-      "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "mixed",
-      "missing_human_inputs": [],
+      "tiktok": null,
+      "google_trends": null,
+      "google_trends_pending": true,
+      "attention_score": 2,
+      "gt_benchmark_title": "AIN",
+      "gt_entity_type": null,
+      "missing_human_inputs": [
+        "tiktok"
+      ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
+      "pending_signal_inputs": [
+        "google_trends"
+      ],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": true
+      "operator_ready": false
     },
     {
       "rank": 2,
-      "title": "The Bell: Panggilan untuk Mati",
-      "youtube_views": 65047,
-      "buzz_level": "RENDAH",
-      "tiktok": 2,
-      "google_trends": 0,
-      "attention_score": 1.2,
-      "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "mixed",
-      "missing_human_inputs": [],
+      "title": "Tumbal Proyek",
+      "youtube_views": 171603,
+      "buzz_level": "SEDANG",
+      "tiktok": null,
+      "google_trends": null,
+      "google_trends_pending": true,
+      "attention_score": 2,
+      "gt_benchmark_title": "AIN",
+      "gt_entity_type": null,
+      "missing_human_inputs": [
+        "tiktok"
+      ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
+      "pending_signal_inputs": [
+        "google_trends"
+      ],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": true
-    },
-    {
-      "rank": 3,
-      "title": "SHAKA OH SHAKA",
-      "youtube_views": 22163,
-      "buzz_level": "RENDAH",
-      "tiktok": 7,
-      "google_trends": 2,
-      "attention_score": 1.74,
-      "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "mixed",
-      "missing_human_inputs": [],
-      "missing_autofillable_inputs": [],
-      "missing_audit_inputs": [],
-      "anomalies": [],
-      "machine_ready": true,
-      "operator_ready": true
-    },
-    {
-      "rank": 4,
-      "title": "Crocodile Tears",
-      "youtube_views": 10723,
-      "buzz_level": "RENDAH",
-      "tiktok": 1,
-      "google_trends": 0,
-      "attention_score": 1.1,
-      "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "mixed",
-      "missing_human_inputs": [],
-      "missing_autofillable_inputs": [],
-      "missing_audit_inputs": [],
-      "anomalies": [],
-      "machine_ready": true,
-      "operator_ready": true
+      "operator_ready": false
     }
   ],
-  "missing_human_inputs": [],
+  "missing_human_inputs": [
+    {
+      "title": "Semua Akan Baik-Baik Saja",
+      "fields": [
+        "tiktok"
+      ]
+    },
+    {
+      "title": "Tumbal Proyek",
+      "fields": [
+        "tiktok"
+      ]
+    }
+  ],
   "missing_autofillable_inputs": [],
   "missing_audit_inputs": [],
+  "pending_signal_inputs": [
+    {
+      "title": "Semua Akan Baik-Baik Saja",
+      "fields": [
+        "google_trends"
+      ]
+    },
+    {
+      "title": "Tumbal Proyek",
+      "fields": [
+        "google_trends"
+      ]
+    }
+  ],
   "anomalies": [],
   "ready_for_publish_titles": [
-    "AIN",
-    "The Bell: Panggilan untuk Mati",
-    "SHAKA OH SHAKA",
-    "Crocodile Tears"
+    "Semua Akan Baik-Baik Saja",
+    "Tumbal Proyek"
   ],
-  "ready_for_operator_titles": [
-    "AIN",
-    "The Bell: Panggilan untuk Mati",
-    "SHAKA OH SHAKA",
-    "Crocodile Tears"
-  ],
+  "ready_for_operator_titles": [],
   "ready_for_publish": true,
-  "ready_for_operator": true,
-  "operator_summary": "All 4 films are fully ready for Wednesday output."
+  "ready_for_operator": false,
+  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Semua Akan Baik-Baik Saja, Tumbal Proyek. Signal confirmation still pending for: Semua Akan Baik-Baik Saja, Tumbal Proyek."
 }

@@ -68,11 +68,12 @@ def main():
     missing_human = weekly_state.get('missing_human_inputs', [])
     missing_auto = weekly_state.get('missing_autofillable_inputs', [])
     missing_audit = weekly_state.get('missing_audit_inputs', [])
+    pending_signals = weekly_state.get('pending_signal_inputs', [])
 
-    if missing_human or missing_auto or missing_audit:
+    if missing_human or missing_auto or missing_audit or pending_signals:
         print('')
         print('Pending:')
-        for group in missing_human + missing_auto + missing_audit:
+        for group in missing_human + missing_auto + missing_audit + pending_signals:
             print(f"- {group['title']}: {', '.join(group['fields'])}")
 
 

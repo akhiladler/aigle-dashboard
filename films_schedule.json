@@ -408,12 +408,6 @@
         },
         {
             "date": "2026-04-30",
-            "title": "Tumbal Proyek",
-            "genre": "Horor",
-            "production_house": "Dee Company"
-        },
-        {
-            "date": "2026-04-30",
             "title": "Rumah Terindah",
             "genre": "Drama",
             "production_house": "Cakra Film"
@@ -454,16 +448,33 @@
             "_note": "21cineplex now lists May 7 release; previously carried as May 21."
         },
         {
-            "date": "2026-05-14",
-            "title": "Harusnya Horror",
-            "genre": "Drama Komedi",
-            "production_house": "Ess Jay Studios"
+            "date": "2026-05-13",
+            "title": "Semua Akan Baik-Baik Saja",
+            "genre": "Drama",
+            "production_house": "Tiger Wong Entertainment",
+            "_note": "Official 21cineplex canonical title. Former local working title: Hari Terakhir Bersama Ibu."
+        },
+        {
+            "date": "2026-05-13",
+            "title": "Tumbal Proyek",
+            "genre": "Horor",
+            "production_house": "Dee Company",
+            "_note": "21cineplex lists Tayang: May 13 as of 2026-05-11."
+        },
+        {
+            "date": "2026-05-13",
+            "title": "Yang Lain Boleh Hilang Asal Kau Jangan",
+            "genre": "Drama",
+            "production_house": "RAPI Films",
+            "_note": "Official 21cineplex May 13 title. Excluded from SAMS operating slate by RAPI Films rule."
         },
         {
             "date": "2026-05-14",
-            "title": "Hari Terakhir Bersama Ibu",
-            "genre": "Drama",
-            "production_house": "Tiger Wong Entertainment"
+            "title": "Harusnya Horror",
+            "genre": "Drama Komedi",
+            "production_house": "Ess Jay Studios",
+            "status": "postponed",
+            "_note": "Watchlist-only as of 2026-05-11: not found on official 21cineplex release-facing source. Do not include in operating slate until reconfirmed."
         },
         {
             "date": "2026-05-21",
