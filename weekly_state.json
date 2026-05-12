@@ -2,7 +2,7 @@
   "week_label": "13 May",
   "week_start": "2026-05-13",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-11T16:47:10+07:00",
+  "generated_at": "2026-05-12T16:35:59+07:00",
   "films_in_scope": [
     "Semua Akan Baik-Baik Saja",
     "Tumbal Proyek"
@@ -12,22 +12,20 @@
     {
       "rank": 1,
       "title": "Semua Akan Baik-Baik Saja",
-      "youtube_views": 330784,
+      "youtube_views": 345518,
       "buzz_level": "SEDANG",
       "tiktok": null,
-      "google_trends": null,
-      "google_trends_pending": true,
-      "attention_score": 2,
-      "gt_benchmark_title": "AIN",
-      "gt_entity_type": null,
+      "google_trends": 1,
+      "google_trends_pending": false,
+      "attention_score": 2.02,
+      "gt_benchmark_title": "Ghost in the Cell",
+      "gt_entity_type": "search_term",
       "missing_human_inputs": [
         "tiktok"
       ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
-      "pending_signal_inputs": [
-        "google_trends"
-      ],
+      "pending_signal_inputs": [],
       "anomalies": [],
       "machine_ready": true,
       "operator_ready": false
@@ -35,22 +33,20 @@
     {
       "rank": 2,
       "title": "Tumbal Proyek",
-      "youtube_views": 171603,
+      "youtube_views": 175365,
       "buzz_level": "SEDANG",
       "tiktok": null,
-      "google_trends": null,
-      "google_trends_pending": true,
-      "attention_score": 2,
-      "gt_benchmark_title": "AIN",
-      "gt_entity_type": null,
+      "google_trends": 15,
+      "google_trends_pending": false,
+      "attention_score": 2.3,
+      "gt_benchmark_title": "Ghost in the Cell",
+      "gt_entity_type": "film",
       "missing_human_inputs": [
         "tiktok"
       ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
-      "pending_signal_inputs": [
-        "google_trends"
-      ],
+      "pending_signal_inputs": [],
       "anomalies": [],
       "machine_ready": true,
       "operator_ready": false
@@ -72,20 +68,7 @@
   ],
   "missing_autofillable_inputs": [],
   "missing_audit_inputs": [],
-  "pending_signal_inputs": [
-    {
-      "title": "Semua Akan Baik-Baik Saja",
-      "fields": [
-        "google_trends"
-      ]
-    },
-    {
-      "title": "Tumbal Proyek",
-      "fields": [
-        "google_trends"
-      ]
-    }
-  ],
+  "pending_signal_inputs": [],
   "anomalies": [],
   "ready_for_publish_titles": [
     "Semua Akan Baik-Baik Saja",
@@ -94,5 +77,5 @@
   "ready_for_operator_titles": [],
   "ready_for_publish": true,
   "ready_for_operator": false,
-  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Semua Akan Baik-Baik Saja, Tumbal Proyek. Signal confirmation still pending for: Semua Akan Baik-Baik Saja, Tumbal Proyek."
+  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Semua Akan Baik-Baik Saja, Tumbal Proyek."
 }
