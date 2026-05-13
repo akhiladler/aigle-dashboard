@@ -69,6 +69,7 @@ Radepa Konten Indonesia | T4 |
 Alamanda Mandiri Sejahtera | T4 |
 DHF Entertainment | T4 |
 Aksa Bumi Langit | T4 |
+Sanggar Mekar Asih | T4 | Local sanggar-led community indie production; operator-confirmed SAMS add-on for Silent Dance on 2026-05-13.
 Impian Indonesia | T4 |
 Tunas Citrasinema Kreatif | T4 |
 Sinema Digital Indonesia | T4 |

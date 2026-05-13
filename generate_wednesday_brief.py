@@ -76,6 +76,28 @@ def describe_week(films):
         return ['Tidak ada film dalam operating slate.']
 
     lines = []
+    titles = {film.get('title') for film in films}
+    if {'Tumbal Proyek', 'Semua Akan Baik-Baik Saja', 'Silent Dance'}.issubset(titles):
+        by_title = {film['title']: film for film in films}
+        tumpal = by_title['Tumbal Proyek']
+        semua = by_title['Semua Akan Baik-Baik Saja']
+        silent = by_title['Silent Dance']
+        lines.append('Belum ada film yang terlihat buzz tinggi.')
+        lines.append(
+            f"Tumbal Proyek paling balance: TikTok {tumpal.get('tiktok')}, "
+            f"GT {tumpal.get('google_trends')}, YouTube {format_views(tumpal.get('youtube_views'))}, "
+            f"plus horror + {tumpal.get('ph')} lebih natural utk SAMS."
+        )
+        lines.append(
+            f"Semua Akan Baik-Baik Saja punya trailer reach lebih besar, tapi TikTok {semua.get('tiktok')} "
+            f"+ GT {format_gt(semua)} bikin active demand-nya terlihat lebih lemah."
+        )
+        lines.append(
+            f"Silent Dance saya baca sebagai low-priority/test allocation dulu: YouTube {format_views(silent.get('youtube_views'))}, "
+            f"TikTok {silent.get('tiktok')}, dan GT masih pending."
+        )
+        return lines
+
     if not any(film.get('buzz_level') == 'TINGGI' for film in films):
         lines.append('Dua-duanya belum terlihat buzz tinggi.' if len(films) == 2 else 'Belum ada film yang terlihat buzz tinggi.')
 

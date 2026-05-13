@@ -1,7 +1,7 @@
 {
       "meta": {
-            "last_updated": "2026-05-11",
-            "total_films": 41,
+            "last_updated": "2026-05-13",
+            "total_films": 42,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -1015,7 +1015,7 @@
                   "youtube_views": 359682,
                   "buzz_level": "SEDANG",
                   "youtube_url": "https://www.youtube.com/watch?v=L1jfo8e0RDk",
-                  "tiktok": null,
+                  "tiktok": 3,
                   "google_trends": 1,
                   "google_trends_pending": false,
                   "gt_benchmark_title": "Ghost in the Cell",
@@ -1027,7 +1027,7 @@
                   "nobar": false,
                   "sequel_of": null,
                   "calendar": "PANAS",
-                  "note": "Official 21cineplex canonical title for the former local working title Hari Terakhir Bersama Ibu. Medium trailer traction, but GT is very low and lower-confidence because Google Trends only recognized the title as a search term, not a film topic.",
+                  "note": "Official 21cineplex canonical title for the former local working title Hari Terakhir Bersama Ibu. Medium trailer traction, but TikTok 3 and GT 1 suggest weak active demand; GT is lower-confidence because Google Trends only recognized the title as a search term, not a film topic.",
                   "plays_at_sams": true
             },
             {
@@ -1040,7 +1040,7 @@
                   "youtube_views": 180235,
                   "buzz_level": "SEDANG",
                   "youtube_url": "https://www.youtube.com/watch?v=McymJCOx-YE",
-                  "tiktok": null,
+                  "tiktok": 6,
                   "google_trends": 15,
                   "google_trends_pending": false,
                   "gt_benchmark_title": "Ghost in the Cell",
@@ -1052,9 +1052,32 @@
                   "nobar": false,
                   "sequel_of": null,
                   "calendar": "PANAS",
-                  "note": "Dee Company T2 horror on official 21cineplex May 13 slate. Trailer traction is medium and GT is meaningfully above Semua, making it the cleaner machine-side SAMS candidate pending TikTok.",
+                  "note": "Dee Company T2 horror on official 21cineplex May 13 slate. Trailer traction is medium, GT is meaningfully above Semua, and TikTok 6 makes it the clearest new-film SAMS attention candidate this week.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Silent Dance",
+                  "release_date": "2026-05-13",
+                  "week_label": "13 May",
+                  "ph": "Sanggar Mekar Asih",
+                  "ph_tier": "T4",
+                  "genre": "Drama",
+                  "youtube_views": 260,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": "https://www.youtube.com/watch?v=5KWAbF9rVXk",
+                  "tiktok": 0,
+                  "google_trends": null,
+                  "google_trends_pending": true,
+                  "gt_benchmark_title": "Ghost in the Cell",
+                  "gt_capture_context": "Google Trends pending: Indonesia | Past week | Web Search | benchmark Ghost in the Cell | source check rate-limited; operator-confirmed low TikTok/no boost activity",
+                  "gt_capture_date": "2026-05-13",
+                  "gt_capture_stage": "wednesday-operator-add-on",
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "PANAS",
+                  "note": "Operator-confirmed SAMS add-on after Dias reported near-zero TikTok and no boost activity. Public sources conflict on May 13 vs May 14 release date, but SAMS listings and allocation show active May 13 play. Treat as low-priority/test allocation, not demand-led priority.",
                   "plays_at_sams": true
             }
       ],
-      "last_updated": "2026-05-12"
+      "last_updated": "2026-05-13"
 }
