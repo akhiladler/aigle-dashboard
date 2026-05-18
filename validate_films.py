@@ -35,6 +35,11 @@ OPTIONAL_BOOL_FIELDS = ['google_trends_pending']
 MANUAL_FIELDS = {'tiktok'}
 AUTOFILLABLE_FIELDS = {'google_trends', 'youtube_views', 'youtube_url'}
 PENDING_GT_REQUIRED_FIELDS = ['gt_benchmark_title', 'gt_capture_context', 'gt_capture_stage']
+OUTCOME_FIELDS = [
+    'day1_sams_adm', 'day1_sams_shows', 'day1_sams_adm_show',
+    'day1_national_adm', 'day1_national_screens', 'day1_national_adm_show',
+    'ow_sams', 'ow_national'
+]
 
 issues = []
 
@@ -186,7 +191,7 @@ def validate_top_level(films, meta):
             add('ERROR', f"meta.total_films={meta['total_films']} does not match films.length={len(films)}", field='meta.total_films')
 
 
-def validate_film(film, idx, schedule_map, valid_ph_tiers):
+def validate_film(film, idx, schedule_map, valid_ph_tiers, today):
     if not isinstance(film, dict):
         add('ERROR', f'Film at index {idx} is not an object')
         return
@@ -206,14 +211,28 @@ def validate_film(film, idx, schedule_map, valid_ph_tiers):
             add('ERROR', f'Missing required field: {field}', film=title, field=field)
 
     release_date = film.get('release_date')
+    parsed_release_date = None
     if isinstance(release_date, str):
         if not DATE_RE.match(release_date):
             add('ERROR', 'release_date must match YYYY-MM-DD', film=title, field='release_date')
         else:
             try:
-                parse_date(release_date)
+                parsed_release_date = parse_date(release_date)
             except ValueError:
                 add('ERROR', 'release_date is not a valid calendar date', film=title, field='release_date')
+
+    if parsed_release_date and parsed_release_date > today:
+        populated_outcomes = [
+            field for field in OUTCOME_FIELDS
+            if film.get(field) is not None
+        ]
+        if populated_outcomes:
+            add(
+                'ERROR',
+                f'Future-release film has outcome fields populated before release: {", ".join(populated_outcomes)}',
+                film=title,
+                field='outcomes',
+            )
 
     if film.get('ph_tier') not in valid_ph_tiers:
         add('ERROR', f"Invalid ph_tier: {film.get('ph_tier')}", film=title, field='ph_tier')
@@ -532,6 +551,7 @@ def print_issues():
 
 def main():
     config = load_config()
+    today = datetime.now(ZoneInfo(config['timezone'])).date()
     valid_ph_tiers = load_ph_tiers()
 
     films, meta = load_data()
@@ -547,7 +567,7 @@ def main():
 
     films_by_title = {}
     for idx, film in enumerate(films):
-        validate_film(film, idx, schedule_map, valid_ph_tiers)
+        validate_film(film, idx, schedule_map, valid_ph_tiers, today)
         if isinstance(film, dict) and isinstance(film.get('title'), str):
             films_by_title[film['title']] = film
 
