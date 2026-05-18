@@ -321,10 +321,11 @@
             "production_house": "Adhya Pictures"
         },
         {
-            "date": "2026-04-16",
+            "date": "2026-05-21",
             "title": "Kamu Harus Mati",
-            "genre": "Horor",
-            "production_house": "Nant Adi Luhur"
+            "genre": "Thriller Mystery",
+            "production_house": "Nant Entertainment",
+            "_note": "Current 21cineplex/M-Tix release-facing source lists Tayang: May 21 as of 2026-05-18. Previously carried as Apr 16."
         },
         {
             "date": "2026-04-16",
@@ -485,15 +486,32 @@
         },
         {
             "date": "2026-05-21",
-            "title": "Untitle Raditya Dika's Project",
+            "title": "Gudang Merica",
             "genre": "Drama",
-            "production_house": "Soraya Intercine"
+            "production_house": "MVP Pictures",
+            "_note": "Current 21cineplex/M-Tix release-facing source lists May 21 advance-ticket-sales title as of 2026-05-18."
         },
         {
             "date": "2026-05-21",
+            "title": "Keluarga Suami Adalah Hama",
+            "genre": "Drama",
+            "production_house": "Umbara Brothers Film",
+            "_note": "Current 21cineplex/M-Tix release-facing source lists May 21 advance-ticket-sales title as of 2026-05-18."
+        },
+        {
+            "date": "2026-05-21",
+            "title": "Untitle Raditya Dika's Project",
+            "genre": "Drama",
+            "production_house": "Soraya Intercine",
+            "status": "postponed",
+            "_note": "Not found on current 21cineplex/M-Tix May 21 release-facing slate as of 2026-05-18. Keep watchlist-only until reconfirmed."
+        },
+        {
+            "date": "2026-06-04",
             "title": "Nobody Loves Kay",
             "genre": "Drama",
-            "production_house": "Visinema Pictures"
+            "production_house": "Visinema Pictures",
+            "_note": "Moved from May 21 to Jun 4 based on current public release-facing sources as of 2026-05-18."
         },
         {
             "date": "2026-05-27",

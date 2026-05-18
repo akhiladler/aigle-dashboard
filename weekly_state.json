@@ -1,97 +1,137 @@
 {
-  "week_label": "13 May",
-  "week_start": "2026-05-13",
+  "week_label": "21 May",
+  "week_start": "2026-05-21",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-13T15:35:17+07:00",
+  "generated_at": "2026-05-18T15:46:06+07:00",
   "films_in_scope": [
-    "Tumbal Proyek",
-    "Semua Akan Baik-Baik Saja",
-    "Silent Dance"
+    "Gudang Merica",
+    "Keluarga Suami Adalah Hama",
+    "Kamu Harus Mati"
   ],
   "missing_titles": [],
   "film_status": [
     {
       "rank": 1,
-      "title": "Tumbal Proyek",
-      "youtube_views": 180235,
-      "buzz_level": "SEDANG",
-      "tiktok": 6,
-      "google_trends": 15,
+      "title": "Gudang Merica",
+      "youtube_views": 0,
+      "buzz_level": "RENDAH",
+      "tiktok": null,
+      "google_trends": null,
       "google_trends_pending": false,
-      "attention_score": 2.9,
-      "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "film",
-      "missing_human_inputs": [],
-      "missing_autofillable_inputs": [],
+      "attention_score": 0,
+      "gt_benchmark_title": null,
+      "gt_entity_type": null,
+      "missing_human_inputs": [
+        "tiktok"
+      ],
+      "missing_autofillable_inputs": [
+        "youtube_views",
+        "google_trends"
+      ],
       "missing_audit_inputs": [],
       "pending_signal_inputs": [],
       "anomalies": [],
-      "machine_ready": true,
-      "operator_ready": true
+      "machine_ready": false,
+      "operator_ready": false
     },
     {
       "rank": 2,
-      "title": "Semua Akan Baik-Baik Saja",
-      "youtube_views": 359682,
-      "buzz_level": "SEDANG",
-      "tiktok": 3,
-      "google_trends": 1,
+      "title": "Keluarga Suami Adalah Hama",
+      "youtube_views": 0,
+      "buzz_level": "RENDAH",
+      "tiktok": null,
+      "google_trends": null,
       "google_trends_pending": false,
-      "attention_score": 2.32,
-      "gt_benchmark_title": "Ghost in the Cell",
-      "gt_entity_type": "search_term",
-      "missing_human_inputs": [],
-      "missing_autofillable_inputs": [],
+      "attention_score": 0,
+      "gt_benchmark_title": null,
+      "gt_entity_type": null,
+      "missing_human_inputs": [
+        "tiktok"
+      ],
+      "missing_autofillable_inputs": [
+        "youtube_views",
+        "google_trends"
+      ],
       "missing_audit_inputs": [],
       "pending_signal_inputs": [],
       "anomalies": [],
-      "machine_ready": true,
-      "operator_ready": true
+      "machine_ready": false,
+      "operator_ready": false
     },
     {
       "rank": 3,
-      "title": "Silent Dance",
-      "youtube_views": 260,
+      "title": "Kamu Harus Mati",
+      "youtube_views": 0,
       "buzz_level": "RENDAH",
-      "tiktok": 0,
+      "tiktok": null,
       "google_trends": null,
-      "google_trends_pending": true,
-      "attention_score": 1.0,
-      "gt_benchmark_title": "Ghost in the Cell",
+      "google_trends_pending": false,
+      "attention_score": 0,
+      "gt_benchmark_title": null,
       "gt_entity_type": null,
-      "missing_human_inputs": [],
-      "missing_autofillable_inputs": [],
-      "missing_audit_inputs": [],
-      "pending_signal_inputs": [
+      "missing_human_inputs": [
+        "tiktok"
+      ],
+      "missing_autofillable_inputs": [
+        "youtube_views",
         "google_trends"
       ],
+      "missing_audit_inputs": [],
+      "pending_signal_inputs": [],
       "anomalies": [],
-      "machine_ready": true,
+      "machine_ready": false,
       "operator_ready": false
     }
   ],
-  "missing_human_inputs": [],
-  "missing_autofillable_inputs": [],
-  "missing_audit_inputs": [],
-  "pending_signal_inputs": [
+  "missing_human_inputs": [
     {
-      "title": "Silent Dance",
+      "title": "Gudang Merica",
       "fields": [
+        "tiktok"
+      ]
+    },
+    {
+      "title": "Keluarga Suami Adalah Hama",
+      "fields": [
+        "tiktok"
+      ]
+    },
+    {
+      "title": "Kamu Harus Mati",
+      "fields": [
+        "tiktok"
+      ]
+    }
+  ],
+  "missing_autofillable_inputs": [
+    {
+      "title": "Gudang Merica",
+      "fields": [
+        "youtube_views",
+        "google_trends"
+      ]
+    },
+    {
+      "title": "Keluarga Suami Adalah Hama",
+      "fields": [
+        "youtube_views",
+        "google_trends"
+      ]
+    },
+    {
+      "title": "Kamu Harus Mati",
+      "fields": [
+        "youtube_views",
         "google_trends"
       ]
     }
   ],
+  "missing_audit_inputs": [],
+  "pending_signal_inputs": [],
   "anomalies": [],
-  "ready_for_publish_titles": [
-    "Tumbal Proyek",
-    "Semua Akan Baik-Baik Saja",
-    "Silent Dance"
-  ],
-  "ready_for_operator_titles": [
-    "Tumbal Proyek",
-    "Semua Akan Baik-Baik Saja"
-  ],
-  "ready_for_publish": true,
+  "ready_for_publish_titles": [],
+  "ready_for_operator_titles": [],
+  "ready_for_publish": false,
   "ready_for_operator": false,
-  "operator_summary": "Machine side is publish-ready. Signal confirmation still pending for: Silent Dance."
+  "operator_summary": "Machine side is not ready. Missing automated or audit inputs for: Gudang Merica, Keluarga Suami Adalah Hama, Kamu Harus Mati."
 }

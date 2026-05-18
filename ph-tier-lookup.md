@@ -79,6 +79,8 @@ Ess Jay Studios | T4 |
 Ess Jay Studio | T4 | Alias for Ess Jay Studios.
 Sinemata Indonesia Pratama | T4 |
 VMS | T4 |
+Umbara Brothers Film | T4 | May 21, 2026 Keluarga Suami Adalah Hama slate entry; micro/indie until stronger distribution proof appears.
+Nant Entertainment | T4 | May 21, 2026 Kamu Harus Mati slate entry; micro/indie until stronger distribution proof appears.
 Summerland | T4 | Co-producer Yohanna (Apr 2026). Source: ANTARA, Kompas.
 Reason8 Films | T4 | Co-producer Yohanna (Apr 2026). Source: KapanLagi.
 Pilgrim Film | T4 | Co-producer Yohanna (Apr 2026). Source: 21cineplex.

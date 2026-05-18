@@ -1,7 +1,7 @@
 {
       "meta": {
-            "last_updated": "2026-05-13",
-            "total_films": 42,
+            "last_updated": "2026-05-18",
+            "total_films": 45,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -1077,7 +1077,61 @@
                   "calendar": "PANAS",
                   "note": "Operator-confirmed SAMS add-on after Dias reported near-zero TikTok and no boost activity. Public sources conflict on May 13 vs May 14 release date, but SAMS listings and allocation show active May 13 play. Treat as low-priority/test allocation, not demand-led priority.",
                   "plays_at_sams": true
+            },
+            {
+                  "title": "Gudang Merica",
+                  "release_date": "2026-05-21",
+                  "week_label": "21 May",
+                  "ph": "MVP Pictures",
+                  "ph_tier": "T2",
+                  "genre": "Drama",
+                  "youtube_views": 0,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": null,
+                  "tiktok": null,
+                  "google_trends": null,
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Current 21cineplex/M-Tix release-facing source lists May 21 advance-ticket-sales title as of 2026-05-18. Signal fields pending Wednesday pipeline.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Keluarga Suami Adalah Hama",
+                  "release_date": "2026-05-21",
+                  "week_label": "21 May",
+                  "ph": "Umbara Brothers Film",
+                  "ph_tier": "T4",
+                  "genre": "Drama",
+                  "youtube_views": 0,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": null,
+                  "tiktok": null,
+                  "google_trends": null,
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Current 21cineplex/M-Tix release-facing source lists May 21 advance-ticket-sales title as of 2026-05-18. Signal fields pending Wednesday pipeline.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Kamu Harus Mati",
+                  "release_date": "2026-05-21",
+                  "week_label": "21 May",
+                  "ph": "Nant Entertainment",
+                  "ph_tier": "T4",
+                  "genre": "Thriller Mystery",
+                  "youtube_views": 0,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": null,
+                  "tiktok": null,
+                  "google_trends": null,
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Current 21cineplex/M-Tix release-facing source lists Tayang: May 21 as of 2026-05-18. Previously carried in schedule as Apr 16. Signal fields pending Wednesday pipeline.",
+                  "plays_at_sams": true
             }
       ],
-      "last_updated": "2026-05-13"
+      "last_updated": "2026-05-18"
 }
