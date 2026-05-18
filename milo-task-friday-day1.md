@@ -123,6 +123,34 @@ python /root/aigle-dashboard/merge_day1_sources.py --cinepoint <cinepoint_json> 
 
 This is the Day 1 review packet.
 
+### Step 4.5: Standing Day 1 / Day 2 allocation read
+Whenever SAMS Day 1 includes known show allocation, calculate an allocation table before making or summarizing Day 2 recommendations.
+
+Required metrics for every title with known SAMS shows:
+- `show_share = film_shows / total_known_shows`
+- `admission_share = film_admissions / total_known_admissions_for_known_show_titles`
+- `admissions_per_show = film_admissions / film_shows`
+- `allocation_index = admission_share / show_share`
+
+Denominator rule:
+- titles with admissions but unknown show counts must be listed separately and must not enter the Allocation Index denominator.
+
+Every allocation change or recommendation must be classified as exactly one of:
+- `demand-led`
+- `support/community-led`
+- `site-led`
+- `supply/distribution-led`
+- `unknown`
+
+Every Day 2 recommendation must cite the evidence it rests on:
+- admissions/show
+- Allocation Index
+- site exceptions, if any
+- operator rationale, if supplied
+
+Output requirement:
+- include the allocation table and one concise operator read; do not return only a table.
+
 ### Step 5: Apply verified Day 1 fields to films.json
 Run:
 
