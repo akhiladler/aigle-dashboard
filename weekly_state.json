@@ -2,7 +2,7 @@
   "week_label": "21 May",
   "week_start": "2026-05-21",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-18T15:46:06+07:00",
+  "generated_at": "2026-05-18T16:09:19+07:00",
   "films_in_scope": [
     "Gudang Merica",
     "Keluarga Suami Adalah Hama",
@@ -13,73 +13,70 @@
     {
       "rank": 1,
       "title": "Gudang Merica",
-      "youtube_views": 0,
-      "buzz_level": "RENDAH",
+      "youtube_views": 1591857,
+      "buzz_level": "TINGGI",
       "tiktok": null,
       "google_trends": null,
-      "google_trends_pending": false,
-      "attention_score": 0,
-      "gt_benchmark_title": null,
+      "google_trends_pending": true,
+      "attention_score": 3,
+      "gt_benchmark_title": "Ghost in the Cell",
       "gt_entity_type": null,
       "missing_human_inputs": [
         "tiktok"
       ],
-      "missing_autofillable_inputs": [
-        "youtube_views",
+      "missing_autofillable_inputs": [],
+      "missing_audit_inputs": [],
+      "pending_signal_inputs": [
         "google_trends"
       ],
-      "missing_audit_inputs": [],
-      "pending_signal_inputs": [],
       "anomalies": [],
-      "machine_ready": false,
+      "machine_ready": true,
       "operator_ready": false
     },
     {
       "rank": 2,
       "title": "Keluarga Suami Adalah Hama",
-      "youtube_views": 0,
-      "buzz_level": "RENDAH",
+      "youtube_views": 376457,
+      "buzz_level": "SEDANG",
       "tiktok": null,
       "google_trends": null,
-      "google_trends_pending": false,
-      "attention_score": 0,
-      "gt_benchmark_title": null,
+      "google_trends_pending": true,
+      "attention_score": 2,
+      "gt_benchmark_title": "Ghost in the Cell",
       "gt_entity_type": null,
       "missing_human_inputs": [
         "tiktok"
       ],
-      "missing_autofillable_inputs": [
-        "youtube_views",
+      "missing_autofillable_inputs": [],
+      "missing_audit_inputs": [],
+      "pending_signal_inputs": [
         "google_trends"
       ],
-      "missing_audit_inputs": [],
-      "pending_signal_inputs": [],
       "anomalies": [],
-      "machine_ready": false,
+      "machine_ready": true,
       "operator_ready": false
     },
     {
       "rank": 3,
       "title": "Kamu Harus Mati",
-      "youtube_views": 0,
-      "buzz_level": "RENDAH",
+      "youtube_views": 205864,
+      "buzz_level": "SEDANG",
       "tiktok": null,
       "google_trends": null,
-      "google_trends_pending": false,
-      "attention_score": 0,
-      "gt_benchmark_title": null,
+      "google_trends_pending": true,
+      "attention_score": 2,
+      "gt_benchmark_title": "Ghost in the Cell",
       "gt_entity_type": null,
       "missing_human_inputs": [
         "tiktok"
       ],
-      "missing_autofillable_inputs": [
-        "youtube_views",
+      "missing_autofillable_inputs": [],
+      "missing_audit_inputs": [],
+      "pending_signal_inputs": [
         "google_trends"
       ],
-      "missing_audit_inputs": [],
-      "pending_signal_inputs": [],
       "anomalies": [],
-      "machine_ready": false,
+      "machine_ready": true,
       "operator_ready": false
     }
   ],
@@ -103,35 +100,36 @@
       ]
     }
   ],
-  "missing_autofillable_inputs": [
+  "missing_autofillable_inputs": [],
+  "missing_audit_inputs": [],
+  "pending_signal_inputs": [
     {
       "title": "Gudang Merica",
       "fields": [
-        "youtube_views",
         "google_trends"
       ]
     },
     {
       "title": "Keluarga Suami Adalah Hama",
       "fields": [
-        "youtube_views",
         "google_trends"
       ]
     },
     {
       "title": "Kamu Harus Mati",
       "fields": [
-        "youtube_views",
         "google_trends"
       ]
     }
   ],
-  "missing_audit_inputs": [],
-  "pending_signal_inputs": [],
   "anomalies": [],
-  "ready_for_publish_titles": [],
+  "ready_for_publish_titles": [
+    "Gudang Merica",
+    "Keluarga Suami Adalah Hama",
+    "Kamu Harus Mati"
+  ],
   "ready_for_operator_titles": [],
-  "ready_for_publish": false,
+  "ready_for_publish": true,
   "ready_for_operator": false,
-  "operator_summary": "Machine side is not ready. Missing automated or audit inputs for: Gudang Merica, Keluarga Suami Adalah Hama, Kamu Harus Mati."
+  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Gudang Merica, Keluarga Suami Adalah Hama, Kamu Harus Mati. Signal confirmation still pending for: Gudang Merica, Keluarga Suami Adalah Hama, Kamu Harus Mati."
 }
