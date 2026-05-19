@@ -2,7 +2,7 @@
   "week_label": "21 May",
   "week_start": "2026-05-21",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-18T16:09:19+07:00",
+  "generated_at": "2026-05-19T14:02:09+07:00",
   "films_in_scope": [
     "Gudang Merica",
     "Keluarga Suami Adalah Hama",
@@ -19,7 +19,7 @@
       "google_trends": null,
       "google_trends_pending": true,
       "attention_score": 3,
-      "gt_benchmark_title": "Ghost in the Cell",
+      "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": null,
       "missing_human_inputs": [
         "tiktok"
@@ -42,7 +42,7 @@
       "google_trends": null,
       "google_trends_pending": true,
       "attention_score": 2,
-      "gt_benchmark_title": "Ghost in the Cell",
+      "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": null,
       "missing_human_inputs": [
         "tiktok"
@@ -65,7 +65,7 @@
       "google_trends": null,
       "google_trends_pending": true,
       "attention_score": 2,
-      "gt_benchmark_title": "Ghost in the Cell",
+      "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": null,
       "missing_human_inputs": [
         "tiktok"
