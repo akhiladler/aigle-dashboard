@@ -1,7 +1,7 @@
 {
       "meta": {
             "last_updated": "2026-05-18",
-            "total_films": 45,
+            "total_films": 46,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -1149,7 +1149,31 @@
                   "calendar": "NORMAL",
                   "note": "Current 21cineplex/M-Tix release-facing source lists Tayang: May 21 as of 2026-05-18. Previously carried in schedule as Apr 16. Signal fields pending Wednesday pipeline.",
                   "plays_at_sams": true
+            },
+            {
+                  "title": "Pocong Merah",
+                  "release_date": "2026-05-21",
+                  "week_label": "21 May",
+                  "ph": "Checklist Cinema",
+                  "ph_tier": "T4",
+                  "genre": "Horor",
+                  "youtube_views": 32240,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": "https://www.youtube.com/watch?v=vicPzll5rUM",
+                  "tiktok": null,
+                  "google_trends": null,
+                  "google_trends_pending": true,
+                  "gt_benchmark_title": "Tumbal Proyek",
+                  "gt_capture_context": "Pending clean Google Trends capture: Indonesia | Past week | Web Search | title entity/search term to confirm | benchmark: Tumbal Proyek. Operator-confirmed SAMS May 21 add-on; public sources list original cinema release around 2026-02-19, so treat as source-conflict/holdover/add-on rather than clean May 21 national opener.",
+                  "gt_entity_type": "pending",
+                  "gt_capture_date": "2026-05-20",
+                  "gt_capture_stage": "operator-confirmed-add-on",
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "SOURCE_CONFLICT / OPERATOR_CONFIRMED: SAMS programming group lists Pocong Merah for May 21, 2026 alongside Gudang Merica, Keluarga Suami Adalah Hama, and Kamu Harus Mati. Public sources found during urgent May 21 correction list Pocong Merah as already released around 2026-02-19; therefore this is tracked as an operator-confirmed SAMS add-on/holdover, not a clean May 21 national opener. PH/genre from public article: Checklist Cinema, horor. YouTube uses Checklist Cinema Official trailer; TikTok and GT still pending.",
+                  "plays_at_sams": true
             }
       ],
-      "last_updated": "2026-05-18"
+      "last_updated": "2026-05-20T13:08:29+07:00"
 }

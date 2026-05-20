@@ -4,9 +4,10 @@
   "films_releasing": [
     "Gudang Merica",
     "Keluarga Suami Adalah Hama",
-    "Kamu Harus Mati"
+    "Kamu Harus Mati",
+    "Pocong Merah"
   ],
-  "updated_at": "2026-05-20T13:01:47+07:00",
-  "updated_by": "milo",
-  "selection_mode": "prerelease"
+  "updated_at": "2026-05-20T13:08:29+07:00",
+  "updated_by": "milo-operator-reality-correction",
+  "selection_mode": "prerelease_operator_confirmed"
 }

@@ -2,11 +2,12 @@
   "week_label": "21 May",
   "week_start": "2026-05-21",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-20T13:03:07+07:00",
+  "generated_at": "2026-05-20T13:08:39+07:00",
   "films_in_scope": [
     "Gudang Merica",
     "Keluarga Suami Adalah Hama",
-    "Kamu Harus Mati"
+    "Kamu Harus Mati",
+    "Pocong Merah"
   ],
   "missing_titles": [],
   "film_status": [
@@ -72,6 +73,29 @@
       "anomalies": [],
       "machine_ready": true,
       "operator_ready": false
+    },
+    {
+      "rank": 4,
+      "title": "Pocong Merah",
+      "youtube_views": 32240,
+      "buzz_level": "RENDAH",
+      "tiktok": null,
+      "google_trends": null,
+      "google_trends_pending": true,
+      "attention_score": 1,
+      "gt_benchmark_title": "Tumbal Proyek",
+      "gt_entity_type": "pending",
+      "missing_human_inputs": [
+        "tiktok"
+      ],
+      "missing_autofillable_inputs": [],
+      "missing_audit_inputs": [],
+      "pending_signal_inputs": [
+        "google_trends"
+      ],
+      "anomalies": [],
+      "machine_ready": true,
+      "operator_ready": false
     }
   ],
   "missing_human_inputs": [
@@ -92,19 +116,33 @@
       "fields": [
         "tiktok"
       ]
+    },
+    {
+      "title": "Pocong Merah",
+      "fields": [
+        "tiktok"
+      ]
     }
   ],
   "missing_autofillable_inputs": [],
   "missing_audit_inputs": [],
-  "pending_signal_inputs": [],
+  "pending_signal_inputs": [
+    {
+      "title": "Pocong Merah",
+      "fields": [
+        "google_trends"
+      ]
+    }
+  ],
   "anomalies": [],
   "ready_for_publish_titles": [
     "Gudang Merica",
     "Keluarga Suami Adalah Hama",
-    "Kamu Harus Mati"
+    "Kamu Harus Mati",
+    "Pocong Merah"
   ],
   "ready_for_operator_titles": [],
   "ready_for_publish": true,
   "ready_for_operator": false,
-  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Gudang Merica, Keluarga Suami Adalah Hama, Kamu Harus Mati."
+  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Gudang Merica, Keluarga Suami Adalah Hama, Kamu Harus Mati, Pocong Merah. Signal confirmation still pending for: Pocong Merah."
 }

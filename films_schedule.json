@@ -1,6 +1,6 @@
 {
     "_note": "Aigle film schedule. Source: movie-forecast-2026.md + 21cineplex.com verification.",
-    "_updated": "2026-05-06",
+    "_updated": "2026-05-20T13:08:29+07:00",
     "_source": "21cineplex.com (primary) + IDNTimes, IMDb, web search",
     "_instructions": "Add new films here. The notebook loads this file automatically. No code editing needed. Only named films included (no 'Untitled' placeholders).",
     "films": [
@@ -505,6 +505,13 @@
             "production_house": "Soraya Intercine",
             "status": "postponed",
             "_note": "Not found on current 21cineplex/M-Tix May 21 release-facing slate as of 2026-05-18. Keep watchlist-only until reconfirmed."
+        },
+        {
+            "date": "2026-05-21",
+            "title": "Pocong Merah",
+            "genre": "Horor",
+            "production_house": "Checklist Cinema",
+            "source_note": "SOURCE_CONFLICT / OPERATOR_CONFIRMED SAMS add-on for May 21, 2026. Public sources found during urgent correction list original cinema release around 2026-02-19; include in May 21 operating week due to SAMS programming evidence, not national opener status."
         },
         {
             "date": "2026-06-04",
