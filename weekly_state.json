@@ -2,7 +2,7 @@
   "week_label": "21 May",
   "week_start": "2026-05-21",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-19T14:09:43+07:00",
+  "generated_at": "2026-05-20T13:03:07+07:00",
   "films_in_scope": [
     "Gudang Merica",
     "Keluarga Suami Adalah Hama",
@@ -13,7 +13,7 @@
     {
       "rank": 1,
       "title": "Gudang Merica",
-      "youtube_views": 1591857,
+      "youtube_views": 1831189,
       "buzz_level": "TINGGI",
       "tiktok": null,
       "google_trends": 2,
@@ -34,12 +34,12 @@
     {
       "rank": 2,
       "title": "Keluarga Suami Adalah Hama",
-      "youtube_views": 376457,
-      "buzz_level": "SEDANG",
+      "youtube_views": 43363,
+      "buzz_level": "RENDAH",
       "tiktok": null,
       "google_trends": 2,
       "google_trends_pending": false,
-      "attention_score": 2.04,
+      "attention_score": 1.04,
       "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": "search_term",
       "missing_human_inputs": [
@@ -55,12 +55,12 @@
     {
       "rank": 3,
       "title": "Kamu Harus Mati",
-      "youtube_views": 205864,
-      "buzz_level": "SEDANG",
+      "youtube_views": 12497,
+      "buzz_level": "RENDAH",
       "tiktok": null,
       "google_trends": 0,
       "google_trends_pending": false,
-      "attention_score": 2.0,
+      "attention_score": 1.0,
       "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": "search_term",
       "missing_human_inputs": [
