@@ -77,6 +77,13 @@ For each title in `operating_week.json -> films_releasing`:
 - update `youtube_url`
 - recalculate `buzz_level`
 
+Canonical YouTube source rule:
+- YouTube buzz means the current theatrical release-campaign trailer for this release window.
+- Prefer PH / distributor / official theatrical campaign uploads, including `CINEMA 21` / `CGV` when they are the current campaign source.
+- Do not silently replace a current campaign trailer with an older higher-view IP, source-material, music, recap, or legacy awareness video.
+- If an older higher-view video is relevant, record it only as context/note unless Akhil explicitly approves using it as canonical.
+- If changing the canonical source causes a major view drop or rise, emit `SOURCE_DISCREPANCY_REVIEW` with old URL/views, new URL/views, and why the new source is more canonical before publishing.
+
 Do not stop at the first failed tool.
 
 If `yt-dlp` search is bot-gated:
