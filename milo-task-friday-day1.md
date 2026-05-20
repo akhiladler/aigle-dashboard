@@ -16,11 +16,19 @@ Canonical files that matter:
 - `films.json`
 
 ## Goal
-Produce a verified Day 1 update for the current operating-week films using:
-- human-provided SAMS release-day numbers
+Produce a verified Day 1 update and Day 2 allocation read for the current operating-week films using:
+- known SAMS show allocation
+- Wednesday prerelease signals
+- human-provided SAMS release-day admissions
 - Cinepoint Day 1 numbers
 
 Then update only the verified Day 1 fields in `films.json`.
+
+Standing rule:
+- before Day 1 admissions arrive, prepare the allocation framework from known show allocation and prerelease signals
+- if show allocation is missing, return `BLOCKED_SHOW_ALLOCATION_MISSING`
+- once Day 1 admissions arrive, calculate the full allocation table and one concise Day 2 operator read
+- do not call Friday complete if private SAMS admissions or private SAMS show counts are missing
 
 ## Friday Workflow
 
@@ -42,6 +50,7 @@ If `operating_week.json` and `weekly_state.json` disagree:
 
 ### Step 1: Capture raw evidence first
 Collect raw evidence separately for:
+- SAMS show allocation
 - SAMS Day 1
 - Cinepoint Day 1
 
@@ -51,7 +60,31 @@ Do not rewrite titles by hand if the raw source already has them.
 Important:
 - Milo may collect public Cinepoint Day 1 data on its own
 - Milo may not invent or assume private SAMS Day 1 data
+- Milo may not invent or assume SAMS show allocation
 - if SAMS Day 1 is only available through operator channels, wait for Akhil to provide the raw SAMS block and treat that as the canonical internal input
+
+#### SAMS show allocation raw format
+Before admissions arrive, capture known show allocation in this format:
+
+```csv
+title,shows
+Film Title,34
+```
+
+If Day 2 planned allocation is already known, use:
+
+```csv
+title,day1_shows,day2_shows
+Film Title,34,40
+```
+
+If show allocation is missing for the titles being evaluated, return:
+
+```text
+BLOCKED_SHOW_ALLOCATION_MISSING
+```
+
+Do not replace missing show allocation with guesses, ratios, national screens, or previous-week counts.
 
 #### SAMS preferred raw format
 ```text
@@ -74,6 +107,23 @@ Showtimes rule:
 - prefer the official Cinepoint `SHOWTIMES` block for the national denominator
 - do not derive the Friday national denominator from Cinepoint movie-detail pages unless that source is explicitly verified as equivalent
 - if only admissions are available but the official `SHOWTIMES` block is missing, keep `day1_national_adm` and leave `day1_national_screens` / `day1_national_adm_show` blank
+
+### Step 1.5: Pre-admissions allocation prep
+Before private SAMS Day 1 admissions arrive, prepare a draft allocation frame using known SAMS show allocation and the current prerelease read.
+
+Include:
+- current operating-week new titles
+- important holdovers still allocated
+- show counts / show share for every title with known shows
+- prerelease signal summary: YouTube, TikTok, Google Trends, PH tier, genre, and source-conflict notes
+- holdover benchmark notes, especially titles with live WOM or operator-confirmed momentum
+- preliminary allocation read: protect / test bigger / test small / support-only / unknown
+
+Rules:
+- compare new titles against important holdovers, not only against each other
+- if any title has admissions but unknown show count later, exclude it from Allocation Index denominators and list it separately
+- if no trustworthy SAMS show allocation is available, return `BLOCKED_SHOW_ALLOCATION_MISSING`
+- this pre-admissions prep is not Friday completion; it is a setup for Day 1 → Day 2 allocation
 
 ### Step 2: Parse SAMS Day 1
 Run:
@@ -124,16 +174,21 @@ python /root/aigle-dashboard/merge_day1_sources.py --cinepoint <cinepoint_json> 
 This is the Day 1 review packet.
 
 ### Step 4.5: Standing Day 1 / Day 2 allocation read
-Whenever SAMS Day 1 includes known show allocation, calculate an allocation table before making or summarizing Day 2 recommendations.
+Whenever SAMS Day 1 includes private admissions and known show allocation, calculate an allocation table before making or summarizing Day 2 recommendations.
 
 Required metrics for every title with known SAMS shows:
 - `show_share = film_shows / total_known_shows`
 - `admission_share = film_admissions / total_known_admissions_for_known_show_titles`
 - `admissions_per_show = film_admissions / film_shows`
+- `market_average_admissions_per_show = total_known_admissions_for_known_show_titles / total_known_shows`
 - `allocation_index = admission_share / show_share`
+- `verdict = over-allocated / fair / under-allocated / support-only / unknown`, based on Allocation Index, admissions/show, prerelease signal, and operator rationale
 
 Denominator rule:
 - titles with admissions but unknown show counts must be listed separately and must not enter the Allocation Index denominator.
+- holdovers still allocated must be included when their admissions and show counts are known; do not evaluate new titles in isolation if holdovers are competing for screens.
+- if private SAMS admissions are missing, return `BLOCKED_PRIVATE_SAMS_DAY1_MISSING` and do not call Friday complete.
+- if private SAMS show counts are missing, return `BLOCKED_SHOW_ALLOCATION_MISSING` and do not call Friday complete.
 
 Every allocation change or recommendation must be classified as exactly one of:
 - `demand-led`
@@ -144,12 +199,15 @@ Every allocation change or recommendation must be classified as exactly one of:
 
 Every Day 2 recommendation must cite the evidence it rests on:
 - admissions/show
+- market average admissions/show
 - Allocation Index
+- comparison against important holdovers
 - site exceptions, if any
 - operator rationale, if supplied
 
 Output requirement:
-- include the allocation table and one concise operator read; do not return only a table.
+- include the allocation table and one concise Day 2 operator read; do not return only a table.
+- if the evidence is incomplete, return the exact blocker instead of a recommendation.
 
 ### Step 5: Apply verified Day 1 fields to films.json
 Run:
@@ -200,6 +258,7 @@ No speculative commentary.
 Escalate when:
 - Cinepoint is not yet posted
 - SAMS Day 1 has not yet been provided by Akhil / operator channel
+- SAMS show allocation is missing
 - SAMS recap is incomplete
 - a title match is ambiguous
 - a ratio exists without a trustworthy denominator
@@ -210,6 +269,9 @@ Escalate when:
 Friday Day 1 is successful when:
 - raw receipts exist
 - parsed outputs match the live operating week
+- private SAMS admissions and show counts exist for evaluated titles
+- the Day 1 / Day 2 allocation table is calculated
+- one concise Day 2 operator read is produced
 - only verified Day 1 fields are written
 - validation passes
 - Akhil receives a short receipt-based report
