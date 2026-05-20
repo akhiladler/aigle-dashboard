@@ -209,6 +209,27 @@ Output requirement:
 - include the allocation table and one concise Day 2 operator read; do not return only a table.
 - if the evidence is incomplete, return the exact blocker instead of a recommendation.
 
+### Step 4.6: Optional operator-facing message draft
+Every Friday, prepare one optional operator-facing Day 1 evaluation message only if it adds value.
+
+Label the draft exactly one of:
+- `SEND`
+- `DO_NOT_SEND`
+
+Use `SEND` only when the message gives Dias useful decision discipline he does not already have from the raw numbers. Use `DO_NOT_SEND` when it would be redundant, premature, blocked, or over-explaining.
+
+The message, when drafted, should briefly explain the Day 1 evaluation frame in operator language:
+- show share vs admission share
+- admissions/show
+- Allocation Index
+- whether allocation looks `demand-led` or `support/community-led` when those labels are supported by evidence
+
+Rules:
+- do not ask Dias for unnecessary extra input
+- do not over-water the plant
+- do not assume the message should be sent
+- Akhil decides whether to send
+
 ### Step 5: Apply verified Day 1 fields to films.json
 Run:
 
