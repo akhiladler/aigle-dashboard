@@ -18,6 +18,34 @@ Milo should **not**:
 - invent TikTok scores
 - make final strategic calls
 
+
+## Aigle v2 Decision Framing
+Every prerelease read must be an Aigle v2 decision read, not only an Aigle v1 public-buzz ranking.
+
+Aigle v1 ranks titles mostly by public buzz: YouTube, TikTok, and Google Trends.
+Aigle v2 must decide what SAMS should protect, test, cut, or classify as support by combining public signals with SAMS fit, operator context, supply reality, and early allocation/performance when available.
+
+For every relevant title, classify it as exactly one of:
+- `protect`
+- `test big`
+- `watch closely`
+- `test small`
+- `support-only`
+- `site-exception`
+- `cut candidate`
+- `unknown`
+
+Every classification must cite evidence from the relevant signal families:
+- awareness: YouTube, source quality, campaign freshness
+- intent: TikTok, Google Trends
+- SAMS fit: genre, local fit, timing
+- distribution/supply: PH tier, DCP/show availability, source constraints
+- operator/organic read: Dias/Karina/programming context, WOM, site exceptions
+- special flags: NOBAR, indie/support, franchise/sequel, source-conflict, legacy video, GT noise
+- early allocation/performance, if available
+
+If a signal family is unknown or unavailable, say so; do not guess.
+
 ## Canonical Files
 - `pipeline_config.json` = machine rules
 - `operating_week.json` = canonical weekly slate

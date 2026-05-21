@@ -117,7 +117,14 @@ Include:
 - show counts / show share for every title with known shows
 - prerelease signal summary: YouTube, TikTok, Google Trends, PH tier, genre, and source-conflict notes
 - holdover benchmark notes, especially titles with live WOM or operator-confirmed momentum
-- preliminary allocation read: protect / test bigger / test small / support-only / unknown
+- an Aigle v2 preliminary allocation read for every relevant title
+
+Aigle v2 decision rule:
+- Do not only rank public buzz from YouTube, TikTok, and Google Trends.
+- Decide what SAMS should protect, test, cut, or classify as support by combining public signals with SAMS fit, operator context, supply reality, and early allocation/performance when available.
+- Classify every relevant title as exactly one of: `protect`, `test big`, `watch closely`, `test small`, `support-only`, `site-exception`, `cut candidate`, `unknown`.
+- Every classification must cite evidence from the relevant signal families: awareness, intent, SAMS fit, distribution/supply, operator/organic read, special flags, and early allocation/performance if available.
+- If a signal family is unknown or unavailable, say so; do not guess admissions, DCP availability, site rationale, or operator intent.
 
 Rules:
 - compare new titles against important holdovers, not only against each other
