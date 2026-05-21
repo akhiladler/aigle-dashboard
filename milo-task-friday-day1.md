@@ -222,8 +222,14 @@ Every Day 2 recommendation must cite the evidence it rests on:
 - site exceptions, if any
 - operator rationale, if supplied
 
+Decision Card thesis test:
+- For every title with a pre-admissions Decision Card, test the original thesis against Day 1 evidence before recommending Day 2 changes.
+- Classify each title exactly one of: `thesis passed`, `thesis failed`, or `inconclusive`.
+- A thesis test must cite admissions/show, market average, Allocation Index, and the card's stated success/failure test when available.
+- If the original Decision Card is missing, create a minimal retro-card from available prerelease evidence and mark confidence `low`; do not skip thesis testing silently.
+
 Output requirement:
-- include the allocation table and one concise Day 2 operator read; do not return only a table.
+- include the allocation table, thesis-test verdicts, and one concise Day 2 operator read; do not return only a table.
 - if the evidence is incomplete, return the exact blocker instead of a recommendation.
 
 ### Step 4.6: Optional operator-facing message draft
