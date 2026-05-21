@@ -22,20 +22,20 @@ Milo should **not**:
 ## Aigle v2 Decision Framing
 Every prerelease read must be an Aigle v2 decision read, not only an Aigle v1 public-buzz ranking.
 
-Aigle v1 ranks titles mostly by public buzz: YouTube, TikTok, and Google Trends.
-Aigle v2 must decide what SAMS should protect, test, cut, or classify as support by combining public signals with SAMS fit, operator context, supply reality, and early allocation/performance when available.
+Aigle v2 is not a ranking system. It is a decision system: what to protect, test, watch, cut, or classify as support, and what evidence would change the decision.
 
-For every relevant title, classify it as exactly one of:
-- `protect`
-- `test big`
-- `watch closely`
-- `test small`
-- `support-only`
-- `site-exception`
-- `cut candidate`
-- `unknown`
+For every relevant title, produce one Decision Card with exactly these fields:
+- Title
+- Role: `protect` / `test big` / `watch closely` / `test small` / `support-only` / `site-exception` / `cut candidate` / `unknown`
+- Thesis: what Aigle believes about this title
+- Evidence: awareness, intent, SAMS fit, distribution/supply, operator/organic read, special flags, early allocation/performance if available
+- Risk: what could make the read wrong
+- Day 1 success test: what evidence would justify hold/increase
+- Day 1 failure test: what evidence would justify reduce/cut
+- Recommended action
+- Confidence: `high` / `medium` / `low`
 
-Every classification must cite evidence from the relevant signal families:
+Evidence rules:
 - awareness: YouTube, source quality, campaign freshness
 - intent: TikTok, Google Trends
 - SAMS fit: genre, local fit, timing
@@ -44,6 +44,7 @@ Every classification must cite evidence from the relevant signal families:
 - special flags: NOBAR, indie/support, franchise/sequel, source-conflict, legacy video, GT noise
 - early allocation/performance, if available
 
+After the Decision Cards, include one concise operator read that explains the programming implication across the slate.
 If a signal family is unknown or unavailable, say so; do not guess.
 
 ## Canonical Files

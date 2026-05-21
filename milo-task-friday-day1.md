@@ -119,11 +119,21 @@ Include:
 - holdover benchmark notes, especially titles with live WOM or operator-confirmed momentum
 - an Aigle v2 preliminary allocation read for every relevant title
 
-Aigle v2 decision rule:
+Aigle v2 decision-card rule:
 - Do not only rank public buzz from YouTube, TikTok, and Google Trends.
-- Decide what SAMS should protect, test, cut, or classify as support by combining public signals with SAMS fit, operator context, supply reality, and early allocation/performance when available.
-- Classify every relevant title as exactly one of: `protect`, `test big`, `watch closely`, `test small`, `support-only`, `site-exception`, `cut candidate`, `unknown`.
-- Every classification must cite evidence from the relevant signal families: awareness, intent, SAMS fit, distribution/supply, operator/organic read, special flags, and early allocation/performance if available.
+- Aigle v2 is not a ranking system. It is a decision system: what to protect, test, watch, cut, or classify as support, and what evidence would change the decision.
+- Produce one Decision Card per relevant title with exactly these fields:
+  - Title
+  - Role: `protect` / `test big` / `watch closely` / `test small` / `support-only` / `site-exception` / `cut candidate` / `unknown`
+  - Thesis: what Aigle believes about this title
+  - Evidence: awareness, intent, SAMS fit, distribution/supply, operator/organic read, special flags, early allocation/performance if available
+  - Risk: what could make the read wrong
+  - Day 1 success test: what evidence would justify hold/increase
+  - Day 1 failure test: what evidence would justify reduce/cut
+  - Recommended action
+  - Confidence: `high` / `medium` / `low`
+- Evidence must cite the relevant signal families: awareness, intent, SAMS fit, distribution/supply, operator/organic read, special flags, and early allocation/performance if available.
+- After the Decision Cards, include one concise operator read that explains the programming implication across the slate.
 - If a signal family is unknown or unavailable, say so; do not guess admissions, DCP availability, site rationale, or operator intent.
 
 Rules:
