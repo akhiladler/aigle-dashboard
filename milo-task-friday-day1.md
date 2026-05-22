@@ -129,13 +129,20 @@ Film Title,245,34
 
 #### Cinepoint raw format
 Preserve the full raw blocks for:
-- `ESTIMATED ADMISSION`
-- `SHOWTIMES`
+- Cinepoint website Top Box Office rows: `Daily Adm.`, `Total Admission`, and `Showtimes`
+- Cinepoint movie page / showtimes page rows when needed for title-level verification
+- `@cinepoint_` `ESTIMATED ADMISSION` post
+- `@cinepoint_` `SHOWTIMES` post/block when available
 
-Showtimes rule:
-- prefer the official Cinepoint `SHOWTIMES` block for the national denominator
-- do not derive the Friday national denominator from Cinepoint movie-detail pages unless that source is explicitly verified as equivalent
-- if only admissions are available but the official `SHOWTIMES` block is missing, keep `day1_national_adm` and leave `day1_national_screens` / `day1_national_adm_show` blank
+Cinepoint public source rule:
+- before reporting `CINEPOINT_SHOWTIMES_MISSING`, `BLOCKED | waiting_for_cinepoint`, or any public denominator missing status, check these sources in order:
+  1. Cinepoint website Top Box Office for the relevant date/title
+  2. Cinepoint movie page / showtimes page if the Top Box Office row is incomplete or title matching needs verification
+  3. `@cinepoint_` estimated admissions post as supporting evidence
+- if the Cinepoint website has both `Daily Adm.` and `Showtimes`, extract both, calculate national admissions/show, and label the result `public Cinepoint estimate/tracking`
+- if `@cinepoint_` has admissions but Cinepoint website showtimes are unavailable, report `estimated admissions available; showtimes unavailable` and do not calculate national admissions/show
+- keep public Cinepoint numbers separate from private SAMS data at all times
+- do not derive the Friday national denominator from a movie-detail/showtimes page unless it is explicitly verified as equivalent to the Cinepoint public showtime count for the scoped date/title
 
 ### Step 1.5: Pre-admissions allocation prep
 Before private SAMS Day 1 admissions arrive, prepare a draft allocation frame using known SAMS show allocation and the current prerelease read.
@@ -206,9 +213,11 @@ Expected output:
 
 Rules:
 - use Cinepoint only for raw Day 1 numbers
-- if Cinepoint has not posted yet, report `BLOCKED | waiting_for_cinepoint`
+- before reporting `BLOCKED | waiting_for_cinepoint`, check Cinepoint website Top Box Office, Cinepoint movie/showtimes page if needed, and `@cinepoint_` estimated admissions post
+- if Cinepoint website Top Box Office exposes `Daily Adm.` and `Showtimes`, extract both and calculate national admissions/show as `public Cinepoint estimate/tracking`
+- if `@cinepoint_` has admissions but website showtimes are unavailable, report admissions available and denominator unavailable; do not call Cinepoint entirely missing
 - do not guess showtimes or ratios
-- do not treat a movie-detail page count as the official `SHOWTIMES` denominator unless separately verified
+- do not treat a movie-detail page count as the official denominator unless separately verified against the scoped Cinepoint website title/date row
 
 ### Step 4: Merge the two parsed sources
 Run:
@@ -329,7 +338,8 @@ No speculative commentary.
 ## Escalate Instead Of Guessing
 
 Escalate when:
-- Cinepoint is not yet posted
+- Cinepoint website Top Box Office, Cinepoint movie/showtimes page, and `@cinepoint_` have all been checked and no relevant public Day 1 evidence is available
+- Cinepoint admissions are available but showtimes remain unavailable after the required website checks
 - Grafana access fails with an exact `BLOCKED_GRAFANA_ACCESS` reason
 - Grafana extraction fails with an exact `BLOCKED_GRAFANA_EXTRACTION` reason
 - SAMS Day 1 is unavailable after the mandatory Grafana attempt and Akhil / operator channel has not supplied a manual fallback paste
