@@ -50,13 +50,34 @@ Keep layers separate until labeled:
 
 Do not mix public Cinepoint and private SAMS numbers in one denominator.
 
-If SAMS opening-frame data is missing, emit:
+Before emitting `BLOCKED_PRIVATE_SAMS_OPENING_FRAME_MISSING`, attempt a bounded read-only Grafana extraction for private SAMS first-four-days / opening-frame data.
+
+Grafana read scope:
+- current operating slate
+- relevant holdovers competing for allocation
+- known distortion titles such as NOBAR/community-event titles when they affect allocation pressure
+- fields needed only for closeout: title, date/frame, admissions, actual show counts when visible, site/filter state, and report timestamp
+
+If Grafana access fails, emit:
+
+`BLOCKED_GRAFANA_ACCESS | <exact reason>`
+
+If Grafana loads but extraction is unsafe or incomplete, emit:
+
+`BLOCKED_GRAFANA_EXTRACTION | <exact reason>`
+
+Only after Grafana failed and no valid manual fallback table is supplied, emit:
 
 `BLOCKED_PRIVATE_SAMS_OPENING_FRAME_MISSING`
 
 Then still report what public data is available, but do not call the week closed.
 
 ## Step 2: Opening-Frame Label
+
+Label private SAMS data by timing and completeness:
+- `FINAL_DAY1` = complete release-day private SAMS Day 1 after business day close
+- `PROVISIONAL` = incomplete/private read before business day close or before final reconciliation
+- `OPENING_FRAME` = first-four/five-day private SAMS frame used for Monday closeout
 
 Label the frame by release-day day count:
 - Thursday release = normal Thu-Sun 4-day OW
@@ -66,6 +87,8 @@ Label the frame by release-day day count:
 Never compare a Wednesday-to-Sunday 5-day frame blindly with a normal Thursday-to-Sunday 4-day OW.
 
 ## Step 3: Cinepoint Revision Check
+
+Keep public Cinepoint separate from private SAMS. Do not mix public national data and private SAMS data in one denominator.
 
 If Cinepoint posts next-day cumulative and current-day daily admissions:
 
