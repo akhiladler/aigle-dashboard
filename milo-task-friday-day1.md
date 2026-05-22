@@ -19,7 +19,7 @@ Canonical files that matter:
 Produce a verified Day 1 update and Day 2 allocation read for the current operating-week films using:
 - known SAMS show allocation
 - Wednesday prerelease signals
-- human-provided SAMS release-day admissions
+- private SAMS release-day admissions from bounded read-only Grafana extraction, falling back to human-provided raw SAMS data only when Grafana access or extraction fails
 - Cinepoint Day 1 numbers
 
 Then update only the verified Day 1 fields in `films.json`.
@@ -59,9 +59,38 @@ Do not rewrite titles by hand if the raw source already has them.
 
 Important:
 - Milo may collect public Cinepoint Day 1 data on its own
+- Milo may collect private SAMS Day 1 data from the dedicated read-only Grafana account using a bounded extraction limited to the current operating slate and relevant holdovers
 - Milo may not invent or assume private SAMS Day 1 data
 - Milo may not invent or assume SAMS show allocation
-- if SAMS Day 1 is only available through operator channels, wait for Akhil to provide the raw SAMS block and treat that as the canonical internal input
+- if Grafana access or extraction fails, emit the exact Grafana blocker first; only then ask Akhil for a manual raw SAMS paste and treat that paste as the fallback canonical internal input
+
+### Step 1.1: Mandatory bounded Grafana read before private-data blocker
+Before returning `BLOCKED_PRIVATE_SAMS_DAY1_MISSING`, Friday Day 1 must attempt a bounded read from the dedicated read-only SAMS Grafana account.
+
+Grafana read scope:
+- date: current `operating_week.week_start` / Day 1 release date only, unless the task explicitly asks for a later closeout frame
+- titles: current `operating_week.films_releasing` plus relevant holdovers still allocated against those titles
+- fields: movie title, show count, admissions / adm seats, paid seats if visible, voucher/freepass seats if visible, report date/time, cinema/site filter state
+- source area: BO Sales / Admission or equivalent admission report only
+
+Grafana privacy limits:
+- use read-only access only
+- do not open edit/admin/settings pages
+- do not extract credentials, customer lists, staff data, payment rows, revenue details, F&B data, or unrelated operational data
+- do not store screenshots or raw dashboard dumps unless Akhil explicitly requests them for audit
+- if the visible report exposes unrelated private data outside the Friday Day 1 scope, stop and return `BLOCKED_GRAFANA_EXTRACTION | unrelated_private_data_visible`
+
+If Grafana access works:
+- treat Grafana as the private SAMS truth source
+- extract admissions and show counts for the current slate and relevant holdovers
+- calculate admissions/show, market average admissions/show, Allocation Index, thesis-test verdicts, and the Day 2 allocation recommendation
+- do not ask Akhil for a manual SAMS paste
+
+If Grafana fails:
+- return `BLOCKED_GRAFANA_ACCESS | <exact reason>` when login, permission, network, session, MFA, or dashboard access blocks the read
+- return `BLOCKED_GRAFANA_EXTRACTION | <exact reason>` when the dashboard loads but the required scoped titles, date, admissions, or show counts cannot be extracted safely
+- only after one of those blockers should the fallback request be: ask Akhil for the raw SAMS paste in the preferred format below
+- do not return `BLOCKED_PRIVATE_SAMS_DAY1_MISSING` until the Grafana attempt has failed and no valid manual fallback has been supplied
 
 #### SAMS show allocation raw format
 Before admissions arrive, capture known show allocation in this format:
@@ -204,7 +233,7 @@ Required metrics for every title with known SAMS shows:
 Denominator rule:
 - titles with admissions but unknown show counts must be listed separately and must not enter the Allocation Index denominator.
 - holdovers still allocated must be included when their admissions and show counts are known; do not evaluate new titles in isolation if holdovers are competing for screens.
-- if private SAMS admissions are missing, return `BLOCKED_PRIVATE_SAMS_DAY1_MISSING` and do not call Friday complete.
+- if private SAMS admissions are missing, first execute Step 1.1. If Grafana works, use Grafana as private SAMS truth. If Grafana fails, return `BLOCKED_GRAFANA_ACCESS | <exact reason>` or `BLOCKED_GRAFANA_EXTRACTION | <exact reason>` and ask for manual paste. Return `BLOCKED_PRIVATE_SAMS_DAY1_MISSING` only after the Grafana attempt failed and no manual fallback has been supplied.
 - if private SAMS show counts are missing, return `BLOCKED_SHOW_ALLOCATION_MISSING` and do not call Friday complete.
 
 Every allocation change or recommendation must be classified as exactly one of:
@@ -301,7 +330,9 @@ No speculative commentary.
 
 Escalate when:
 - Cinepoint is not yet posted
-- SAMS Day 1 has not yet been provided by Akhil / operator channel
+- Grafana access fails with an exact `BLOCKED_GRAFANA_ACCESS` reason
+- Grafana extraction fails with an exact `BLOCKED_GRAFANA_EXTRACTION` reason
+- SAMS Day 1 is unavailable after the mandatory Grafana attempt and Akhil / operator channel has not supplied a manual fallback paste
 - SAMS show allocation is missing
 - SAMS recap is incomplete
 - a title match is ambiguous
@@ -324,6 +355,7 @@ Friday Day 1 is successful when:
 
 Friday has two different collection surfaces:
 - public Cinepoint Day 1 can be cron-collected automatically
-- private SAMS Day 1 still requires human handoff unless and until a safe internal feed exists
+- private SAMS Day 1 should be collected first from the dedicated read-only Grafana account through the bounded Friday scope above
+- human handoff is fallback only after `BLOCKED_GRAFANA_ACCESS` or `BLOCKED_GRAFANA_EXTRACTION`
 
 Do not confuse a successful public-data cron with a complete Friday Day 1 update.
