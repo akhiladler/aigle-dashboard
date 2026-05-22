@@ -150,6 +150,29 @@ If Sheet/dashboard rows already exist:
 If fields need correction:
 - list exact title, field, current value, proposed value, source, and confidence
 
+## Step 8: Product Proof Ledger
+
+At the end of every Monday closeout, return a section labeled exactly:
+
+`PRODUCT_PROOF_LEDGER_UPDATE`
+
+It must include exactly these fields, in this order:
+- Week
+- User
+- Decision moment
+- Aigle output
+- Observed impact
+- Verdict
+- Code / workflow change
+- Evidence gaps
+- Write to ledger: YES / NO
+
+Rules:
+- Do not claim product proof from machine improvement alone.
+- Do not claim operator decision movement unless there is evidence someone changed or defended a programming decision because of Aigle.
+- If evidence is internal only, say internal proof, not operator proof.
+- If the row is not honest enough to write, label `Write to ledger: NO`.
+
 ## Success Condition
 
 Monday closeout is successful only when:
