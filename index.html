@@ -914,7 +914,7 @@
             </div>
             <div class="spectrum-legend">
                 <span class="legend-gold">&#x25CF;</span> emas = rilis minggu ini &nbsp;&nbsp;
-                <span style="color:var(--text-muted);">&#x25CF;</span> abu = riwayat &nbsp;&nbsp;
+                <span style="color:var(--text-muted);">&#x25CF;</span> abu = film pembanding &nbsp;&nbsp;
                 Skala: views trailer YouTube (log)
             </div>
         </div>
@@ -923,7 +923,6 @@
         <div class="tab-nav" id="tabNav">
             <button class="tab-btn active" data-tab="minggu-ini" id="tabBtnMinggu">Minggu Ini<span class="tab-count" id="tabCountMinggu"></span></button>
             <button class="tab-btn" data-tab="mendatang" id="tabBtnMendatang">Mendatang<span class="tab-count" id="tabCountMendatang"></span></button>
-            <button class="tab-btn" data-tab="riwayat" id="tabBtnRiwayat">Riwayat<span class="tab-count" id="tabCountRiwayat"></span></button>
         </div>
 
         <!-- TAB: MINGGU INI -->
@@ -937,7 +936,10 @@
             <div id="upcomingCards"></div>
         </div>
 
-        <!-- TAB: RIWAYAT -->
+        <!-- TAB: RIWAYAT
+             Hidden from main navigation until history becomes a true benchmark
+             engine. Historical films still power embedded "Sinyal mirip..." insights.
+        -->
         <div class="tab-content" id="tabRiwayat">
             <div id="historyCards"></div>
         </div>
@@ -2157,8 +2159,6 @@
             // Tab counts
             document.getElementById('tabCountMinggu').textContent = ' (' + data.thisWeek.length + ')';
             document.getElementById('tabCountMendatang').textContent = data.upcoming.length > 0 ? ' (' + data.upcoming.length + ')' : '';
-            document.getElementById('tabCountRiwayat').textContent = ' (' + data.history.length + ')';
-
             // Hide mendatang tab if no upcoming films
             if (data.upcoming.length === 0) {
                 document.getElementById('tabBtnMendatang').style.display = 'none';
