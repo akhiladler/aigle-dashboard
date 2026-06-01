@@ -1,13 +1,13 @@
 {
-  "week_label": "21 May",
-  "week_start": "2026-05-21",
+  "week_label": "27 May",
+  "week_start": "2026-05-27",
   "films_releasing": [
-    "Gudang Merica",
-    "Keluarga Suami Adalah Hama",
-    "Kamu Harus Mati",
-    "Pocong Merah"
+    "Sekawan Limo 2: Gunung Klawih",
+    "Children of Heaven",
+    "Badut Gendong",
+    "Suamiku Lukaku"
   ],
-  "updated_at": "2026-05-20T13:08:29+07:00",
-  "updated_by": "milo-operator-reality-correction",
-  "selection_mode": "prerelease_operator_confirmed"
+  "updated_at": "2026-05-29T12:55:00+07:00",
+  "updated_by": "codex-dashboard-current-slate-refresh",
+  "selection_mode": "current_release_slate"
 }

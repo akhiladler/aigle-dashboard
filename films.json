@@ -1,7 +1,7 @@
 {
       "meta": {
-            "last_updated": "2026-05-18",
-            "total_films": 46,
+            "last_updated": "2026-05-29",
+            "total_films": 50,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -1173,7 +1173,127 @@
                   "calendar": "NORMAL",
                   "note": "SOURCE_CONFLICT / OPERATOR_CONFIRMED: SAMS programming group lists Pocong Merah for May 21, 2026 alongside Gudang Merica, Keluarga Suami Adalah Hama, and Kamu Harus Mati. Public sources found during urgent May 21 correction list Pocong Merah as already released around 2026-02-19; therefore this is tracked as an operator-confirmed SAMS add-on/holdover, not a clean May 21 national opener. PH/genre from public article: Checklist Cinema, horor. YouTube uses Checklist Cinema Official trailer; TikTok and GT still pending.",
                   "plays_at_sams": true
+            },
+            {
+                  "title": "Badut Gendong",
+                  "release_date": "2026-05-27",
+                  "week_label": "27 May",
+                  "ph": "Magma Entertainment",
+                  "ph_tier": "T3",
+                  "genre": "Horor / Action",
+                  "youtube_views": 346000,
+                  "buzz_level": "SEDANG",
+                  "youtube_url": "https://www.youtube.com/watch?v=W3MhiBzwHu8",
+                  "tiktok": 3,
+                  "google_trends": 5,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Tumbal Proyek",
+                  "gt_capture_context": "Approved historical Google Trends manual capture: Indonesia | Past week | Web Search | title entity: search term | benchmark: Tumbal Proyek average interest=63 | captured before release; do not relabel as a fresh June 1 capture.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-05-26",
+                  "gt_capture_stage": "approved-historical-prerelease-receipt",
+                  "signal_provenance": {
+                        "youtube": "Approved historical prerelease receipt from 2026-05-26; Codex-collected and Akhil-verified. Canonical trailer URL verified on 2026-06-01.",
+                        "tiktok": "Dias human receipt from 2026-05-26.",
+                        "google_trends": "Akhil human cross-check from 2026-05-26."
+                  },
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Judul aktif SAMS dari pembacaan Grafana pertama yang berhasil pada 28 Mei. Sinyal minat publik masih perlu diperbarui lewat pipeline Rabu/Cinepoint sebelum dibaca sebagai bacaan akhir.",
+                  "plays_at_sams": true,
+                  "current_week_rank": 3
+            },
+            {
+                  "title": "Children of Heaven",
+                  "release_date": "2026-05-27",
+                  "week_label": "27 May",
+                  "ph": "MD Pictures",
+                  "ph_tier": "T1",
+                  "genre": "Drama",
+                  "youtube_views": 686000,
+                  "buzz_level": "TINGGI",
+                  "youtube_url": "https://www.youtube.com/watch?v=OnHYKXrHG8U",
+                  "tiktok": 6,
+                  "google_trends": 7,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Tumbal Proyek",
+                  "gt_capture_context": "Approved historical Google Trends manual capture: Indonesia | Past week | Web Search | title entity: search term | benchmark: Tumbal Proyek average interest=63 | captured before release; do not relabel as a fresh June 1 capture.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-05-26",
+                  "gt_capture_stage": "approved-historical-prerelease-receipt",
+                  "signal_provenance": {
+                        "youtube": "Approved historical prerelease receipt from 2026-05-26; Codex-collected and Akhil-verified. Canonical May release-campaign trailer URL verified on 2026-06-01. The stored 686K value remains the approved historical prerelease capture and must not be replaced by the later June 1 recollection.",
+                        "tiktok": "Dias human receipt from 2026-05-26.",
+                        "google_trends": "Akhil human cross-check from 2026-05-26."
+                  },
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Judul aktif SAMS dari pembacaan Grafana pertama yang berhasil pada 28 Mei. Sinyal minat publik masih perlu diperbarui lewat pipeline Rabu/Cinepoint sebelum dibaca sebagai bacaan akhir.",
+                  "plays_at_sams": true,
+                  "current_week_rank": 2
+            },
+            {
+                  "title": "Sekawan Limo 2: Gunung Klawih",
+                  "release_date": "2026-05-27",
+                  "week_label": "27 May",
+                  "ph": "Starvision",
+                  "ph_tier": "T1",
+                  "genre": "Horor Komedi",
+                  "youtube_views": 261000,
+                  "buzz_level": "SEDANG",
+                  "youtube_url": "https://www.youtube.com/watch?v=BRBgSf9_kQ4",
+                  "tiktok": 8,
+                  "google_trends": 27,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Tumbal Proyek",
+                  "gt_capture_context": "Approved historical Google Trends manual capture: Indonesia | Past week | Web Search | title entity: Sekawan Limo search term | benchmark: Tumbal Proyek average interest=63 | captured before release; do not relabel as a fresh June 1 capture.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-05-26",
+                  "gt_capture_stage": "approved-historical-prerelease-receipt",
+                  "signal_provenance": {
+                        "youtube": "Approved historical prerelease receipt from 2026-05-26; Codex-collected and Akhil-verified. Canonical trailer URL verified on 2026-06-01.",
+                        "tiktok": "Dias human receipt from 2026-05-26.",
+                        "google_trends": "Akhil human cross-check from 2026-05-26."
+                  },
+                  "nobar": false,
+                  "sequel_of": "Sekawan Limo",
+                  "calendar": "NORMAL",
+                  "note": "Judul aktif SAMS dari pembacaan Grafana pertama yang berhasil pada 28 Mei dan penggerak operasi saat ini. Sinyal minat publik masih perlu diperbarui lewat pipeline Rabu/Cinepoint sebelum dibaca sebagai bacaan akhir.",
+                  "plays_at_sams": true,
+                  "current_week_rank": 1
+            },
+            {
+                  "title": "Suamiku Lukaku",
+                  "release_date": "2026-05-27",
+                  "week_label": "27 May",
+                  "ph": "Sinemart",
+                  "ph_tier": "T2",
+                  "genre": "Drama",
+                  "youtube_views": 608000,
+                  "buzz_level": "TINGGI",
+                  "youtube_url": "https://www.youtube.com/watch?v=NjppEwcW3rE",
+                  "tiktok": 3,
+                  "google_trends": 0,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Tumbal Proyek",
+                  "gt_capture_context": "Approved historical Google Trends manual capture: Indonesia | Past week | Web Search | title entity: search term | benchmark: Tumbal Proyek average interest=63 | captured before release; do not relabel as a fresh June 1 capture.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-05-26",
+                  "gt_capture_stage": "approved-historical-prerelease-receipt",
+                  "signal_provenance": {
+                        "youtube": "Approved historical prerelease receipt from 2026-05-26; Codex-collected and Akhil-verified. Canonical trailer URL verified on 2026-06-01.",
+                        "tiktok": "Dias human receipt from 2026-05-26.",
+                        "google_trends": "Akhil human cross-check from 2026-05-26."
+                  },
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "Judul aktif SAMS dari pembacaan Grafana pertama yang berhasil pada 28 Mei. Sinyal minat publik masih perlu diperbarui lewat pipeline Rabu/Cinepoint sebelum dibaca sebagai bacaan akhir.",
+                  "plays_at_sams": true,
+                  "current_week_rank": 4
             }
       ],
-      "last_updated": "2026-05-20T13:08:29+07:00"
+      "last_updated": "2026-05-29T12:55:00+07:00"
 }

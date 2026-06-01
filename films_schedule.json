@@ -328,10 +328,11 @@
             "_note": "Current 21cineplex/M-Tix release-facing source lists Tayang: May 21 as of 2026-05-18. Previously carried as Apr 16."
         },
         {
-            "date": "2026-04-16",
+            "date": "2026-05-27",
             "title": "Suamiku Lukaku",
             "genre": "Drama",
-            "production_house": "Sinemart"
+            "production_house": "Sinemart",
+            "_note": "Moved from stale Apr 16 schedule row to May 27 based on May 2026 release-facing sources and current SAMS/Cinepoint planning context."
         },
         {
             "date": "2026-04-16",
@@ -531,6 +532,12 @@
             "title": "Children of Heaven",
             "genre": "Drama",
             "production_house": "MD Pictures"
+        },
+        {
+            "date": "2026-05-27",
+            "title": "Badut Gendong",
+            "genre": "Horor",
+            "production_house": "Magma Entertainment"
         },
         {
             "date": "2026-05-27",

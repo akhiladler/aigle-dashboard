@@ -1,25 +1,25 @@
 {
-  "week_label": "21 May",
-  "week_start": "2026-05-21",
+  "week_label": "27 May",
+  "week_start": "2026-05-27",
   "deadline_local": "12:00",
-  "generated_at": "2026-05-20T16:50:19+07:00",
+  "generated_at": "2026-06-01T12:37:24+07:00",
   "films_in_scope": [
-    "Gudang Merica",
-    "Keluarga Suami Adalah Hama",
-    "Kamu Harus Mati",
-    "Pocong Merah"
+    "Sekawan Limo 2: Gunung Klawih",
+    "Children of Heaven",
+    "Badut Gendong",
+    "Suamiku Lukaku"
   ],
   "missing_titles": [],
   "film_status": [
     {
       "rank": 1,
-      "title": "Gudang Merica",
-      "youtube_views": 1845728,
-      "buzz_level": "TINGGI",
-      "tiktok": 6,
-      "google_trends": 2,
+      "title": "Sekawan Limo 2: Gunung Klawih",
+      "youtube_views": 261000,
+      "buzz_level": "SEDANG",
+      "tiktok": 8,
+      "google_trends": 27,
       "google_trends_pending": false,
-      "attention_score": 3.64,
+      "attention_score": 3.34,
       "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": "search_term",
       "missing_human_inputs": [],
@@ -32,13 +32,13 @@
     },
     {
       "rank": 2,
-      "title": "Keluarga Suami Adalah Hama",
-      "youtube_views": 44302,
-      "buzz_level": "RENDAH",
-      "tiktok": 7,
-      "google_trends": 2,
+      "title": "Children of Heaven",
+      "youtube_views": 686000,
+      "buzz_level": "TINGGI",
+      "tiktok": 6,
+      "google_trends": 7,
       "google_trends_pending": false,
-      "attention_score": 1.74,
+      "attention_score": 3.74,
       "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": "search_term",
       "missing_human_inputs": [],
@@ -51,13 +51,13 @@
     },
     {
       "rank": 3,
-      "title": "Kamu Harus Mati",
-      "youtube_views": 236204,
+      "title": "Badut Gendong",
+      "youtube_views": 346000,
       "buzz_level": "SEDANG",
       "tiktok": 3,
-      "google_trends": 0,
+      "google_trends": 5,
       "google_trends_pending": false,
-      "attention_score": 2.3,
+      "attention_score": 2.4,
       "gt_benchmark_title": "Tumbal Proyek",
       "gt_entity_type": "search_term",
       "missing_human_inputs": [],
@@ -70,59 +70,42 @@
     },
     {
       "rank": 4,
-      "title": "Pocong Merah",
-      "youtube_views": 32241,
-      "buzz_level": "RENDAH",
-      "tiktok": null,
-      "google_trends": null,
-      "google_trends_pending": true,
-      "attention_score": 1,
+      "title": "Suamiku Lukaku",
+      "youtube_views": 608000,
+      "buzz_level": "TINGGI",
+      "tiktok": 3,
+      "google_trends": 0,
+      "google_trends_pending": false,
+      "attention_score": 3.3,
       "gt_benchmark_title": "Tumbal Proyek",
-      "gt_entity_type": "pending",
-      "missing_human_inputs": [
-        "tiktok"
-      ],
+      "gt_entity_type": "search_term",
+      "missing_human_inputs": [],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
-      "pending_signal_inputs": [
-        "google_trends"
-      ],
+      "pending_signal_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": false
+      "operator_ready": true
     }
   ],
-  "missing_human_inputs": [
-    {
-      "title": "Pocong Merah",
-      "fields": [
-        "tiktok"
-      ]
-    }
-  ],
+  "missing_human_inputs": [],
   "missing_autofillable_inputs": [],
   "missing_audit_inputs": [],
-  "pending_signal_inputs": [
-    {
-      "title": "Pocong Merah",
-      "fields": [
-        "google_trends"
-      ]
-    }
-  ],
+  "pending_signal_inputs": [],
   "anomalies": [],
   "ready_for_publish_titles": [
-    "Gudang Merica",
-    "Keluarga Suami Adalah Hama",
-    "Kamu Harus Mati",
-    "Pocong Merah"
+    "Sekawan Limo 2: Gunung Klawih",
+    "Children of Heaven",
+    "Badut Gendong",
+    "Suamiku Lukaku"
   ],
   "ready_for_operator_titles": [
-    "Gudang Merica",
-    "Keluarga Suami Adalah Hama",
-    "Kamu Harus Mati"
+    "Sekawan Limo 2: Gunung Klawih",
+    "Children of Heaven",
+    "Badut Gendong",
+    "Suamiku Lukaku"
   ],
   "ready_for_publish": true,
-  "ready_for_operator": false,
-  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Pocong Merah. Signal confirmation still pending for: Pocong Merah."
+  "ready_for_operator": true,
+  "operator_summary": "All 4 films are fully ready for Wednesday output."
 }
