@@ -67,11 +67,20 @@ Important:
 ### Step 1.1: Mandatory bounded Grafana read before private-data blocker
 Before returning `BLOCKED_PRIVATE_SAMS_DAY1_MISSING`, Friday Day 1 must attempt a bounded read from the dedicated read-only SAMS Grafana account.
 
+Proven Movie Programing BO route (primary as of 2026-05-23):
+- Dashboard: Movie Programing (`/d/fe67op4i87myoa/movie-programing`).
+- Method: set date + movie title filters and extract title-by-title from the `$movie - $date` table panel.
+- Scope: all visible SAMS cinema rows; do not exclude Labuan Bajo or any other site unless explicitly instructed. Report observed site scope.
+- Safe fields: Movie, Cinema, Studio, Showtime Date, Showtime Start, Ticket Price, Status/Aproval when visible, Total Amount, Adm Seats, Paid Seats, Voucher/Freepass if visible.
+- Required labels: `grafana_paid_seats`, `grafana_adm_seats`, `grafana_total_amount`, `show_count`, `abdu_comparable_status = unverified_until_reconciled`.
+- Keep paid seats and adm seats separate. Do not label either as Abdu Total Seat Sold before reconciliation.
+- Never use Customer Transaction rows. Use Daily Report only for isolated aggregate site/BO totals if safe.
+
 Grafana read scope:
 - date: current `operating_week.week_start` / Day 1 release date only, unless the task explicitly asks for a later closeout frame
 - titles: current `operating_week.films_releasing` plus relevant holdovers still allocated against those titles
 - fields: movie title, show count, admissions / adm seats, paid seats if visible, voucher/freepass seats if visible, report date/time, cinema/site filter state
-- source area: BO Sales / Admission or equivalent admission report only
+- source area: Movie Programing proven route first; Daily Report only for isolated aggregate site/BO totals if safe
 
 Grafana privacy limits:
 - use read-only access only
@@ -82,7 +91,7 @@ Grafana privacy limits:
 
 If Grafana access works:
 - treat Grafana as the private SAMS truth source
-- extract admissions and show counts for the current slate and relevant holdovers
+- extract `grafana_paid_seats`, `grafana_adm_seats`, `grafana_total_amount`, show counts, and site rollups when safely derivable for the current slate and relevant holdovers
 - calculate admissions/show, market average admissions/show, Allocation Index, thesis-test verdicts, and the Day 2 allocation recommendation
 - do not ask Akhil for a manual SAMS paste
 
