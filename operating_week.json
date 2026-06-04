@@ -1,13 +1,12 @@
 {
-  "week_label": "27 May",
-  "week_start": "2026-05-27",
+  "week_label": "4 Jun",
+  "week_start": "2026-06-04",
   "films_releasing": [
-    "Sekawan Limo 2: Gunung Klawih",
-    "Children of Heaven",
-    "Badut Gendong",
-    "Suamiku Lukaku"
+    "Monster Pabrik Rambut",
+    "Nobody Loves Kay",
+    "Kucing Hitam"
   ],
-  "updated_at": "2026-05-29T12:55:00+07:00",
-  "updated_by": "codex-dashboard-current-slate-refresh",
-  "selection_mode": "current_release_slate"
+  "updated_at": "2026-06-04T14:03:04+07:00",
+  "updated_by": "codex-june4-dias-tiktok",
+  "selection_mode": "prerelease"
 }

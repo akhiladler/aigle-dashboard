@@ -1,7 +1,7 @@
 {
       "meta": {
-            "last_updated": "2026-05-29",
-            "total_films": 50,
+            "last_updated": "2026-06-03",
+            "total_films": 53,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -1293,7 +1293,94 @@
                   "note": "Judul aktif SAMS dari pembacaan Grafana pertama yang berhasil pada 28 Mei. Sinyal minat publik masih perlu diperbarui lewat pipeline Rabu/Cinepoint sebelum dibaca sebagai bacaan akhir.",
                   "plays_at_sams": true,
                   "current_week_rank": 4
+            },
+            {
+                  "title": "Kucing Hitam",
+                  "release_date": "2026-06-04",
+                  "week_label": "4 Jun",
+                  "ph": "Jose Poernomo Film",
+                  "ph_tier": "T4",
+                  "genre": "Horor",
+                  "youtube_views": 19208,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": "https://www.youtube.com/watch?v=RClnbd4LGOU",
+                  "tiktok": 2,
+                  "google_trends": 7,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Sekawan Limo",
+                  "gt_capture_context": "Akhil manual Google Trends visual receipt: Indonesia | Past week | Web Search | search terms: Kucing Hitam, Nobody Loves Kay, Monster Pabrik Rambut, Sekawan Limo | average interest: Kucing Hitam=7, Nobody Loves Kay=2, Monster Pabrik Rambut=1, Sekawan Limo=50 | screenshot supplied in Codex on 2026-06-03 after Milo GT shadow blocked.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-06-03",
+                  "gt_capture_stage": "akhil-manual-visual-prerelease-receipt",
+                  "signal_provenance": {
+                        "youtube": "Milo no-write receipt from 2026-06-03; Akhil verified current trailer and views.",
+                        "tiktok": "Dias human receipt from 2026-06-04: Kucing Hitam score 2.",
+                        "google_trends": "Akhil manual visual Google Trends receipt from 2026-06-03 after Milo machine route blocked with HTTP 429."
+                  },
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "June 4 public candidate from corrected official XXI enumeration. Local metadata repaired to unblock prerelease rehearsal; signals and operator confirmation remain pending.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Monster Pabrik Rambut",
+                  "release_date": "2026-06-04",
+                  "week_label": "4 Jun",
+                  "ph": "Palari Films",
+                  "ph_tier": "T4",
+                  "genre": "Horor Fantasi",
+                  "youtube_views": 3665548,
+                  "buzz_level": "TINGGI",
+                  "youtube_url": "https://www.youtube.com/watch?v=WJNHL_TuX20",
+                  "tiktok": 4,
+                  "google_trends": 1,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Sekawan Limo",
+                  "gt_capture_context": "Akhil manual Google Trends visual receipt: Indonesia | Past week | Web Search | search terms: Kucing Hitam, Nobody Loves Kay, Monster Pabrik Rambut, Sekawan Limo | average interest: Kucing Hitam=7, Nobody Loves Kay=2, Monster Pabrik Rambut=1, Sekawan Limo=50 | screenshot supplied in Codex on 2026-06-03 after Milo GT shadow blocked.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-06-03",
+                  "gt_capture_stage": "akhil-manual-visual-prerelease-receipt",
+                  "signal_provenance": {
+                        "youtube": "Milo no-write receipt from 2026-06-03; Akhil verified current trailer and views.",
+                        "tiktok": "Dias human receipt from 2026-06-04: Monster Pabrik Rambut score 4.",
+                        "google_trends": "Akhil manual visual Google Trends receipt from 2026-06-03 after Milo machine route blocked with HTTP 429."
+                  },
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "June 4 public candidate from corrected official XXI enumeration. Local metadata repaired to unblock prerelease rehearsal; signals and operator confirmation remain pending.",
+                  "plays_at_sams": true
+            },
+            {
+                  "title": "Nobody Loves Kay",
+                  "release_date": "2026-06-04",
+                  "week_label": "4 Jun",
+                  "ph": "Visinema Pictures",
+                  "ph_tier": "T2",
+                  "genre": "Drama",
+                  "youtube_views": 36949,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": "https://www.youtube.com/watch?v=6ArxVRwBYU4",
+                  "tiktok": 7,
+                  "google_trends": 2,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Sekawan Limo",
+                  "gt_capture_context": "Akhil manual Google Trends visual receipt: Indonesia | Past week | Web Search | search terms: Kucing Hitam, Nobody Loves Kay, Monster Pabrik Rambut, Sekawan Limo | average interest: Kucing Hitam=7, Nobody Loves Kay=2, Monster Pabrik Rambut=1, Sekawan Limo=50 | screenshot supplied in Codex on 2026-06-03 after Milo GT shadow blocked.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-06-03",
+                  "gt_capture_stage": "akhil-manual-visual-prerelease-receipt",
+                  "signal_provenance": {
+                        "youtube": "Milo no-write receipt from 2026-06-03; Akhil verified current trailer and views.",
+                        "tiktok": "Dias human receipt from 2026-06-04: Nobody Loves Kay score 7.",
+                        "google_trends": "Akhil manual visual Google Trends receipt from 2026-06-03 after Milo machine route blocked with HTTP 429."
+                  },
+                  "nobar": false,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "June 4 public candidate from corrected official XXI enumeration. Local metadata repaired to unblock prerelease rehearsal; signals and operator confirmation remain pending.",
+                  "plays_at_sams": true
             }
       ],
-      "last_updated": "2026-05-29T12:55:00+07:00"
+      "last_updated": "2026-06-04T10:55:00+07:00"
 }

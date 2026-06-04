@@ -522,6 +522,13 @@
             "_note": "Moved from May 21 to Jun 4 based on current public release-facing sources as of 2026-05-18."
         },
         {
+            "date": "2026-06-04",
+            "title": "Kucing Hitam",
+            "genre": "Horor",
+            "production_house": "Jose Poernomo Film",
+            "_note": "Added from corrected official XXI June 4 enumeration. Genre/production corroborated by LSF film listing; signals remain pending."
+        },
+        {
             "date": "2026-05-27",
             "title": "Sekawan Limo 2: Gunung Klawih",
             "genre": "Horor",
@@ -578,8 +585,9 @@
         {
             "date": "2026-06-04",
             "title": "Monster Pabrik Rambut",
-            "genre": "Thriller",
-            "production_house": "Palari Pictures"
+            "genre": "Horor Fantasi",
+            "production_house": "Palari Films",
+            "_note": "Corrected from Palari Pictures / Thriller to Palari Films / horor-fantasi based on current release-facing coverage. Keep prerelease signals pending."
         },
         {
             "date": "2026-06-04",
