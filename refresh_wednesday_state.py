@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parent
 SELECT_SCRIPT = ROOT / "select_operating_week.py"
 VALIDATE_SCRIPT = ROOT / "validate_films.py"
 CHECK_SCRIPT = ROOT / "check-films.py"
+LIVE_SLATE_SCRIPT = ROOT / "build_live_slate_state.py"
 
 
 def run_step(command, label, allowed_exit_codes=None):
@@ -40,6 +41,7 @@ def main():
     steps = [
         (select_cmd, "select_operating_week", {0}),
         ([sys.executable, str(VALIDATE_SCRIPT)], "validate_films", {0}),
+        ([sys.executable, str(LIVE_SLATE_SCRIPT)], "build_live_slate_state", {0}),
     ]
 
     if not args.skip_check:

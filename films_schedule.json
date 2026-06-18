@@ -1,6 +1,6 @@
 {
     "_note": "Aigle film schedule. Source: movie-forecast-2026.md + 21cineplex.com verification.",
-    "_updated": "2026-05-20T13:08:29+07:00",
+    "_updated": "2026-06-18T12:50:00+07:00",
     "_source": "21cineplex.com (primary) + IDNTimes, IMDb, web search",
     "_instructions": "Add new films here. The notebook loads this file automatically. No code editing needed. Only named films included (no 'Untitled' placeholders).",
     "films": [
@@ -617,13 +617,57 @@
             "date": "2026-06-17",
             "title": "RS Angker Korea",
             "genre": "Horor",
-            "production_house": "MD Pictures"
+            "production_house": "MD Pictures",
+            "_note": "Needs recheck before use as current slate: not covered by the June 16 source-provenance patch review for the audited June 18 public slate."
         },
         {
-            "date": "2026-06-17",
+            "date": "2026-06-18",
             "title": "Cerita Lila",
             "genre": "Drama",
-            "production_house": "MVP Pictures"
+            "production_house": "MVP Pictures",
+            "_note": "Date corrected from 2026-06-17 based on control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md SOURCE_PROVENANCE_PATCH_REVIEW; mobile 21Cineplex title page showed Tayang: June 18."
+        },
+        {
+            "date": "2026-06-18",
+            "title": "Dukun Magang",
+            "genre": "TBD",
+            "production_house": "TBD",
+            "_note": "Added from control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md SOURCE_PROVENANCE_PATCH_REVIEW; mobile 21Cineplex title page showed Tayang: June 18. PH/genre not captured in local audited artifact."
+        },
+        {
+            "date": "2026-06-18",
+            "title": "Saat Aku Bersuara",
+            "genre": "Drama",
+            "production_house": "TBD",
+            "_note": "Current SAB operating title. Release date sourced from control/wednesday-day1-allocation-prep-card-2026-06-16.md, control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md, and aigle-dashboard/saat_aku_bersuara.json. PH/distributor still needs clean source confirmation."
+        },
+        {
+            "date": "2026-06-18",
+            "title": "Assalamualaikum Beijing 2: Lost in Ningxia",
+            "genre": "TBD",
+            "production_house": "TBD",
+            "_note": "Added from control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md SOURCE_PROVENANCE_PATCH_REVIEW; mobile 21Cineplex title page showed Tayang: June 18. Public/context-only until SAMS booking is separately confirmed."
+        },
+        {
+            "date": "2026-06-18",
+            "title": "Elio",
+            "genre": "TBD",
+            "production_house": "TBD",
+            "_note": "Added from control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md SOURCE_PROVENANCE_PATCH_REVIEW; mobile 21Cineplex title page showed Tayang: June 18. Public/context-only until SAMS booking is separately confirmed."
+        },
+        {
+            "date": "2026-06-18",
+            "title": "28 Years Later",
+            "genre": "TBD",
+            "production_house": "TBD",
+            "_note": "Added from control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md SOURCE_PROVENANCE_PATCH_REVIEW; mobile 21Cineplex title page showed Tayang: June 18. Public/context-only until SAMS booking is separately confirmed."
+        },
+        {
+            "date": "2026-06-18",
+            "title": "Cinema Surprise Show",
+            "genre": "TBD",
+            "production_house": "TBD",
+            "_note": "Added from control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md SOURCE_PROVENANCE_PATCH_REVIEW; mobile 21Cineplex title page showed Tayang: June 18. Public/context-only until SAMS booking is separately confirmed."
         },
         {
             "date": "2026-06-25",

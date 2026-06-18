@@ -1,8 +1,84 @@
 {
+  "contract": "aigle_live_slate_state.v0",
+  "generated_at": "2026-06-18T20:39:18+07:00",
   "week_label": "18 Jun",
   "week_start": "2026-06-18",
-  "films_releasing": [
-    "Saat Aku Bersuara"
+  "status": "PARTIAL_OPERATOR_GRAFANA_UNVERIFIED",
+  "state_mismatch": false,
+  "blocker": "Public candidates exist that are not confirmed/tracked for SAMS.",
+  "layers": {
+    "dashboard_state": {
+      "source_files": [
+        "operating_week.json",
+        "weekly_state.json",
+        "films.json",
+        "films_schedule.json"
+      ],
+      "status": "loaded",
+      "titles": [
+        "Saat Aku Bersuara"
+      ],
+      "ready_for_publish": true,
+      "ready_for_operator": false
+    },
+    "operator_schedule": {
+      "status": "missing_receipt",
+      "titles": null,
+      "receipt": null,
+      "note": "No durable full SAMS booking/showtime confirmation receipt is attached."
+    },
+    "grafana_reality": {
+      "status": "missing_receipt",
+      "titles": null,
+      "receipt": null,
+      "note": "No current Grafana active-title/show allocation receipt is attached."
+    }
+  },
+  "sams_confirmation": {
+    "status": "partial",
+    "confirmed_titles": [
+      "Saat Aku Bersuara"
+    ],
+    "unconfirmed_public_candidates": [
+      "Cerita Lila",
+      "Dukun Magang",
+      "Assalamualaikum Beijing 2: Lost in Ningxia",
+      "Elio",
+      "28 Years Later",
+      "Cinema Surprise Show"
+    ],
+    "excluded_candidates": [],
+    "blocker": "Public candidates exist that are not confirmed/tracked for SAMS."
+  },
+  "active_titles": [
+    {
+      "title": "Saat Aku Bersuara",
+      "dashboard_state": {
+        "rank": 1,
+        "title": "Saat Aku Bersuara",
+        "youtube_views": 29594,
+        "buzz_level": "RENDAH",
+        "tiktok": null,
+        "google_trends": 1,
+        "google_trends_pending": false,
+        "attention_score": 1.02,
+        "gt_benchmark_title": "Warkop DKI / Sekawan Limo / Cerita Lila",
+        "gt_entity_type": "search_term",
+        "missing_human_inputs": [
+          "tiktok"
+        ],
+        "missing_autofillable_inputs": [],
+        "missing_audit_inputs": [],
+        "pending_signal_inputs": [],
+        "anomalies": [],
+        "machine_ready": true,
+        "operator_ready": false
+      },
+      "dashboard_status": "tracked_sams_candidate",
+      "operator_schedule_status": "missing_receipt",
+      "grafana_reality_status": "missing_receipt",
+      "render_group": "sams_tracked_candidate"
+    }
   ],
   "public_release_candidates": [
     {
@@ -69,23 +145,10 @@
       "source_note": "Added from control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md SOURCE_PROVENANCE_PATCH_REVIEW; mobile 21Cineplex title page showed Tayang: June 18. Public/context-only until SAMS booking is separately confirmed."
     }
   ],
-  "sams_confirmation": {
-    "status": "partial",
-    "confirmed_titles": [
-      "Saat Aku Bersuara"
-    ],
-    "unconfirmed_public_candidates": [
-      "Cerita Lila",
-      "Dukun Magang",
-      "Assalamualaikum Beijing 2: Lost in Ningxia",
-      "Elio",
-      "28 Years Later",
-      "Cinema Surprise Show"
-    ],
-    "excluded_candidates": [],
-    "blocker": "Public candidates exist that are not confirmed/tracked for SAMS."
-  },
-  "updated_at": "2026-06-18T20:38:35+07:00",
-  "updated_by": "codex-reconcile",
-  "selection_mode": "prerelease"
+  "render_rules": {
+    "primary_titles": "active_titles",
+    "candidate_titles": "public_release_candidates",
+    "show_state_mismatch": "state_mismatch",
+    "do_not_present_public_candidates_as_sams_confirmed": true
+  }
 }

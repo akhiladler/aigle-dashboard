@@ -437,7 +437,7 @@ def build_weekly_state(films_by_title, operating_week, config):
             missing.append('tiktok')
         if film.get('youtube_views') in (None, 0):
             missing.append('youtube_views')
-        if film.get('youtube_views', 0) > 0 and not film.get('youtube_url'):
+        if (film.get('youtube_views') or 0) > 0 and not film.get('youtube_url'):
             missing.append('youtube_url')
         if film.get('google_trends') is None:
             if gt_pending:

@@ -1,7 +1,7 @@
 {
       "meta": {
-            "last_updated": "2026-06-03",
-            "total_films": 53,
+            "last_updated": "2026-06-18",
+            "total_films": 54,
             "description": "Aigle film tracking database - pre-release signals and outcomes"
       },
       "films": [
@@ -1380,7 +1380,39 @@
                   "calendar": "NORMAL",
                   "note": "June 4 public candidate from corrected official XXI enumeration. Local metadata repaired to unblock prerelease rehearsal; signals and operator confirmation remain pending.",
                   "plays_at_sams": true
+            },
+            {
+                  "title": "Saat Aku Bersuara",
+                  "release_date": "2026-06-18",
+                  "week_label": "18 Jun",
+                  "ph": "TBD",
+                  "ph_tier": "T4",
+                  "genre": "Drama",
+                  "youtube_views": 29594,
+                  "buzz_level": "RENDAH",
+                  "youtube_url": "https://www.youtube.com/watch?v=SB13fe44eos",
+                  "tiktok": null,
+                  "google_trends": 1,
+                  "google_trends_pending": false,
+                  "gt_benchmark_title": "Warkop DKI / Sekawan Limo / Cerita Lila",
+                  "gt_capture_context": "Akhil manual Google Trends cross-check: Indonesia | Past week | Web Search | search terms: Saat Aku Bersuara, Warkop DKI, Sekawan Limo, Cerita Lila | average interest: Saat Aku Bersuara=1, Warkop DKI=55, Sekawan Limo=58, Cerita Lila=20 | supplied 2026-06-17.",
+                  "gt_entity_type": "search_term",
+                  "gt_capture_date": "2026-06-17",
+                  "gt_capture_stage": "akhil-manual-gt-cross-check",
+                  "signal_provenance": {
+                        "release_date": "control/wednesday-day1-allocation-prep-card-2026-06-16.md and control/milo-wednesday-allocation-prep-benchmark-audit-2026-06-16.md; SAB listed in public 21Cineplex upcoming context with release date 2026-06-18.",
+                        "youtube": "Free local YouTube updater captured CINEMA 21 official trailer on 2026-06-18: https://www.youtube.com/watch?v=SB13fe44eos | 29,594 views | title: Saat Aku Bersuara - Official Trailer. SAB cockpit refreshed the same URL with public metrics; YouTube comments remain blocked without YOUTUBE_API_KEY.",
+                        "tiktok": "Human-owned score pending; provider/social material remains candidate-only shadow evidence.",
+                        "google_trends": "Akhil manual Google Trends cross-check from 2026-06-17: Indonesia | Past week | Web Search | average interest Saat Aku Bersuara=1; benchmarks Warkop DKI=55, Sekawan Limo=58, Cerita Lila=20.",
+                        "social_context": "aigle-dashboard/saat_aku_bersuara.json records Instagram trailer plays, public press candidates, TikTok/Instagram pickup candidates, and Subang/Indramayu group-viewing context as trust/activation signals, not turnout proof."
+                  },
+                  "nobar": true,
+                  "sequel_of": null,
+                  "calendar": "NORMAL",
+                  "note": "SAB current operating title for the June 18, 2026 cycle. Public release date is locally audited; SAMS booking/show count and Day 1 evidence remain separate. PH/distributor is still pending a clean source in the local audited artifacts, so ph is deliberately TBD and must be replaced when confirmed. Genre is a conservative drama classification from local public-source context and should be verified against an official metadata page. YouTube awareness is now captured from the CINEMA 21 official trailer; this is attention, not demand proof.",
+                  "plays_at_sams": true,
+                  "current_week_rank": 1
             }
       ],
-      "last_updated": "2026-06-04T10:55:00+07:00"
+      "last_updated": "2026-06-18T13:26:41+07:00"
 }

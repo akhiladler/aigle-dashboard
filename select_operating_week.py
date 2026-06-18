@@ -142,6 +142,76 @@ def titles_for_date(primary_date, schedule_by_date, tracked_by_date):
     return schedule_titles
 
 
+def public_candidates_for_date(primary_date, schedule_by_date, tracked_titles, config):
+    if primary_date is None:
+        return []
+
+    excluded_ph = set(
+        config.get('sams_filters', {}).get('excluded_production_houses', [])
+    )
+    candidates = []
+
+    for film in schedule_by_date.get(primary_date, []):
+        title = film.get('title')
+        if not isinstance(title, str) or not title.strip():
+            continue
+
+        production_house = film.get('production_house')
+        excluded = production_house in excluded_ph
+        if excluded:
+            sams_status = 'excluded_by_config'
+        elif title in tracked_titles:
+            sams_status = 'tracked_sams_candidate'
+        else:
+            sams_status = 'unconfirmed_public_candidate'
+
+        candidates.append({
+            'title': title,
+            'date': primary_date.isoformat(),
+            'genre': film.get('genre'),
+            'production_house': production_house,
+            'sams_status': sams_status,
+            'source_scope': 'films_schedule',
+            'source_note': film.get('_note'),
+        })
+
+    return candidates
+
+
+def build_sams_confirmation(primary_titles, public_candidates):
+    unconfirmed = [
+        candidate['title']
+        for candidate in public_candidates
+        if candidate.get('sams_status') == 'unconfirmed_public_candidate'
+    ]
+    excluded = [
+        candidate['title']
+        for candidate in public_candidates
+        if candidate.get('sams_status') == 'excluded_by_config'
+    ]
+
+    if not public_candidates:
+        status = 'unknown'
+        blocker = 'No public candidates are available for the selected date.'
+    elif unconfirmed:
+        status = 'partial'
+        blocker = 'Public candidates exist that are not confirmed/tracked for SAMS.'
+    elif primary_titles:
+        status = 'confirmed_from_tracked_records'
+        blocker = None
+    else:
+        status = 'unknown'
+        blocker = 'No tracked operating titles are available for the selected date.'
+
+    return {
+        'status': status,
+        'confirmed_titles': primary_titles,
+        'unconfirmed_public_candidates': unconfirmed,
+        'excluded_candidates': excluded,
+        'blocker': blocker,
+    }
+
+
 def main():
     config = load_config()
     args = parse_args(config)
@@ -156,11 +226,19 @@ def main():
     available_dates = set(schedule_by_date.keys()) | set(tracked_by_date.keys())
     primary_date = choose_operating_date(today, available_dates, config, args.mode)
     primary_titles = titles_for_date(primary_date, schedule_by_date, tracked_by_date)
+    public_candidates = public_candidates_for_date(
+        primary_date,
+        schedule_by_date,
+        set(primary_titles),
+        config,
+    )
 
     payload = {
         'week_label': format_week_label(primary_date) if primary_date else None,
         'week_start': primary_date.isoformat() if primary_date else None,
         'films_releasing': primary_titles,
+        'public_release_candidates': public_candidates,
+        'sams_confirmation': build_sams_confirmation(primary_titles, public_candidates),
         'updated_at': datetime.now(timezone).isoformat(timespec='seconds'),
         'updated_by': args.updated_by,
         'selection_mode': args.mode,

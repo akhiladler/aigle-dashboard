@@ -1,89 +1,52 @@
 {
-  "week_label": "4 Jun",
-  "week_start": "2026-06-04",
+  "week_label": "18 Jun",
+  "week_start": "2026-06-18",
   "deadline_local": "12:00",
-  "generated_at": "2026-06-04T14:03:05+07:00",
+  "generated_at": "2026-06-18T20:39:49+07:00",
   "films_in_scope": [
-    "Monster Pabrik Rambut",
-    "Nobody Loves Kay",
-    "Kucing Hitam"
+    "Saat Aku Bersuara"
   ],
   "missing_titles": [],
   "film_status": [
     {
       "rank": 1,
-      "title": "Monster Pabrik Rambut",
-      "youtube_views": 3665548,
-      "buzz_level": "TINGGI",
-      "tiktok": 4,
+      "title": "Saat Aku Bersuara",
+      "youtube_views": 29594,
+      "buzz_level": "RENDAH",
+      "tiktok": null,
       "google_trends": 1,
       "google_trends_pending": false,
-      "attention_score": 3.42,
-      "gt_benchmark_title": "Sekawan Limo",
+      "attention_score": 1.02,
+      "gt_benchmark_title": "Warkop DKI / Sekawan Limo / Cerita Lila",
       "gt_entity_type": "search_term",
-      "missing_human_inputs": [],
+      "missing_human_inputs": [
+        "tiktok"
+      ],
       "missing_autofillable_inputs": [],
       "missing_audit_inputs": [],
       "pending_signal_inputs": [],
       "anomalies": [],
       "machine_ready": true,
-      "operator_ready": true
-    },
-    {
-      "rank": 2,
-      "title": "Nobody Loves Kay",
-      "youtube_views": 36949,
-      "buzz_level": "RENDAH",
-      "tiktok": 7,
-      "google_trends": 2,
-      "google_trends_pending": false,
-      "attention_score": 1.74,
-      "gt_benchmark_title": "Sekawan Limo",
-      "gt_entity_type": "search_term",
-      "missing_human_inputs": [],
-      "missing_autofillable_inputs": [],
-      "missing_audit_inputs": [],
-      "pending_signal_inputs": [],
-      "anomalies": [],
-      "machine_ready": true,
-      "operator_ready": true
-    },
-    {
-      "rank": 3,
-      "title": "Kucing Hitam",
-      "youtube_views": 19208,
-      "buzz_level": "RENDAH",
-      "tiktok": 2,
-      "google_trends": 7,
-      "google_trends_pending": false,
-      "attention_score": 1.34,
-      "gt_benchmark_title": "Sekawan Limo",
-      "gt_entity_type": "search_term",
-      "missing_human_inputs": [],
-      "missing_autofillable_inputs": [],
-      "missing_audit_inputs": [],
-      "pending_signal_inputs": [],
-      "anomalies": [],
-      "machine_ready": true,
-      "operator_ready": true
+      "operator_ready": false
     }
   ],
-  "missing_human_inputs": [],
+  "missing_human_inputs": [
+    {
+      "title": "Saat Aku Bersuara",
+      "fields": [
+        "tiktok"
+      ]
+    }
+  ],
   "missing_autofillable_inputs": [],
   "missing_audit_inputs": [],
   "pending_signal_inputs": [],
   "anomalies": [],
   "ready_for_publish_titles": [
-    "Monster Pabrik Rambut",
-    "Nobody Loves Kay",
-    "Kucing Hitam"
+    "Saat Aku Bersuara"
   ],
-  "ready_for_operator_titles": [
-    "Monster Pabrik Rambut",
-    "Nobody Loves Kay",
-    "Kucing Hitam"
-  ],
+  "ready_for_operator_titles": [],
   "ready_for_publish": true,
-  "ready_for_operator": true,
-  "operator_summary": "All 3 films are fully ready for Wednesday output."
+  "ready_for_operator": false,
+  "operator_summary": "Machine side is publish-ready. Human inputs still pending for: Saat Aku Bersuara."
 }

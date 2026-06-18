@@ -11,8 +11,13 @@ PUBLISH_FILES = [
     "films_schedule.json",
     "operating_week.json",
     "weekly_state.json",
+    "live_slate_state.json",
+    "select_operating_week.py",
     "refresh_wednesday_state.py",
+    "build_live_slate_state.py",
+    "validate_films.py",
     "update_youtube_signals.py",
+    "publish_dashboard_state.py",
 ]
 
 
@@ -49,8 +54,8 @@ def has_conflict_markers() -> tuple[bool, str]:
         path = ROOT / rel
         if not path.exists():
             continue
-        text = path.read_text(encoding="utf-8", errors="ignore")
-        if "<<<<<<<" in text or "=======" in text or ">>>>>>>" in text:
+        lines = path.read_text(encoding="utf-8", errors="ignore").splitlines()
+        if any(line.startswith(("<<<<<<<", "=======", ">>>>>>>")) for line in lines):
             return True, f"Conflict markers found in {rel}"
     return False, ""
 
