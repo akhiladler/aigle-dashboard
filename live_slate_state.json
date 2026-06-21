@@ -1,11 +1,11 @@
 {
   "contract": "aigle_live_slate_state.v0",
-  "generated_at": "2026-06-18T20:39:18+07:00",
+  "generated_at": "2026-06-20T04:10:26+00:00",
   "week_label": "18 Jun",
   "week_start": "2026-06-18",
-  "status": "PARTIAL_OPERATOR_GRAFANA_UNVERIFIED",
+  "status": "VALIDATED_NEXT_STATE",
   "state_mismatch": false,
-  "blocker": "Public candidates exist that are not confirmed/tracked for SAMS.",
+  "blocker": null,
   "layers": {
     "dashboard_state": {
       "source_files": [
@@ -22,16 +22,89 @@
       "ready_for_operator": false
     },
     "operator_schedule": {
-      "status": "missing_receipt",
-      "titles": null,
-      "receipt": null,
-      "note": "No durable full SAMS booking/showtime confirmation receipt is attached."
+      "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
+      "source_date": "2026-06-19",
+      "scope": "SAMS-owned excluding SAMS Labuan Bajo",
+      "titles": [
+        {
+          "title": "Cerita Lila",
+          "role": "perkuat",
+          "shows": 92,
+          "adm": 1170,
+          "adm_per_show": 12.72
+        },
+        {
+          "title": "Sekawan Limo 2: Gunung Klawih",
+          "role": "pantau",
+          "shows": 28,
+          "adm": 279,
+          "adm_per_show": 9.96
+        },
+        {
+          "title": "Dukun Magang",
+          "role": "pantau",
+          "shows": 41,
+          "adm": 181,
+          "adm_per_show": 4.41
+        },
+        {
+          "title": "Children of Heaven",
+          "role": "pantau",
+          "shows": 2,
+          "adm": 125,
+          "adm_per_show": 62.5,
+          "event_context": "DISTORTION_CONTEXT: prior LAM PPK/nobar context; do not score as clean ordinary demand without separation."
+        },
+        {
+          "title": "Badut Gendong",
+          "role": "pantau",
+          "shows": 16,
+          "adm": 122,
+          "adm_per_show": 7.62
+        },
+        {
+          "title": "Saat Aku Bersuara",
+          "role": "kurangi",
+          "shows": 47,
+          "adm": 95,
+          "adm_per_show": 2.02
+        },
+        {
+          "title": "Warkop DKI: ViRaLiN dOoOoNg..!!",
+          "role": "pantau",
+          "shows": 3,
+          "adm": 16,
+          "adm_per_show": 5.33,
+          "event_context": "DISTORTION_CONTEXT: low clean-show denominator after LBJ/franchise exclusion; do not use as a broad ordinary-demand benchmark."
+        }
+      ],
+      "row_filter": "Status=Playing and Aproval=Aproved; exclude SAMS Labuan Bajo and Landing/Rejected rows"
     },
     "grafana_reality": {
-      "status": "missing_receipt",
-      "titles": null,
-      "receipt": null,
-      "note": "No current Grafana active-title/show allocation receipt is attached."
+      "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
+      "source_date": "2026-06-19",
+      "scope": "SAMS-owned excluding SAMS Labuan Bajo, with LBJ franchise delta separate",
+      "active_title_count": 7,
+      "owned_show_count": 229,
+      "owned_adm": 1988,
+      "network_including_lbj": {
+        "paid": 2010,
+        "adm": 2020,
+        "amount": 59940000,
+        "shows": 256
+      },
+      "lbj_franchise_delta": {
+        "paid": 32,
+        "adm": 32,
+        "amount": 1440000,
+        "shows": 25
+      },
+      "all_active_denominator_bridge": {
+        "raw": 256,
+        "lbj": 25,
+        "landing_rejected": 2,
+        "clean": 229
+      }
     }
   },
   "sams_confirmation": {
@@ -150,5 +223,26 @@
     "candidate_titles": "public_release_candidates",
     "show_state_mismatch": "state_mismatch",
     "do_not_present_public_candidates_as_sams_confirmed": true
+  },
+  "notes": [
+    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-19.",
+    "Audited clean denominators read from /root/.openclaw/workspace/aigle/control/result-receipt-2026-06-19-day2.md.",
+    "Show counts use CLEAN_OPERATOR_SHOWS after LBJ/franchise and Landing/Rejected exclusions.",
+    "Labuan Bajo is reported only as franchise delta and excluded from operator_schedule.titles.",
+    "Public Cinepoint/national, NOBAR/event/context, and social signals remain separate.",
+    "Na Willa is registered as Akhil-confirmed nobar distortion context and must be flagged whenever present."
+  ],
+  "decision_scope": "SAMS-owned excluding SAMS Labuan Bajo",
+  "cockpit_summary": {
+    "playing_now": [
+      "Cerita Lila",
+      "Sekawan Limo 2: Gunung Klawih",
+      "Dukun Magang",
+      "Children of Heaven",
+      "Badut Gendong",
+      "Saat Aku Bersuara",
+      "Warkop DKI: ViRaLiN dOoOoNg..!!"
+    ],
+    "main_decision": "Perkuat/protect: Cerita Lila. Kurangi/watch tightly: Saat Aku Bersuara."
   }
 }
