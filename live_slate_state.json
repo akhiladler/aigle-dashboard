@@ -1,6 +1,6 @@
 {
   "contract": "aigle_live_slate_state.v0",
-  "generated_at": "2026-06-21T22:25:04+07:00",
+  "generated_at": "2026-06-22T22:25:13+07:00",
   "week_label": "18 Jun",
   "week_start": "2026-06-18",
   "status": "VALIDATED_NEXT_STATE",
@@ -23,90 +23,120 @@
     },
     "operator_schedule": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-21",
+      "source_date": "2026-06-22",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo",
       "titles": [
         {
           "title": "Ayah, Ini Arahnya Kemana, Ya?",
           "role": "pantau",
-          "shows": 1,
-          "adm": 89,
-          "adm_per_show": 89.0,
+          "shows": 16,
+          "adm": 166,
+          "adm_per_show": 10.38,
           "event_context": "DISTORTION_CONTEXT: low clean-show denominator; do not use as a broad ordinary-demand benchmark."
         },
         {
           "title": "Badut Gendong",
           "role": "pantau",
-          "shows": 8,
-          "adm": 81,
-          "adm_per_show": 10.12
+          "shows": 6,
+          "adm": 40,
+          "adm_per_show": 6.67
         },
         {
           "title": "Cerita Lila",
           "role": "perkuat",
-          "shows": 123,
-          "adm": 2636,
-          "adm_per_show": 21.43
+          "shows": 92,
+          "adm": 1008,
+          "adm_per_show": 10.96
+        },
+        {
+          "title": "Children of Heaven",
+          "role": "pantau",
+          "shows": 2,
+          "adm": 111,
+          "adm_per_show": 55.5,
+          "event_context": "DISTORTION_CONTEXT: prior LAM PPK/nobar context; do not score as clean ordinary demand without separation."
         },
         {
           "title": "Dukun Magang",
           "role": "pantau",
-          "shows": 20,
-          "adm": 161,
-          "adm_per_show": 8.05
+          "shows": 7,
+          "adm": 32,
+          "adm_per_show": 4.57
+        },
+        {
+          "title": "Na Willa",
+          "role": "pantau",
+          "shows": 7,
+          "adm": 42,
+          "adm_per_show": 6.0,
+          "event_context": "DISTORTION_CONTEXT: Akhil-confirmed nobar title; do not score as clean ordinary demand without separation."
         },
         {
           "title": "Saat Aku Bersuara",
           "role": "kurangi",
-          "shows": 47,
-          "adm": 1123,
-          "adm_per_show": 23.89
+          "shows": 46,
+          "adm": 458,
+          "adm_per_show": 9.96
         },
         {
           "title": "Sekawan Limo 2: Gunung Klawih",
           "role": "pantau",
-          "shows": 26,
-          "adm": 584,
-          "adm_per_show": 22.46
+          "shows": 21,
+          "adm": 273,
+          "adm_per_show": 13.0
+        },
+        {
+          "title": "Semua Akan Baik-Baik Saja",
+          "role": "pantau",
+          "shows": 16,
+          "adm": 346,
+          "adm_per_show": 21.62
+        },
+        {
+          "title": "Suamiku Lukaku",
+          "role": "pantau",
+          "shows": 16,
+          "adm": 56,
+          "adm_per_show": 3.5
         },
         {
           "title": "Warkop DKI: ViRaLiN dOoOoNg..!!",
           "role": "pantau",
-          "shows": 3,
-          "adm": 112,
-          "adm_per_show": 37.33,
+          "shows": 2,
+          "adm": 7,
+          "adm_per_show": 3.5,
           "event_context": "DISTORTION_CONTEXT: low clean-show denominator after LBJ/franchise exclusion; do not use as a broad ordinary-demand benchmark."
         }
       ],
       "row_filter": "Status=Playing and Aproval=Aproved; exclude SAMS Labuan Bajo and Landing/Rejected rows",
       "receipt": null,
       "clean_denominator_source": "grafana_clean_denominator_bridge",
-      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-21.json"
+      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-22.json"
     },
     "grafana_reality": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-21",
+      "source_date": "2026-06-22",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo, with LBJ franchise delta separate",
-      "active_title_count": 7,
-      "owned_show_count": 228,
-      "owned_adm": 4786,
+      "active_title_count": 11,
+      "owned_show_count": 231,
+      "owned_adm": 2539,
       "network_including_lbj": {
-        "adm": 4810,
-        "amount": 162865000,
-        "paid": 4685,
-        "shows": 249
+        "adm": 2557,
+        "amount": 68875000,
+        "paid": 2530,
+        "shows": 252
       },
       "lbj_franchise_delta": {
-        "adm": 24,
-        "amount": 1200000,
-        "paid": 24,
+        "adm": 18,
+        "amount": 810000,
+        "paid": 18,
         "shows": 21
       },
       "all_active_denominator_bridge": {
-        "clean": 228,
+        "clean": 231,
         "landing_rejected": 0,
         "lbj": 21,
-        "raw": 249
+        "raw": 252
       }
     }
   },
@@ -228,7 +258,7 @@
     "do_not_present_public_candidates_as_sams_confirmed": true
   },
   "notes": [
-    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-21.",
+    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-22.",
     "Clean denominators read from grafana_clean_denominator_bridge.",
     "Show counts use CLEAN_OPERATOR_SHOWS after LBJ/franchise and Landing/Rejected exclusions.",
     "Labuan Bajo is reported only as franchise delta and excluded from operator_schedule.titles.",
@@ -240,9 +270,13 @@
       "Ayah, Ini Arahnya Kemana, Ya?",
       "Badut Gendong",
       "Cerita Lila",
+      "Children of Heaven",
       "Dukun Magang",
+      "Na Willa",
       "Saat Aku Bersuara",
       "Sekawan Limo 2: Gunung Klawih",
+      "Semua Akan Baik-Baik Saja",
+      "Suamiku Lukaku",
       "Warkop DKI: ViRaLiN dOoOoNg..!!"
     ],
     "main_decision": "Daily slate built from the latest audited clean Grafana denominator."
