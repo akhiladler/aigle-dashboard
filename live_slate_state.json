@@ -1,6 +1,6 @@
 {
   "contract": "aigle_live_slate_state.v0",
-  "generated_at": "2026-06-25T15:35:44+07:00",
+  "generated_at": "2026-06-25T22:29:41+07:00",
   "week_label": "18 Jun",
   "week_start": "2026-06-18",
   "status": "VALIDATED_NEXT_STATE",
@@ -30,16 +30,16 @@
           "title": "Badut Gendong",
           "role": "pantau",
           "shows": 1,
-          "adm": 0,
-          "adm_per_show": 0.0,
+          "adm": 4,
+          "adm_per_show": 4.0,
           "event_context": "DISTORTION_CONTEXT: low clean-show denominator; do not use as a broad ordinary-demand benchmark."
         },
         {
           "title": "Cerita Lila",
           "role": "perkuat",
           "shows": 46,
-          "adm": 225,
-          "adm_per_show": 4.89
+          "adm": 644,
+          "adm_per_show": 14.0
         },
         {
           "title": "Children of Heaven",
@@ -53,36 +53,36 @@
           "title": "Jangan Buang Ibu",
           "role": "pantau",
           "shows": 76,
-          "adm": 970,
-          "adm_per_show": 12.76
+          "adm": 3191,
+          "adm_per_show": 41.99
         },
         {
           "title": "Saat Aku Bersuara",
           "role": "kurangi",
           "shows": 30,
-          "adm": 0,
-          "adm_per_show": 0.0
+          "adm": 9,
+          "adm_per_show": 0.3
         },
         {
           "title": "Sekawan Limo 2: Gunung Klawih",
           "role": "pantau",
           "shows": 11,
-          "adm": 48,
-          "adm_per_show": 4.36
+          "adm": 128,
+          "adm_per_show": 11.64
         },
         {
           "title": "Tanah Runtuh",
           "role": "pantau",
           "shows": 32,
-          "adm": 11,
-          "adm_per_show": 0.34
+          "adm": 27,
+          "adm_per_show": 0.84
         },
         {
           "title": "Tanah Sengketa",
           "role": "pantau",
-          "shows": 30,
-          "adm": 0,
-          "adm_per_show": 0.0
+          "shows": 31,
+          "adm": 111,
+          "adm_per_show": 3.58
         }
       ],
       "row_filter": "Status=Playing and Aproval=Aproved; exclude SAMS Labuan Bajo and Landing/Rejected rows",
@@ -95,25 +95,25 @@
       "source_date": "2026-06-25",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo, with LBJ franchise delta separate",
       "active_title_count": 8,
-      "owned_show_count": 227,
-      "owned_adm": 1284,
+      "owned_show_count": 228,
+      "owned_adm": 4144,
       "network_including_lbj": {
-        "adm": 1292,
-        "amount": 36545000,
-        "paid": 1222,
-        "shows": 251
+        "adm": 4210,
+        "amount": 121845000,
+        "paid": 4110,
+        "shows": 252
       },
       "lbj_franchise_delta": {
-        "adm": 8,
-        "amount": 360000,
-        "paid": 8,
+        "adm": 66,
+        "amount": 2970000,
+        "paid": 66,
         "shows": 22
       },
       "all_active_denominator_bridge": {
-        "clean": 227,
+        "clean": 228,
         "landing_rejected": 2,
         "lbj": 22,
-        "raw": 251
+        "raw": 252
       }
     }
   },
