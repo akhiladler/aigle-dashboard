@@ -1,6 +1,6 @@
 {
   "contract": "aigle_live_slate_state.v0",
-  "generated_at": "2026-06-26T22:29:25+07:00",
+  "generated_at": "2026-06-27T22:29:10+07:00",
   "week_label": "18 Jun",
   "week_start": "2026-06-18",
   "status": "VALIDATED_NEXT_STATE",
@@ -23,89 +23,82 @@
     },
     "operator_schedule": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-26",
+      "source_date": "2026-06-27",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo",
       "titles": [
         {
           "title": "Cerita Lila",
           "role": "perkuat",
-          "shows": 42,
-          "adm": 699,
-          "adm_per_show": 16.64
-        },
-        {
-          "title": "Children of Heaven",
-          "role": "pantau",
-          "shows": 2,
-          "adm": 127,
-          "adm_per_show": 63.5,
-          "event_context": "DISTORTION_CONTEXT: prior LAM PPK/nobar context; do not score as clean ordinary demand without separation."
+          "shows": 57,
+          "adm": 1296,
+          "adm_per_show": 22.74
         },
         {
           "title": "Jangan Buang Ibu",
           "role": "pantau",
-          "shows": 132,
-          "adm": 3483,
-          "adm_per_show": 26.39
+          "shows": 146,
+          "adm": 3965,
+          "adm_per_show": 27.16
         },
         {
           "title": "Saat Aku Bersuara",
           "role": "kurangi",
-          "shows": 15,
-          "adm": 24,
-          "adm_per_show": 1.6
+          "shows": 8,
+          "adm": 6,
+          "adm_per_show": 0.75
         },
         {
           "title": "Sekawan Limo 2: Gunung Klawih",
           "role": "pantau",
           "shows": 6,
-          "adm": 98,
-          "adm_per_show": 16.33
+          "adm": 169,
+          "adm_per_show": 28.17
         },
         {
           "title": "Tanah Runtuh",
           "role": "pantau",
           "shows": 16,
-          "adm": 212,
-          "adm_per_show": 13.25
+          "adm": 69,
+          "adm_per_show": 4.31
         },
         {
-          "title": "Tanah Sengketa",
+          "title": "Warkop DKI: ViRaLiN dOoOoNg..!!",
           "role": "pantau",
-          "shows": 16,
-          "adm": 21,
-          "adm_per_show": 1.31
+          "shows": 1,
+          "adm": 62,
+          "adm_per_show": 62.0,
+          "event_context": "DISTORTION_CONTEXT: low clean-show denominator; do not use as a broad ordinary-demand benchmark."
         }
       ],
       "row_filter": "Status=Playing and Aproval=Aproved; exclude SAMS Labuan Bajo and Landing/Rejected rows",
       "receipt": null,
       "clean_denominator_source": "grafana_clean_denominator_bridge",
-      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-26.json"
+      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-27.json"
     },
     "grafana_reality": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-26",
+      "source_date": "2026-06-27",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo, with LBJ franchise delta separate",
-      "active_title_count": 7,
-      "owned_show_count": 229,
-      "owned_adm": 4664,
+      "active_title_count": 6,
+      "owned_show_count": 234,
+      "owned_adm": 5567,
       "network_including_lbj": {
-        "adm": 4703,
-        "amount": 136130000,
-        "paid": 4595,
-        "shows": 254
+        "adm": 5633,
+        "amount": 194935000,
+        "paid": 5602,
+        "shows": 256
       },
       "lbj_franchise_delta": {
-        "adm": 39,
-        "amount": 1725000,
-        "paid": 39,
-        "shows": 24
+        "adm": 66,
+        "amount": 3300000,
+        "paid": 66,
+        "shows": 22
       },
       "all_active_denominator_bridge": {
-        "clean": 229,
-        "landing_rejected": 1,
-        "lbj": 24,
-        "raw": 254
+        "clean": 234,
+        "landing_rejected": 0,
+        "lbj": 22,
+        "raw": 256
       }
     }
   },
@@ -227,7 +220,7 @@
     "do_not_present_public_candidates_as_sams_confirmed": true
   },
   "notes": [
-    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-26.",
+    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-27.",
     "Clean denominators read from grafana_clean_denominator_bridge.",
     "Show counts use CLEAN_OPERATOR_SHOWS after LBJ/franchise and Landing/Rejected exclusions.",
     "Labuan Bajo is reported only as franchise delta and excluded from operator_schedule.titles.",
@@ -237,12 +230,11 @@
   "cockpit_summary": {
     "playing_now": [
       "Cerita Lila",
-      "Children of Heaven",
       "Jangan Buang Ibu",
       "Saat Aku Bersuara",
       "Sekawan Limo 2: Gunung Klawih",
       "Tanah Runtuh",
-      "Tanah Sengketa"
+      "Warkop DKI: ViRaLiN dOoOoNg..!!"
     ],
     "main_decision": "Daily slate built from the latest audited clean Grafana denominator."
   }
