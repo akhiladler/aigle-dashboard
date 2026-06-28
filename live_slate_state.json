@@ -1,6 +1,6 @@
 {
   "contract": "aigle_live_slate_state.v0",
-  "generated_at": "2026-06-27T22:29:10+07:00",
+  "generated_at": "2026-06-28T22:29:41+07:00",
   "week_label": "18 Jun",
   "week_start": "2026-06-18",
   "status": "VALIDATED_NEXT_STATE",
@@ -23,82 +23,67 @@
     },
     "operator_schedule": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-27",
+      "source_date": "2026-06-28",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo",
       "titles": [
         {
           "title": "Cerita Lila",
           "role": "perkuat",
-          "shows": 57,
-          "adm": 1296,
-          "adm_per_show": 22.74
+          "shows": 59,
+          "adm": 1425,
+          "adm_per_show": 24.15
         },
         {
           "title": "Jangan Buang Ibu",
           "role": "pantau",
-          "shows": 146,
-          "adm": 3965,
-          "adm_per_show": 27.16
-        },
-        {
-          "title": "Saat Aku Bersuara",
-          "role": "kurangi",
-          "shows": 8,
-          "adm": 6,
-          "adm_per_show": 0.75
+          "shows": 152,
+          "adm": 4167,
+          "adm_per_show": 27.41
         },
         {
           "title": "Sekawan Limo 2: Gunung Klawih",
           "role": "pantau",
           "shows": 6,
-          "adm": 169,
-          "adm_per_show": 28.17
+          "adm": 154,
+          "adm_per_show": 25.67
         },
         {
           "title": "Tanah Runtuh",
           "role": "pantau",
-          "shows": 16,
-          "adm": 69,
-          "adm_per_show": 4.31
-        },
-        {
-          "title": "Warkop DKI: ViRaLiN dOoOoNg..!!",
-          "role": "pantau",
-          "shows": 1,
-          "adm": 62,
-          "adm_per_show": 62.0,
-          "event_context": "DISTORTION_CONTEXT: low clean-show denominator; do not use as a broad ordinary-demand benchmark."
+          "shows": 17,
+          "adm": 177,
+          "adm_per_show": 10.41
         }
       ],
       "row_filter": "Status=Playing and Aproval=Aproved; exclude SAMS Labuan Bajo and Landing/Rejected rows",
       "receipt": null,
       "clean_denominator_source": "grafana_clean_denominator_bridge",
-      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-27.json"
+      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-28.json"
     },
     "grafana_reality": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-27",
+      "source_date": "2026-06-28",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo, with LBJ franchise delta separate",
-      "active_title_count": 6,
+      "active_title_count": 4,
       "owned_show_count": 234,
-      "owned_adm": 5567,
+      "owned_adm": 5923,
       "network_including_lbj": {
-        "adm": 5633,
-        "amount": 194935000,
-        "paid": 5602,
-        "shows": 256
+        "adm": 5999,
+        "amount": 206085000,
+        "paid": 5918,
+        "shows": 252
       },
       "lbj_franchise_delta": {
-        "adm": 66,
-        "amount": 3300000,
-        "paid": 66,
-        "shows": 22
+        "adm": 76,
+        "amount": 3650000,
+        "paid": 76,
+        "shows": 18
       },
       "all_active_denominator_bridge": {
         "clean": 234,
         "landing_rejected": 0,
-        "lbj": 22,
-        "raw": 256
+        "lbj": 18,
+        "raw": 252
       }
     }
   },
@@ -220,7 +205,7 @@
     "do_not_present_public_candidates_as_sams_confirmed": true
   },
   "notes": [
-    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-27.",
+    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-28.",
     "Clean denominators read from grafana_clean_denominator_bridge.",
     "Show counts use CLEAN_OPERATOR_SHOWS after LBJ/franchise and Landing/Rejected exclusions.",
     "Labuan Bajo is reported only as franchise delta and excluded from operator_schedule.titles.",
@@ -231,10 +216,8 @@
     "playing_now": [
       "Cerita Lila",
       "Jangan Buang Ibu",
-      "Saat Aku Bersuara",
       "Sekawan Limo 2: Gunung Klawih",
-      "Tanah Runtuh",
-      "Warkop DKI: ViRaLiN dOoOoNg..!!"
+      "Tanah Runtuh"
     ],
     "main_decision": "Daily slate built from the latest audited clean Grafana denominator."
   }
