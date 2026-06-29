@@ -1,6 +1,6 @@
 {
   "contract": "aigle_live_slate_state.v0",
-  "generated_at": "2026-06-28T22:29:41+07:00",
+  "generated_at": "2026-06-29T22:29:04+07:00",
   "week_label": "18 Jun",
   "week_start": "2026-06-18",
   "status": "VALIDATED_NEXT_STATE",
@@ -23,67 +23,88 @@
     },
     "operator_schedule": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-28",
+      "source_date": "2026-06-29",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo",
       "titles": [
         {
+          "title": "Ayah, Ini Arahnya Kemana, Ya?",
+          "role": "pantau",
+          "shows": 16,
+          "adm": 134,
+          "adm_per_show": 8.38
+        },
+        {
           "title": "Cerita Lila",
           "role": "perkuat",
-          "shows": 59,
-          "adm": 1425,
-          "adm_per_show": 24.15
+          "shows": 50,
+          "adm": 835,
+          "adm_per_show": 16.7
         },
         {
           "title": "Jangan Buang Ibu",
           "role": "pantau",
-          "shows": 152,
-          "adm": 4167,
-          "adm_per_show": 27.41
+          "shows": 117,
+          "adm": 2742,
+          "adm_per_show": 23.44
         },
         {
           "title": "Sekawan Limo 2: Gunung Klawih",
           "role": "pantau",
           "shows": 6,
-          "adm": 154,
-          "adm_per_show": 25.67
+          "adm": 123,
+          "adm_per_show": 20.5
+        },
+        {
+          "title": "Semua Akan Baik-Baik Saja",
+          "role": "pantau",
+          "shows": 16,
+          "adm": 146,
+          "adm_per_show": 9.12
+        },
+        {
+          "title": "Suamiku Lukaku",
+          "role": "pantau",
+          "shows": 16,
+          "adm": 75,
+          "adm_per_show": 4.69
         },
         {
           "title": "Tanah Runtuh",
           "role": "pantau",
-          "shows": 17,
-          "adm": 177,
-          "adm_per_show": 10.41
+          "shows": 9,
+          "adm": 16,
+          "adm_per_show": 1.78
         }
       ],
       "row_filter": "Status=Playing and Aproval=Aproved; exclude SAMS Labuan Bajo and Landing/Rejected rows",
       "receipt": null,
       "clean_denominator_source": "grafana_clean_denominator_bridge",
-      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-28.json"
+      "grafana_source": "/root/.openclaw/workspace/control/grafana-first-read/grafana-first-read-2026-06-29.json"
     },
     "grafana_reality": {
       "source": "Grafana Movie Programing first-read JSON + audited denominator bridge",
-      "source_date": "2026-06-28",
+      "source_date": "2026-06-29",
       "scope": "SAMS-owned excluding SAMS Labuan Bajo, with LBJ franchise delta separate",
-      "active_title_count": 4,
-      "owned_show_count": 234,
-      "owned_adm": 5923,
+      "active_title_count": 7,
+      "owned_show_count": 230,
+      "owned_adm": 4071,
       "network_including_lbj": {
-        "adm": 5999,
-        "amount": 206085000,
-        "paid": 5918,
-        "shows": 252
+        "adm": 4111,
+        "amount": 117980000,
+        "paid": 4070,
+        "shows": 253
       },
       "lbj_franchise_delta": {
-        "adm": 76,
-        "amount": 3650000,
-        "paid": 76,
-        "shows": 18
+        "adm": 40,
+        "amount": 1800000,
+        "paid": 40,
+        "shows": 15
       },
       "all_active_denominator_bridge": {
-        "clean": 234,
-        "landing_rejected": 0,
-        "lbj": 18,
-        "raw": 252
+        "clean": 230,
+        "landing_rejected": 8,
+        "lbj": 15,
+        "raw": 253
       }
     }
   },
@@ -205,7 +226,7 @@
     "do_not_present_public_candidates_as_sams_confirmed": true
   },
   "notes": [
-    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-28.",
+    "Built from bounded Grafana Movie Programing first-read JSON for 2026-06-29.",
     "Clean denominators read from grafana_clean_denominator_bridge.",
     "Show counts use CLEAN_OPERATOR_SHOWS after LBJ/franchise and Landing/Rejected exclusions.",
     "Labuan Bajo is reported only as franchise delta and excluded from operator_schedule.titles.",
@@ -214,9 +235,12 @@
   "decision_scope": "SAMS-owned excluding SAMS Labuan Bajo",
   "cockpit_summary": {
     "playing_now": [
+      "Ayah, Ini Arahnya Kemana, Ya?",
       "Cerita Lila",
       "Jangan Buang Ibu",
       "Sekawan Limo 2: Gunung Klawih",
+      "Semua Akan Baik-Baik Saja",
+      "Suamiku Lukaku",
       "Tanah Runtuh"
     ],
     "main_decision": "Daily slate built from the latest audited clean Grafana denominator."
