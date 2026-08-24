@@ -1,0 +1,1661 @@
+{
+  "schema": "aigle.monday_map.v1",
+  "producer": "MILO",
+  "cycle_id": "2026-08-24",
+  "generated_at_utc": "2026-08-23T02:00:01.147871+00:00",
+  "as_of_label": "AS OF SUNDAY 23 AUGUST 2026 09:00 WIB",
+  "eyebrow": "THIS WEEK'S PORTFOLIO READ",
+  "h1": "Reach is visible. Now we watch who pays.",
+  "room_line": "OPERASI PESTA COPET is the most interesting watch; RUMAH SINGGAH has the widest sampled reach; PAKET SANTET has the most concentrated signal.",
+  "coming_kick": "Three clear hooks arrive without verified paid-demand evidence.",
+  "coming_caveat": "Rank signal quality now; let paid Day 1 and Day 4 behavior settle demand.",
+  "signal_note": "Do not compare the social totals directly: RUMAH SINGGAH is a ten-post aggregate; OPERASI PESTA COPET is one strongest post. Compare signal shapes, not totals.",
+  "operating_window": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "coming": [
+    {
+      "t": "OPERASI PESTA COPET",
+      "lvl": "MEDIUM",
+      "lvlx": "Distinctive premise; paid response still to come",
+      "posture": "SECONDARY TEST",
+      "release_date": "2026-08-27",
+      "slate_role": "SAMS_PUBLIC_CURRENT_WEEK",
+      "eligibility": {
+        "status": "LOCAL_ELIGIBLE",
+        "basis": "Indonesian production and cast, with an exact title-and-date match on the sealed SAMS public Coming surface.",
+        "sams_prior": "SAMS_PUBLIC_CONFIRMED",
+        "booking_status": "PUBLIC_SAMS_RELEVANCE_PRIVATE_BOOKING_UNKNOWN"
+      },
+      "meta": "Iqbaal Ramadhan; Imajinari, Angin Segar and Boss Creator: Edy Khemod directs Kristo Immanuel, Zulfa Maharani and Kawai Labiba alongside Iqbaal.",
+      "logline": "Four cash-strapped friends train as pickpockets and infiltrate Pestapora, turning a heist into a test of friendship.",
+      "quality": "Positive, but still narrow: one press-screening review reports natural acting, strong four-lead chemistry, fresh humor and smooth pacing; no broad critic or paying-audience confirmation is captured.",
+      "gold": "The clearest differentiated proposition: a legible heist-comedy, Iqbaal recognition and authentic Pestapora scale. Distinctiveness creates upside; paid attendance must prove breadth.",
+      "promo": "Visible launch support: an official trailer, physical campaign materials and a Malang roadshow establish activity, not nationwide reach or ticket conversion.",
+      "social": "Real but concentrated attention: one Iqbaal/Malang TikTok reached 11,730 views, 1,069 likes, 37 comments and 157 shares; most sampled posts stayed below 1,000 views, and Instagram retrieval was mostly irrelevant.",
+      "demand": "No measured paid demand yet: tickets appear available for 27 August, but we have no presale count, sellouts, seat pressure or transactions. Ask Programming for any booking signal; otherwise Day-1 full-price attendance is the first decisive read.",
+      "risk": "Signal substitution is the main risk: star power, production scale and roadshows may resemble demand before tickets prove it. A debut director and crime premise add execution risk.",
+      "bet": "Its heist-comedy hook and Iqbaal-led cast will beat the local-title Day-1 prior, but event-led fandom will overstate breadth.",
+      "nug": "Pestapora gives the heist a recognizable youth hook and authentic scale.",
+      "lanes": [
+        {
+          "lane_id": "logline",
+          "status": "KNOWN",
+          "read": "Four economically pressured friends train as pickpockets and infiltrate Pestapora, combining a heist comedy with friendship and structural-economic themes inside a real Indonesian music festival.",
+          "strongest_available_evidence": "Fetched reporting consistently describes Ijal, Adut, Tia and Melodi planning a coordinated pickpocketing operation at Pestapora after economic hardship.",
+          "missing_fact": "NONE",
+          "decision_consequence": "A clear audience entry point.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop",
+            "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/"
+          ]
+        },
+        {
+          "lane_id": "cast_ph",
+          "status": "KNOWN",
+          "read": "Iqbaal Ramadhan leads with Kristo Immanuel, Zulfa Maharani and Kawai Labiba; Imajinari produced with Angin Segar and Boss Creator, while Ernest Prakasa, Dipa Andika, James Erlangga and Iqbaal served as producers.",
+          "strongest_available_evidence": "The fetched production report directly names the principal cast, production companies and producers; Letterboxd independently confirms the ensemble and Edy Khemod as director.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Recognition helps; it is not ticket demand.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/",
+            "https://letterboxd.com/film/operasi-pesta-copet/"
+          ]
+        },
+        {
+          "lane_id": "quality_feel",
+          "status": "INFERENCE",
+          "read": "The current-film quality signal is positive but narrow: one press-screening review reports natural acting, strong four-lead chemistry, fresh humor, smooth transitions and an applauding audience, without broad critic or paying-audience confirmation.",
+          "strongest_available_evidence": "Liputan6's screening-based review praises the authentic performances, ensemble chemistry, humor and editing after seeing the completed film.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Encouraging, not yet a quality premium.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur",
+            "https://letterboxd.com/film/operasi-pesta-copet/"
+          ]
+        },
+        {
+          "lane_id": "commercial_angle",
+          "status": "INFERENCE",
+          "read": "This is a credible medium-upside local prospect: an easy-to-market heist-comedy hook, Iqbaal's recognition and authentic Pestapora scale can reach youth and music audiences, while the economic theme may add emotional substance beyond novelty.",
+          "strongest_available_evidence": "The production used a real mass festival environment, the lead ensemble has recognizable talent, and the only completed-film review says the humor and relationships work.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Let paid attendance earn conviction.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/",
+            "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur"
+          ]
+        },
+        {
+          "lane_id": "promo",
+          "status": "KNOWN",
+          "read": "The campaign is active across an official trailer, physical promotional packaging and a Malang roadshow or meet-and-greet, but the bundle does not quantify nationwide campaign reach or prove that activation converted into ticket purchases.",
+          "strongest_available_evidence": "Current social samples directly show Malang roadshow activity, while ANTARA displays branded promotional packaging and the official Cinema XXI trailer asset was captured successfully.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Useful visibility, not demand.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16OPCT.mp4",
+            "https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop",
+            "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "social",
+          "status": "KNOWN",
+          "read": "The captured TikTok sample shows real but concentrated activity around Iqbaal and the Malang event: one post reached 11,730 views with 1,069 likes, 37 comments and 157 shares, while most sampled posts remained below 1,000 views; Instagram keyword retrieval was largely irrelevant.",
+          "strongest_available_evidence": "The strongest TikTok post was highly engaged, but its language centered on meeting Iqbaal, indicating creator or star spillover rather than clean film-demand evidence.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Local attention, not an attendance forecast.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "demand",
+          "status": "UNKNOWN",
+          "read": "Purchase access appears to exist for the 27 August release, but no captured source provides presale volume, sold-out sessions, seat-map pressure, transaction counts or representative watch intent; current demand therefore remains commercially unproven.",
+          "strongest_available_evidence": "GoPay states that tickets for the 27 August release can be ordered across XXI, CGV and Cinepolis, which establishes proximity to purchase but not purchase intensity.",
+          "missing_fact": "Paid advance-sales volume or an equivalent site-level seat-consumption measure, plus representative audience watch intent, is missing.",
+          "decision_consequence": "Paid attendance is the decisive update.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://gopay.co.id/blog/fakta-menarik-film-operasi-pesta-copet",
+            "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "risk",
+          "status": "INFERENCE",
+          "read": "The principal risk is signal substitution: a recognizable star, ambitious production and visible roadshow can look like demand before tickets prove it. Secondary risks are a debut feature director and a crime premise that must retain the humanity reported by the screening review.",
+          "strongest_available_evidence": "Captured promotion and fan engagement are visible, but quantified demand is absent; the only completed-film review is positive, limiting evidence for a quality failure or backlash thesis.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Let opening receipts outweigh campaign scale.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence",
+            "https://www.idntimes.com/hype/entertainment/alasan-film-operasi-pesta-pora-ganti-judul-jadi-operasi-pesta-copet-00-hwff8-qkgwpp",
+            "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur"
+          ]
+        }
+      ],
+      "ai_rating": {
+        "source_confidence": "High: premise, cast, campaign and release date are directly sourced; quality rests on one review.",
+        "sams_relevance": "High: the verified local release matches the SAMS public Coming surface for 27 August.",
+        "demand_proximity": "Low: tickets are orderable, but no presales, occupancy, seat pressure or representative intent were captured.",
+        "promo_social_strength": "Medium: the trailer and Malang activation are visible; one Iqbaal-led TikTok reached 11,730 views.",
+        "risk_pressure": "Medium: star and campaign visibility may be mistaken for demand; broad quality evidence remains thin.",
+        "actionability": "High: Day-1 and Day-4 paid admissions per show can test opening strength, retention and breadth."
+      }
+    },
+    {
+      "t": "PAKET SANTET",
+      "lvl": "LOW",
+      "lvlx": "Clear horror premise; conversion still to come",
+      "posture": "SMALL TEST",
+      "release_date": "2026-08-27",
+      "slate_role": "SAMS_PUBLIC_CURRENT_WEEK",
+      "eligibility": {
+        "status": "LOCAL_ELIGIBLE",
+        "basis": "Indonesian production and cast, with an exact title-and-date match on the sealed SAMS public Coming surface.",
+        "sams_prior": "SAMS_PUBLIC_CONFIRMED",
+        "booking_status": "PUBLIC_SAMS_RELEVANCE_PRIVATE_BOOKING_UNKNOWN"
+      },
+      "meta": "BASE Entertainment; director Dinna Jasanti: ensemble cast Fatih Unru, Yasamin Jasem, Fadly Faisal, Gabriella Ekaputri, Fiki Naki, Farandika and Azela Putri.",
+      "logline": "Seven students receive anonymous parcels that unleash targeted black-magic attacks, turning routine deliveries into a revenge mystery.",
+      "quality": "Quality remains an evidence gap: one pre-release blog likes the courier premise and paranoid group dynamic but calls the jump scares standard; no completed-screening or representative audience response is captured.",
+      "gold": "The clearest instantly understood genre proposition: modern santet delivered through anonymous parcels, a young ensemble and a 98-minute format. Familiar horror makes comprehension easy, not conversion certain.",
+      "promo": "Active launch with BOGOF: multiple trailer waves, a cast media visit and advance-viewing activity show campaign effort. Separate full-price response from promotional traffic.",
+      "social": "One cast-led outlier, not broad momentum: one TikTok reached 65,406 views and 7,810 likes, while most sampled posts stayed below 1,000 views; Instagram results were noisy and mostly irrelevant.",
+      "demand": "Purchase-adjacent, not purchase-proven: BOGOF and one ticket-oriented TikTok move the campaign closer to purchase, but no paid presale count, seat depletion, sellout, booking velocity or site-level intent is captured. Test full-price behavior after promo and invitation traffic are removed.",
+      "risk": "False breadth is the main risk: an accessible premise, active campaign and one cast-led outlier may look like broad purchase intent. Quality remains unverified, and one article calls the jump scares standard.",
+      "bet": "Its modern-horror hook will earn discovery-level interest, but not broad paid demand without stronger quality or conversion evidence.",
+      "nug": "One cast-led TikTok reached 65,406 views and 7,810 likes; most sampled posts stayed below 1,000 views.",
+      "lanes": [
+        {
+          "lane_id": "logline",
+          "status": "KNOWN",
+          "read": "Seven students receive anonymous packages that unleash targeted black-magic attacks, combining familiar courier culture with a friendship-and-revenge mystery.",
+          "strongest_available_evidence": "BASE Entertainment directly describes an unexplained package whose opening begins a lethal curse; Kumparan adds that the seven recipients were deliberately selected.",
+          "missing_fact": "NONE",
+          "decision_consequence": "The premise is clear; demand is not.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://base-ent.com/films/paket-santet/",
+            "https://kumparan.com/kumparanhits/trailer-paket-santet-dirilis-ungkap-teror-bisa-datang-dari-orang-terdekat-27tZYbtKBPE"
+          ]
+        },
+        {
+          "lane_id": "cast_ph",
+          "status": "INFERENCE",
+          "read": "BASE Entertainment supplies a credible production platform and a seven-person young ensemble, but the bundle does not prove that any cast member independently converts followers into cinema admissions.",
+          "strongest_available_evidence": "The producer page verifies Dinna Jasanti and the ensemble of Fatih Unru, Yasamin Jasem, Fadly Faisal, Gabriella Ekaputri, Fiki Naki, Farandika and Azela Putri.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Production supports execution, not commercial confidence.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "https://base-ent.com/films/paket-santet/",
+            "https://id.wikipedia.org/wiki/Paket_Santet"
+          ]
+        },
+        {
+          "lane_id": "quality_feel",
+          "status": "UNKNOWN",
+          "read": "A pre-release blog praises the modern courier premise and paranoid group dynamics while conceding standard jump scares, but no captured review establishes attendance at a completed screening or reports representative audience response.",
+          "strongest_available_evidence": "The only readable evaluative article calls the premise innovative and the ride thrilling, yet presents no screening provenance and largely discusses trailer-visible material.",
+          "missing_fact": "A clearly independent, screening-based review or a sufficiently broad verified audience-reaction sample for the completed film.",
+          "decision_consequence": "Treat current quality as an evidence gap.",
+          "confidence": "LOW",
+          "source_refs": [
+            "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html"
+          ]
+        },
+        {
+          "lane_id": "commercial_angle",
+          "status": "INFERENCE",
+          "read": "The strongest commercial proposition is an accessible local-horror concept that turns routine parcel delivery into danger, with a young ensemble and a 98-minute, teen-rated presentation supporting easy comprehension.",
+          "strongest_available_evidence": "Producer and schedule pages consistently present a concise package-curse hook; the schedule page lists horror, a 98-minute duration and a Remaja rating.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Measure Day 1 closely before raising conviction.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "https://base-ent.com/films/paket-santet/",
+            "https://jadwalnonton.com/film/2026/paket-santet/"
+          ]
+        },
+        {
+          "lane_id": "promo",
+          "status": "KNOWN",
+          "read": "The campaign includes multiple trailer waves, a documented cast media visit and social posts built around advance viewing and a buy-one-get-one offer; this verifies active promotion, not organic demand.",
+          "strongest_available_evidence": "Kumparan documents a 16 July cast media visit, while captured TikTok posts promote advance viewing and a BOGO offer immediately before release.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Active promotion is not organic demand.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://kumparan.com/kumparanhits/trailer-paket-santet-dirilis-ungkap-teror-bisa-datang-dari-orang-terdekat-27tZYbtKBPE",
+            "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "social",
+          "status": "KNOWN",
+          "read": "Captured TikTok results are sharply concentrated: one cast-related post reached 65,406 views and 7,810 likes, while most sampled posts remained below 1,000 views; Instagram keyword results were noisy and mostly irrelevant.",
+          "strongest_available_evidence": "The ten-post TikTok sample contains one clear 65,406-view outlier, one 6,132-view ticket-oriented post with 125 shares, and several campaign posts with minimal interaction.",
+          "missing_fact": "NONE",
+          "decision_consequence": "A pocket of attention, not broad momentum.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "demand",
+          "status": "UNKNOWN",
+          "read": "The bundle shows an advance BOGO promotion and one ticket-oriented TikTok post with meaningful sharing, but it contains no paid presale count, seat-map depletion, sellout, booking velocity or site-level intent evidence.",
+          "strongest_available_evidence": "A ticket-oriented TikTok sample recorded 6,132 views and 125 shares, while another post advertised an advance BOGO screening; neither proves purchases.",
+          "missing_fact": "Paid bookings, seat occupancy or sellout evidence by cinema and session before the general release.",
+          "decision_consequence": "Wait for paid performance before raising conviction.",
+          "confidence": "LOW",
+          "source_refs": [
+            "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "risk",
+          "status": "INFERENCE",
+          "read": "The principal risk is mistaking a relatable premise, active campaign and one cast-driven social outlier for broad purchase intent; quality is also unverified and one article characterizes the jump scares as standard.",
+          "strongest_available_evidence": "Most captured campaign posts had limited interaction, official-trailer reach metrics were unavailable, and the only readable evaluative article lacked clear screening provenance.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Let early results outweigh visibility.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence",
+            "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html"
+          ]
+        }
+      ],
+      "ai_rating": {
+        "source_confidence": "High on identity, release and campaign facts; low on completed-film quality and paid demand.",
+        "sams_relevance": "Exact title-and-date match on SAMS public Coming confirms local commercial eligibility.",
+        "demand_proximity": "Ticket sharing and advance BOGO messaging exist, but no paid bookings, seat depletion or sellouts were captured.",
+        "promo_social_strength": "Active campaign with one strong cast-led outlier; sampled engagement is otherwise small and concentrated.",
+        "risk_pressure": "High risk of mistaking a relatable hook, campaign activity and one social outlier for broad purchase intent.",
+        "actionability": "Day-1 and Day-4 paid admissions per show can directly test breadth, persistence and promotional distortion."
+      }
+    },
+    {
+      "t": "RUMAH SINGGAH",
+      "lvl": "MEDIUM",
+      "lvlx": "Cast-led attention; conversion still to come",
+      "posture": "SMALL TEST",
+      "release_date": "2026-08-27",
+      "slate_role": "SAMS_PUBLIC_CURRENT_WEEK",
+      "eligibility": {
+        "status": "LOCAL_ELIGIBLE",
+        "basis": "Indonesian production and cast, with an exact title-and-date match on the sealed SAMS public Coming surface.",
+        "sams_prior": "SAMS_PUBLIC_CONFIRMED",
+        "booking_status": "PUBLIC_SAMS_RELEVANCE_PRIVATE_BOOKING_UNKNOWN"
+      },
+      "meta": "Adhisty Zara and Devano; SENARA, Mandela Pictures and Limelight Pictures: Dyan Sunu Prastowo directs, with Ciccio Manassero, Messi Gusti, Aming and Dewi Irawan.",
+      "logline": "After a bone-cancer diagnosis, runner Karla enters a shelter, forms friendships and helps pursue her fellow patients' remaining dreams.",
+      "quality": "Quality remains an evidence gap: the material promises a warm, tearful and hopeful tone, but no readable independent review, verified screening reaction or audience assessment of execution is captured.",
+      "gold": "A clear emotional youth proposition: Zara, Devano, cancer, friendship and a bucket-list journey give it broad accessibility. Its upside depends on the film carrying attention beyond celebrity and gala activity.",
+      "promo": "Coordinated launch: a media visit, official poster and trailer launch, cinema placement and gala-led social support make weak awareness or paid response more informative.",
+      "social": "Large reach, shallow conversation: the ten-post TikTok sample reached 342,335 views and 6,547 likes, but centered on Zara and the gala, with only 29 comments and 28 shares.",
+      "demand": "No measured paid demand yet: Cinema XXI lists 27 August, but no transaction count, seat map, presale velocity or owned-site booking signal is captured. Ask whether Programming sees demand beyond Zara-led attention.",
+      "risk": "Celebrity substitution is the main risk: Zara and gala reach may be mistaken for title demand. Quality is unverified, and the broad appeal of the serious-illness theme remains untested.",
+      "bet": "Cast awareness will support discovery-level attendance, but breakout demand requires stronger word of mouth by Day 4.",
+      "nug": "The ten-post TikTok sample reached 342,335 views, but centered on Zara and the gala, with only 29 comments and 28 shares.",
+      "lanes": [
+        {
+          "lane_id": "logline",
+          "status": "KNOWN",
+          "read": "An emotional Indonesian drama about Karla, a young runner diagnosed with bone cancer, who enters a shelter, forms friendships with other patients, and pursues their remaining dreams.",
+          "strongest_available_evidence": "The captured release article supplies the complete Karla, cancer-shelter, friendship and bucket-list premise.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Frame it as hope and friendship, not only illness.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+          ]
+        },
+        {
+          "lane_id": "cast_ph",
+          "status": "KNOWN",
+          "read": "The film is led by Adhisty Zara and Devano, supported by Ciccio Manassero, Messi Gusti, Aming and Dewi Irawan, and produced by SENARA with Mandela Pictures and Limelight Pictures.",
+          "strongest_available_evidence": "A captured release article directly names the principal cast, production companies, director Dyan Sunu Prastowo and story team.",
+          "missing_fact": "NONE",
+          "decision_consequence": "The young leads offer recognition, not proof.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html",
+            "https://www.acmodasi.in/amdb/movie/1716269-rumah-singgah-2026/crew"
+          ]
+        },
+        {
+          "lane_id": "quality_feel",
+          "status": "UNKNOWN",
+          "read": "The captured material supports a warm, tearful and hopeful intended tone, but it contains no readable independent review, verified screening reaction or audience assessment of execution.",
+          "strongest_available_evidence": "Promotional material presents warmth, friendship and hope around four cancer patients; that establishes intended tone, not achieved film quality.",
+          "missing_fact": "An independent full-film review, credible screening assessment or verified post-screening audience response.",
+          "decision_consequence": "Treat current quality as an evidence gap.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+          ]
+        },
+        {
+          "lane_id": "commercial_angle",
+          "status": "INFERENCE",
+          "read": "Its strongest commercial angle is an emotional youth drama pairing Adhisty Zara and Devano with a concrete cancer, friendship and bucket-list hook that can differentiate it from genre-led releases.",
+          "strongest_available_evidence": "The named young leads, emotionally explicit premise and cast-centered social attention align around one clear audience proposition.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Test the emotional premise before assuming breakout.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html",
+            "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "promo",
+          "status": "KNOWN",
+          "read": "The campaign includes a July media visit with Adhisty Zara and Aming, a poster and official-trailer launch, cinema trailer placement and a gala-premiere-centered social push.",
+          "strongest_available_evidence": "ANTARA directly records the 23 July media visit as promotion for the 27 August release, while the release article documents the trailer campaign.",
+          "missing_fact": "NONE",
+          "decision_consequence": "A supported launch makes weak awareness more informative.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://www.antarafoto.com/view/2827092/media-visit-to-the-cast-of-the-film-rumah-singgah",
+            "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+          ]
+        },
+        {
+          "lane_id": "social",
+          "status": "KNOWN",
+          "read": "The ten-post TikTok sample accumulated 342,335 views and 6,547 likes, but attention was predominantly Zara and gala-premiere content, with only 29 comments and 28 shares.",
+          "strongest_available_evidence": "One Zara red-carpet post reached 189,217 views and 3,362 likes, while most sampled posts emphasized celebrity appearance rather than ticket intention.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Read this as cast-led attention, not purchase intent.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence"
+          ]
+        },
+        {
+          "lane_id": "demand",
+          "status": "UNKNOWN",
+          "read": "Direct ticket demand remains unproven: an official Cinema XXI page confirms a 27 August listing, but no captured transaction count, seat map, presale velocity or owned-site booking signal exists.",
+          "strongest_available_evidence": "Cinema XXI directly lists the title as a 113-minute drama releasing on 27 August, establishing proximity to sale but not customer conversion.",
+          "missing_fact": "Authoritative presale transactions or first-day paid admits and occupancy by session across the 16 owned sites.",
+          "decision_consequence": "Wait for paid behavior before raising conviction.",
+          "confidence": "HIGH",
+          "source_refs": [
+            "https://m.21cineplex.com/id/movies/16RSIH"
+          ]
+        },
+        {
+          "lane_id": "risk",
+          "status": "INFERENCE",
+          "read": "The primary commercial risk is mistaking celebrity and gala-premiere reach for title demand, compounded by an unverified quality outcome and a serious illness theme whose broad appeal is still untested.",
+          "strongest_available_evidence": "High sampled reach clusters around Zara's red-carpet appearance, while the bundle contains neither purchase conversion nor independent full-film assessment.",
+          "missing_fact": "NONE",
+          "decision_consequence": "Keep the judgment reversible.",
+          "confidence": "MEDIUM",
+          "source_refs": [
+            "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence",
+            "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+          ]
+        }
+      ],
+      "ai_rating": {
+        "source_confidence": "High: premise, cast, campaign and release listing are directly supported.",
+        "sams_relevance": "High: confirmed local release matched on the SAMS public Coming surface.",
+        "demand_proximity": "Low: Cinema XXI confirms release proximity, but no transactions, seat maps or sales velocity were captured.",
+        "promo_social_strength": "Medium: coordinated promotion and strong sampled reach, but shallow interaction and no purchase-intent proof.",
+        "risk_pressure": "High: celebrity reach may be mistaken for title demand; completed-film quality also remains unverified.",
+        "actionability": "High: Day 1 and Day 4 paid behavior can directly test whether awareness converts and holds."
+      }
+    }
+  ],
+  "playing": [
+    {
+      "t": "Harusnya Horror",
+      "g": "pantau",
+      "aps": 9.5185,
+      "lab": "Monitor — largest volume, below network pace",
+      "note": "Recorded 1,799 admissions from 189 shows, with site results ranging from 2.86 to 47.00 admissions per show.",
+      "evt": false
+    },
+    {
+      "t": "Dan Bandung",
+      "g": "pantau",
+      "aps": 12.7429,
+      "lab": "Monitor — above network pace, locally uneven",
+      "note": "Recorded 446 admissions from 35 shows; Cianjur, Cibadak and Subang exceeded 21 admissions per show while several sites remained at or below 7.",
+      "evt": false
+    },
+    {
+      "t": "Children of Heaven",
+      "g": "pantau",
+      "aps": 60.0,
+      "lab": "Monitor — Probolinggo event result",
+      "note": "All 180 admissions came from three Probolinggo shows in NOBAR/event context, so this is not a network-comparable run.",
+      "evt": true
+    },
+    {
+      "t": "Ayah, Aku Mau Cerita",
+      "g": "pantau",
+      "aps": 8.7143,
+      "lab": "Monitor — small base, wide local spread",
+      "note": "Recorded 122 admissions from 14 shows, ranging from 2.00 admissions per show at several sites to 23.00 at Subang.",
+      "evt": false
+    },
+    {
+      "t": "Perumahan Laddaland",
+      "g": "pantau",
+      "aps": 8.0,
+      "lab": "Monitor — single-show observation",
+      "note": "The result is eight admissions from one Nganjuk show and is too narrow to represent wider demand.",
+      "evt": false
+    }
+  ],
+  "now_meta": {
+    "basisKick": "Closed Saturday results for 22 August: 2,555 admissions from 242 shows, or 10.56 admissions per show.",
+    "sourceNote": "Private SAMS-owned 16-site operating evidence only; SAMS Labuan Bajo and UNKNOWN context are excluded. The validated 52-week trimmed-mean reference is 20.41 admissions per show, while the 27.79 same-weekday figure rests on one historical sample and is contextual rather than a promoted benchmark.",
+    "basisChange": "Current-title status does not establish carryover or NOMAT status. No current-title NOMAT classification was supplied, so a one-show pattern is not treated as proof of NOMAT."
+  },
+  "attention_heading": "Three truths to carry into the room",
+  "attention": [
+    {
+      "label": "Best signal is not the loudest",
+      "why": "OPERASI PESTA COPET has modest cited reach, but alone combines a distinctive hook with screening-based quality evidence.",
+      "action": "Use Day 4 as the durability decision: a Day 1 lead that disappears is not a quality edge; a Day 4 lead after trailing on Day 1 is stronger support."
+    },
+    {
+      "label": "342k views may be celebrity reach",
+      "why": "RUMAH SINGGAH reached 342,335 sampled views but generated only 29 comments and 28 shares, led by Zara and gala content.",
+      "action": "Separate opening conversion from retention; a Day 1-only lead supports awareness conversion, not durable demand."
+    },
+    {
+      "label": "One horror spike is not breadth",
+      "why": "PAKET SANTET's 65,406-view post earned 7,810 likes, while most sampled posts remained below 1,000 views.",
+      "action": "Read the paid site distribution after BOGO and invitations are removed; isolated pockets and portfolio breadth are different outcomes."
+    }
+  ],
+  "source_receipts": {
+    "current_week_enumeration": {
+      "checked_at": "2026-08-23",
+      "source": "https://m.21cineplex.com/api/movies?type=upcoming",
+      "status": "COMPLETE_FULL_MTIX_21_CURRENT_WEEK",
+      "enumeration_path": "control/monday-map/cycles/2026-08-24/owner/sectioned/enumeration/accepted.json",
+      "input_snapshot_sha256": "aa9801f1e1d224a63687939b4f563f36f928044b92f42ad5ae209a027af1efbb",
+      "items": [
+        {
+          "title": "AGITO PSYCHIC WAR",
+          "release_date": "2026-08-26",
+          "source_label": "M-Tix/Cinema XXI upcoming; SAMS public Coming cross-check",
+          "sams_filter": "CONTEXT_ONLY",
+          "card_status": "CONTEXT_ONLY",
+          "reason": "Retained as foreign-release context. The sealed evidence does not establish eligibility for the local allocation-card lane; absence from SAMS public Coming is not private booking, DCP, or final eligibility truth."
+        },
+        {
+          "title": "MOTOR CITY",
+          "release_date": "2026-08-26",
+          "source_label": "M-Tix/Cinema XXI upcoming; SAMS public Coming cross-check",
+          "sams_filter": "CONTEXT_ONLY",
+          "card_status": "CONTEXT_ONLY",
+          "reason": "Retained as foreign-release context. The sealed evidence does not establish eligibility for the local allocation-card lane; absence from SAMS public Coming is not private booking, DCP, or final eligibility truth."
+        },
+        {
+          "title": "OPERASI PESTA COPET",
+          "release_date": "2026-08-27",
+          "source_label": "M-Tix/Cinema XXI upcoming; matched on SAMS public Coming",
+          "sams_filter": "INCLUDED",
+          "card_status": "VISIBLE_CARD",
+          "reason": "Commercially eligible local new release. On its first owned operating day before any closed result, the Day-0 discovery floor is one show at each of 16 owned sites; allocations above that floor remain Milo's discretionary commercial judgment."
+        },
+        {
+          "title": "PAKET SANTET",
+          "release_date": "2026-08-27",
+          "source_label": "M-Tix/Cinema XXI upcoming; matched on SAMS public Coming",
+          "sams_filter": "INCLUDED",
+          "card_status": "VISIBLE_CARD",
+          "reason": "Commercially eligible local new release. On its first owned operating day before any closed result, the Day-0 discovery floor is one show at each of 16 owned sites; allocations above that floor remain Milo's discretionary commercial judgment."
+        },
+        {
+          "title": "RUMAH SINGGAH",
+          "release_date": "2026-08-27",
+          "source_label": "M-Tix/Cinema XXI upcoming; matched on SAMS public Coming",
+          "sams_filter": "INCLUDED",
+          "card_status": "VISIBLE_CARD",
+          "reason": "Commercially eligible local new release. On its first owned operating day before any closed result, the Day-0 discovery floor is one show at each of 16 owned sites; allocations above that floor remain Milo's discretionary commercial judgment."
+        },
+        {
+          "title": "CHIIKAWA THE MOVIE: THE SECRET OF THE MERMAID ISLAND",
+          "release_date": "2026-08-28",
+          "source_label": "M-Tix/Cinema XXI upcoming; SAMS public Coming cross-check",
+          "sams_filter": "CONTEXT_ONLY",
+          "card_status": "CONTEXT_ONLY",
+          "reason": "Retained as foreign-release context. The sealed evidence does not establish eligibility for the local allocation-card lane; absence from SAMS public Coming is not private booking, DCP, or final eligibility truth."
+        },
+        {
+          "title": "THE DOG STARS",
+          "release_date": "2026-08-28",
+          "source_label": "M-Tix/Cinema XXI upcoming; SAMS public Coming cross-check",
+          "sams_filter": "CONTEXT_ONLY",
+          "card_status": "CONTEXT_ONLY",
+          "reason": "Retained as foreign-release context. The sealed evidence does not establish eligibility for the local allocation-card lane; absence from SAMS public Coming is not private booking, DCP, or final eligibility truth."
+        },
+        {
+          "title": "WINGS OF DREAD",
+          "release_date": "2026-08-28",
+          "source_label": "M-Tix/Cinema XXI upcoming; SAMS public Coming cross-check",
+          "sams_filter": "CONTEXT_ONLY",
+          "card_status": "CONTEXT_ONLY",
+          "reason": "Retained as foreign-release context. The sealed evidence does not establish eligibility for the local allocation-card lane; absence from SAMS public Coming is not private booking, DCP, or final eligibility truth."
+        }
+      ]
+    },
+    "playing_truth": "control/operator-reports/2026-08-22-site-title-matrix.json",
+    "room_rules": "control/programming-room-allocation-rules-current.json",
+    "calibrated_priors": "control/monday-learning/calibrated-priors.json",
+    "milo_title_packet_sha256s": [
+      "ba999e854ebc630eaf5abcbcb1ca49f3c77326cbe92301e267d3362fc8eaaa48",
+      "7ef41754a9106d1eefd51563ba6c5d6d60e11f6c88e4badc66bad927a5b248d7",
+      "704f7487a5a00e0f8a2be44b1ab900b47f5000a9429eae8881576f5d91838b22"
+    ],
+    "milo_title_presentation_sha256s": [
+      "a0c1c45f0d1da40238c27296a52f6b9d37bce732d027ac5b127c8e757e3c155b",
+      "2330ca1b88223b4c552cc1a3f82425b5d914e714459f3376e97fbee4fceab330",
+      "260a28efc8bf62cd2145108856f02a048dfd1489ab28364de3a249429c8271b8"
+    ],
+    "milo_learning_section_sha256": "5bd31cbd24e734093ea9a69b3499a1f60648d8a79c7f13160083d96246accfe1",
+    "milo_portfolio_section_sha256": "d1c811af1a325ae9cacd5b21ebe6747fd38a13e42bcdfef66d3c14ae32a14111"
+  },
+  "readiness": {
+    "state": "DRAFT",
+    "reason": "Milo-authored sections assembled unchanged; deterministic and independent gates remain required.",
+    "publication_authorized": false
+  },
+  "quality_contract": "aigle.monday_map.intelligence_edge.v3",
+  "decision_edge": {
+    "recommendation_mode": "OBSERVE_LEARN",
+    "maturity_gate": {
+      "state": "NOT_YET_EARNED",
+      "reason": "There are no closed Monday cycles or scored Day 4 positions in the calibrated record, so these observations cannot support recommendation-level learning yet.",
+      "minimum_closed_cycles": 2,
+      "minimum_scored_day4_positions": 4,
+      "observed_closed_cycles": 0,
+      "observed_scored_day4_positions": 0,
+      "source_refs": [
+        "calibrated_priors.coverage.closed_monday_cycles",
+        "calibrated_priors.coverage",
+        "calibrated_priors.boundaries.candidate_may_self_promote"
+      ]
+    },
+    "what_milo_sees": [
+      {
+        "rank": 1,
+        "title": "OPERASI PESTA COPET",
+        "insight": "The provisional evidence-quality favorite, not a reach winner: OPERASI PESTA COPET has the clearest differentiated hook and the only cited screening assessment, but that assessment is one narrow review and paid breadth remains unproved.",
+        "room_question": "Does early paid behavior come from the title, or mainly from Iqbaal and Pestapora?",
+        "strengthens_if": "OPERASI PESTA COPET ranks first on full-price Day 4 admissions per show after event traffic is excluded; a Day 4 lead after trailing on Day 1 would add retention support to the quality thesis.",
+        "weakens_if": "Another title leads full-price Day 4 admissions per show, especially if OPERASI PESTA COPET led on Day 1 and then lost ground; record the screening signal as narrow rather than predictive.",
+        "decision_if_unresolved": "If Day 1 and Day 4 have different leaders, record opening and retention separately. If event traffic cannot be removed, make no comparative call.",
+        "public_signal_shape": {
+          "lead_signal": "PROMO",
+          "status": "QUANTIFIED",
+          "metric": "Views on one Iqbaal-led TikTok",
+          "value": 11730,
+          "comparison": "One 11,730-view Iqbaal-led post; this one-post value is not comparable with another title's multi-post aggregate."
+        },
+        "evidence": "It has the clearest differentiated premise and the only cited screening-based quality evidence, while its narrow star-led social activity and absent sales evidence directly challenge a broad-demand interpretation.",
+        "source_refs": [
+          "title_section_sha256:a0c1c45f0d1da40238c27296a52f6b9d37bce732d027ac5b127c8e757e3c155b#/display",
+          "title_section_sha256:a0c1c45f0d1da40238c27296a52f6b9d37bce732d027ac5b127c8e757e3c155b#/hypothesis_support"
+        ]
+      },
+      {
+        "rank": 2,
+        "title": "RUMAH SINGGAH",
+        "insight": "It owns the largest awareness signal, not the strongest demand signal. Its 342,335 sampled views are undermined by only 29 comments and 28 shares, with attention concentrated around Zara and the gala premiere.",
+        "room_question": "Does the 342,335-view reach persist beyond Zara and gala-led attention?",
+        "strengthens_if": "RUMAH SINGGAH leads full-price Day 1 admissions per show but loses relative position by Day 4, supporting awareness-led opening conversion without durable leadership.",
+        "weakens_if": "RUMAH SINGGAH leads full-price admissions per show on both Day 1 and Day 4 and leads more owned sites than either rival; that would convert the awareness signal into the strongest paid-demand case.",
+        "decision_if_unresolved": "If it leads only one day or paid traffic cannot be separated, record opening and retention separately; keep 342,335 as awareness, not demand.",
+        "public_signal_shape": {
+          "lead_signal": "AWARENESS",
+          "status": "QUANTIFIED",
+          "metric": "Sampled TikTok views",
+          "value": 342335,
+          "comparison": "Ten sampled posts produced 342,335 views, 29 comments and 28 shares; the aggregate is not comparable with OPERASI PESTA COPET's one-post value."
+        },
+        "evidence": "Recognizable leads and coordinated promotion generated the portfolio's largest reach, but interaction was shallow and no purchase or completed-film quality evidence was captured.",
+        "source_refs": [
+          "title_section_sha256:260a28efc8bf62cd2145108856f02a048dfd1489ab28364de3a249429c8271b8#/display/nug",
+          "title_section_sha256:260a28efc8bf62cd2145108856f02a048dfd1489ab28364de3a249429c8271b8#/display/ai_rating",
+          "title_section_sha256:260a28efc8bf62cd2145108856f02a048dfd1489ab28364de3a249429c8271b8#/hypothesis_support"
+        ]
+      },
+      {
+        "rank": 3,
+        "title": "PAKET SANTET",
+        "insight": "The modern parcel-curse hook is legible, but its public signal is concentrated rather than broad: one cast post broke out while most sampled posts remained below 1,000 views.",
+        "room_question": "Does full-price behavior persist after BOGOF, invitation and isolated cast effects are separated?",
+        "strengthens_if": "PAKET SANTET remains a network non-leader and its paid strength is concentrated in fewer owned sites than either rival after BOGO and invitation traffic are excluded.",
+        "weakens_if": "PAKET SANTET leads full-price Day 4 admissions per show and leads more owned sites than either rival after BOGO and invitation traffic are excluded.",
+        "decision_if_unresolved": "If promo traffic cannot be separated or Day 1 and Day 4 split, keep the title unresolved; do not turn the 65,406-view outlier into breadth.",
+        "public_signal_shape": {
+          "lead_signal": "AFFINITY",
+          "status": "QUANTIFIED",
+          "metric": "Views on the strongest cast-related TikTok",
+          "value": 65406,
+          "comparison": "The post earned 7,810 likes, but most sampled posts stayed below 1,000 views."
+        },
+        "evidence": "The relatable hook and one high-affinity cast post support discovery, while the surrounding sample, absent quality evidence and unverified conversion argue against breadth.",
+        "source_refs": [
+          "title_section_sha256:2330ca1b88223b4c552cc1a3f82425b5d914e714459f3376e97fbee4fceab330#/display/nug",
+          "title_section_sha256:2330ca1b88223b4c552cc1a3f82425b5d914e714459f3376e97fbee4fceab330#/display/ai_rating",
+          "title_section_sha256:2330ca1b88223b4c552cc1a3f82425b5d914e714459f3376e97fbee4fceab330#/hypothesis_support"
+        ]
+      }
+    ],
+    "title_hypotheses": [
+      {
+        "title": "OPERASI PESTA COPET",
+        "hypothesis": "OPERASI PESTA COPET is the most plausible Day 4 leader to test, even if a rival wins Day 1, after event traffic is separated.",
+        "confidence": "MEDIUM",
+        "genre_tags": [
+          "heist comedy",
+          "friendship",
+          "youth",
+          "music festival",
+          "social drama"
+        ],
+        "evidence": "The clear premise, recognizable lead, authentic festival scale and positive screening review support upside, while narrow star-led social activity and absent paid-sales evidence make breadth the key uncertainty.",
+        "falsifier": "Another opener leads full-price Day 4 admissions per show after event traffic is separated.",
+        "measurement": {
+          "metric": "ADM_PER_SHOW",
+          "horizon": "DAY1_AND_DAY4",
+          "comparison": "Rank all three on full-price admissions per show on each day; treat Day 1 as opening conversion, Day 4 as durability, and site-lead counts as descriptive breadth without a fixed cutoff."
+        },
+        "source_refs": [
+          "https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop",
+          "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/",
+          "https://letterboxd.com/film/operasi-pesta-copet/",
+          "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur",
+          "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16OPCT.mp4",
+          "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence",
+          "https://gopay.co.id/blog/fakta-menarik-film-operasi-pesta-copet",
+          "https://www.idntimes.com/hype/entertainment/alasan-film-operasi-pesta-pora-ganti-judul-jadi-operasi-pesta-copet-00-hwff8-qkgwpp"
+        ]
+      },
+      {
+        "title": "PAKET SANTET",
+        "hypothesis": "PAKET SANTET may produce a concentrated site pattern rather than a network-wide Day 4 lead once BOGOF and invitation traffic are separated.",
+        "confidence": "MEDIUM",
+        "genre_tags": [
+          "HORROR",
+          "BLACK MAGIC",
+          "YOUTH ENSEMBLE",
+          "FRIENDSHIP MYSTERY"
+        ],
+        "evidence": "The parcel-curse premise is immediately understandable and actively promoted, yet quality lacks screening-based evidence and social attention has not translated into verified purchases.",
+        "falsifier": "PAKET SANTET leads full-price Day 4 admissions per show and more owned sites than either rival after BOGOF and invitation traffic are separated.",
+        "measurement": {
+          "metric": "ADM_PER_SHOW",
+          "horizon": "DAY1_AND_DAY4",
+          "comparison": "Exclude BOGO and invitation traffic, then compare Day 1 and Day 4 network admissions per show plus each title's count and distribution of site-level leads; use no fixed breadth cutoff."
+        },
+        "source_refs": [
+          "https://base-ent.com/films/paket-santet/",
+          "https://kumparan.com/kumparanhits/trailer-paket-santet-dirilis-ungkap-teror-bisa-datang-dari-orang-terdekat-27tZYbtKBPE",
+          "https://id.wikipedia.org/wiki/Paket_Santet",
+          "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html",
+          "https://jadwalnonton.com/film/2026/paket-santet/",
+          "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+        ]
+      },
+      {
+        "title": "RUMAH SINGGAH",
+        "hypothesis": "RUMAH SINGGAH may open stronger on Day 1 than it holds through Day 4; Zara-led attention is the signal to test.",
+        "confidence": "MEDIUM",
+        "genre_tags": [
+          "Indonesian drama",
+          "youth drama",
+          "illness drama",
+          "friendship",
+          "hopeful tearjerker"
+        ],
+        "evidence": "Recognizable young leads, a clear emotional premise and coordinated promotion create awareness, while shallow social interaction and absent purchase or independent-quality evidence argue against assuming breakout demand.",
+        "falsifier": "RUMAH SINGGAH leads full-price admissions per show on both Day 1 and Day 4, and leads more owned sites than either rival.",
+        "measurement": {
+          "metric": "ADM_PER_SHOW",
+          "horizon": "DAY1_AND_DAY4",
+          "comparison": "Compare its full-price Day 1 rank with Day 4 rank and admissions-per-show change, then compare site-lead counts with both rivals; report mixed opening and retention leaders separately."
+        },
+        "source_refs": [
+          "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html",
+          "https://www.acmodasi.in/amdb/movie/1716269-rumah-singgah-2026/crew",
+          "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence",
+          "https://www.antarafoto.com/view/2827092/media-visit-to-the-cast-of-the-film-rumah-singgah",
+          "https://m.21cineplex.com/id/movies/16RSIH"
+        ]
+      }
+    ],
+    "research_coverage": [
+      {
+        "schema_version": "aigle.monday.research_coverage.v2",
+        "title": "OPERASI PESTA COPET",
+        "retrieved_at_utc": "2026-08-23T02:00:01.147871+00:00",
+        "official_trailer_collector": {
+          "status": "PASS",
+          "url": "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16OPCT.mp4",
+          "receipt_ref": "control/monday-map/cycles/2026-08-24/owner/sectioned/source-bundles/01-operasi-pesta-copet.json",
+          "receipt_sha256": "663165b57a6b3b97017e9cfff15f00132912ebe6b3f874b20ce929f11caec121"
+        },
+        "evidence_classes": {
+          "official_identity": {
+            "status": "CAPTURED",
+            "finding": "Iqbaal Ramadhan leads with Kristo Immanuel, Zulfa Maharani and Kawai Labiba; Imajinari produced with Angin Segar and Boss Creator, while Ernest Prakasa, Dipa Andika, James Erlangga and Iqbaal served as producers.",
+            "source_refs": [
+              "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/",
+              "https://letterboxd.com/film/operasi-pesta-copet/"
+            ]
+          },
+          "trailer_comments": {
+            "status": "CAPTURED",
+            "finding": "The captured TikTok sample shows real but concentrated activity around Iqbaal and the Malang event: one post reached 11,730 views with 1,069 likes, 37 comments and 157 shares, while most sampled posts remained below 1,000 views; Instagram keyword retrieval was largely irrelevant.",
+            "source_refs": [
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          },
+          "independent_quality": {
+            "status": "CAPTURED",
+            "finding": "The current-film quality signal is positive but narrow: one press-screening review reports natural acting, strong four-lead chemistry, fresh humor, smooth transitions and an applauding audience, without broad critic or paying-audience confirmation.",
+            "source_refs": [
+              "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur",
+              "https://letterboxd.com/film/operasi-pesta-copet/"
+            ]
+          },
+          "promo": {
+            "status": "CAPTURED",
+            "finding": "The campaign is active across an official trailer, physical promotional packaging and a Malang roadshow or meet-and-greet, but the bundle does not quantify nationwide campaign reach or prove that activation converted into ticket purchases.",
+            "source_refs": [
+              "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16OPCT.mp4",
+              "https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop",
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          },
+          "direct_demand": {
+            "status": "ATTEMPTED_NOT_CAPTURED",
+            "finding": "Purchase access appears to exist for the 27 August release, but no captured source provides presale volume, sold-out sessions, seat-map pressure, transaction counts or representative watch intent; current demand therefore remains commercially unproven.",
+            "source_refs": [
+              "https://gopay.co.id/blog/fakta-menarik-film-operasi-pesta-copet",
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ],
+            "blocker": "Purchase access appears to exist for the 27 August release, but no captured source provides presale volume, sold-out sessions, seat-map pressure, transaction counts or representative watch intent; current demand therefore remains commercially unproven."
+          },
+          "adverse": {
+            "status": "CAPTURED",
+            "finding": "The principal risk is signal substitution: a recognizable star, ambitious production and visible roadshow can look like demand before tickets prove it. Secondary risks are a debut feature director and a crime premise that must retain the humanity reported by the screening review.",
+            "source_refs": [
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence",
+              "https://www.idntimes.com/hype/entertainment/alasan-film-operasi-pesta-pora-ganti-judul-jadi-operasi-pesta-copet-00-hwff8-qkgwpp",
+              "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur"
+            ]
+          }
+        },
+        "signal_separation": {
+          "awareness": {
+            "status": "PARTIAL",
+            "read": "An official trailer, media coverage, promotional packaging and Malang activation establish visible awareness work, but trailer views and representative nationwide reach are unavailable.",
+            "source_refs": [
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          },
+          "engagement": {
+            "status": "PARTIAL",
+            "read": "TikTok contains one strongly engaged Iqbaal-centered post and several smaller reactions, but the sample is narrow, event-led and not representative of film-level engagement.",
+            "source_refs": [
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          },
+          "quality": {
+            "status": "PARTIAL",
+            "read": "One readable press-screening review positively assesses the completed film's acting, chemistry, humor and editing; broader critic and paying-audience evidence remains missing.",
+            "source_refs": [
+              "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur",
+              "https://letterboxd.com/film/operasi-pesta-copet/"
+            ]
+          },
+          "promo": {
+            "status": "KNOWN",
+            "read": "The official trailer, physical promotional material and Malang roadshow activity are directly captured; their existence is known even though campaign reach and conversion are not.",
+            "source_refs": [
+              "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16OPCT.mp4",
+              "https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop",
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          },
+          "demand": {
+            "status": "PARTIAL",
+            "read": "GoPay reports that tickets can be ordered for the 27 August release, placing the title near purchase, but no verified presale quantity, occupancy or sell-out evidence is captured.",
+            "source_refs": [
+              "https://gopay.co.id/blog/fakta-menarik-film-operasi-pesta-copet",
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          }
+        },
+        "lane_support": [
+          {
+            "lane_id": "logline",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop",
+              "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/"
+            ]
+          },
+          {
+            "lane_id": "cast_ph",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/",
+              "https://letterboxd.com/film/operasi-pesta-copet/"
+            ]
+          },
+          {
+            "lane_id": "quality_feel",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur",
+              "https://letterboxd.com/film/operasi-pesta-copet/"
+            ]
+          },
+          {
+            "lane_id": "commercial_angle",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/",
+              "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur"
+            ]
+          },
+          {
+            "lane_id": "promo",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16OPCT.mp4",
+              "https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop",
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          },
+          {
+            "lane_id": "social",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ]
+          },
+          {
+            "lane_id": "demand",
+            "status": "UNKNOWN",
+            "source_refs": [
+              "https://gopay.co.id/blog/fakta-menarik-film-operasi-pesta-copet",
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence"
+            ],
+            "gap": "Purchase access appears to exist for the 27 August release, but no captured source provides presale volume, sold-out sessions, seat-map pressure, transaction counts or representative watch intent; current demand therefore remains commercially unproven."
+          },
+          {
+            "lane_id": "risk",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "source_bundle_sha256:fc74d4b9c8241e99dd7ce11aeaa2af414af2c96a8ca6f7cc14b708455adf0a8f#/social_intelligence",
+              "https://www.idntimes.com/hype/entertainment/alasan-film-operasi-pesta-pora-ganti-judul-jadi-operasi-pesta-copet-00-hwff8-qkgwpp",
+              "https://www.liputan6.com/showbiz/read/8272919/sinopsis-operasi-pesta-copet-dan-review-filmnya-kala-nyopet-pakai-tahapan-terstruktur"
+            ]
+          }
+        ],
+        "unavailable_sources": [],
+        "contradictions": [
+          "{\"claim_a\": \"A fetched Jadwalnonton page says the film was showing on 26 August 2026 and labels that date as today.\", \"claim_b\": \"Journey of Indonesia, ANTARA, Wikipedia and the sealed title record consistently state a national release date of 27 August 2026.\", \"confidence\": \"HIGH\", \"judgment\": \"Accept 27 August 2026. The Jadwalnonton page is internally temporally incoherent: it was fetched on 23 August, calls 26 August today, and also contains a stray 20 September 2025 sentence. Multiple more direct and coherent sources outweigh it.\", \"judgment_basis\": \"provenance\", \"source_refs\": [\"https://jadwalnonton.com/film/2026/operasi-pesta-pora/\", \"https://journeyofindonesia.com/entertainment/film/operasi-pesta-copet-dirilis-imajinari-garap-produksi-terbesarnya-di-pestapora/\", \"https://m.antaranews.com/amp/berita/5695901/operasi-pesta-copet-sinopsis-pemain-dan-jadwal-tayang-di-bioskop\", \"https://id.wikipedia.org/wiki/Operasi_Pesta_Copet\"]}",
+          "{\"claim_a\": \"Public speculation linked the change from Operasi Pesta Pora to Operasi Pesta Copet with sensitive Pestapora 2025 controversy.\", \"claim_b\": \"Producer Ernest Prakasa said the title changed because including 'copet' communicates the film's core premise more clearly, not because of that controversy.\", \"confidence\": \"MEDIUM\", \"judgment\": \"Accept the producer's explanation as the strongest available evidence about the team's stated intent because it is a direct quotation, while recognizing that private motive cannot be independently verified from the bundle. The dispute is not currently a material commercial negative signal.\", \"judgment_basis\": \"directness\", \"source_refs\": [\"https://www.idntimes.com/hype/entertainment/alasan-film-operasi-pesta-pora-ganti-judul-jadi-operasi-pesta-copet-00-hwff8-qkgwpp\"]}"
+        ],
+        "confidence": "MEDIUM",
+        "research_depth": {
+          "free_web_queries_read": 12,
+          "full_text_sources_read": 13,
+          "unique_domains_read": 12,
+          "scrapecreators_calls_read": 2,
+          "highest_value_remaining_gap": "Verified paid advance-sales or seat-consumption data by owned site, followed by broader independent completed-film reviews or representative paying-audience response.",
+          "one_targeted_followup": "At the first authorized measurement point, capture site-level paid admissions or seat consumption against the predeclared comparable-title prior; do not use schedule availability as a sales proxy."
+        },
+        "class_collection": {
+          "official_identity": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 8,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "journeyofindonesia.com",
+              "letterboxd.com"
+            ]
+          },
+          "trailer_comments": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 8,
+            "fetched_source_count": 3,
+            "unique_domains": [
+              "jakartakita.com",
+              "nos.jkt-1.neo.id",
+              "youtube.com"
+            ]
+          },
+          "independent_quality": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 7,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "gopay.co.id",
+              "liputan6.com"
+            ]
+          },
+          "promo": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 9,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "id.wikipedia.org",
+              "letterboxd.com"
+            ]
+          },
+          "direct_demand": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 8,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "jadwalnonton.com",
+              "m.antaranews.com"
+            ]
+          },
+          "adverse": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 10,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "idntimes.com",
+              "teknostyle.id"
+            ]
+          }
+        },
+        "social_provider": {
+          "status": "CAPTURED",
+          "calls_used_for_title": 2,
+          "weekly_calls_used": 5,
+          "receipt_sha256": "d4467c9cb1c1825e218ddbc0f21efc71d1bfdfa4b80aae51ef16f563a383c59d"
+        },
+        "stop_rule": {
+          "materially_different_zero_yield_expansions": 0,
+          "reason": "SOURCE_BUNDLE_COMPLETE_OR_GAP_RECORDED",
+          "note": "SOURCE_BUNDLE_COMPLETE_OR_GAP_RECORDED"
+        }
+      },
+      {
+        "schema_version": "aigle.monday.research_coverage.v2",
+        "title": "PAKET SANTET",
+        "retrieved_at_utc": "2026-08-23T02:00:01.147871+00:00",
+        "official_trailer_collector": {
+          "status": "PASS",
+          "url": "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16PSAT.mp4",
+          "receipt_ref": "control/monday-map/cycles/2026-08-24/owner/sectioned/source-bundles/02-paket-santet.json",
+          "receipt_sha256": "ae5bb330fd8511d45281dc99e1b7f5a241486df5cc2c8b619cd0e7b551f7ab8a"
+        },
+        "evidence_classes": {
+          "official_identity": {
+            "status": "CAPTURED",
+            "finding": "BASE Entertainment supplies a credible production platform and a seven-person young ensemble, but the bundle does not prove that any cast member independently converts followers into cinema admissions.",
+            "source_refs": [
+              "https://base-ent.com/films/paket-santet/",
+              "https://id.wikipedia.org/wiki/Paket_Santet"
+            ]
+          },
+          "trailer_comments": {
+            "status": "CAPTURED",
+            "finding": "Captured TikTok results are sharply concentrated: one cast-related post reached 65,406 views and 7,810 likes, while most sampled posts remained below 1,000 views; Instagram keyword results were noisy and mostly irrelevant.",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          },
+          "independent_quality": {
+            "status": "ATTEMPTED_NOT_CAPTURED",
+            "finding": "A pre-release blog praises the modern courier premise and paranoid group dynamics while conceding standard jump scares, but no captured review establishes attendance at a completed screening or reports representative audience response.",
+            "source_refs": [
+              "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html"
+            ],
+            "blocker": "A pre-release blog praises the modern courier premise and paranoid group dynamics while conceding standard jump scares, but no captured review establishes attendance at a completed screening or reports representative audience response."
+          },
+          "promo": {
+            "status": "CAPTURED",
+            "finding": "The campaign includes multiple trailer waves, a documented cast media visit and social posts built around advance viewing and a buy-one-get-one offer; this verifies active promotion, not organic demand.",
+            "source_refs": [
+              "https://kumparan.com/kumparanhits/trailer-paket-santet-dirilis-ungkap-teror-bisa-datang-dari-orang-terdekat-27tZYbtKBPE",
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          },
+          "direct_demand": {
+            "status": "ATTEMPTED_NOT_CAPTURED",
+            "finding": "The bundle shows an advance BOGO promotion and one ticket-oriented TikTok post with meaningful sharing, but it contains no paid presale count, seat-map depletion, sellout, booking velocity or site-level intent evidence.",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ],
+            "blocker": "The bundle shows an advance BOGO promotion and one ticket-oriented TikTok post with meaningful sharing, but it contains no paid presale count, seat-map depletion, sellout, booking velocity or site-level intent evidence."
+          },
+          "adverse": {
+            "status": "CAPTURED",
+            "finding": "The principal risk is mistaking a relatable premise, active campaign and one cast-driven social outlier for broad purchase intent; quality is also unverified and one article characterizes the jump scares as standard.",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence",
+              "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html"
+            ]
+          }
+        },
+        "signal_separation": {
+          "awareness": {
+            "status": "PARTIAL",
+            "read": "An official trailer, CGV amplification, media coverage and active social promotion establish campaign visibility, but the official trailer capture has no view count and breadth of title-level awareness remains unmeasured.",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          },
+          "engagement": {
+            "status": "PARTIAL",
+            "read": "TikTok contains one 65,406-view, 7,810-like cast-related outlier and one 125-share ticket post, but most sampled posts are small and the sample is directional rather than representative.",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          },
+          "quality": {
+            "status": "UNKNOWN",
+            "read": "One nominal review is favorable but supplies no screening provenance and appears substantially trailer-derived; no dependable completed-film critic or audience verdict was captured.",
+            "source_refs": [
+              "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html"
+            ],
+            "gap": "One nominal review is favorable but supplies no screening provenance and appears substantially trailer-derived; no dependable completed-film critic or audience verdict was captured."
+          },
+          "promo": {
+            "status": "KNOWN",
+            "read": "Multiple trailer pushes, a documented cast media visit and advance-viewing BOGO messaging establish an active campaign; this proves promotional effort only.",
+            "source_refs": [
+              "https://kumparan.com/kumparanhits/trailer-paket-santet-dirilis-ungkap-teror-bisa-datang-dari-orang-terdekat-27tZYbtKBPE",
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          },
+          "demand": {
+            "status": "PARTIAL",
+            "read": "Advance-screening and BOGO language places some messaging close to purchase, but no paid-ticket totals, seat maps, booking velocity or verified sellout evidence were captured.",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          }
+        },
+        "lane_support": [
+          {
+            "lane_id": "logline",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://base-ent.com/films/paket-santet/",
+              "https://kumparan.com/kumparanhits/trailer-paket-santet-dirilis-ungkap-teror-bisa-datang-dari-orang-terdekat-27tZYbtKBPE"
+            ]
+          },
+          {
+            "lane_id": "cast_ph",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://base-ent.com/films/paket-santet/",
+              "https://id.wikipedia.org/wiki/Paket_Santet"
+            ]
+          },
+          {
+            "lane_id": "quality_feel",
+            "status": "UNKNOWN",
+            "source_refs": [
+              "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html"
+            ],
+            "gap": "A pre-release blog praises the modern courier premise and paranoid group dynamics while conceding standard jump scares, but no captured review establishes attendance at a completed screening or reports representative audience response."
+          },
+          {
+            "lane_id": "commercial_angle",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://base-ent.com/films/paket-santet/",
+              "https://jadwalnonton.com/film/2026/paket-santet/"
+            ]
+          },
+          {
+            "lane_id": "promo",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://kumparan.com/kumparanhits/trailer-paket-santet-dirilis-ungkap-teror-bisa-datang-dari-orang-terdekat-27tZYbtKBPE",
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          },
+          {
+            "lane_id": "social",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ]
+          },
+          {
+            "lane_id": "demand",
+            "status": "UNKNOWN",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence"
+            ],
+            "gap": "The bundle shows an advance BOGO promotion and one ticket-oriented TikTok post with meaningful sharing, but it contains no paid presale count, seat-map depletion, sellout, booking velocity or site-level intent evidence."
+          },
+          {
+            "lane_id": "risk",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "source_bundle_sha256:8a5daf5574164283d06ce77ca90aff9b12377d8377bfae95b8c8dd9ab64ff92b#/social_intelligence",
+              "https://www.agusprasetiyo.com/2026/07/paket-santet-review-why-this-2026.html"
+            ]
+          }
+        ],
+        "unavailable_sources": [],
+        "contradictions": [
+          "{\"claim_a\": \"BASE Entertainment, CGV and the sealed title record identify 27 August 2026 as the general release date.\", \"claim_b\": \"Tribunnews states 12 August 2026, while Jadwalnonton says the film will 'return' on 27 August and displays a 24 August listing with internally inconsistent page dates.\", \"confidence\": \"HIGH\", \"judgment\": \"Accept 27 August 2026 as the general release. It is supported by the producer and exhibitor, whereas the 12 August report relies on IMDb and the schedule page contains obvious temporal inconsistencies; earlier listings are more plausibly advance or special screenings.\", \"judgment_basis\": \"provenance\", \"source_refs\": [\"https://base-ent.com/films/paket-santet/\", \"https://x.com/CGV_ID/status/2076939696492470462\", \"https://www.tribunnews.com/seleb/7866024/film-paket-santet-tayang-perdana-di-bioskop-mulai-12-agustus-2026-ini-sinopsis-dan-daftar-pemainnya\", \"https://jadwalnonton.com/film/2026/paket-santet/\"]}"
+        ],
+        "confidence": "MEDIUM",
+        "research_depth": {
+          "free_web_queries_read": 12,
+          "full_text_sources_read": 13,
+          "unique_domains_read": 11,
+          "scrapecreators_calls_read": 2,
+          "highest_value_remaining_gap": "Verified paid presale or seat-map depletion by site, followed by independent completed-film audience evidence.",
+          "one_targeted_followup": "Capture paid booking and seat-availability evidence for the first owned operating day by site and session, excluding complimentary or BOGO distortion where identifiable."
+        },
+        "class_collection": {
+          "official_identity": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 7,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "base-ent.com",
+              "id.wikipedia.org"
+            ]
+          },
+          "trailer_comments": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 9,
+            "fetched_source_count": 3,
+            "unique_domains": [
+              "nos.jkt-1.neo.id",
+              "x.com",
+              "youtube.com"
+            ]
+          },
+          "independent_quality": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 7,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "agusprasetiyo.com",
+              "bilibili.tv"
+            ]
+          },
+          "promo": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 9,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "base-ent.com",
+              "kumparan.com"
+            ]
+          },
+          "direct_demand": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 6,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "jadwalnonton.com",
+              "tribunnews.com"
+            ]
+          },
+          "adverse": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 9,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "agusprasetiyo.com",
+              "kondusif.com"
+            ]
+          }
+        },
+        "social_provider": {
+          "status": "CAPTURED",
+          "calls_used_for_title": 2,
+          "weekly_calls_used": 5,
+          "receipt_sha256": "d4467c9cb1c1825e218ddbc0f21efc71d1bfdfa4b80aae51ef16f563a383c59d"
+        },
+        "stop_rule": {
+          "materially_different_zero_yield_expansions": 0,
+          "reason": "SOURCE_BUNDLE_COMPLETE_OR_GAP_RECORDED",
+          "note": "SOURCE_BUNDLE_COMPLETE_OR_GAP_RECORDED"
+        }
+      },
+      {
+        "schema_version": "aigle.monday.research_coverage.v2",
+        "title": "RUMAH SINGGAH",
+        "retrieved_at_utc": "2026-08-23T02:00:01.147871+00:00",
+        "official_trailer_collector": {
+          "status": "PASS",
+          "url": "https://nos.jkt-1.neo.id/media.cinema21.co.id/movie-trailer/16RSIH.mp4",
+          "receipt_ref": "control/monday-map/cycles/2026-08-24/owner/sectioned/source-bundles/03-rumah-singgah.json",
+          "receipt_sha256": "982f193060b29a6d67c2a0defe89f4838fb4ad92a53ab376aa6e753213f8164a"
+        },
+        "evidence_classes": {
+          "official_identity": {
+            "status": "CAPTURED",
+            "finding": "The film is led by Adhisty Zara and Devano, supported by Ciccio Manassero, Messi Gusti, Aming and Dewi Irawan, and produced by SENARA with Mandela Pictures and Limelight Pictures.",
+            "source_refs": [
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html",
+              "https://www.acmodasi.in/amdb/movie/1716269-rumah-singgah-2026/crew"
+            ]
+          },
+          "trailer_comments": {
+            "status": "CAPTURED",
+            "finding": "The ten-post TikTok sample accumulated 342,335 views and 6,547 likes, but attention was predominantly Zara and gala-premiere content, with only 29 comments and 28 shares.",
+            "source_refs": [
+              "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence"
+            ]
+          },
+          "independent_quality": {
+            "status": "ATTEMPTED_NOT_CAPTURED",
+            "finding": "The captured material supports a warm, tearful and hopeful intended tone, but it contains no readable independent review, verified screening reaction or audience assessment of execution.",
+            "source_refs": [
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ],
+            "blocker": "The captured material supports a warm, tearful and hopeful intended tone, but it contains no readable independent review, verified screening reaction or audience assessment of execution."
+          },
+          "promo": {
+            "status": "CAPTURED",
+            "finding": "The campaign includes a July media visit with Adhisty Zara and Aming, a poster and official-trailer launch, cinema trailer placement and a gala-premiere-centered social push.",
+            "source_refs": [
+              "https://www.antarafoto.com/view/2827092/media-visit-to-the-cast-of-the-film-rumah-singgah",
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ]
+          },
+          "direct_demand": {
+            "status": "ATTEMPTED_NOT_CAPTURED",
+            "finding": "Direct ticket demand remains unproven: an official Cinema XXI page confirms a 27 August listing, but no captured transaction count, seat map, presale velocity or owned-site booking signal exists.",
+            "source_refs": [
+              "https://m.21cineplex.com/id/movies/16RSIH"
+            ],
+            "blocker": "Direct ticket demand remains unproven: an official Cinema XXI page confirms a 27 August listing, but no captured transaction count, seat map, presale velocity or owned-site booking signal exists."
+          },
+          "adverse": {
+            "status": "CAPTURED",
+            "finding": "The primary commercial risk is mistaking celebrity and gala-premiere reach for title demand, compounded by an unverified quality outcome and a serious illness theme whose broad appeal is still untested.",
+            "source_refs": [
+              "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence",
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ]
+          }
+        },
+        "signal_separation": {
+          "awareness": {
+            "status": "KNOWN",
+            "read": "Cast-led awareness is visible: the ten-post TikTok sample recorded 342,335 views, led by Zara gala-premiere content, but the sample is directional rather than population-level reach.",
+            "source_refs": [
+              "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence"
+            ]
+          },
+          "engagement": {
+            "status": "PARTIAL",
+            "read": "The sample generated 6,547 likes but only 29 comments and 28 shares; observable interaction exists, yet it is shallow, unrepresentative and not evidence of purchase intent.",
+            "source_refs": [
+              "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence"
+            ]
+          },
+          "quality": {
+            "status": "UNKNOWN",
+            "read": "No readable independent review, credible completed-film screening assessment or verified audience-quality response was captured; promotional descriptions cannot fill this gap.",
+            "source_refs": [
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ],
+            "gap": "No readable independent review, credible completed-film screening assessment or verified audience-quality response was captured; promotional descriptions cannot fill this gap."
+          },
+          "promo": {
+            "status": "KNOWN",
+            "read": "Promotion is confirmed through a July ANTARA media visit, poster and trailer launch, planned cinema trailer placement and current gala-premiere social content.",
+            "source_refs": [
+              "https://www.antarafoto.com/view/2827092/media-visit-to-the-cast-of-the-film-rumah-singgah",
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ]
+          },
+          "demand": {
+            "status": "PARTIAL",
+            "read": "The official Cinema XXI listing confirms a 27 August release, but no trustworthy presale inventory, seat availability, sales velocity or transaction evidence was captured.",
+            "source_refs": [
+              "https://m.21cineplex.com/id/movies/16RSIH"
+            ]
+          }
+        },
+        "lane_support": [
+          {
+            "lane_id": "logline",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ]
+          },
+          {
+            "lane_id": "cast_ph",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html",
+              "https://www.acmodasi.in/amdb/movie/1716269-rumah-singgah-2026/crew"
+            ]
+          },
+          {
+            "lane_id": "quality_feel",
+            "status": "UNKNOWN",
+            "source_refs": [
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ],
+            "gap": "The captured material supports a warm, tearful and hopeful intended tone, but it contains no readable independent review, verified screening reaction or audience assessment of execution."
+          },
+          {
+            "lane_id": "commercial_angle",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html",
+              "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence"
+            ]
+          },
+          {
+            "lane_id": "promo",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "https://www.antarafoto.com/view/2827092/media-visit-to-the-cast-of-the-film-rumah-singgah",
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ]
+          },
+          {
+            "lane_id": "social",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence"
+            ]
+          },
+          {
+            "lane_id": "demand",
+            "status": "UNKNOWN",
+            "source_refs": [
+              "https://m.21cineplex.com/id/movies/16RSIH"
+            ],
+            "gap": "Direct ticket demand remains unproven: an official Cinema XXI page confirms a 27 August listing, but no captured transaction count, seat map, presale velocity or owned-site booking signal exists."
+          },
+          {
+            "lane_id": "risk",
+            "status": "SUPPORTED",
+            "source_refs": [
+              "source_bundle_sha256:87bb3bd1c53e20285212a8e6f755619a12194810134c7e179dce3f14a98c3697#/social_intelligence",
+              "https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html"
+            ]
+          }
+        ],
+        "unavailable_sources": [],
+        "contradictions": [
+          "{\"claim_a\": \"Tribunnews states that RUMAH SINGGAH began screening on 23 August 2026.\", \"claim_b\": \"Cinema XXI directly lists August 27, and the captured campaign article also states 27 August 2026.\", \"confidence\": \"HIGH\", \"judgment\": \"Accept 27 August as the commercial release date because the direct exhibitor listing and film-specific campaign material outweigh the derivative Tribunnews article.\", \"judgment_basis\": \"provenance\", \"source_refs\": [\"https://www.tribunnews.com/seleb/7869737/film-rumah-singgah-yang-tayang-di-bioskop-mulai-23-agustus-2026-simak-sinopsis-dan-daftar-pemainnya\", \"https://m.21cineplex.com/id/movies/16RSIH\", \"https://jadwalnonton.com/movie-news/2026/film-rumah-singgah-rilis-poster-dan-trailer-resmi-sebuah-persembahan-untuk-semua-yang.html\"]}",
+          "{\"claim_a\": \"The JadwalNonton title page says RUMAH SINGGAH was playing on 23 August 2026.\", \"claim_b\": \"The same captured page embeds a Jakarta schedule dated 20 September 2025 with internally implausible listings.\", \"confidence\": \"HIGH\", \"judgment\": \"Accept neither part as reliable evidence of current ticket availability; the page's internal date contamination destroys its purchase-signal value.\", \"judgment_basis\": \"disconfirming_power\", \"source_refs\": [\"https://jadwalnonton.com/film/2026/rumah-singgah/\"]}"
+        ],
+        "confidence": "MEDIUM",
+        "research_depth": {
+          "free_web_queries_read": 12,
+          "full_text_sources_read": 11,
+          "unique_domains_read": 9,
+          "scrapecreators_calls_read": 1,
+          "highest_value_remaining_gap": "Authoritative purchase conversion and first owned-day paid admissions by site and session, followed by an independent completed-film quality signal.",
+          "one_targeted_followup": "Capture verified paid admits, occupancy and admits per show for every owned-site session after the first operating day closes."
+        },
+        "class_collection": {
+          "official_identity": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 10,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "acmodasi.in",
+              "mubi.com"
+            ]
+          },
+          "trailer_comments": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 10,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "jadwalnonton.com",
+              "nos.jkt-1.neo.id"
+            ]
+          },
+          "independent_quality": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 9,
+            "fetched_source_count": 1,
+            "unique_domains": [
+              "m.21cineplex.com"
+            ]
+          },
+          "promo": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 10,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "antarafoto.com",
+              "youtube.com"
+            ]
+          },
+          "direct_demand": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 7,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "jadwalnonton.com",
+              "tribunnews.com"
+            ]
+          },
+          "adverse": {
+            "query_count": 2,
+            "materially_different_expansion_count": 1,
+            "result_count": 10,
+            "fetched_source_count": 2,
+            "unique_domains": [
+              "kompasiana.com",
+              "m.21cineplex.com"
+            ]
+          }
+        },
+        "social_provider": {
+          "status": "CAPTURED",
+          "calls_used_for_title": 1,
+          "weekly_calls_used": 5,
+          "receipt_sha256": "d4467c9cb1c1825e218ddbc0f21efc71d1bfdfa4b80aae51ef16f563a383c59d"
+        },
+        "stop_rule": {
+          "materially_different_zero_yield_expansions": 0,
+          "reason": "SOURCE_BUNDLE_COMPLETE_OR_GAP_RECORDED",
+          "note": "SOURCE_BUNDLE_COMPLETE_OR_GAP_RECORDED"
+        }
+      }
+    ],
+    "private_playing_context": [
+      {
+        "scope": "SAMS-owned network",
+        "fact": "The network recorded 2,555 admissions from 242 shows, equal to 10.56 admissions per show, versus the validated 52-week trimmed-mean context of 20.41.",
+        "why_it_matters": "The whole-day result was weak relative to the validated context, but the reference dataset remains classified as validated-not-promoted and the same-weekday comparison has only one sample.",
+        "room_question": "Which two recorded shows account for the difference between the 242-show actual and the room's governed 240-show pool?",
+        "source_refs": [
+          "private_playing.benchmark_context",
+          "private_playing.raw_summary",
+          "room_rules.governed_scope",
+          "allocation_observation_contract",
+          "playing_truth_sha256:c152fc65cef216c357f93e9a0cf837932757872fa68ce056824d530accdc0218#/raw_sites"
+        ]
+      },
+      {
+        "scope": "Harusnya Horror",
+        "fact": "Harusnya Horror supplied 189 of 242 shows and 1,799 admissions, but its 9.52 admissions per show was below the 10.56 network result. Local pace ranged from 47.00 at Subang and 18.13 at Cianjur to 2.86 at Pekalongan.",
+        "why_it_matters": "Its network aggregate combines materially different local outcomes, making the site-level evidence more informative than the single network average.",
+        "room_question": "What local audience, timing or operating circumstances explain the gap between Subang, Cianjur and the weakest sites?",
+        "source_refs": [
+          "private_playing.raw_summary.Harusnya Horror",
+          "private_playing.raw_sites.SAMS Subang.Harusnya Horror",
+          "private_playing.raw_sites.SAMS Cianjur.Harusnya Horror",
+          "private_playing.raw_sites.SAMS Pekalongan.Harusnya Horror",
+          "playing_truth_sha256:c152fc65cef216c357f93e9a0cf837932757872fa68ce056824d530accdc0218#/raw_sites"
+        ]
+      },
+      {
+        "scope": "Dan Bandung",
+        "fact": "Dan Bandung recorded 12.74 admissions per show network-wide, with results above 21 at Cianjur, Cibadak and Subang, but zero admissions from its single Pasuruan show and 3.00 at Kebumen, Pekalongan and Probolinggo.",
+        "why_it_matters": "The above-network headline conceals a sharp local split that should be preserved in the learning record.",
+        "room_question": "Which local conditions distinguished Cianjur, Cibadak and Subang from the low-result sites?",
+        "source_refs": [
+          "private_playing.raw_summary.Dan Bandung",
+          "private_playing.raw_sites.SAMS Cianjur.Dan Bandung",
+          "private_playing.raw_sites.SAMS Cibadak.Dan Bandung",
+          "private_playing.raw_sites.SAMS Subang.Dan Bandung",
+          "private_playing.raw_sites.SAMS Pasuruan.Dan Bandung",
+          "playing_truth_sha256:c152fc65cef216c357f93e9a0cf837932757872fa68ce056824d530accdc0218#/raw_sites"
+        ]
+      },
+      {
+        "scope": "Children of Heaven",
+        "fact": "Children of Heaven recorded 180 admissions from three shows, all at Probolinggo, for 60.00 admissions per show in NOBAR/event context.",
+        "why_it_matters": "The event concentration explains why this title's result should remain separate from ordinary multi-site Playing evidence.",
+        "room_question": "What NOBAR or event mechanics produced this result, and were all three shows operated under the same context?",
+        "source_refs": [
+          "private_playing.raw_summary.Children of Heaven",
+          "private_playing.raw_sites.SAMS Probolinggo.Children of Heaven",
+          "playing_truth_sha256:c152fc65cef216c357f93e9a0cf837932757872fa68ce056824d530accdc0218#/raw_sites"
+        ]
+      },
+      {
+        "scope": "Narrow observations",
+        "fact": "Ayah, Aku Mau Cerita had 14 shows with a 2.00-to-23.00 local range, while Perumahan Laddaland had only one show at Nganjuk. No supplied evidence classifies either title as Monday NOMAT.",
+        "why_it_matters": "Small or uneven exposure limits what can be inferred, and current Playing status cannot substitute for lifecycle or NOMAT classification.",
+        "room_question": "What verified lifecycle and NOMAT status applies to each title before the next room interpretation is recorded?",
+        "source_refs": [
+          "private_playing.raw_summary.Ayah, Aku Mau Cerita",
+          "private_playing.raw_summary.Perumahan Laddaland",
+          "private_playing.raw_sites",
+          "room_rules.monday_nomat_rule",
+          "calibrated_priors.eligible_priors.LESSON_1",
+          "playing_truth_sha256:c152fc65cef216c357f93e9a0cf837932757872fa68ce056824d530accdc0218#/raw_sites"
+        ]
+      }
+    ],
+    "proprietary_edge": {
+      "fact": "Historical SAMS operating evidence shows an observed Harusnya Horror APS spread from 47.00 to 2.86 admissions per show, despite a 9.52 network average.",
+      "metric": "ADM_PER_SHOW",
+      "value": 47,
+      "unit": "ADM_PER_SHOW",
+      "comparison_value": 2.86,
+      "comparison_label": "Lowest recorded local pace for Harusnya Horror",
+      "magnitude": "16.43x, a gap of 44.14 admissions per show",
+      "why_only_sams_knows": "This dispersion comes from private SAMS-owned operating results unavailable in public campaign or release data.",
+      "room_sentence": "Historical SAMS reminder: Harusnya Horror showed an observed APS range from 47.00 to 2.86 admissions per show.",
+      "commercial_consequence": "The observed 16.43x spread is not current-slate demand proof. It is a warning to compare each opener's site distribution and context, not only its network average.",
+      "source_refs": [
+        "playing_truth_sha256:c152fc65cef216c357f93e9a0cf837932757872fa68ce056824d530accdc0218#/raw_sites"
+      ]
+    },
+    "non_consensus_hypothesis": {
+      "title": "OPERASI PESTA COPET",
+      "hypothesis": "OPERASI PESTA COPET is the most plausible Day 4 leader to test, even if RUMAH SINGGAH wins Day 1, after event traffic is separated.",
+      "confidence": "MEDIUM",
+      "evidence": "OPERASI PESTA COPET has the clearest differentiated hook and the only captured screening assessment, though that review is narrow. RUMAH SINGGAH has the widest sampled reach but shallow interaction; PAKET SANTET has a familiar horror hook but no verified quality or purchase breadth.",
+      "why_non_consensus": "The obvious public read favors RUMAH SINGGAH's 342,335-view aggregate or PAKET SANTET's familiar horror hook. Neither establishes paid durability, and the social denominators are not comparable.",
+      "strongest_alternative_title": "RUMAH SINGGAH",
+      "why_stronger_than_alternative": "No title has verified purchases. OPERASI PESTA COPET's differentiated premise and narrow screening signal support a retention hypothesis more directly than celebrity-led awareness or familiar-horror recognition, while confidence stays MEDIUM.",
+      "falsifier": "RUMAH SINGGAH or PAKET SANTET leads full-price Day 4 admissions per show after event, BOGOF and invitation traffic are separated.",
+      "source_refs": [
+        "title_section_sha256:a0c1c45f0d1da40238c27296a52f6b9d37bce732d027ac5b127c8e757e3c155b#/display",
+        "title_section_sha256:260a28efc8bf62cd2145108856f02a048dfd1489ab28364de3a249429c8271b8#/display"
+      ]
+    },
+    "allocation_observation_contract": {
+      "actual_allocation_source": "PROGRAMMING_ROOM_ACTUAL",
+      "capture_after_room": true,
+      "daily_read_only": true,
+      "default_equal_split_forbidden": true,
+      "network_show_total": 240,
+      "shows_per_site": 15,
+      "site_count": 16
+    },
+    "learning_trace": {
+      "schema_version": "aigle.monday.learning_trace.v2",
+      "state": "CALIBRATED_PRIOR_APPLIED",
+      "priors_file_sha256": "7ca8b1f0862903333ff6f5bea81b1a3545567be9ccd39c002a43e370c64c2861",
+      "evidence_to_measure": [
+        "Capture the frozen Programming room actual for all 16 SAMS-owned sites and reconcile its 240-show total against the 242 recorded Playing shows.",
+        "Preserve same-site title results so local differences are measured without replacing them with network averages.",
+        "Record verified lifecycle, NOMAT and NOBAR/event status separately from current Playing status.",
+        "Score the first eligible Day 4 positions and closed Monday cycles against the stated maturity thresholds."
+      ],
+      "applied_priors": [
+        {
+          "id": "LESSON_1",
+          "application": "Lifecycle obligations and verified NOMAT or event status remain separate from current Playing results; no carryover status is inferred from appearance or show count.",
+          "source_refs": [
+            "calibrated_priors.eligible_priors.LESSON_1",
+            "room_rules.new_release_floor",
+            "room_rules.monday_nomat_rule",
+            "priors_sha256:7ca8b1f0862903333ff6f5bea81b1a3545567be9ccd39c002a43e370c64c2861"
+          ]
+        },
+        {
+          "id": "LESSON_2",
+          "application": "The observation frame preserves site-level dispersion for Harusnya Horror, Dan Bandung and Ayah, Aku Mau Cerita because their network averages conceal materially different local outcomes.",
+          "source_refs": [
+            "calibrated_priors.eligible_priors.LESSON_2",
+            "private_playing.raw_sites",
+            "private_playing.raw_summary",
+            "priors_sha256:7ca8b1f0862903333ff6f5bea81b1a3545567be9ccd39c002a43e370c64c2861"
+          ]
+        }
+      ]
+    },
+    "quality_self_review": {
+      "target_score": 90,
+      "claimed_score": 90,
+      "weakest_area": "Private SAMS history is title-external: it requires site-distribution measurement but cannot predict any opener, and no title has verified paid behavior.",
+      "repair_made": "Removed the incompatible reach ratio, changed the winner-take-all strategy to separate opening conversion, Day 4 durability and site distribution, and removed the unjustified nine-site cutoff."
+    }
+  },
+  "presentation_profile": "soft-power-v1"
+}

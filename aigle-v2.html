@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="id" translate="no" class="notranslate">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<title>AIGLE - Program SAMS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f6f5f1;--surface:#fff;--ink:#1b1b18;--ink2:#55554e;--muted:#8a8a80;--faint:#b6b6ad;--line:rgba(20,18,10,.09);--gold:#9a6f15;--green:#1f9d57;--green-s:rgba(31,157,87,.12);--red:#c0413a;--red-s:rgba(192,65,58,.11);--amber:#b3791a;--amber-s:rgba(179,121,26,.12);--shadow:0 1px 2px rgba(20,18,10,.04),0 10px 30px rgba(20,18,10,.05)}
+html,body{max-width:100%;overflow-x:hidden}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:44px}
+.wrap{max-width:700px;min-width:0;margin:0 auto;padding:0 22px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0 16px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px}
+.mark{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;background:linear-gradient(135deg,var(--gold),#c69320);color:#fff}
+.bname{font-size:14px;font-weight:800;letter-spacing:4px;color:var(--gold)}
+.btag{font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:3px}
+.live{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right}
+.tabs{display:flex;gap:8px;margin:18px 0 0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;min-height:42px;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--muted);font:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+.tab.on{color:var(--ink);background:rgba(154,111,21,.09);border-color:rgba(154,111,21,.4);box-shadow:inset 0 -2px 0 var(--gold)}
+.tab.milo{color:var(--green)}.tab.milo.on{color:var(--green);background:var(--green-s);border-color:rgba(31,157,87,.4);box-shadow:inset 0 -2px 0 var(--green)}
+.panel{display:none;min-width:0;padding-top:24px}.panel.on{display:block}
+.eb{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(21px,3.8vw,28px);font-weight:900;line-height:1.18;letter-spacing:-.4px;margin:10px 0 0}
+.kick{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
+.upc{min-width:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);padding:14px 16px;margin-bottom:10px}
+.upc-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.upc-h .nm{font-size:16.5px;font-weight:800}
+.lvl{font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:3px 9px;border-radius:6px}
+.lvl.tinggi{color:var(--green);background:var(--green-s)}.lvl.sedang{color:var(--amber);background:var(--amber-s)}.lvl.kecil{color:var(--muted);background:rgba(20,18,10,.06)}
+.upc-log{font-size:13px;color:var(--ink);margin-top:8px}.upc-log b{color:var(--gold)}
+.upc-meta{font-size:12px;color:var(--muted);margin-top:5px}
+.upc-bet{font-size:13px;color:var(--ink);margin-top:8px;font-weight:700}
+.nug{margin-top:9px}
+.nug summary{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);cursor:pointer;list-style:none;display:inline-block}
+.nug summary::-webkit-details-marker{display:none}
+.nug summary::before{content:"\25B8 ";font-size:9px}
+.nug[open] summary::before{content:"\25BE "}
+.nug > div{font-size:13px;color:var(--ink2);margin-top:8px;line-height:1.6;padding:12px 14px;background:rgba(154,111,21,.05);border-radius:9px;border-left:3px solid rgba(154,111,21,.4)}
+.list{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.grp{padding:8px 16px;border-top:1px solid var(--line);background:rgba(20,18,10,.015)}
+.grp:first-child{border-top:0}
+.tag{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 9px;border-radius:6px}
+.tag.lindungi{color:var(--green);background:var(--green-s)}.tag.pantau{color:var(--amber);background:var(--amber-s)}.tag.kurangi{color:var(--red);background:var(--red-s)}
+.row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:11px 16px;border-top:1px solid var(--line)}
+.row .n{font-size:14px;font-weight:700}.row .g{font-size:12px;color:var(--muted);margin-top:1px}
+.row .a{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.row .a.tinggi{color:var(--green)}.row .a.sedang{color:var(--ink2)}.row .a.rendah{color:var(--red)}.row .a.evt{color:var(--faint)}
+.metric{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.mchip{font-size:10px;font-weight:800;color:var(--ink2);background:rgba(20,18,10,.045);border:1px solid var(--line);border-radius:999px;padding:3px 8px}.mchip.good{color:var(--green);background:var(--green-s)}.mchip.wait{color:var(--muted);background:rgba(20,18,10,.025)}.note{font-size:12px;color:var(--ink2);line-height:1.55;margin-top:8px}.soft{border:1px dashed rgba(154,111,21,.35);background:rgba(154,111,21,.045);border-radius:12px;padding:12px 14px;margin:10px 0}.soft b{color:var(--gold)}.sus{font-size:12px;color:var(--muted);padding:9px 0;border-top:1px solid var(--line)}.proof{display:grid;grid-template-columns:1fr;gap:8px}.proof div{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 12px;font-size:12px;color:var(--ink2)}
+.story{font-size:15px;line-height:1.6;color:var(--ink2)}
+.lnk{display:inline-flex;gap:6px;margin-top:14px;font-size:12px;font-weight:700;color:var(--gold);text-decoration:none;border:1px solid rgba(154,111,21,.32);background:rgba(154,111,21,.08);border-radius:999px;padding:8px 14px}
+.foot{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--faint);letter-spacing:.5px}
+.loop{border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);padding:13px 16px;margin-bottom:10px}
+.loop-h{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.loop-h .nm{font-size:15px;font-weight:800}
+.mat{font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:3px 9px;border-radius:6px}
+.mat.manual{color:var(--muted);background:rgba(20,18,10,.05)}.mat.diawasi{color:var(--amber);background:var(--amber-s)}.mat.cek{color:var(--green);background:var(--green-s)}.mat.milo{color:#fff;background:var(--green)}
+.tgt{font-size:10px;font-weight:700;color:var(--muted);margin-left:auto}
+.loop-role{font-size:11.5px;color:var(--muted);margin-top:5px}
+.comp{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.c{font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px}
+.c.ok{color:var(--green);background:var(--green-s)}.c.part{color:var(--amber);background:var(--amber-s)}.c.no{color:var(--faint);background:rgba(20,18,10,.03)}
+.c.ok::before{content:"\2713 "}.c.part::before{content:"~ "}.c.no::before{content:"\2717 "}
+.rescue{font-size:12px;color:var(--ink2);margin-top:9px;font-weight:600}
+.r-sering{color:var(--red)}.r-kadang{color:var(--amber)}.r-jarang{color:var(--green)}
+.langbar{display:flex;gap:6px;align-items:center;margin:12px 0 0}
+.lang{font-size:11px;font-weight:800;padding:5px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.lang.on{color:var(--ink);background:rgba(154,111,21,.09);border-color:rgba(154,111,21,.4)}
+.langnote{font-size:10.5px;color:var(--faint);margin-left:4px}
+.frow{display:flex;gap:10px;padding:9px 16px;border-top:1px solid var(--line)}.frow:first-child{border-top:0}
+.frow .fl{font-size:12px;color:var(--muted);min-width:135px;font-weight:600;flex-shrink:0}
+.frow .fv{font-size:13px;color:var(--ink);font-weight:600}
+.chk{display:flex;gap:9px;align-items:flex-start;padding:9px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink)}.chk:first-child{border-top:0}.chk::before{content:"\25A1";color:var(--gold);font-weight:800}
+.read{font-size:16px;font-weight:800;color:var(--ink);margin-top:11px;line-height:1.3}
+.soft .ql{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold)}
+.soft .qp{font-size:16.5px;font-weight:800;color:var(--ink);margin-top:6px;line-height:1.35}
+.sig{border:1px solid var(--line);border-radius:11px;background:var(--surface);box-shadow:var(--shadow);padding:12px 15px;margin-bottom:8px}
+.sig-l{font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--gold)}
+.sig-c{font-size:13.5px;color:var(--ink);margin-top:4px;line-height:1.5}
+.topright{display:flex;flex-direction:column;align-items:flex-end;gap:6px}.topright .langbar{margin:0}
+.pill{font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:3px 9px;border-radius:6px;margin-left:auto;white-space:nowrap}
+.pill.good{color:var(--green);background:var(--green-s)}.pill.warn{color:var(--amber);background:var(--amber-s)}.pill.bad{color:var(--red);background:var(--red-s)}.pill.neutral{color:var(--muted);background:rgba(20,18,10,.05)}
+.cardq{font-size:11.5px;color:var(--muted);margin-top:7px}
+.cardv{font-size:14px;font-weight:700;color:var(--ink);margin-top:3px;line-height:1.4}
+.brief{display:grid;grid-template-columns:minmax(64px,78px) minmax(0,1fr);gap:6px 12px;margin-top:10px}
+.brief .bl{font-size:9.5px;font-weight:800;letter-spacing:.55px;text-transform:uppercase;color:var(--gold);padding-top:2px}
+.brief .bt{min-width:0;font-size:13px;color:var(--ink);line-height:1.5;overflow-wrap:anywhere}
+.brief .bt strong{font-weight:800}
+.brief .risk{color:var(--amber)}
+.brief .signal{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.brief .signal-extra{grid-column:2/-1}
+.sigrow{display:flex;min-width:0;gap:6px;flex-wrap:wrap;margin-top:9px}
+.sigchip{max-width:100%;font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);background:var(--surface);white-space:normal;overflow-wrap:anywhere}
+.sigchip.on{color:var(--ink);border-color:rgba(20,18,10,.2)}.sigchip.on b{color:var(--gold)}
+.sigchip.off{color:var(--faint);border-style:dashed}
+.riskv{font-size:12px;color:var(--amber);margin-top:5px;line-height:1.45}
+.credits{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.cardrule{height:1px;background:var(--line);margin:11px 0}
+.brow{display:flex;gap:11px;margin-top:8px}
+.brow:first-of-type{margin-top:0}
+.brow .blbl{font-size:8.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;width:52px;flex-shrink:0;padding-top:3px}
+.blbl.draw{color:var(--gold)}.blbl.risk{color:var(--amber)}
+.brow .btext{font-size:12.5px;color:var(--ink2);line-height:1.5;flex:1}
+.sigpill{display:inline-block;font-size:9.5px;font-weight:700;color:var(--gold);background:rgba(154,111,21,.09);border:1px solid rgba(154,111,21,.25);border-radius:999px;padding:1px 8px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.cavpill{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.4px;color:var(--amber);background:var(--amber-s);border-radius:5px;padding:2px 7px;margin-left:4px;white-space:nowrap;vertical-align:1px}
+.own{font-size:9.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--gold);background:rgba(154,111,21,.12);padding:3px 7px;border-radius:5px;flex-shrink:0;white-space:nowrap}
+.act{display:flex;gap:9px;align-items:flex-start;padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink);line-height:1.45}.act:first-child{border-top:0}.act>span:last-child{flex:1;min-width:0;overflow-wrap:anywhere}
+.chk{overflow-wrap:anywhere}.cardv,.cardq,.sig-c,.nug>div,.note{overflow-wrap:anywhere}
+.readbig{font-size:16px;font-weight:800;color:var(--ink);margin-top:11px;line-height:1.35;overflow-wrap:anywhere}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
+.badge{font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--ink2);background:rgba(20,18,10,.05);border:1px solid var(--line);border-radius:6px;padding:3px 9px;white-space:nowrap}
+.scope{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.45;overflow-wrap:anywhere}
+.stale{font-size:12.5px;font-weight:700;color:var(--red);background:var(--red-s);border:1px solid rgba(192,65,58,.3);border-radius:9px;padding:10px 13px;margin-top:14px;line-height:1.45}
+.tblimg{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin-top:14px;background:#fff}
+.edge{border:2px solid rgba(154,111,21,.35);border-radius:14px;background:#fffdf7;box-shadow:var(--shadow);padding:15px 16px;margin:18px 0 16px}.edge-title{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}.edge-action{padding:11px 0;border-top:1px solid var(--line)}.edge-action:first-of-type{border-top:0}.edge-action b{font-size:14px}.edge-meta{font-size:11px;color:var(--muted);margin-top:4px}.edge-trigger{font-size:11.5px;color:var(--ink2);margin-top:5px}.edge-private{padding:11px 12px;margin-top:10px;border-radius:10px;background:var(--green-s);font-size:12px;line-height:1.5}.edge-bet{padding:11px 12px;margin-top:9px;border-radius:10px;background:var(--amber-s);font-size:12px;line-height:1.5}
+body.monday-exec{padding-bottom:0;background:#f3f0e8}body.monday-exec .wrap{max-width:900px;padding:0 34px}body.monday-exec .tabs,body.monday-exec #upcoming,body.monday-exec #comingkick,body.monday-exec #attnkick,body.monday-exec #attn,body.monday-exec details,body.monday-exec .foot{display:none!important}body.monday-exec .panel{padding-top:18px}body.monday-exec h1{font-size:30px}body.monday-exec #roomline{font-size:15px}body.monday-exec .edge{margin-top:14px;padding:18px 20px}body.monday-exec .edge-action b{font-size:16px}body.monday-exec .edge-meta,body.monday-exec .edge-trigger,body.monday-exec .edge-private,body.monday-exec .edge-bet{font-size:13px}
+.canon-portfolio{border:1px solid rgba(154,111,21,.28);border-radius:18px;background:linear-gradient(145deg,#fffdf7 0%,#f4efe3 100%);box-shadow:var(--shadow);padding:20px 22px;margin:18px 0}.canon-portfolio-kicker,.canon-kicker{font-size:10px;font-weight:900;letter-spacing:1.45px;text-transform:uppercase;color:var(--gold)}.canon-portfolio-read{font-size:17px;font-weight:850;line-height:1.35;margin-top:8px;color:var(--ink)}.canon-rank-list{display:grid;gap:8px;margin-top:14px}.canon-rank-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:8px}.canon-rank-n{font-size:18px;font-weight:900;color:var(--gold)}.canon-rank-title{font-size:13px;font-weight:850;color:var(--ink)}.canon-rank-tag{font-size:9px;font-weight:850;letter-spacing:.45px;text-transform:uppercase;color:var(--ink2);background:rgba(20,18,10,.06);padding:4px 7px;border-radius:999px}.canon-private,.canon-challenge{margin-top:12px;border-radius:12px;padding:12px 14px;font-size:12px;line-height:1.48}.canon-private{background:var(--green-s)}.canon-challenge{background:var(--amber-s)}
+.edge .canon-portfolio{border:0;box-shadow:none;margin:0;padding:0;background:transparent}
+.canonical-deck{display:grid;gap:14px;margin-top:14px}.canon-card{--accent:#9a6f15;position:relative;overflow:hidden;border:1px solid rgba(20,18,10,.12);border-radius:19px;background:#fff;box-shadow:0 12px 28px rgba(43,35,17,.09);padding:20px 22px}.canon-card:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--accent)}.canon-card.accent-green{--accent:#267a52}.canon-card.accent-amber{--accent:#ad7418}.canon-card.accent-red{--accent:#a64e45}.canon-card-head{display:grid;grid-template-columns:58px minmax(0,1fr);gap:13px;align-items:start;padding-bottom:13px;border-bottom:1px solid var(--line)}.canon-rank{font-size:40px;line-height:.9;font-weight:950;letter-spacing:-2px;color:var(--accent)}.canon-rank small{display:block;font-size:8px;line-height:1;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:7px}.canon-title{font-size:20px;line-height:1.08;font-weight:950;letter-spacing:-.25px;color:var(--ink)}.canon-subline{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.canon-chip{font-size:8.5px;font-weight:850;letter-spacing:.45px;text-transform:uppercase;border-radius:999px;padding:3px 8px;background:rgba(20,18,10,.055);color:var(--ink2)}.canon-chip.accent{background:color-mix(in srgb,var(--accent) 12%,white);color:var(--accent)}.canon-pulse{font-size:11.5px;line-height:1.45;color:var(--ink2);margin-top:10px;padding:9px 11px;background:#f7f4ec;border-radius:10px}.canon-lanes{display:grid;gap:0;margin-top:7px}.canon-lane{display:grid;grid-template-columns:32px 116px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line);align-items:start}.canon-lane:first-child{border-top:0}.canon-lane-n{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 11%,white);color:var(--accent);font-size:9px;font-weight:950}.canon-lane-label{font-size:9px;font-weight:900;letter-spacing:.55px;text-transform:uppercase;color:var(--gold);padding-top:5px}.canon-lane-copy{min-width:0}.canon-lane-read{font-size:12.5px;line-height:1.43;font-weight:700;color:var(--ink)}.canon-lane-why{font-size:10.5px;line-height:1.4;color:var(--muted);margin-top:4px}.canon-lane-meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}.canon-lane-meta span{font-size:7.5px;font-weight:850;letter-spacing:.35px;text-transform:uppercase;color:var(--muted);background:#f4f1ea;border-radius:999px;padding:2px 6px}.canon-footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.canon-move{border-radius:12px;padding:11px 12px;background:#f5f2eb;min-width:0}.canon-move.ask{background:var(--green-s)}.canon-move.bet{background:var(--amber-s)}.canon-move-label{font-size:8px;font-weight:950;letter-spacing:.8px;text-transform:uppercase;color:var(--gold)}.canon-move-text{font-size:11px;line-height:1.42;color:var(--ink);margin-top:4px}.canon-evidence-note{font-size:8.5px;color:var(--faint);margin-top:10px;text-align:right}
+.canon-softline{font-size:10px;line-height:1.35;color:var(--muted);margin-top:7px}.canon-lane-soft{font-size:10.5px;line-height:1.4;color:var(--muted);margin-top:4px}.canon-lane-lead{font-weight:750}.canon-footer-grid.soft .canon-move:last-child{grid-column:1/-1}.canon-rank-row.soft{grid-template-columns:64px minmax(0,1fr)}body.monday-soft .canon-card,body.monday-soft .canon-cover{box-shadow:0 8px 22px rgba(43,35,17,.055)}body.monday-soft .canon-lane-read{font-weight:400}body.monday-soft .canon-evidence-note{opacity:.62}
+body.monday-card{padding:0;background:#e8e3d8}body.monday-card .wrap{max-width:1080px;padding:0;background:#f7f4ec;min-height:0}body.monday-card .tabs,body.monday-card section.panel:not([data-panel="map"]){display:none!important}body.monday-card .top{padding:34px 54px 20px;margin:0;border-bottom:1px solid rgba(20,18,10,.1)}body.monday-card .panel[data-panel="map"]{display:block!important;padding:24px 54px 32px;margin:0}body.monday-card .canon-card{min-height:0;padding:30px 34px;border-radius:24px;box-shadow:none}body.monday-card .canon-card-head{grid-template-columns:82px minmax(0,1fr);padding-bottom:18px}body.monday-card .canon-rank{font-size:61px}body.monday-card .canon-title{font-size:34px}body.monday-card .canon-chip{font-size:11px;padding:5px 11px}body.monday-card .canon-pulse{font-size:17px;line-height:1.42;padding:14px 16px;margin-top:15px}body.monday-card .canon-lane{grid-template-columns:42px 160px minmax(0,1fr);gap:12px;padding:13px 0}body.monday-card .canon-lane-n{width:34px;height:34px;font-size:12px}body.monday-card .canon-lane-label{font-size:12px;padding-top:8px}body.monday-card .canon-lane-read{font-size:17px;line-height:1.38}body.monday-card .canon-lane-why{font-size:13px;line-height:1.36;margin-top:5px}body.monday-card .canon-lane-meta span{font-size:9px;padding:3px 8px}body.monday-card .canon-footer-grid{gap:12px;margin-top:17px}body.monday-card .canon-move{padding:15px 16px}body.monday-card .canon-move-label{font-size:10px}body.monday-card .canon-move-text{font-size:14px;line-height:1.38}body.monday-card .canon-evidence-note{font-size:10px}body.monday-card .canon-cover{display:flex;flex-direction:column;padding:42px;border-radius:24px;background:linear-gradient(150deg,#fffdf6 0%,#efe8d8 100%);border:1px solid rgba(154,111,21,.24)}body.monday-card .canon-cover h1{font-size:55px;line-height:1.03;letter-spacing:-1.5px;margin-top:18px}body.monday-card .canon-cover .canon-cover-room{font-size:23px;line-height:1.45;color:var(--ink2);margin-top:20px}body.monday-card .canon-cover .canon-rank-list{margin-top:34px;gap:15px}body.monday-card .canon-cover .canon-rank-row{grid-template-columns:64px minmax(0,1fr) auto;padding-top:15px}body.monday-card .canon-cover .canon-rank-n{font-size:34px}body.monday-card .canon-cover .canon-rank-title{font-size:23px}body.monday-card .canon-cover .canon-rank-tag{font-size:11px;padding:6px 10px}body.monday-card .canon-cover .canon-private,body.monday-card .canon-cover .canon-challenge{font-size:18px;line-height:1.5;padding:20px 22px;margin-top:20px}body.monday-card .canon-cover-foot{margin-top:30px;font-size:13px;color:var(--muted);letter-spacing:.7px;text-transform:uppercase;font-weight:800}
+body.monday-card .canon-card.fit-tight{padding:24px 29px}body.monday-card .canon-card.fit-tight .canon-card-head{padding-bottom:13px}body.monday-card .canon-card.fit-tight .canon-rank{font-size:54px}body.monday-card .canon-card.fit-tight .canon-title{font-size:30px}body.monday-card .canon-card.fit-tight .canon-pulse{font-size:15.5px;padding:11px 14px;margin-top:11px}body.monday-card .canon-card.fit-tight .canon-lane{padding:10px 0}body.monday-card .canon-card.fit-tight .canon-lane-read{font-size:15.5px}body.monday-card .canon-card.fit-tight .canon-lane-why{font-size:12px}body.monday-card .canon-card.fit-tight .canon-footer-grid{gap:9px;margin-top:12px}body.monday-card .canon-card.fit-tight .canon-move{padding:11px 13px}body.monday-card .canon-card.fit-tight .canon-move-text{font-size:12.5px}
+body.monday-card .canon-card.fit-tighter{padding:21px 27px}body.monday-card .canon-card.fit-tighter .canon-card-head{padding-bottom:10px}body.monday-card .canon-card.fit-tighter .canon-rank{font-size:49px}body.monday-card .canon-card.fit-tighter .canon-title{font-size:28px}body.monday-card .canon-card.fit-tighter .canon-chip{font-size:9.5px;padding:4px 9px}body.monday-card .canon-card.fit-tighter .canon-pulse{font-size:14.5px;padding:9px 12px;margin-top:9px}body.monday-card .canon-card.fit-tighter .canon-lane{grid-template-columns:38px 148px minmax(0,1fr);gap:9px;padding:8px 0}body.monday-card .canon-card.fit-tighter .canon-lane-n{width:31px;height:31px}body.monday-card .canon-card.fit-tighter .canon-lane-label{font-size:11px}body.monday-card .canon-card.fit-tighter .canon-lane-read{font-size:14.5px}body.monday-card .canon-card.fit-tighter .canon-lane-why{font-size:11px}body.monday-card .canon-card.fit-tighter .canon-lane-meta span{font-size:8px}body.monday-card .canon-card.fit-tighter .canon-footer-grid{gap:8px;margin-top:10px}body.monday-card .canon-card.fit-tighter .canon-move{padding:9px 11px}body.monday-card .canon-card.fit-tighter .canon-move-text{font-size:11.5px}body.monday-card .canon-card.fit-tighter .canon-evidence-note{font-size:9px;margin-top:6px}
+.tbllinks{display:flex;gap:12px;margin-top:10px}
+.tbllinks a{font-size:12px;font-weight:700;color:var(--gold);text-decoration:none;border:1px solid rgba(154,111,21,.32);background:rgba(154,111,21,.08);border-radius:999px;padding:6px 13px}
+.steps{display:flex;gap:6px;margin:16px 0 0;flex-wrap:wrap}
+.step{flex:1 1 88px;min-width:88px;border:1px solid var(--line);border-radius:9px;background:var(--surface);padding:8px 6px 7px;text-align:center}
+.step.on{border-color:var(--green);background:var(--green-s)}
+.step.done{border-color:rgba(31,157,87,.4)}
+.step .sn{font-size:10px;font-weight:800;color:var(--faint)}
+.step.on .sn,.step.done .sn{color:var(--green)}
+.step .sl{font-size:11px;font-weight:800;color:var(--muted);margin-top:3px;line-height:1.2}
+.step.on .sl{color:var(--ink)}
+.step .ss{font-size:8.5px;font-weight:700;color:var(--faint);margin-top:3px;text-transform:uppercase;letter-spacing:.3px;overflow-wrap:anywhere}
+</style>
+</head>
+<body class="notranslate" translate="no">
+<div class="wrap">
+<h2 class="sr">AIGLE - peta program SAMS. This Week: keputusan ruangan.</h2>
+<header class="top">
+<div class="brand"><div class="mark">&#x1F985;</div><div><div class="bname">AIGLE</div><div class="btag">Program SAMS</div></div></div>
+<div class="topright"><span class="live" id="live">-</span></div>
+</header>
+
+<nav class="tabs">
+<button class="tab on" data-go="map" type="button">This Week</button>
+</nav>
+
+
+<!-- PETA RABU -->
+<section class="panel" data-panel="wednesday">
+<div class="eb">Peta Alokasi - Rabu 24 Jun</div>
+<h1>Sebelum Day 1 Kamis: apa yang dites, dijaga, dan dicek lagi.</h1>
+<p class="story" style="margin-top:10px">Peta untuk ruangan. Slate publik dipisah dari booking SAMS; metrik yang belum bersih tidak dipaksa tampil.</p>
+
+<div class="kick">Baru - datang Kamis 25 Jun</div>
+<div class="upc"><div class="upc-h"><span class="nm">Jangan Buang Ibu</span><span class="lvl tinggi">kandidat test</span><span class="mchip wait">Booking SAMS: belum terlihat</span></div><div class="upc-meta">Drama keluarga - Leo Pictures</div><div class="note">Angka menyusul Hari 1. Jangan sebut booked sampai jadwal publik/operator membuktikan.</div></div>
+<div class="upc"><div class="upc-h"><span class="nm">Tanah Runtuh</span><span class="lvl sedang">test selektif</span><span class="mchip wait">Booking SAMS: belum terlihat</span></div><div class="upc-meta">Drama sosial - Denny Siregar Production</div><div class="note">Biar Hari 1 menentukan. Jangan over-feed dari nama besar saja.</div></div>
+<div class="upc"><div class="upc-h"><span class="nm">Tanah Sengketa</span><span class="lvl sedang">test selektif</span><span class="mchip wait">Booking SAMS: belum terlihat</span></div><div class="upc-meta">Horor/thriller - Ocean Production</div><div class="note">Lantai horor ada, tapi booking SAMS dan reaksi Day 1 masih harus dibuktikan.</div></div>
+
+<div class="kick">Working batch - sedang main</div>
+<div class="list">
+ <div class="grp"><span class="tag lindungi">Lindungi / tahan pocket</span></div>
+ <div class="row"><div><div class="n">Sekawan Limo 2: Gunung Klawih</div><div class="g">holdover efisien</div><div class="metric"><span class="mchip good">13.00/tayang</span></div></div></div>
+ <div class="row"><div><div class="n">Cerita Lila</div><div class="g">volume leader, tapi jangan automatic add</div><div class="metric"><span class="mchip good">10.96/tayang</span></div></div></div>
+ <div class="grp"><span class="tag pantau">Pantau / caveat</span></div>
+ <div class="row"><div><div class="n">Saat Aku Bersuara</div><div class="g">pendapatan nyata, promo/support caveat</div><div class="metric"><span class="mchip">9.96/tayang</span></div></div></div>
+ <div class="grp"><span class="tag kurangi">Ekor - pantau/kurangi</span></div>
+ <div class="row"><div><div class="n">Dukun Magang</div><div class="g">lemah kecuali ada pocket lokal</div><div class="metric"><span class="mchip">4.57/tayang</span></div></div></div>
+ <div class="row"><div><div class="n">Badut Gendong</div><div class="g">kecil; jangan broad proof</div><div class="metric"><span class="mchip">6.67/tayang</span></div></div></div>
+ <div class="row"><div><div class="n">Warkop</div><div class="g">low-show/context tail</div><div class="metric"><span class="mchip wait">jangan over-read</span></div></div></div>
+</div>
+
+<div class="kick">Konteks Senin - belum tentu reguler</div>
+<div class="soft"><b>Terlihat Senin, belum terjadwal publik Selasa.</b><div class="sus">Ayah, Ini Arahnya Kemana, Ya?</div><div class="sus">Semua Akan Baik-Baik Saja</div><div class="sus">Suamiku Lukaku</div><div class="sus">Children of Heaven</div><div class="sus">Na Willa</div><div class="note">Konteks dulu, bukan inventori reguler, kecuali Grafana/jadwal berikutnya membuktikan berulang.</div></div>
+
+<div class="kick">Yang harus dibuktikan Hari 1</div>
+<div class="proof"><div><b>Terisi + efisien:</b> lindungi.</div><div><b>Tipis tapi hidup:</b> pantau / test selektif.</div><div><b>Kosong atau support-only:</b> kurangi atau tahan hanya di pocket.</div></div>
+
+<div class="soft"><b>Kalimat ruangan:</b> Aku coba pisahkan mana yang sudah jelas, mana yang masih menghasilkan, dan mana yang perlu dipantau supaya kita tidak terlalu cepat bereaksi.</div>
+<div class="foot">Peta untuk ruangan; keputusan tetap di tim. Milo Difference disembunyikan sampai hard gates pass.</div>
+</section>
+<!-- PETA SENIN -->
+<section class="panel on" data-panel="map">
+<div class="eb" id="slate-eb">Week 3 - Variety and quantity</div>
+<h1 id="slate-h1">Five holdovers. Four new releases.</h1>
+<div class="read" id="roomline">A variety-and-quantity week: five holdovers and four local releases, with no obvious JBI-scale title. Test breadth without losing allocation discipline.</div>
+
+<div class="edge" id="decision-edge" style="display:none" data-ready="false"></div>
+
+<div class="kick" id="comingkick" style="display:none"></div>
+<div id="upcoming"></div>
+
+<div class="kick" id="attnkick" style="display:none">Perlu perhatian</div>
+<div id="attn"></div>
+
+<details style="display:none">
+<summary id="nowsum" style="font-size:12.5px;font-weight:800;color:var(--ink2);cursor:pointer"></summary>
+<div class="note" id="nowbasis" style="margin-top:8px;color:var(--ink2);font-weight:600"></div>
+<div class="list" id="nowmap" style="margin-top:8px"></div>
+<div class="note" id="nownote" style="margin-top:6px;color:var(--muted);font-size:11px"></div>
+</details>
+<div class="foot">Monday surface: pre-release intelligence, not nightly results. Signals are attention, not demand. Final programming call stays with the team.</div>
+</section>
+
+<!-- SOROTAN -->
+<section class="panel" data-panel="sorotan">
+<div class="eb">Sorotan: Saat Aku Bersuara</div>
+<h1>Penuh di angka - tapi belum terbukti organik</h1>
+<p class="story" style="margin-top:14px">SAB sekarang ~16,6 penonton/tayang - naik tajam dari ~2 sehari sebelumnya. Lonjakan itu sejalan dengan dorongan promo (GoPay 20k, M-Tix BOGO, roadshow), <b>bukan permintaan organik berulang yang terbukti.</b> Pendapatannya nyata; tapi jangan dibaca sebagai sukses organik sampai walk-in biasa terpisah.</p>
+<a class="lnk" href="https://akhiladler.github.io/saat-aku-bersuara/" target="_blank" rel="noopener">Halaman publik Saat Aku Bersuara &rarr;</a>
+</section>
+
+<!-- DAILY ADJUSTMENT: moved into the Milo tab as a state, not a top-level tab -->
+
+<!-- FILM IN FOCUS -->
+<section class="panel" data-panel="focus" id="focus-panel">
+<div class="eb">Layar Pembuktian</div>
+<h1>Layar tidak dibeli. Dibuktikan.</h1>
+<div class="read" style="margin-top:10px">Aturan lama: uang membeli layar, penonton memutuskan belakangan - terlambat untuk film kecil. Di jaringan kota kecil kami, aturannya dibalik: bukti penonton yang membeli layar.</div>
+
+<div class="kick">Tiket masuk - bukan uang</div>
+<div class="list">
+ <div class="chk">Tanggal rilis publik di akun resmi (gratis)</div>
+ <div class="chk">Trailer resmi yang bisa ditonton (aset yang sudah kamu punya)</div>
+ <div class="chk">2 kota target + 1 komunitas yang kamu kenal (gratis)</div>
+ <div class="chk">1 aktivasi dengan RSVP terhitung - nobar kecil pun cukup (murah)</div>
+</div>
+<div class="note" style="margin-top:8px;color:var(--ink2)"><b>Belum punya distributor?</b> Untuk tes di jaringan kami, itu bukan penghalang - kami memesan layar kami sendiri.</div>
+
+<div class="kick">Tangganya - naik dengan angka, bukan koneksi</div>
+<div class="list">
+ <div class="frow"><span class="fv" style="flex:1"><b>1 · KOMUNITAS</b> - show terbatas di 1 kota, penonton yang kamu gerakkan sendiri</span><span class="pill neutral">naik: di atas pool site</span></div>
+ <div class="frow"><span class="fv" style="flex:1"><b>2 · REGIONAL</b> - 3-5 kota SAMS</span><span class="pill neutral">naik: bertahan tanpa support tersembunyi</span></div>
+ <div class="frow"><span class="fv" style="flex:1"><b>3 · JARINGAN</b> - seluruh site SAMS</span><span class="pill neutral">lulus: minggu penuh, angka bersih</span></div>
+ <div class="frow"><span class="fv" style="flex:1"><b>4 · SERTIFIKAT</b> - angka per-show bersih dari bioskop sungguhan, organik dipisah dari support</span><span class="pill good">mata uang ke bioskop mana pun</span></div>
+</div>
+<div class="note" style="margin-top:8px;color:var(--ink2)">Aturan Day-1 disepakati SEBELUM tayang. Diskor oleh mesin yang sama yang menjalankan operasi mingguan kami. Uang tidak bisa membeli skornya.</div>
+
+<div class="kick">Kasus</div>
+<div class="upc"><div class="upc-h"><span class="nm" style="font-size:15px">Pelet Biduan Jalang</span><span class="lvl sedang">KANDIDAT #1 · tiket 0/4</span></div>
+<div class="note" style="margin-top:6px">Hook lokal nyata (horor klenik dunia biduan). Keempat tiket masuk gratis/murah - bisa mulai minggu ini. Bola di PH.</div></div>
+<div class="upc"><div class="upc-h"><span class="nm" style="font-size:15px">402 · kontrol - jalan uang</span><span class="lvl kecil">ATENSI ≠ KONVERSI</span></div>
+<div class="note" style="margin-top:6px">909rb views + festival - tetap di bawah pool dua hari pertama di kota kecil (receipt 9-10 Jul). Uang membeli atensi, bukan penonton. Itu kenapa gelanggang ini ada.</div></div>
+
+<div class="foot">Mekanisme diusulkan - alokasi slot menunggu keputusan SAMS (spec: control/release-intelligence/layar-pembuktian-mechanism-v1) · Bukan janji sukses; janji tes yang adil dan angka yang jujur · Internal sampai disetujui.</div>
+</section>
+
+<!-- MILO - status loop -->
+<section class="panel" data-panel="milo" id="milo-panel">
+<div class="eb" style="color:var(--green)">Milo · Eksperimen</div>
+<h1>Dua taruhan beku. Belum ada klaim.</h1>
+<p class="story" style="margin-top:10px;font-size:13px">Taruhan dibekukan sebelum hasil, dinilai lewat gate bukti, lalu dicatat jujur - menang atau tidak.</p>
+
+<div class="soft" style="margin-top:16px">
+ <div id="mstatus" style="font-weight:800;font-size:14px"></div>
+ <div class="note" id="mnext" style="margin-top:4px"></div>
+ <details class="nug" id="mmore"><summary>Lainnya yang ditunggu</summary><div id="mqueue"></div></details>
+</div>
+
+<div class="kick">Taruhan 1 · Alokasi Rabu (rilis baru)</div>
+<div class="list" id="cycleledger"></div>
+<details class="nug"><summary>Detail teknis</summary><div id="wadetail"></div></details>
+
+<div class="kick" style="margin-top:22px">Taruhan 2 · Penyesuaian Harian (holdover)</div>
+<div class="list" id="daledger"></div>
+<details class="nug"><summary>Detail teknis</summary><div id="dadetail"></div></details>
+
+<div class="kick" id="histkick" style="margin-top:22px;display:none">Riwayat siklus (tertutup)</div>
+<div class="list" id="cyclehistory"></div>
+
+<details style="margin-top:24px">
+<summary style="font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);cursor:pointer">Receipt hasil terakhir (25 Jun - pra-eksperimen)</summary>
+<div id="daily" style="margin-top:10px"><div class="note" style="margin-top:8px">Memuat tabel operator...</div></div>
+</details>
+
+<details style="margin-top:24px">
+<summary style="font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);cursor:pointer">Empat loop &amp; rincian</summary>
+<div class="list" id="loopframe" style="margin-top:10px"></div>
+<div style="margin-top:12px">
+<div class="loop">
+<div class="loop-h"><span class="nm">1 - Monday Map Loop / Peta Senin</span><span class="mat diawasi">Diawasi</span><span class="tgt">pintu depan / adopsi</span></div>
+<div class="comp"><span class="c ok">Pemicu</span><span class="c ok">Input</span><span class="c ok">Output</span><span class="c part">Hasil</span><span class="c part">Umpan-balik</span></div>
+<div class="rescue">Rescue Akhil: <b class="r-kadang">kadang</b></div>
+</div>
+<div class="loop">
+<div class="loop-h"><span class="nm">2 - Wednesday Allocation Loop</span><span class="mat diawasi">Diawasi - awal</span><span class="tgt">target: Dipimpin Milo</span></div>
+<div class="loop-role">Edge komersial - loop target 27 Sep</div>
+<div class="comp"><span class="c ok">Pemicu</span><span class="c part">Input</span><span class="c ok">Output</span><span class="c no">Hasil</span><span class="c no">Umpan-balik</span></div>
+<div class="rescue">Rescue Akhil: <b class="r-sering">sering</b></div>
+</div>
+<div class="loop">
+<div class="loop-h"><span class="nm">3 - Daily Adjustment Loop</span><span class="mat diawasi">Diawasi</span><span class="tgt">target: Dipimpin Milo</span></div>
+<div class="loop-role">Kurangi kesalahan mahal - loop target 27 Sep</div>
+<div class="comp"><span class="c ok">Pemicu</span><span class="c ok">Input</span><span class="c part">Output</span><span class="c ok">Hasil</span><span class="c no">Umpan-balik</span></div>
+<div class="rescue">Rescue Akhil: <b class="r-kadang">kadang</b></div>
+</div>
+<div class="loop">
+<div class="loop-h"><span class="nm">4 - OW Closeout &amp; Compounding Loop</span><span class="mat manual">Manual</span><span class="tgt">memori &amp; pembelajaran</span></div>
+<div class="comp"><span class="c part">Pemicu</span><span class="c part">Input</span><span class="c no">Output</span><span class="c no">Hasil</span><span class="c no">Umpan-balik</span></div>
+<div class="rescue">Rescue Akhil: <b class="r-sering">sering</b></div>
+</div>
+</div>
+</details>
+<div class="foot">Diawasi, bukan otonom. Target 27 Sep: 2 loop dipimpin Milo (Wednesday + Daily). Keputusan tetap di tim.</div>
+</section>
+</div>
+<script>
+(function(){
+"use strict";
+// Lean decision cards. The eight visible lanes stay fixed; missing evidence is
+// displayed as an explicit gap instead of changing the card shape.
+var UPC=[
+ {t:"Lastri - Arwah Kembang Desa",lvl:"tinggi",posture:"UJI UTAMA",
+   release_date:"2026-07-16",slate_role:"SAMS_PUBLIC_CURRENT_WEEK",
+   meta:"Abelle Pictures - Hendry Tivo - Hana Saraswati, Yama Carlos, Audy Bella, Gary Iskak - Drama/Horor - 16 Jul 2026.",
+   logline:"Atmi, an ordinary-looking older woman, is terrorized by an unseen spirit tied to the Lastri Binti Djoyoredjo urban legend.",
+   quality:"Current-week horror with a local urban-legend hook. Gala/press activity exists, but no trusted audience-quality verdict yet.",
+   gold:"Room read: this is the current-week SAMS-public title to verify first; it should not be hidden behind August/September watchlist titles.",
+   promo:"21/M-Tix lists the 16 Jul release and SAMS public upcoming includes it; Abelle/cast promo and gala activity are visible.",
+   social:"Conversation is horror-premiere/cast/urban-legend awareness, including Gary Iskak attention. Treat as awareness, not proven WOM.",
+   demand:"SAMS public upcoming confirms the title, but site allocation and private booking truth still need confirmation before any show recommendation.",
+   risk:"Risk: smaller PH horror in a crowded week. If booking is light or early pressure is weak, keep it as a bounded test, not a broad clear.",
+   signals:[{k:"Status",v:"SAMS_PUBLIC_CURRENT_WEEK"}]},
+ {t:"Cek Khodam",lvl:"sedang",posture:"UJI SEKUNDER",
+   release_date:"2026-07-16",slate_role:"LOCAL_ELIGIBLE_CURRENT_WEEK_SAMS_LIKELY",
+   meta:"Dee Company - Dheeraj Kalwani / JeroPoint - Jirayut, Saputra Kori, Benidictus Siregar, Angie Williams - Horor komedi - 16 Jul 2026.",
+   logline:"In a world where khodam are losing their power to scare humans, three chaos-prone figures turn the supernatural premise into comedy.",
+   quality:"The hook is meme-native and easy to explain; the risk is that online joke recognition may not become cinema intent.",
+   gold:"Room read: watch as meme-horror counterprogramming, but only elevate if SAMS booking or public show pressure appears.",
+   promo:"Official trailer/teaser cycle is active and the campaign leans into the viral khodam premise. Promo exists; SAMS placement is not confirmed.",
+   social:"Built around a familiar online khodam joke. Need to check whether conversation is active audience intent or just recycled meme awareness.",
+   demand:"Local-eligible current-week public candidate. SAMS-likely, but no public SAMS booking/show count captured yet.",
+   risk:"Risk: meme title can feel cheap quickly. If the joke does not travel beyond online awareness, small-city conversion can be weak.",
+   signals:[{k:"Status",v:"LOCAL_ELIGIBLE_CURRENT_WEEK_SAMS_LIKELY"}]},
+ {t:"Ghost Buzzer - Antar Aku Pulang",lvl:"kecil",posture:"PANTAU",
+   release_date:"2026-07-16",slate_role:"LOCAL_ELIGIBLE_CURRENT_WEEK_SAMS_LIKELY",
+   meta:"M8 Pictures - horor/komedi/fantasi - family-safe SU positioning - 16 Jul 2026.",
+   logline:"Four mystery-loving friends investigate a haunted basement and meet Maria, a spirit asking to be taken home.",
+   quality:"Lighter adventure-horror shape: puzzles, friendship, ghost mission. More family-safe than hard horror, but demand depth is unproven.",
+   gold:"Room read: monitor as a soft family/horror option; do not let it crowd out stronger current-week horror unless booking proves real.",
+   promo:"Cinema 21 trailer and public release listing are visible. Current evidence is release awareness, not SAMS booking.",
+   social:"Early public posts describe the premise and 16 Jul release. No trusted reviewer or audience WOM signal captured yet.",
+   demand:"Local-eligible current-week public candidate. SAMS-likely, but actual booking needs showtime/API/operator confirmation.",
+   risk:"Risk: soft SU horror may be neither scary enough for horror demand nor familiar enough for family pull.",
+   signals:[{k:"Status",v:"LOCAL_ELIGIBLE_CURRENT_WEEK_SAMS_LIKELY"}]},
+ {t:"Takkan Kubiarkan Kau Menangis",lvl:"sedang",posture:"UJI SEKUNDER",
+   release_date:"2026-07-16",slate_role:"LOCAL_ELIGIBLE_CURRENT_WEEK_SAMS_LIKELY",
+   meta:"Langit Pictures Indonesia - Ferly Halim - Ari Irham, Shanty, Ariyo Wahab, Agoye Mahendra, Emiliano Cortizo, Teuku Rizky, Annisa Kaila, Didi Riyadi - Drama keluarga/musik - 16 Jul 2026.",
+   logline:"Dika feels he is never enough for his single mother Dini; music and his band force them to confront the love buried beneath rules and misunderstanding.",
+   quality:"An emotional mother-son drama powered by music rather than horror spectacle. No neutral audience verdict exists yet; the question is whether its familiar conflict feels cinematic enough.",
+   gold:"Room read: use this as the week's non-horror counterprogramming test; it earns space because the other three local releases all carry supernatural or horror elements.",
+   promo:"Poster and trailer launch, the family-communication press angle, Sheila on 7 catalogue songs, and an original OST involving Kiesha Alvaro and Ade Govinda give the campaign several hooks.",
+   social:"Ari Irham and Shanty plus Sheila on 7 nostalgia can widen conversation beyond horror audiences. Current coverage is campaign-led awareness, not audience WOM.",
+   demand:"Cinema XXI confirms the 16 Jul public release. SAMS booking and site show counts are not yet captured, so treat it as SAMS-likely rather than demand-proven.",
+   risk:"A family drama from a smaller PH can be squeezed in a four-title launch. Music nostalgia may create recognition without urgent cinema intent.",
+   signals:[{k:"Status",v:"LOCAL_ELIGIBLE_CURRENT_WEEK_SAMS_LIKELY"}]}
+];
+var NOW=[
+ {t:"Jangan Buang Ibu",g:"lindungi",aps:65,lab:"65 PUBLIC",note:"Public baseline anchor. Compare against private execution tonight before proof."},
+ {t:"Petaka Gunung Welirang",g:"lindungi",aps:28,lab:"28 PUBLIC",note:"Public baseline pocket count. Needs site-level reconciliation with private execution."},
+ {t:"Pemikat Jiwa",g:"pantau",aps:9,lab:"9 PUBLIC",note:"Tiny public baseline. Watch, not broad demand proof."},
+ {t:"402 Rumah Sakit Angker Korea",g:"kurangi",aps:51,lab:"51 PUBLIC",note:"High public supply. Result must show which sites justify protection versus weak-site trim."},
+ {t:"Foufo",g:"kurangi",aps:22,lab:"22 PUBLIC",note:"Site-specific baseline. Do not treat as broad local-fit proof without result pockets."}
+];
+// Holdover chrome - single place for tonight's receipt-backed refresh.
+// basisChange stays empty until the clean matrix lands (empty = hidden). No numbers live here.
+var NOWMETA={
+ basisKick:"Five holdovers before the July 16 four-title launch",
+ basisChange:"Monday room truth: JBI, Petaka, Foufo, 402, and Pemikat remain active; Lastri, Ghost Buzzer, Cek Khodam, and TKKM enter this week.",
+ sourceNote:"Sources: July 13 Monday meeting, 21/M-Tix current-week list, SAMS public upcoming API, and July 13 SAMS-owned public baseline tanpa LBJ.",
+ matrixLink:"",
+ matrixLabel:""
+};
+var ATTENTION=[
+ {label:"Variety week",why:"Five holdovers meet four different local releases without one obvious JBI-scale replacement.",action:"Protect range while keeping every new-title test bounded and measurable."},
+ {label:"SAMS confirmation",why:"All four July 16 titles are local-eligible; only Lastri is currently visible on the SAMS public upcoming surface.",action:"Capture exact site-by-title booking before the Wednesday allocation freeze."},
+ {label:"Allocation baseline",why:"A crowded nine-title slate can hide both over-allocation and under-testing behind total admissions.",action:"Freeze source-to-destination show movements before Thursday results."}
+];
+var esc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');};
+function laneVal(u,id){
+ var a=u&&u.lanes;if(!a)return '';
+ for(var i=0;i<a.length;i++)if(a[i]&&a[i].lane_id===id)return a[i].read||a[i].value||'';
+ return '';
+}
+function laneObj(u,id){
+ var a=u&&u.lanes;if(!a)return null;
+ for(var i=0;i<a.length;i++)if(a[i]&&a[i].lane_id===id)return a[i];
+ return null;
+}
+function cardVal(u,key,lane){return u[key]||laneVal(u,lane)||'';}
+function missingLane(label){
+ if(label.indexOf('Promo')>=0)return 'Not captured yet: campaign support, trailer/message push, or PH/distributor activation.';
+ if(label.indexOf('Social')>=0)return 'Not captured yet: trusted reviewer read, repeated audience pattern, or organic conversation.';
+ if(label.indexOf('Demand')>=0)return 'Not captured yet: booking, advance pressure, show pressure, or commitment evidence.';
+ if(label.indexOf('Quality / feel')>=0)return 'Not captured yet: trusted critic/audience feel or early WOM read.';
+ return 'Not captured yet.';
+}
+function laneRow(label,value,cls,strong){
+ var text=value||missingLane(label);
+ return '<div class="bl">'+esc(label)+'</div><div class="bt'+(cls?' '+cls:'')+'">'+(strong?'<strong>'+esc(text)+'</strong>':esc(text))+'</div>';
+}
+function evidenceLaneRow(label,u,id,cls,strong){
+ var lane=laneObj(u,id)||{},text=lane.read||lane.value||missingLane(label),detail='';
+ if(lane.strongest_available_evidence)detail+='<div class="edge-meta"><b>Best evidence:</b> '+esc(lane.strongest_available_evidence)+'</div>';
+ if(lane.missing_fact&&String(lane.missing_fact).toUpperCase()!=='NONE')detail+='<div class="edge-meta"><b>Still missing:</b> '+esc(lane.missing_fact)+'</div>';
+ if(lane.decision_consequence)detail+='<div class="edge-meta"><b>Why it matters:</b> '+esc(lane.decision_consequence)+'</div>';
+ return '<div class="bl">'+esc(label)+'</div><div class="bt'+(cls?' '+cls:'')+'">'+(strong?'<strong>'+esc(text)+'</strong>':esc(text))+detail+'</div>';
+}
+var groups=[{k:'lindungi',l:'Protect'},{k:'pantau',l:'Monitor'},{k:'kurangi',l:'Reduce carefully'}];
+function lvlc(n){if(n.evt)return 'evt';return n.aps<5?'rendah':(n.aps>12?'tinggi':'sedang');}
+function lvlClass(v){var x=String(v||'').toUpperCase();return x==='HIGH'?'tinggi':(x==='LOW'?'kecil':(x==='MEDIUM'?'sedang':String(v||'sedang').toLowerCase()));}
+var STATE={asof:"2026-07-13 - current-week slate correction",live:false};
+function render(){
+ document.getElementById('live').textContent=(STATE.live?'Live - ':'Meeting prep - ')+STATE.asof;
+ document.getElementById('upcoming').innerHTML=UPC.map(function(u){
+  var log=cardVal(u,'logline','logline')||u.log||'';
+  var quality=cardVal(u,'quality','quality_feel');
+  var commercial=u.gold||laneVal(u,'commercial_angle')||'';
+  var promo=cardVal(u,'promo','promo');
+  var social=cardVal(u,'social','social');
+  var demand=cardVal(u,'demand','demand');
+  var risk=cardVal(u,'risk','risk');
+  var sig=(u.signals||[]).filter(function(s){return s.v;}).map(function(s){return '<span class="sigchip on">'+esc(s.k)+' <b>'+esc(s.v)+'</b></span>';}).join('');
+  return '<div class="upc">'+
+   '<div class="upc-h"><span class="nm">'+esc(u.t)+'</span><span class="lvl '+lvlClass(u.lvl)+'">'+esc(u.posture||u.action||'')+'</span></div>'+
+   '<div class="brief">'+
+     evidenceLaneRow('1 · Logline',u,'logline')+
+     evidenceLaneRow('2 · Cast / PH',u,'cast_ph')+
+     evidenceLaneRow('3 · Quality / feel',u,'quality_feel')+
+     evidenceLaneRow('4 · Commercial angle',u,'commercial_angle','',true)+
+     evidenceLaneRow('5 · Promo',u,'promo')+
+     evidenceLaneRow('6 · Social',u,'social','signal')+(sig?'<div class="bt signal signal-extra">'+sig+'</div>':'')+
+     evidenceLaneRow('7 · Demand',u,'demand')+
+     evidenceLaneRow('8 · Risk',u,'risk','risk')+
+    '</div>'+
+    '</div>';
+ }).join('');
+ var html='';
+ groups.forEach(function(grp){
+  var items=NOW.filter(function(n){return n.g===grp.k;});if(!items.length)return;
+  html+='<div class="grp"><span class="tag '+grp.k+'">'+grp.l+'</span></div>';
+  html+=items.map(function(n){var rt=n.lab?esc(n.lab):(n.aps+'/tayang');return '<div class="row"><div><div class="n">'+esc(n.t)+'</div><div class="g">'+esc(n.note)+'</div></div><span class="a '+lvlc(n)+'">'+rt+'</span></div>';}).join('');
+ });
+ document.getElementById('nowmap').innerHTML=html;
+ var nm=NOWMETA,el;
+ var g={lindungi:[],pantau:[],kurangi:[]};
+ NOW.forEach(function(n){if(g[n.g])g[n.g].push(n.t.split(':')[0]);});
+ if(el=document.getElementById('nowsum'))el.textContent='Now playing: '+(g.lindungi.join(', ')||'-')+' protected · '+g.pantau.length+' monitored · '+g.kurangi.length+' reduced';
+ if(el=document.getElementById('nowkick'))el.textContent=nm.basisKick;
+ if(el=document.getElementById('nowbasis')){el.textContent=nm.basisChange||'';el.style.display=nm.basisChange?'':'none';}
+ if(el=document.getElementById('nownote'))el.textContent=nm.sourceNote;
+ if(el=document.getElementById('nowmatrix')){if(nm.matrixLink){el.href=nm.matrixLink;el.textContent=nm.matrixLabel;el.style.display='';}else{el.style.display='none';}}
+ var ak=document.getElementById('attnkick'),ac=document.getElementById('attn');
+ if(ATTENTION&&ATTENTION.length&&ak&&ac){
+  ak.textContent='Room Watchpoints';
+  ak.style.display='';
+  ac.innerHTML='<div class="list">'+ATTENTION.slice(0,3).map(function(f){
+   return '<div class="chk"><span><b>'+esc(f.label)+':</b> '+esc(f.why)+(f.action?' <span style="color:var(--muted)">- '+esc(f.action)+'</span>':'')+'</span></div>';
+  }).join('')+'</div>';
+ }
+}
+render();
+
+// Monday Map loader - reads the published monday_map.json artifact (aigle.monday_map.v1).
+// Publication of the artifact is the approval gate (Milo drafts -> Akhil/Codex approve -> publish).
+// Fail-closed: missing/stale/malformed file => the static data above stays exactly as-is.
+// A local file refresh has no background sync, so prefer the canonical live
+// artifact there. Hosted/dev builds keep the same-origin artifact first.
+var MMREMOTE='https://akhiladler.github.io/aigle-dashboard/monday-map/';
+var MMQUERY=new URLSearchParams(location.search);
+var MMPREVIEW=MMQUERY.get('monday_preview')==='local';
+var MMEXEC=MMQUERY.get('monday_exec')==='1';
+var MMCARD=MMQUERY.get('monday_card');
+var MMCARDLANG='en';
+var MMCARDPROFILE='standard';
+if(MMEXEC)document.body.classList.add('monday-exec');
+if(MMCARD!==null)document.body.classList.add('monday-card');
+var MMBASES=MMPREVIEW?['monday-map/']:(location.protocol==='file:'?[MMREMOTE,'monday-map/']:['monday-map/',MMREMOTE]);
+function mmValid(m){
+ if(!m||m.schema!=='aigle.monday_map.v1'||!m.as_of_label||!m.cycle_id)return false;
+ var t=Date.parse(m.generated_at_utc||'');
+ if(!t||(Date.now()-t)>6*86400000)return false; // older than ~6 days = stale, ignore
+ if(!(m.coming&&m.coming.length)||!(m.playing&&m.playing.length))return false;
+ return true;
+}
+function canonicalRanks(m){
+ var rank={};((m.decision_edge||{}).what_milo_sees||[]).forEach(function(x){rank[String(x.title||'').toUpperCase()]=+x.rank||999;});
+ return (m.coming||[]).map(function(x,i){return {film:x,source:i,rank:rank[String(x.t||'').toUpperCase()]||999};}).sort(function(a,b){return a.rank-b.rank||a.source-b.source;}).map(function(x){return x.film;});
+}
+function canonicalInsight(m,title){
+ return (((m.decision_edge||{}).what_milo_sees)||[]).find(function(x){return String(x.title||'').toUpperCase()===String(title||'').toUpperCase();})||{};
+}
+function canonicalHypothesis(m,title){
+ var d=m.decision_edge||{},n=d.non_consensus_hypothesis||{};
+ if(String(n.title||'').toUpperCase()===String(title||'').toUpperCase())return n;
+ return (d.title_hypotheses||[]).find(function(x){return String(x.title||'').toUpperCase()===String(title||'').toUpperCase();})||{};
+}
+function canonicalAccent(u){var p=String(u.posture||'').toUpperCase();return p.indexOf('PRIMARY')>=0?'accent-green':(p.indexOf('RISK')>=0?'accent-amber':(p.indexOf('INSUFFICIENT')>=0?'accent-red':''));}
+function canonicalLaneValue(u,id){
+ var direct={logline:u.logline||u.log,cast_ph:u.meta,quality_feel:u.quality,commercial_angle:u.gold,promo:u.promo,social:u.social,demand:u.demand,risk:u.risk};
+ var lane=laneObj(u,id)||{};return direct[id]||lane.read||lane.value||missingLane(id);
+}
+function canonicalSentence(value){
+ var s=String(value||'').trim();if(!s)return '';
+ var m=s.match(/^.*?[.!?](?:\s|$)/);return (m?m[0]:s).trim();
+}
+function canonicalLaneReadHtml(u,id){
+ var value=String(canonicalLaneValue(u,id)||'');
+ if(!canonicalIsSoft())return esc(value);
+ if(id==='logline')return '<strong class="canon-lane-lead">'+esc(value)+'</strong>';
+ var split=value.indexOf(':');
+ if(split>0&&split<=96)return '<strong class="canon-lane-lead">'+esc(value.slice(0,split+1))+'</strong>'+esc(value.slice(split+1));
+ var sentence=canonicalSentence(value),lead=sentence&&sentence.length<=96?sentence:'';
+ if(!lead){var mark=value.search(/[,;]/);if(mark>0&&mark<=96)lead=value.slice(0,mark+1);}
+ if(!lead){var words=value.split(/\s+/),picked=[];for(var i=0;i<words.length&&i<8;i++){picked.push(words[i]);if(picked.join(' ').length>=48)break;}lead=picked.join(' ');}
+ return lead?'<strong class="canon-lane-lead">'+esc(lead)+'</strong>'+esc(value.slice(lead.length)):esc(value);
+}
+function canonicalIsSoft(){return MMCARDPROFILE==='soft-power-v1';}
+function canonicalPostureLabel(value){
+ var english={'PRIMARY TEST':'PRIMARY OBSERVATION','SECONDARY TEST':'SECONDARY OBSERVATION','SMALL TEST':'SMALL OBSERVATION'};
+ var indonesian={'PRIMARY TEST':'OBSERVASI UTAMA','SECONDARY TEST':'OBSERVASI SEKUNDER','SMALL TEST':'OBSERVASI TERBATAS','WATCH':'PANTAU'};
+ var key=String(value||'WATCH').toUpperCase(),labels=MMCARDLANG==='id'?indonesian:english;return labels[key]||value||(MMCARDLANG==='id'?'PANTAU':'WATCH');
+}
+function canonicalText(key,fallback){
+ if(canonicalIsSoft()){
+  var softEn={ask:'What to confirm',bet:'Working hypothesis',kill:'What would change the view',kicker:'Monday Map - early read',edge:'What stands out:',private:'A reminder from SAMS',challenge:'Worth testing',swipe:'Continue with',cards:'eight-point film cards',portfolio:'A quiet portfolio read'};
+  var softId={ask:'YANG PERLU DIKONFIRMASI',bet:'HIPOTESIS KERJA',kill:'PANDANGAN BERUBAH JIKA',kicker:'Monday Map - bacaan awal',edge:'Yang terlihat:',private:'PENGINGAT DARI SAMS',challenge:'YANG LAYAK DIUJI',swipe:'Lanjutkan dengan',cards:'kartu film delapan poin',portfolio:'Bacaan ringkas portofolio'};
+  var soft=(MMCARDLANG==='id'?softId:softEn)[key];if(soft)return soft;
+ }
+ if(MMCARDLANG!=='id')return fallback;
+ var values={why:'Mengapa penting:',source:'SUMBER',sources:'SUMBER',logline:'LOGLINE',cast_ph:'PEMERAN / PH',quality_feel:'KUALITAS / NUANSA',commercial_angle:'SUDUT KOMERSIAL',promo:'PROMO',social:'MEDIA SOSIAL',demand:'PERMINTAAN',risk:'RISIKO',ask:'TANYAKAN DI RAPAT',bet:'TARUHAN MILO',kill:'BATAL JIKA',unresolved:'JIKA BELUM TERJAWAB',kicker:'Minggu ini - bacaan lapangan Milo',edge:'Inti bacaan:',lineage:'Sumber lengkap dan hash tercatat di Monday Map',private:'KEUNGGULAN DATA SAMS',challenge:'TARUHAN KONTRA-KONSENSUS',swipe:'Geser untuk melihat',cards:'kartu film delapan poin berperingkat',portfolio:'Bacaan portofolio dalam 30 detik',not_captured:'Belum tersedia.'};
+ return values[key]||fallback;
+}
+function canonicalStatusLabel(value){
+ var raw=String(value||'UNSET').toUpperCase();if(MMCARDLANG!=='id')return raw==='UNKNOWN'?'EVIDENCE GAP':raw;
+ return ({KNOWN:'TERKONFIRMASI',INFERENCE:'INFERENSI',UNKNOWN:'KESENJANGAN BUKTI',UNSET:'BELUM DISET'})[raw]||raw;
+}
+function canonicalConfidenceLabel(value,isGap){
+ var raw=String(value||'UNSET').toUpperCase();if(MMCARDLANG!=='id')return raw+(isGap?' CERTAINTY':' CONFIDENCE');
+ var level=({HIGH:'TINGGI',MEDIUM:'SEDANG',LOW:'RENDAH',UNSET:'BELUM DISET'})[raw]||raw;return (isGap?'KEPASTIAN ':'KEYAKINAN ')+level;
+}
+function canonicalEligibilityLabel(value){
+ var raw=String(value||'ELIGIBILITY UNKNOWN').toUpperCase();if(MMCARDLANG!=='id')return raw;
+ return ({LOCAL_ELIGIBLE:'LAYAK LOKAL',ELIGIBILITY_UNKNOWN:'KELAYAKAN BELUM DIKETAHUI',BELUM_CUKUP_DATA:'DATA BELUM CUKUP'})[raw]||raw.replaceAll('_',' ');
+}
+function canonicalConfidenceWord(value){
+ var raw=String(value||'UNSET').toUpperCase();if(MMCARDLANG!=='id')return raw;
+ return ({HIGH:'TINGGI',MEDIUM:'SEDANG',LOW:'RENDAH',UNSET:'BELUM DISET'})[raw]||raw;
+}
+function canonicalLaneHtml(u,id,label,index){
+ var lane=laneObj(u,id)||{},sources=Array.isArray(lane.source_refs)?lane.source_refs.length:0;
+ var why=canonicalSentence(lane.decision_consequence||'');
+ var rawStatus=String(lane.status||'UNSET').toUpperCase(),status=canonicalStatusLabel(rawStatus);
+ var confidence=canonicalConfidenceLabel(lane.confidence||u.lvl||'UNSET',rawStatus==='UNKNOWN');
+ var sourceLabel=String(sources)+' '+canonicalText(sources===1?'source':'sources',sources===1?'SOURCE':'SOURCES');
+ if(canonicalIsSoft()){var showWhy=why&&['quality_feel','social','risk'].indexOf(id)>=0;return '<div class="canon-lane"><div class="canon-lane-n">'+String(index).padStart(2,'0')+'</div><div class="canon-lane-label">'+esc(canonicalText(id,label))+'</div><div class="canon-lane-copy"><div class="canon-lane-read">'+canonicalLaneReadHtml(u,id)+'</div>'+(showWhy?'<div class="canon-lane-soft">'+esc(why)+'</div>':'')+'</div></div>';}
+ return '<div class="canon-lane"><div class="canon-lane-n">'+String(index).padStart(2,'0')+'</div><div class="canon-lane-label">'+esc(canonicalText(id,label))+'</div><div class="canon-lane-copy"><div class="canon-lane-read">'+esc(canonicalLaneValue(u,id))+'</div>'+(why?'<div class="canon-lane-why"><b>'+esc(canonicalText('why','Why it matters:'))+'</b> '+esc(why)+'</div>':'')+'<div class="canon-lane-meta"><span>'+esc(status)+'</span><span>'+esc(confidence)+'</span><span>'+esc(sourceLabel)+'</span></div></div></div>';
+}
+function canonicalTitleCard(m,u,index,total,standalone){
+ var insight=canonicalInsight(m,u.t),hyp=canonicalHypothesis(m,u.t),accent=canonicalAccent(u);
+ var lanes=[['logline','Logline'],['cast_ph','Cast / PH'],['quality_feel','Quality / feel'],['commercial_angle','Commercial angle'],['promo','Promo'],['social','Social'],['demand','Demand'],['risk','Risk']];
+ var soft=canonicalIsSoft();
+ var footer=soft?'<div class="canon-footer-grid soft"><div class="canon-move ask"><div class="canon-move-label">'+esc(canonicalText('ask','What to confirm'))+'</div><div class="canon-move-text">'+esc(insight.room_question||'What decision-relevant fact can the room resolve?')+'</div></div><div class="canon-move bet"><div class="canon-move-label">'+esc(canonicalText('bet','Working hypothesis'))+' - '+esc(canonicalConfidenceWord(hyp.confidence||'UNSET'))+'</div><div class="canon-move-text">'+esc(hyp.hypothesis||u.bet||'No supported hypothesis yet.')+'</div></div><div class="canon-move"><div class="canon-move-label">'+esc(canonicalText('kill','What would change the view'))+'</div><div class="canon-move-text">'+esc(hyp.falsifier||'Record the evidence that would prove this read wrong.')+'</div></div></div>':'<div class="canon-footer-grid"><div class="canon-move ask"><div class="canon-move-label">'+esc(canonicalText('ask','Ask the room'))+'</div><div class="canon-move-text">'+esc(insight.room_question||'What decision-relevant fact can the room resolve?')+'</div></div><div class="canon-move bet"><div class="canon-move-label">'+esc(canonicalText('bet','Milo\'s bet'))+' - '+esc(canonicalConfidenceWord(hyp.confidence||'UNSET'))+'</div><div class="canon-move-text">'+esc(hyp.hypothesis||u.bet||'No supported hypothesis yet.')+'</div></div><div class="canon-move"><div class="canon-move-label">'+esc(canonicalText('kill','Kill switch'))+'</div><div class="canon-move-text">'+esc(hyp.falsifier||'Record the evidence that would prove this read wrong.')+'</div></div><div class="canon-move"><div class="canon-move-label">'+esc(canonicalText('unresolved','If unresolved'))+'</div><div class="canon-move-text">'+esc(insight.decision_if_unresolved||'Keep the uncertainty visible; do not manufacture a preference.')+'</div></div></div>';
+ var subline=soft?'<div class="canon-softline">'+esc(u.lvlx||u.lvl||'')+'</div>':'<div class="canon-subline"><span class="canon-chip accent">'+esc(canonicalPostureLabel(u.posture))+'</span><span class="canon-chip">'+esc(u.lvlx||u.lvl||'UNRANKED')+'</span><span class="canon-chip">'+esc(canonicalEligibilityLabel((u.eligibility||{}).status))+'</span></div>';
+ return '<article class="canon-card '+accent+(standalone?' is-standalone':'')+'" data-title="'+esc(u.t)+'"><div class="canon-card-head"><div class="canon-rank">'+String(index).padStart(2,'0')+'<small>'+(MMCARDLANG==='id'?'dari':'of')+' '+String(total).padStart(2,'0')+'</small></div><div><div class="canon-kicker">'+esc(canonicalText('kicker','This week - Milo field read'))+'</div><div class="canon-title">'+esc(u.t)+'</div>'+subline+'</div></div><div class="canon-pulse"><b>'+esc(canonicalText('edge','The edge:'))+'</b> '+esc(u.nug||insight.insight||u.gold||'No concise edge captured.')+'</div><div class="canon-lanes">'+lanes.map(function(x,i){return canonicalLaneHtml(u,x[0],x[1],i+1);}).join('')+'</div>'+footer+'<div class="canon-evidence-note">'+esc(canonicalText('lineage','Full source lineage is hash-bound in the Monday Map'))+' - '+esc(m.cycle_id)+'</div></article>';
+}
+function canonicalPortfolioHtml(m,standalone){
+ var films=canonicalRanks(m),d=m.decision_edge||{},edge=d.proprietary_edge||{},challenge=d.non_consensus_hypothesis||{};
+ var soft=canonicalIsSoft();
+ var rows=films.map(function(u,i){return '<div class="canon-rank-row'+(soft?' soft':'')+'"><div class="canon-rank-n">'+String(i+1).padStart(2,'0')+'</div><div><div class="canon-rank-title">'+esc(u.t)+'</div><div class="edge-meta">'+esc(u.nug||u.gold||'')+'</div></div>'+(soft?'':'<div class="canon-rank-tag">'+esc(canonicalPostureLabel(u.posture))+'</div>')+'</div>';}).join('');
+ if(standalone)return '<article class="canon-cover"><div class="canon-portfolio-kicker">'+esc(canonicalText('kicker','Monday Map - early read'))+' - '+esc(m.cycle_id)+'</div><h1>'+esc(m.h1)+'</h1><div class="canon-cover-room">'+esc(m.room_line)+'</div><div class="canon-rank-list">'+rows+'</div><div class="canon-private"><b>'+esc(canonicalText('private','PRIVATE SAMS EDGE'))+'</b><br>'+esc(edge.room_sentence||edge.fact||canonicalText('not_captured','No proprietary edge captured.'))+'</div><div class="canon-challenge"><b>'+esc(canonicalText('challenge','THE CHALLENGE'))+(soft?'':' - '+esc(canonicalConfidenceWord(challenge.confidence||'UNSET')))+'</b><br>'+esc(challenge.hypothesis||canonicalText('not_captured','No non-consensus hypothesis captured.'))+'</div><div class="canon-cover-foot">'+esc(canonicalText('swipe','Swipe through'))+' '+esc(films.length)+' '+esc(canonicalText('cards','ranked eight-point film cards'))+'</div></article>';
+ return '<div class="canon-portfolio"><div class="canon-portfolio-kicker">'+esc(canonicalText('portfolio','What Milo sees in 30 seconds'))+'</div><div class="canon-portfolio-read">'+esc(m.room_line||m.h1)+'</div><div class="canon-rank-list">'+rows+'</div><div class="canon-private"><b>'+esc(canonicalText('private','Private SAMS edge'))+':</b> '+esc(edge.room_sentence||edge.fact||canonicalText('not_captured','Not captured.'))+'</div><div class="canon-challenge"><b>'+esc(canonicalText('challenge','Non-consensus'))+' - '+esc(canonicalConfidenceWord(challenge.confidence||'UNSET'))+':</b> '+esc(challenge.hypothesis||canonicalText('not_captured','Not captured.'))+'</div></div>';
+}
+function renderCanonicalStack(m){
+ var target=document.getElementById('upcoming'),films=canonicalRanks(m);if(!target)return;
+ target.innerHTML='<div class="canonical-deck">'+films.map(function(u,i){return canonicalTitleCard(m,u,i+1,films.length,false);}).join('')+'</div>';
+}
+function fitMondayCard(){
+ var panel=document.querySelector('section.panel[data-panel="map"]'),card=panel&&panel.querySelector('.canon-card');if(!card)return 'cover';
+ var preferred=1740;
+ if(card.scrollHeight>preferred)card.classList.add('fit-tight');
+ if(card.scrollHeight>preferred)card.classList.add('fit-tighter');
+ var state=card.scrollHeight<=preferred?(card.classList.contains('fit-tighter')?'tighter':(card.classList.contains('fit-tight')?'tight':'natural')):'review-warning';
+ document.body.setAttribute('data-monday-card-fit',state);return state;
+}
+function renderMondayCardMode(m){
+ if(MMCARD===null)return;
+ MMCARDLANG=String(m.presentation_language||'en').toLowerCase().indexOf('id')===0?'id':'en';
+ var panel=document.querySelector('section.panel[data-panel="map"]'),films=canonicalRanks(m),html='';if(!panel)return;
+ if(MMCARD==='cover')html=canonicalPortfolioHtml(m,true);else{var index=parseInt(MMCARD,10);if(!Number.isInteger(index)||index<1||index>films.length){panel.innerHTML='<div class="stale">Card index is outside the current ranked slate.</div>';return;}html=canonicalTitleCard(m,films[index-1],index,films.length,true);}
+ panel.innerHTML='<div id="monday-card-stage" data-card-id="'+esc(MMCARD)+'">'+html+'</div>';
+ fitMondayCard();
+ document.body.setAttribute('data-monday-card-ready','true');
+}
+function mondayCallCard(c,label){
+ var pc=c.confidence==='HIGH'?'good':(c.confidence==='LOW'?'bad':'warn');
+ return '<div class="upc"><div class="upc-h"><span class="nm">'+esc(c.title)+'</span><span class="pill '+pc+'">'+esc(label+' · '+c.confidence)+'</span></div>'+
+  '<div class="note" style="margin-top:7px"><b>Call:</b> '+esc(c.call)+'</div>'+
+  '<div class="note" style="margin-top:4px"><b>Evidence:</b> '+esc(c.evidence)+'</div>'+
+  '<div class="note" style="margin-top:4px;color:var(--muted)"><b>Falsifier:</b> '+esc(c.falsifier)+'</div></div>';
+}
+function humanToken(v){
+ var labels={ADM_PER_SHOW:'ADM/show',TOTAL_ADM:'total ADM',SHOW_COUNT:'shows',GTE:'\u2265',LTE:'\u2264',GT:'>',LT:'<',EQ:'=',
+  DAY1_AT_5_OR_MORE_NAMED_SITES:'Day 1 at 5+ named sites',DAY1_PER_SITE:'Day 1 per site',
+  DAY1_ALL_3_SELECTED_SITES:'Day 1 at all 3 selected sites',DAY1_PER_SELECTED_SITE:'Day 1 per selected site',
+  DAY1_NAMED_OWNED_FIRST_TWO_SHOWS:'Day 1, first two shows at named owned sites'};
+ return labels[v]||String(v||'').replaceAll('_',' ').toLowerCase();
+}
+function rangeText(r){return r?esc(r.min)+'-'+esc(r.max)+' '+esc(humanToken(r.unit)):'UNKNOWN';}
+function sitesText(s){return !Array.isArray(s)||!s.length?'sites pending':(s.length>5?esc(s.length)+' owned sites':esc(s.join(', ')));}
+function triggerText(t){return t?esc(humanToken(t.operator))+' '+esc(t.threshold)+' '+esc(humanToken(t.metric))+' \u00b7 '+esc(humanToken(t.window)):'UNKNOWN';}
+function renderDecisionEdge(m){
+ var d=m.decision_edge,p=document.getElementById('decision-edge');if(!p||!d)return;
+ if(d.recommendation_mode==='OBSERVE_LEARN'){
+  var observations=(d.what_milo_sees||[]).map(function(a){var s=a.public_signal_shape||{};return '<div class="edge-action"><b>'+esc(a.rank)+'. '+esc(a.title)+'</b><div class="edge-trigger">'+esc(a.insight)+'</div>'+(s.metric?'<div class="edge-meta"><b>Lead signal:</b> '+esc(s.lead_signal)+' · '+esc(s.metric)+(s.value===null||typeof s.value==='undefined'?'':' = '+esc(s.value))+' · '+esc(s.comparison)+'</div>':'')+'<div class="edge-meta"><b>Evidence:</b> '+esc(a.evidence)+'</div><div class="edge-meta"><b>Ask the room:</b> '+esc(a.room_question)+'</div><div class="edge-meta"><b>Stronger if:</b> '+esc(a.strengthens_if)+' <b>Weaker if:</b> '+esc(a.weakens_if)+'</div><div class="edge-meta"><b>If unresolved:</b> '+esc(a.decision_if_unresolved)+'</div></div>';}).join('');
+  var e2=d.proprietary_edge||{},h=d.non_consensus_hypothesis||{},g=d.maturity_gate||{};
+  p.innerHTML='<div class="edge-title">What Milo sees</div>'+observations+
+   '<div class="edge-private"><b>PRIVATE EDGE:</b> '+esc(e2.room_sentence)+(e2.metric?'<br><b>'+esc(e2.metric)+':</b> '+esc(e2.value)+' '+esc(e2.unit)+' vs '+esc(e2.comparison_value)+' ('+esc(e2.comparison_label)+') · '+esc(e2.magnitude):'')+(e2.why_only_sams_knows?'<br><b>Why this is proprietary:</b> '+esc(e2.why_only_sams_knows):'')+'<br><span style="color:var(--ink2)">'+esc(e2.commercial_consequence)+'</span></div>'+
+   '<div class="edge-bet"><b>NON-CONSENSUS HYPOTHESIS · '+esc(h.confidence)+':</b> '+esc(h.hypothesis)+'<br><b>Evidence:</b> '+esc(h.evidence)+(h.strongest_alternative_title?'<br><b>Stronger than '+esc(h.strongest_alternative_title)+':</b> '+esc(h.why_stronger_than_alternative):'')+'<br><b>Falsifier:</b> '+esc(h.falsifier)+'</div>'+
+   '<div class="edge-meta"><b>ALLOCATION ADVICE:</b> '+esc(g.state||'NOT_YET_EARNED')+' · '+esc(g.reason||'Observe the actual 15-show portfolio and learn first.')+'</div>';
+  p.style.display='';p.setAttribute('data-ready','true');return;
+ }
+ var tests={};(d.title_tests||[]).forEach(function(t){tests[t.title]=t;});
+ var actions=(d.what_i_would_do||[]).map(function(a){var t=tests[a.title]||{};return '<div class="edge-action"><b>'+esc(a.rank)+'. '+esc(a.action)+'</b><div class="edge-meta">'+esc(a.title)+' · '+sitesText(a.sites)+' · Open '+rangeText(a.opening_range)+'</div><div class="edge-trigger"><b>Expand:</b> '+triggerText(t.expand_if)+' &nbsp; <b>Pull back:</b> '+triggerText(t.pullback_if)+'</div><div class="edge-trigger">'+esc(a.reason)+'</div></div>';}).join('');
+ var e=d.proprietary_edge||{},b=d.non_consensus_bet||{},cost=b.cost_if_wrong||{};
+ p.innerHTML='<div class="edge-title">What I would do</div>'+actions+
+  '<div class="edge-private"><b>PRIVATE EDGE:</b> '+esc(e.room_sentence)+'<br><span style="color:var(--ink2)">'+esc(e.commercial_consequence)+'</span></div>'+
+  '<div class="edge-bet"><b>NON-CONSENSUS · '+esc(b.confidence)+':</b> '+esc(b.call)+'<br><b>Falsifier:</b> '+esc(b.falsifier)+'<br><b>Cost if wrong:</b> '+rangeText(cost)+' · '+esc(cost.explanation)+'</div>';
+ p.style.display='';p.setAttribute('data-ready','true');
+}
+function renderMondayMilo(m){
+ var d=m.milo,p=document.getElementById('milo-panel');if(!p||!d)return;
+ p.innerHTML='<div class="eb" style="color:var(--green)">Milo · Weekly thesis · '+esc(m.cycle_id)+'</div>'+
+  '<h1>'+esc(d.headline)+'</h1><p class="story" style="margin-top:10px">'+esc(d.summary)+'</p>'+
+  '<div class="kick">Three calls for the room</div>'+d.calls.map(function(c){return mondayCallCard(c,'CALL');}).join('')+
+  '<div class="kick">Non-consensus call</div>'+mondayCallCard(d.non_consensus_call,'CHALLENGE')+
+  '<div class="soft"><b>What Programming may see differently</b><div class="note" style="margin-top:5px">'+esc(d.programming_difference)+'</div></div>'+
+  '<div class="soft"><b>Bounded experiment</b><div class="note" style="margin-top:5px">'+esc(d.bounded_experiment)+'</div></div>'+
+  '<div class="soft"><b>Daily lesson carried forward</b><div class="note" style="margin-top:5px">'+esc(d.daily_lesson)+'</div></div>'+
+  '<div class="foot">Milo Sunday capability score: '+esc(d.capability_score)+'/100 · supervised weekly decision support.</div>';
+}
+function renderMondayFocus(m){
+ var d=m.film_in_focus,p=document.getElementById('focus-panel');if(!p||!d)return;
+ if(d.status==='NONE'){
+  p.innerHTML='<div class="eb">Film in Focus · '+esc(m.cycle_id)+'</div><h1>No focus selected this week</h1>'+
+   '<div class="read" style="margin-top:10px">'+esc(d.reason)+'</div>'+
+   '<div class="foot">An empty focus is an explicit decision, not stale carry-forward.</div>';return;
+ }
+ p.innerHTML='<div class="eb">'+esc(d.eyebrow)+' · '+esc(m.cycle_id)+'</div><h1>'+esc(d.title)+'</h1>'+
+  '<div class="read" style="margin-top:10px"><b>'+esc(d.headline)+'</b><br>'+esc(d.read)+'</div>'+
+  '<div class="kick">Decision question</div><div class="soft">'+esc(d.question)+'</div>'+
+  '<div class="kick">Evidence</div><div class="list">'+d.evidence.map(function(e){return '<div class="frow"><span class="fl">'+esc(e.label)+'</span><span class="fv">'+esc(e.value)+'</span></div>';}).join('')+'</div>'+
+  '<div class="soft"><b>Risk</b><div class="note" style="margin-top:5px">'+esc(d.risk)+'</div></div>'+
+  '<div class="soft"><b>Next action</b><div class="note" style="margin-top:5px">'+esc(d.next_action)+'</div></div>'+
+  '<div class="foot">Current-cycle focus only. Final Programming decision stays with the room.</div>';
+}
+function applyMonday(m){
+ var okLvl={tinggi:1,sedang:1,kecil:1,HIGH:1,MEDIUM:1,LOW:1},okG={lindungi:1,pantau:1,kurangi:1},el;
+ MMCARDLANG=String(m.presentation_language||'en').toLowerCase().indexOf('id')===0?'id':'en';
+ MMCARDPROFILE=String(m.presentation_profile||'standard');
+ document.body.classList.toggle('monday-soft',canonicalIsSoft());
+ m.coming.forEach(function(u){if(!okLvl[u.lvl])u.lvl='sedang';});
+ m.playing.forEach(function(n){if(!okG[n.g])n.g='pantau';n.aps=+n.aps||0;});
+ if(m.eyebrow&&(el=document.getElementById('slate-eb')))el.textContent=m.eyebrow;
+ if(m.h1&&(el=document.getElementById('slate-h1')))el.textContent=m.h1;
+ if(m.room_line&&(el=document.getElementById('roomline')))el.textContent=m.room_line;
+ if(m.coming_kick&&(el=document.getElementById('comingkick')))el.textContent=m.coming_kick;
+ if(m.coming_caveat&&(el=document.getElementById('slatecaveat')))el.textContent=m.coming_caveat;
+ if(m.signal_note&&(el=document.getElementById('signote')))el.textContent=m.signal_note;
+ UPC=m.coming;NOW=m.playing;ATTENTION=m.attention||ATTENTION;
+ if(m.now_meta){for(var k in m.now_meta)if(Object.prototype.hasOwnProperty.call(m.now_meta,k))NOWMETA[k]=m.now_meta[k];}
+ STATE.asof=m.as_of_label;
+ MM_ACTIVE=true;if(typeof renderLoops==='function')renderLoops();
+ render();renderDecisionEdge(m);var edgePanel=document.getElementById('decision-edge');if(edgePanel&&m.decision_edge&&m.decision_edge.recommendation_mode==='OBSERVE_LEARN'){edgePanel.innerHTML=canonicalPortfolioHtml(m,false);edgePanel.style.display='';edgePanel.setAttribute('data-ready','true');}renderCanonicalStack(m);document.body.classList.add('monday-only');document.body.setAttribute('data-monday-ready','true');renderMondayCardMode(m);
+ var ak=document.getElementById('attnkick'),ac=document.getElementById('attn');
+ if(m.attention&&m.attention.length&&ak&&ac){
+  if(m.attention_heading)ak.textContent=m.attention_heading;
+  ak.style.display='';
+  ac.innerHTML='<div class="list">'+m.attention.slice(0,3).map(function(f){
+   return '<div class="chk"><span><b>'+esc(f.label)+':</b> '+esc(f.why)+(f.action?' <span style="color:var(--muted)">- '+esc(f.action)+'</span>':'')+'</span></div>';
+  }).join('')+'</div>';
+ }
+}
+function loadMonday(i){
+ if(i>=MMBASES.length)return; // fail closed - static Slate stays
+ fetch(MMBASES[i]+'monday_map.json',{cache:'no-store'})
+  .then(function(r){return r.ok?r.json():Promise.reject();})
+  .then(function(m){if(!mmValid(m))return loadMonday(i+1);applyMonday(m);})
+  .catch(function(){loadMonday(i+1);});
+}
+loadMonday(0);
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+function activate(g){tabs.forEach(function(x){x.classList.toggle('on',x.getAttribute('data-go')===g);});panels.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-panel')===g);});}
+tabs.forEach(function(b){b.addEventListener('click',function(){activate(b.getAttribute('data-go'));});});
+
+// Film in Focus - bilingual (ID default; EN translates this tab first)
+var FIF={
+id:{
+ eyebrow:"Peta Bukti Penonton - Clawsourcing",
+ title:"Pelet Biduan Jalang",
+ lane:"Lane PH kecil / indie / clawsourcing - bukan bagian slate SAMS Kamis 2 Jul.",
+ read:"Hook lokalnya jelas; bukti penonton belum cukup.",
+ sub:"Horor/klenik + dunia biduan memberi jalur audience yang spesifik. Sekarang tugasnya bukan terlihat ramai, tapi membuktikan ada penonton yang bisa digerakkan.",
+ ql:"Pertanyaan utama",
+ question:"Bisakah hook biduan + klenik berubah menjadi rencana nonton yang nyata?",
+ mapk:"Peta Bukti Penonton",
+ cards:[
+  {t:"Hari Ini",pill:"Sebagian jelas",pc:"warn",q:"Apa yang sudah jelas sekarang?",v:"Hook & genre jelas; jadwal, distributor, dan audience belum.",d:"Jelas: PH Afici Entertainment, sutradara Bram Ferino, horor/klenik dengan dunia biduan, preview 'lumayan'. Belum: tanggal pasti, distributor, budget promo (kemungkinan nihil)."},
+  {t:"Bottleneck",pill:"Hambatan utama",pc:"bad",q:"Apa yang menahan penonton datang?",v:"Awareness rendah tanpa budget promo - orang belum tahu film ini ada.",d:"Tanpa budget promo + cast belum besar -> awareness rendah. Niche dangdut/horor butuh aktivasi komunitas, bukan iklan mahal. Tanpa itu, Day 1 bisa sepi meski filmnya layak."},
+  {t:"Aksi 48 Jam",pill:"Perlu segera",pc:"warn",q:"Apa yang harus dilakukan 48 jam ke depan?",v:"Kunci tanggal + distributor, siapkan asset pack, aktifkan komunitas target.",d:"Detail lengkap + pemilik tiap aksi ada di bagian '48 Jam Ke Depan' di bawah."},
+  {t:"Sinyal",pill:"Belum ada",pc:"neutral",q:"Bukti apa yang kita pantau?",v:"Gerakan komunitas + komitmen nonton di kota target - bukan jumlah views.",d:"Dipantau: respons nobar/komunitas, pre-sale/komitmen di kota target, komen/simpan 'mau nonton'. Bukan: views YouTube/reels - atensi belum tentu permintaan."},
+  {t:"Realitas Pasar",pill:"Sempit tapi mungkin",pc:"warn",q:"Apakah pasar mendukung tes ini?",v:"Horor punya lantai; tapi minggu ramai + PH kecil = ruang sempit.",d:"Horor selalu punya lantai penonton di Indonesia. Tapi di minggu rilis ramai, PH kecil tanpa promo dapat slot kecil. Tes kecil masuk akal; ekspansi hanya kalau Day 1 bergerak."}
+ ],
+ actk:"48 Jam Ke Depan",
+ actions:[
+  {o:"PH",a:"Kunci tanggal rilis + jalur distributor - hapus ketidakpastian dasar."},
+  {o:"PH",a:"Siapkan trailer + asset pack (poster + potongan 15-30 detik untuk reels)."},
+  {o:"PH + AIGLE",a:"Tentukan audience inti: penggemar horor lokal + komunitas dangdut di kota target - bukan 'semua orang'."},
+  {o:"Cast",a:"Posting ke audiens sendiri dengan ajakan jelas (tanggal + ajak nobar). Sinyal: berapa yang komen/simpan 'mau nonton'."},
+  {o:"Komunitas",a:"Atur nobar di 1-2 kota target. Sinyal: jumlah RSVP/komitmen nyata."},
+  {o:"SAMS",a:"Sediakan slot tes kecil bila bukti minimum muncul."}
+ ],
+ testk:"Aturan Tes yang Adil",
+ testlede:"Tes kecil terkontrol hanya kalau bukti minimum muncul:",
+ testreqs:["Tanggal & distributor jelas","Trailer / asset pack siap","Audience target disebut spesifik","Dukungan cast / komunitas terlihat","Aturan bukti Hari 1 sudah ditetapkan"],
+ d1k:"Yang harus dibuktikan Hari 1",
+ d1:[["Terisi & efisien","tahan / lindungi"],["Tipis tapi hidup","pantau"],["Kosong tanpa dukungan","kurangi"]],
+ foot:"Belum rekomendasi booking. Ini Peta Bukti Penonton - apa yang PH harus buktikan untuk dapat tes yang adil."
+},
+en:{
+ eyebrow:"Audience-Proof Map - Clawsourcing",
+ title:"Pelet Biduan Jalang",
+ lane:"Small-PH / indie / clawsourcing lane - not part of the July 2 SAMS slate.",
+ read:"The local hook is clear; the audience proof isn't enough yet.",
+ sub:"Horror/klenik + the biduan world gives a specific audience lane. The job now isn't to look busy - it's to prove there's an audience that can actually be moved.",
+ ql:"The question",
+ question:"Can the biduan + klenik hook turn into a real plan to watch?",
+ mapk:"Audience-Proof Map",
+ cards:[
+  {t:"Today",pill:"Partly clear",pc:"warn",q:"What's clear right now?",v:"Hook & genre are clear; schedule, distributor, and audience aren't.",d:"Clear: PH Afici Entertainment, director Bram Ferino, horror/klenik with the biduan world, preview 'not bad'. Unknown: firm date, distributor, promo budget (likely none)."},
+  {t:"Bottleneck",pill:"Main blocker",pc:"bad",q:"What blocks turnout?",v:"Low awareness with no promo budget - people don't know it exists.",d:"No promo budget + a not-yet-big cast -> low awareness. A dangdut/horror niche needs community activation, not expensive ads. Without it, Day 1 can be empty even if the film is decent."},
+  {t:"48h Action",pill:"Needed now",pc:"warn",q:"What must happen in the next 48 hours?",v:"Lock date + distributor, prep the asset pack, activate the target community.",d:"Full detail + an owner per action are in '48 Hours' below."},
+  {t:"Signal",pill:"None yet",pc:"neutral",q:"What evidence do we watch?",v:"Community movement + intent-to-watch in target cities - not view counts.",d:"Watch: nobar/community response, pre-sales/commitments in target cities, comments/saves saying 'will watch'. Not: YouTube/reels views - attention isn't demand."},
+  {t:"Market Reality",pill:"Tight but possible",pc:"warn",q:"Does the market support this test?",v:"Horror has a floor; but a crowded week + small PH = tight room.",d:"Horror always has an audience floor in Indonesia. But in a crowded release week, a small PH with no promo gets a small slot. A small test makes sense; expansion only if Day 1 moves."}
+ ],
+ actk:"Next 48 Hours",
+ actions:[
+  {o:"PH",a:"Lock release date + distributor path - remove the basic uncertainty."},
+  {o:"PH",a:"Prepare trailer + asset pack (poster + 15-30s cuts for reels)."},
+  {o:"PH + AIGLE",a:"Define the core audience: local horror fans + dangdut community in target cities - not 'everyone'."},
+  {o:"Cast",a:"Post to your own audience with a clear ask (date + invite to nobar). Signal: how many comment/save 'will watch'."},
+  {o:"Community",a:"Set up a nobar in 1-2 target cities. Signal: real RSVP/commitments."},
+  {o:"SAMS",a:"Offer a small test slot once minimum evidence appears."}
+ ],
+ testk:"Fair Test Rule",
+ testlede:"A small controlled test only once minimum evidence appears:",
+ testreqs:["Date & distributor clear","Trailer / asset pack ready","Target audience named specifically","Cast / community support visible","Day 1 proof rule defined"],
+ d1k:"What Day 1 must prove",
+ d1:[["Full & efficient","hold / protect"],["Thin but alive","watch"],["Empty without support","reduce"]],
+ foot:"Not yet a booking recommendation. This is an Audience-Proof Map - what the PH must prove to earn a fair test."
+}
+};
+// Path B Lab prototype - rendered from Milo live report PRSR-2026-07-04-PELET-BIDUAN-JALANG
+// (validated, FOCUS mode, 0 paid calls) + SAMS/PH renders v1. Legacy FIF object above is
+// superseded dead data (kept for history; Codex may remove). ID-only: EN removed, no fake bilingual UI.
+var FIF2={
+ rid:"PRSR-2026-07-04 · sweep publik Milo 4 Jul · FOCUS · 0 paid call",
+ title:"Pelet Biduan Jalang",
+ chip:"BELUM BISA DIPROGRAM",
+ sub:"Horor klenik dunia biduan · Afici Entertainment · Bram Ferino · window internal 30 Jul (belum publik) · sinyal beku 4 Jul (T-25 dari window)",
+ lib:"Afici · window internal 30 Jul · belum bisa diprogram",
+ libOutcome:"tanpa jalur rilis", libPc:"neutral",
+ stages:[
+  ["Sinyal beku","4 Jul","done"],
+  ["Hasil first read","terkunci","locked","Tidak ada jalur rilis - stage ini terbuka hanya kalau gerbang struktur terpenuhi (tanggal + distributor + aset)."],
+  ["Autopsi kota kecil","terkunci","locked","Terbuka setelah ada rilis nyata."],
+  ["Pelajaran","terkunci","locked","Terbuka setelah autopsi; satu pelajaran per film masuk ledger bukti komersial."]
+ ],
+ read:"Hook lokalnya nyata - tapi film ini belum punya satu pun dari tiga syarat dasar yang dimiliki semua film yang kita program 2 Juli.",
+ beyond:"Google memberi artikel sindikasi. Halaman ini memberi posisi film terhadap gerbang yang dipakai SAMS untuk memberi layar.",
+ gate:[
+  {k:"Tanggal rilis publik",act:false},
+  {k:"Jalur distribusi / listing bioskop",act:false},
+  {k:"Aset resmi terukur (trailer di akun resmi)",act:false},
+  {k:"Aktivasi terhitung (nobar / RSVP)",act:true},
+  {k:"Rencana support disebut di muka",act:true}
+ ],
+ gatebench:"Pembanding internal: Petaka, CLBK, dan Dua Nafas semuanya 3/3 syarat struktur terkunci sekitar T-7 sebelum rilis 2 Jul.",
+ gatefair:"Gerbang ini soal struktur, bukan hype: Dua Nafas - buzz terkecil minggu itu (trailer ±1rb) - tetap diprogram 16 show karena strukturnya lengkap.",
+ decision:"Untuk SAMS: jangan pesan slot, jangan habiskan waktu meeting. Kalau PH menghubungi - pakai daftar permintaan di bawah.",
+ verified:[
+  "PH, sutradara, dan cast terverifikasi (Times Indonesia, 4 Jul). Premis: suara biduan menjadi pelet mematikan.",
+  "Akun IG resmi ada (+1 reel) - belum ada metrik yang bisa diukur.",
+  "Artikel yang beredar = sindikasi pers, bukan kampanye. Calon penonton yang mencari film ini tidak akan menemukannya."
+ ],
+ asks:[
+  "Tanggal rilis publik + distributor / jalur booking",
+  "Trailer / poster resmi di akun resmi (objek yang bisa diukur)",
+  "Kota target spesifik + rencana komunitas dangdut/horor",
+  "Satu aktivasi yang bisa dihitung (nobar dengan RSVP)",
+  "Rencana support/promo disebut di muka, bukan ketahuan belakangan"
+ ],
+ watch:[
+  "Tanggal/distributor muncul publik -> naikkan dari BELUM CUKUP DATA.",
+  "Trailer resmi tayang -> saat itu 1 paid call ScrapeCreators jadi layak.",
+  "T-7 tanpa struktur lengkap -> anggap window 30 Jul tidak nyata."
+ ],
+ phNote:"KONSEP INTERNAL - belum boleh keluar: butuh persetujuan tertulis SAMS + setelah 27 Sep 2026.",
+ phLede:"Isi untuk PH: film Anda belum bisa ditemukan calon penonton - pers ada, kampanye tidak. Jalur ke layar (murah/gratis):",
+ phPath:[
+  ["Umumkan tanggal rilis publik","secepatnya"],
+  ["Kunci + sebut distributor / jalur booking","≤ T-21 (9 Jul)"],
+  ["Rilis trailer resmi di akun resmi","≤ T-21"],
+  ["Sebut kota target + komunitas dangdut/horor","≤ T-14"],
+  ["Satu nobar dengan RSVP terhitung","≤ T-7"]
+ ],
+ phOffer:"Bila gerbang terpenuhi: tes kecil yang adil di site yang cocok, aturan bukti Day-1 disepakati di muka. Bukan janji layar - janji tes yang adil.",
+ gaps:[
+  ["Listing 21cineplex / Cinepoint","dicek 4 Jul - tidak ada"],
+  ["Trailer YouTube resmi","tidak ditemukan (cek metadata terbentur bot-check - dicatat jujur)"],
+  ["Kampanye TikTok terindeks","tidak ditemukan"],
+  ["Skor kualitas netral","belum mungkin - belum ada penonton netral"],
+  ["Paid scrape (ScrapeCreators)","ditahan 2x berturut-turut - belum ada objek untuk diukur (disiplin biaya)"]
+ ],
+ foot:"Bukan ramalan, bukan penilaian kualitas. Pembanding = 3 judul / 1 minggu / jaringan SAMS; deadline gerbang = aturan rumah AIGLE. Tidak untuk pihak eksternal sebelum 27 Sep 2026 + persetujuan tertulis SAMS."
+};
+// Case 2 - 402 RSAK, from validated live report PRSR-2026-07-06-402-RUMAH-SAKIT-ANGKER-KOREA
+// (VALIDATION_PASS, FOCUS, 0 paid calls) + SAMS/PH renders v1. Data-rich contrast case.
+var FIF3={
+ rid:"PRSR-2026-07-06 · sweep publik + resmi Milo 6 Jul · FOCUS · 0 paid call",
+ title:"402 Rumah Sakit Angker Korea",
+ chip:"UJI UTAMA",
+ sub:"Horor · MD Pictures / Umbara / Pichouse · Anggy Umbara · rilis 9 Jul · sinyal beku 6 Jul (T-3)",
+ lib:"MD Pictures · rilis 9 Jul · UJI UTAMA",
+ libOutcome:"hasil: menunggu 9 Jul", libPc:"warn",
+ stages:[
+  ["Sinyal beku","6 Jul","done"],
+  ["Hasil first read","menunggu 9 Jul","next","Diisi dari matrix operator + receipt Milo setelah Day 1 (9 Jul) - bukan dari kesan. Pertanyaan yang menunggu jawaban: apakah setting Korea bekerja di kota kecil, dan apakah atensi 909rb jadi penonton?"],
+  ["Autopsi kota kecil","±2 minggu pasca-rilis","locked","Di mana bertahan, di mana mati, organik vs terdorong, kapan pemotongan datang. Versi eksternal butuh persetujuan tertulis SAMS."],
+  ["Pelajaran","setelah autopsi","locked","Satu pelajaran per film masuk ledger bukti komersial - sinyal mana yang benar, mana yang menyesatkan."]
+ ],
+ read:"Paket horor terkuat 9 Jul di atas kertas: hook rumah sakit angker Korea + kreator konten, atensi BIFAN, trailer resmi 909rb views. Perhatian belum sama dengan penonton kota kecil.",
+ gate:[
+  {k:"Tanggal rilis publik - 9 Jul (21cineplex + MD)",act:false,have:true},
+  {k:"Jalur distribusi / listing - 21cineplex + Mtix/TIX/CGV/Cinepolis",act:false,have:true},
+  {k:"Aset resmi terukur - trailer MD, 909rb views",act:false,have:true},
+  {k:"Aktivasi kota kecil terhitung",act:true,have:false},
+  {k:"Syarat support lokal disebut (jejak BOGOF belum terverifikasi)",act:true,have:false}
+ ],
+ gatebench:"Pembanding: Pelet 0/3 pada T-25; semua judul terprogram 2 Jul 3/3 pada ±T-7. Sinyal: trailer 909rb = ±7-8x Petaka pada jarak rilis mirip (T-2/T-3) - baseline baru 3 judul.",
+ gatefair:"Unknown khas kota kecil: setting Korea - novelty premium atau jarak dari horor lokal yang familiar? Terjawab di first read Kamis.",
+ decision:"Untuk SAMS: tes utama 9 Jul BILA placement terkonfirmasi. Danai dari tekanan lemah non-anchor - JBI tetap dilindungi. Jangan biarkan paket MD/BIFAN otomatis menggeser anchor.",
+ verified:[
+  "Paket terverifikasi: MD Pictures / Umbara Brothers / Pichouse, sutradara Anggy Umbara; Arbani Yasiz, Jang Han-sol. Framing remake Gonjiam.",
+  "Logline resmi: kreator konten 'Para Pencari Hantu' live streaming di rumah sakit terbengkalai Korea demi 3 juta penonton, lalu diteror.",
+  "BIFAN world premiere + sambutan hangat (RRI) = sinyal atensi/positioning, bukan konsensus review netral.",
+  "Kehadiran publik jelas: listing 21cineplex + platform tiket. Tekanan booking di kota SAMS belum tertangkap."
+ ],
+ asksLabel:"Pertanyaan untuk ruangan:",
+ asks:[
+  "Placement SAMS: site mana, berapa show?",
+  "Ada syarat support (BOGOF/cinema visit/nobar)? Jejak BOGOF pihak ketiga belum terverifikasi - konfirmasi.",
+  "Dari mana show-nya diambil? Jawaban benar: tekanan lemah non-anchor.",
+  "Apa yang harus dibuktikan first read Kamis untuk perluasan?"
+ ],
+ watch:[
+  "Placement tipis / support mendominasi / first read lemah -> tetap tes terkontrol, jangan lebar.",
+  "Scrape TikTok/IG berbayar hanya kalau ruangan memutus terkontrol vs lebar (pemicu tertulis di receipt).",
+  "Setting Korea: cek reaksi penonton kota kecil di first read."
+ ],
+ phNote:"KONSEP INTERNAL - belum boleh keluar: butuh persetujuan tertulis SAMS + setelah 27 Sep 2026.",
+ phLede:"Isi untuk PH (kelas PH besar): kampanye Anda bekerja di lapisan nasional - yang tidak bisa Anda lihat adalah kota lapis dua:",
+ phBlind:[
+  "Apakah setting Korea bekerja di kota lapis dua - atau justru jadi jarak?",
+  "Di tipe kota mana premis kreator-konten mengena - dan di mana dia mati?",
+  "Berapa bagian penonton awal Anda organik vs terdorong (promo/event)?",
+  "Kapan dan di mana pemotongan show mulai terjadi - dan apa yang mendahuluinya?"
+ ],
+ phOffer:"Temuan gratis: jejak kampanye publik Anda berhenti di lapisan nasional - tidak ada jejak aktivasi kota lapis dua yang bisa ditemukan pada T-3. Tawaran bila disetujui: first-read kota kecil + autopsi 2 minggu setelah rilis (teragregasi, seizin tertulis pemilik data).",
+ gapsDate:"per 6 Jul",
+ gaps:[
+  ["Placement SAMS / planned shows","belum - ruangan yang menjawab"],
+  ["Syarat support lokal","belum dikonfirmasi (jejak BOGOF pihak ketiga belum terverifikasi)"],
+  ["TikTok/IG/X kuantitatif","ditahan - pemicu berbayar: keputusan terkontrol vs lebar"],
+  ["Review netral","gratis setelah tayang - tunggu"],
+  ["Catatan sumber","trailer dipilih via yt-dlp dengan mengecualikan false-match ber-view lebih tinggi (mis. trailer Gonjiam asli)"]
+ ],
+ foot:"Bukan ramalan, bukan penilaian kualitas. Baseline pembanding = 3 judul / 1 minggu / jaringan SAMS. Tidak untuk pihak eksternal sebelum 27 Sep 2026 + persetujuan tertulis SAMS."
+};
+// v0.4 RELEASE MRI. Sinyal -> Hasil -> Diagnosis -> Next ask, per film, dari receipt.
+// Sources: PRSR-2026-07-04 (Pelet), PRSR-2026-07-06 (402), RESULT_RECEIPT 9 & 10 Jul,
+// matrix operator 9-10 Jul. FIF/FIF2/FIF3 di atas = dead data (Codex boleh hapus).
+var MRI={
+ f402:{
+  title:"402 Rumah Sakit Angker Korea",
+  chip:"UJI TERKONTROL - BUKAN ANCHOR",chipCls:"sedang",
+  lib:"MD Pictures · rilis 9 Jul",libOutcome:"first-read tersedia",libPc:"good",
+  exec:"Atensi nasional besar (trailer 909rb, BIFAN) tidak otomatis jadi penonton kota kecil: dua hari pertama di bawah pool, dan makin turun saat show justru ditambah. Lanjutkan hanya di site yang terbukti - perluasan broad belum earned.",
+  svo:[
+   ["Sinyal beku (6 Jul)","UJI UTAMA - paket MD/Umbara, trailer 909rb, BIFAN. Catatan beku: perhatian belum sama dengan penonton kota kecil."],
+   ["Hasil first-read","D1 (9 Jul): 737 ADM / 56 show = 13,16 - di bawah pool 15,10 (index 0,87). D2 (10 Jul): 634 / 58 = 10,93 - di bawah pool 13,33 (index 0,82)."],
+   ["Diagnosis","Hype nasional tidak menerjemah broad di kota kecil. Penempatan lebih lebar dari yang earned: show naik 56 ke 58 saat hasil turun. Arah sinyal beku benar - ini memang bukan anchor."],
+   ["Next ask","Geser ke site-specific hold. Sebelum tambah show atau support: site mana yang di atas pool, dan apa bukti paid-quality/pocket-nya?"]
+  ],
+  changed:[
+   "Posture: UJI UTAMA (pra-rilis) -> UJI TERKONTROL / site-specific (setelah 2 hari di bawah pool).",
+   "Day 1 -> Day 2 melemah (13,16 -> 10,93) justru saat show ditambah (56 -> 58).",
+   "Kalibrasi bet 11 Jul (receipt 10 Jul): tahan 402 site-specific; prioritas show kembali ke JBI (index 1,34)."
+  ],
+  pocket:"Bacaan pocket per site terbatas oleh grouping matrix saat ini: 402 masih terlipat ke kolom 'Other' - belum ada baris per site. Perbaikan kolom generator diminta ke Codex.",
+  sams:"Aksi programming: tahan 402 hanya di site yang hasilnya di atas pool; kembalikan sisa show ke JBI (anchor bersih, index 1,34-1,41). Jangan potong anchor untuk hype. Petaka tetap di-cap.",
+  ph:"KONSEP - internal, belum boleh keluar. Atensi nasional film Anda nyata; yang tidak terlihat dari Jakarta adalah kota mana yang menerjemahkannya jadi penonton. First-read kami menunjukkan penerjemahan tidak merata dan menyempit di hari kedua. Sebelum belanja support berikutnya, kami bisa tunjukkan kota mana layak support dan kota mana tidak - detail per kota dalam kerja sama berizin.",
+  bound:"Terverifikasi: receipt hasil 9-10 Jul (Grafana bridge + matrix operator). Belum diketahui: occupancy (kapasitas tidak tersedia), pocket per site (grouping matrix), kualitas paid per site. Tidak boleh diklaim: proof / Milo Difference - gate belum jalan.",
+  rid:"PRSR-2026-07-06 + RESULT_RECEIPT 9-10 Jul"
+ },
+ pelet:{
+  title:"Pelet Biduan Jalang",
+  chip:"BELUM BISA DIPROGRAM",chipCls:"sedang",
+  lib:"Afici · window internal 30 Jul",libOutcome:"belum bisa diprogram",libPc:"neutral",
+  exec:"Hook lokal nyata (horor klenik dunia biduan), tapi tanpa tanggal publik, distributor, dan aset terukur, film ini belum punya jalur ke layar. Tidak ada outcome untuk diukur - bola di PH.",
+  svo:[
+   ["Sinyal beku (4 Jul)","0/3 gerbang struktur: tanpa tanggal publik, tanpa distributor/listing, tanpa aset terukur. Pembanding: semua judul terprogram punya 3/3 pada sekitar T-7."],
+   ["Hasil first-read","Tidak ada - film belum rilis dan belum punya jalur rilis."],
+   ["Diagnosis","Film tanpa struktur rilis tidak menghasilkan data. Pers ada (sindikasi), kampanye tidak - calon penonton tidak bisa menemukannya."],
+   ["Next ask","5 receipt untuk membuka tes: tanggal publik, distributor, trailer resmi, kota target + komunitas, satu nobar ber-RSVP."]
+  ],
+  changed:[
+   "Tidak ada perubahan - tidak ada receipt baru sejak 4 Jul.",
+   "Window internal 30 Jul makin dekat tanpa satu pun struktur terkunci."
+  ],
+  pocket:"Tidak berlaku - belum ada rilis.",
+  sams:"Aksi programming: tidak ada. Jangan pesan slot; pakai daftar 5 receipt kalau PH menghubungi.",
+  ph:"KONSEP - internal, belum boleh keluar. Film Anda belum bisa ditemukan calon penonton. Jalur ke layar murah/gratis: umumkan tanggal, kunci distributor, rilis trailer resmi, sebut kota target, satu nobar ber-RSVP. Gerbang ini soal struktur, bukan hype - film ber-buzz kecil pun dapat layar kalau strukturnya lengkap.",
+  bound:"Terverifikasi: sweep publik 4 Jul (PRSR). Belum diketahui: semua sinyal penonton. Tidak boleh diklaim: kualitas film - belum ada penonton netral.",
+  rid:"PRSR-2026-07-04"
+ }
+};
+// v0.8 SMALL-PH PROOF MACHINE: BUKTI SEBELUM LAYAR.
+// Five commands per film: MINTA LAYAR? / BUKTI BERIKUTNYA / DI MANA DULU / YANG MEMBUKA LAYAR / JANGAN DULU.
+// Hero = Pelet (the small-PH customer problem). 402 = labeled control case (attention is not proof).
+// Sources: PRSR 4 & 6 Jul, RESULT_RECEIPT 9-10 Jul, FIF receipts. FIF/FIF2/FIF3/MRI above = dead data (Codex cleanup).
+var P={
+ pelet:{
+  btn:"Pelet · kasus PH kecil",
+  title:"Pelet Biduan Jalang",
+  meta:"Horor klenik dunia biduan · Afici Entertainment",
+  ask:"BELUM SIAP MINTA LAYAR",askCls:"sedang",
+  askLine:"Struktur rilis 0/3. Bukan filmnya yang kurang - buktinya yang belum dibuat.",
+  next:{l:"BUKTI BERIKUTNYA",v:"Umumkan tanggal rilis publik di akun resmi. Gratis, bisa hari ini - dan menyalakan jam untuk semua bukti lainnya.",cls:"gold"},
+  where:{l:"DI MANA DULU",v:"Sebut 2 kota target + 1 komunitas dangdut/horor. Data kota belum ada karena belum pernah disebut - menyebutnya gratis, dan jejaknya bisa kami cek."},
+  unlock:{l:"YANG MEMBUKA LAYAR",v:"3/3 struktur (tanggal + distributor + trailer resmi) membuka pembicaraan tes. Tambah 1 nobar ber-RSVP terhitung: layak minta 1-2 layar tes di kota komunitas."},
+  dont:{l:"JANGAN DULU",v:"Jangan belanja iklan atau poster berbayar sebelum struktur lengkap. Atensi tanpa struktur tidak menghasilkan layar - lihat kasus kontrol 402.",cls:"red"},
+  evidence:"Sweep publik 4 Jul (PRSR-2026-07-04): tanggal/distributor/trailer tidak ditemukan; artikel yang ada = sindikasi pers. Pembanding: film ber-buzz 1rb diprogram karena strukturnya lengkap."
+ },
+ f402:{
+  btn:"402 · kontrol",
+  title:"402 Rumah Sakit Angker Korea",
+  meta:"Kasus kontrol (PH besar): atensi bukan bukti",
+  ask:"TAHAN PER SITE",askCls:"sedang",
+  askLine:"909rb views + BIFAN - tapi dua hari pertama di bawah pool, justru saat show dinaikkan 56 → 58.",
+  next:{l:"BUKTI BERIKUTNYA",v:"Bacaan per kota: site mana yang di atas pool. Tanpa itu, tidak ada dasar untuk show atau support tambahan.",cls:"gold"},
+  where:{l:"DI MANA DULU",v:"Belum terbaca - matrix masih menggabungkan judul baru dalam satu kolom. Itu sebabnya jawabannya per site, bukan expand."},
+  unlock:{l:"YANG MEMBUKA LAYAR",v:"Site terbukti di atas pool -> tambah show di site itu saja. Tidak sebelum itu."},
+  dont:{l:"JANGAN DULU",v:"Support broad setelah dua hari di bawah pool = membakar uang untuk hype yang tidak mengkonversi di kota kecil.",cls:"red"},
+  evidence:"Receipt hasil 9-10 Jul: D1 737 ADM / 56 show = 13,16 vs pool 15,10 · D2 634 / 58 = 10,93 vs 13,33."
+ }
+};
+var P_CASE='pelet';
+function renderLib(){
+ var el=document.getElementById('fiflib');if(!el)return;
+ el.innerHTML=Object.keys(P).map(function(k){
+  return '<button class="lang'+(k===P_CASE?' on':'')+'" data-case="'+k+'" type="button">'+esc(P[k].btn)+'</button>';
+ }).join('');
+ el.querySelectorAll('.lang').forEach(function(b){
+  b.addEventListener('click',function(){P_CASE=b.getAttribute('data-case');renderFIF();renderLib();});
+ });
+}
+function renderFIF(){
+ var d=P[P_CASE],h='';
+ h+='<h1 style="margin-top:12px">'+esc(d.title)+'</h1>';
+ h+='<div class="note" style="margin-top:2px;color:var(--muted)">'+esc(d.meta)+'</div>';
+ h+='<div class="eb" style="font-size:9px;margin-top:16px">MINTA LAYAR?</div>';
+ h+='<div style="margin-top:5px"><span class="lvl '+d.askCls+'" style="font-size:13px;padding:7px 14px;letter-spacing:.5px">'+esc(d.ask)+'</span></div>';
+ h+='<div style="font-size:14px;font-weight:700;color:var(--ink);margin-top:9px;line-height:1.5">'+esc(d.askLine)+'</div>';
+ var tiles=[d.next,d.where,d.unlock,d.dont];
+ h+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:9px;margin-top:16px">'+tiles.map(function(t){
+  var accent=t.cls==='gold'?'var(--gold)':(t.cls==='red'?'var(--red)':'var(--line)');
+  var lbl=t.cls==='red'?'var(--red)':'var(--gold)';
+  return '<div style="border:1px solid var(--line);border-left:3px solid '+accent+';border-radius:10px;background:var(--surface);padding:11px 13px">'+
+   '<div style="font-size:9.5px;font-weight:800;letter-spacing:1px;color:'+lbl+'">'+esc(t.l)+'</div>'+
+   '<div style="font-size:12.5px;color:var(--ink);line-height:1.55;margin-top:5px">'+esc(t.v)+'</div></div>';
+ }).join('')+'</div>';
+ h+='<div class="note" style="margin-top:14px;font-size:10.5px;color:var(--faint)">'+esc(d.evidence)+' · internal · bukan proof, bukan ramalan · keputusan layar tetap di bioskop</div>';
+ document.getElementById('fif').innerHTML=h;
+}
+// v0.9 LAYAR PEMBUKTIAN: panel is static HTML above; P/renderLib/renderFIF retired (Codex cleanup).
+
+// Milo experiment cycle - SINGLE source for the stepper + ledger.
+// Hand-set to current true state. This object IS the shape a future Milo per-event
+// cycle receipt should fill (Codex contract). Advancing state = edit this object only.
+var CYCLE={
+ stage:2,            // 1 read, 2 frozen, 3 result, 4 gated, 5 recorded, 6 lesson
+ blocked:null,       // or {at:<stage#>, why:'...'}
+ bet:'Petaka lead test/protect; CLBK controlled secondary; Dua Nafas limited watch.', // frozen Milo call (PRE_RESULT_BET EXP-2026-07-01-WED-ALLOC-001)
+ frozenAt:'2026-07-01 12:03 WIB', // freeze timestamp
+ versus:'Rencana operator hampir sama: Petaka 56,6% · CLBK 28,3% · Dua Nafas 15,1%.',
+ versusPill:'selaras - bukan bukti', versusPc:'warn',
+ resultPending:'menunggu receipt hasil Day 1 (Grafana 2 Jul)',
+ result:null,        // result read (string)
+ resultStatus:null,  // SCORABLE | LEARNING_ONLY | BLOCKED | UNKNOWABLE
+ gate:null,          // PROOF_ELIGIBLE | LEARNING_ONLY | BLOCKED | MASTER_AUDIT_PENDING
+ lesson:null,        // accepted BET_KAIZEN lesson
+ detail:[
+  'Cycle: EXP-2026-07-01-WED-ALLOC-001.',
+  'Index beku Milo: Petaka 55 · CLBK 30 · Dua Nafas 15.',
+  'Rencana operator penuh (tabel programming 1 Jul, SAMS-owned tanpa LBJ): JBI 86 dilindungi · Petaka 60 · Cerita Lila 31 · CLBK 30 · Dua Nafas 16 · Sekawan 4 · total 228.',
+  'Selaras bukan bukti: taruhan beku sebelum hasil; tanpa gate lulus tidak ada klaim Milo Difference.'
+ ]
+};
+var STEPLABELS=['Pra-rilis read','Bet beku','Hasil Day 1','Proof gate','Catat bet','Pelajaran'];
+var STEPHINT=['','PRE_RESULT_BET','RESULT_RECEIPT','PROOF_GATE','THINKING_IN_BETS','BET_KAIZEN'];
+// Second tracked loop - Daily Adjustment (EXP-2026-07-01-DAILY-001), receipt-backed.
+var CYCLE_DA={
+ stage:2, blocked:null,
+ bet:'Tahan anchor: JBI 150 show, Cerita Lila 70, Sekawan 6, Tanah Runtuh 0.',
+ frozenAt:'2026-07-01 12:25 WIB',
+ versus:'Sengaja sama dengan status quo (ulang alokasi 30 Jun) - tesnya disiplin anchor, bukan cari upside.',
+ versusPill:'status quo', versusPc:'neutral',
+ result:null, resultStatus:null,
+ resultPending:'hasil 1 Jul diskor di luar AIGLE - menunggu receipt untuk masuk',
+ gate:null, lesson:null,
+ detail:[
+  'Cycle: EXP-2026-07-01-DAILY-001.',
+  'Frozen call verbatim: HOLD_ANCHOR / STABILIZER_WATCH: JBI 150, Cerita Lila 70, Sekawan Limo 2 6, Tanah Runtuh 0, Other context 2.',
+  'Baseline naive = status quo proxy = ulang alokasi 30 Jun (228 show bersih, SAMS-owned tanpa LBJ).',
+  'Taruhan beku sebelum hasil 1 Jul. Tanpa gate lulus: tidak ada klaim Milo Difference.'
+ ]
+};
+function renderCycle(c, ids){
+ var sc=document.getElementById(ids.steps)||{};
+ var bl=c.blocked&&c.blocked.at;
+ sc.innerHTML=STEPLABELS.map(function(l,i){
+  var n=i+1,cls='step',ss;
+  if(bl===n){cls+=' on';ss='terblokir';}
+  else if(n<c.stage){cls+=' done';ss='selesai';}
+  else if(n===c.stage){cls+=' on';ss='sekarang';}
+  else if(n===c.stage+1){ss='berikutnya';}
+  else{ss='terkunci';}
+  return '<div class="'+cls+'"><div class="sn">'+n+'</div><div class="sl">'+esc(l)+'</div><div class="ss">'+esc(ss)+'</div></div>';
+ }).join('');
+ var st=document.getElementById(ids.status)||{style:{}};
+ if(c.blocked){st.style.display='';st.innerHTML='<b>Terblokir</b> di '+esc(STEPLABELS[c.blocked.at-1])+' - '+esc(c.blocked.why);}
+ else{st.style.display='none';st.innerHTML='';}
+ function row(l,v,pill,pc){return '<div class="frow"><span class="fl">'+esc(l)+'</span><span class="fv" style="flex:1">'+v+'</span><span class="pill '+pc+'">'+esc(pill)+'</span></div>';}
+ var lg=document.getElementById(ids.ledger);
+ lg.innerHTML=
+  (c.blocked?row('Terblokir',esc(c.blocked.why),'blokir','bad'):'')+
+  row('Taruhan',c.bet?esc(c.bet)+(c.frozenAt?' <span style="color:var(--muted)">('+esc(c.frozenAt)+')</span>':''):'belum beku - menunggu freeze sebelum hasil',c.bet?'beku':'belum','good')+
+  (c.versus?row('Pembanding',esc(c.versus),c.versusPill||'konteks',c.versusPc||'neutral'):'')+
+  row('Hasil',c.result?esc(c.result):(c.resultPending||'menunggu receipt'),c.resultStatus?c.resultStatus:'pending',c.resultStatus==='BLOCKED'?'bad':'neutral')+
+  row('Gate bukti',c.gate?(c.gate==='PROOF_ELIGIBLE'?'lulus - boleh klaim konservatif':(c.gate==='LEARNING_ONLY'?'learning-only - belum boleh klaim':esc(c.gate))):'belum boleh klaim bukti',c.gate?c.gate:'closed',c.gate==='PROOF_ELIGIBLE'?'good':(c.gate==='BLOCKED'?'bad':(c.gate?'warn':'bad')))+
+  row('Pelajaran',c.lesson?esc(c.lesson):'-',c.lesson?'tercatat':'pending','neutral');
+ var dt=document.getElementById(ids.detail);
+ if(dt)dt.innerHTML=(c.detail||[]).map(function(x){return '<div class="note" style="margin-top:6px">'+esc(x)+'</div>';}).join('');
+}
+renderCycle(CYCLE,{steps:'cyclesteps',status:'cyclestatus',ledger:'cycleledger',detail:'wadetail'});
+renderCycle(CYCLE_DA,{steps:'dasteps',status:'dastatus',ledger:'daledger',detail:'dadetail'});
+
+// Status + next action - DERIVED from state (CYCLE, CYCLE_DA, NOWMETA). Plain language
+// on the surface; message shapes stay in control/july2-night-bus-workflow-2026-07-02.md.
+function renderQueue(){
+ var st=document.getElementById('mstatus'),nx=document.getElementById('mnext'),mq=document.getElementById('mqueue'),mm=document.getElementById('mmore');
+ if(!st)return;
+ function sw(c){return c.blocked?'terblokir':STEPLABELS[c.stage-1].toLowerCase();}
+ var gate=(CYCLE.gate==='PROOF_ELIGIBLE'||CYCLE_DA.gate==='PROOF_ELIGIBLE')?'sebagian lulus':'tertutup';
+ st.textContent='Alokasi Rabu: '+sw(CYCLE)+' · Harian: '+sw(CYCLE_DA)+' · Gate bukti: '+gate;
+ var q=[];
+ if(CYCLE.stage===2&&!CYCLE.blocked)q.push('hasil Day 1 dari Grafana (2 Jul)');
+ if(CYCLE.stage===3)q.push('verdict proof gate Alokasi Rabu');
+ if(CYCLE_DA.stage===2&&!CYCLE_DA.blocked)q.push('hasil 1 Jul loop Harian (sudah diskor, tinggal masuk)');
+ if(CYCLE_DA.stage===3)q.push('verdict proof gate loop Harian');
+ if(!NOWMETA.basisChange)q.push('angka bersih terbaru untuk peta Sedang main');
+ nx.textContent=q.length?('Berikutnya: '+q[0]):'Semua sinkron - tidak ada yang ditunggu.';
+ if(mm){if(q.length>1){mm.style.display='';mq.innerHTML=q.slice(1).map(function(x){return '<div class="note" style="margin-top:4px">· '+esc(x)+'</div>';}).join('');}else{mm.style.display='none';}}
+}
+// Empat loop - the weekly rhythm as one frame; cycle states derived live.
+var MM_ACTIVE=false; // set true when a valid monday_map artifact renders
+function renderLoops(){
+ var el=document.getElementById('loopframe');if(!el)return;
+ function r(nm,st,mat,mc){return '<div class="frow"><span class="fl">'+nm+'</span><span class="fv" style="flex:1">'+st+'</span><span class="pill '+mc+'">'+mat+'</span></div>';}
+ el.innerHTML=
+  r('1 · Monday Map','Pintu depan mingguan (Slate). '+(MM_ACTIVE?'Artifact monday_map aktif.':'Belum ada artifact minggu ini - Slate memakai state approved terakhir.'),'Diawasi','warn')+
+  r('2 · Wednesday Allocation','Bet rilis baru + displacement. Siklus W1: '+esc(STEPLABELS[CYCLE.stage-1])+'.','Diawasi','warn')+
+  r('3 · Daily Adjustment','Disiplin holdover malam. Siklus W1: '+esc(STEPLABELS[CYCLE_DA.stage-1])+'.','Diawasi','warn')+
+  r('4 · OW Closeout','Memori & pelajaran mingguan - belum mulai; hasilnya mengisi Riwayat siklus.','Manual','neutral');
+}
+// Riwayat siklus - closed cycles. Fill ONLY from closeout receipts via bus:
+// {week,loop,frozen,result,gate,lesson}. Empty = hidden.
+var HISTORY=[];
+function renderHistory(){
+ var k=document.getElementById('histkick'),el=document.getElementById('cyclehistory');if(!el)return;
+ if(!HISTORY.length){if(k)k.style.display='none';el.innerHTML='';return;}
+ if(k)k.style.display='';
+ el.innerHTML=HISTORY.map(function(h){
+  return '<div class="frow"><span class="fl">'+esc(h.week+' · '+h.loop)+'</span><span class="fv" style="flex:1">'+esc(h.frozen)+' → '+esc(h.result)+(h.lesson?' · Pelajaran: '+esc(h.lesson):'')+'</span><span class="pill '+(h.gate==='PROOF_ELIGIBLE'?'good':'warn')+'">'+esc(h.gate)+'</span></div>';
+ }).join('');
+}
+renderQueue();renderLoops();renderHistory();
+
+// Daily Adjustment - reads ONLY the operator-tables manifest. Never live_slate_state; never computes/parses numbers.
+var DBASES=['operator-tables/out/','https://akhiladler.github.io/aigle-dashboard/operator-tables/out/'];
+function dailyMsg(msg){var el=document.getElementById('daily');if(el)el.innerHTML='<div class="eb">Daily Adjustment</div><div class="note" style="margin-top:12px">'+esc(msg)+'</div>';}
+function renderDaily(m,base){
+ var a=m&&m.latest_by_type&&m.latest_by_type.DAILY_ADMISSIONS_RESULT;
+ if(!a){dailyMsg('Tabel DAILY_ADMISSIONS_RESULT belum tersedia.');return;}
+ var stale='',t=Date.parse(a.updated_at_utc);
+ if(t&&(Date.now()-t)>26*3600000){stale='<div class="stale">WARNING: Tabel ini per '+esc(a.date)+' - versi lebih baru belum ada. Jangan dibaca sebagai kondisi terkini.</div>';}
+ var badges=(a.badges||[]).map(function(b){return '<span class="badge">'+esc(b)+'</span>';}).join('');
+ var png=base+a.png,htm=base+a.html;
+ document.getElementById('daily').innerHTML='<div class="eb">Daily Adjustment</div>'+
+  '<h1 style="font-size:21px">'+esc(a.title)+'</h1>'+
+  '<div class="scope" style="margin-top:3px">'+esc(a.date)+'</div>'+
+  '<div class="readbig">'+esc(a.one_line_read)+'</div>'+
+  '<div class="badges">'+badges+'</div>'+
+  '<div class="scope">'+esc(a.scope)+'</div>'+
+  stale+
+  '<a href="'+esc(png)+'" target="_blank" rel="noopener"><img class="tblimg" id="dimg" src="'+esc(png)+'" alt="'+esc(a.title)+'"></a>'+
+  '<div class="tbllinks"><a href="'+esc(htm)+'" target="_blank" rel="noopener">Buka HTML</a><a href="'+esc(png)+'" target="_blank" rel="noopener">PNG</a></div>'+
+  '<div class="foot">Sumber: renderer operator-tables (independen dari slate AIGLE). Keputusan tetap di tim.</div>';
+ var im=document.getElementById('dimg');if(im)im.onerror=function(){this.style.display='none';this.insertAdjacentHTML('afterend','<div class="note">Gambar tabel belum ter-render - buka HTML / PNG di bawah.</div>');};
+}
+function loadDaily(i){
+ if(i>=DBASES.length){dailyMsg('Tabel operator belum terjangkau (manifest tidak ditemukan).');return;}
+ fetch(DBASES[i]+'manifest.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(m){renderDaily(m,DBASES[i]);}).catch(function(){loadDaily(i+1);});
+}
+loadDaily(0);
+})();
+</script>
+</body>
+</html>
+
