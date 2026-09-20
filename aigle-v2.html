@@ -308,7 +308,6 @@ body.monday-card .canon-card.fit-tighter{padding:21px 27px}body.monday-card .can
 <div class="foot">Diawasi, bukan otonom. Target 27 Sep: 2 loop dipimpin Milo (Wednesday + Daily). Keputusan tetap di tim.</div>
 </section>
 </div>
-<script src="monday-language.js"></script>
 <script>
 (function(){
 "use strict";
@@ -689,8 +688,8 @@ function applyMonday(m){
 function loadMonday(i){
  if(i>=MMBASES.length)return; // fail closed - static Slate stays
  fetch(MMBASES[i]+'monday_map.json',{cache:'no-store'})
-  .then(function(r){return r.ok?r.arrayBuffer():Promise.reject();})
-  .then(function(raw){var m=JSON.parse(new TextDecoder().decode(raw));if(!mmValid(m))return loadMonday(i+1);return MondayLanguage.load(raw,m,MMBASES[i],applyMonday,MMCARD!==null||MMEXEC);})
+  .then(function(r){return r.ok?r.json():Promise.reject();})
+  .then(function(m){if(!mmValid(m))return loadMonday(i+1);applyMonday(m);})
   .catch(function(){loadMonday(i+1);});
 }
 loadMonday(0);
